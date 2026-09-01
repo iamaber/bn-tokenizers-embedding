@@ -35,12 +35,6 @@ htmlcov/
 .env.*
 !.env.example
 
-# Data and generated artifacts
-data/raw/**
-data/interim/**
-data/processed/**
-data/external/**
-!data/**/.gitkeep
 
 # Trained models and checkpoints
 checkpoints/

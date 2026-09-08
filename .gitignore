@@ -48,6 +48,11 @@ runs/
 *.safetensors
 
 # Logs and temporary files
+.tools/
+data/raw/
+data/processed/
+models/
+bin/
 *.log
 logs/
 tmp/

@@ -1,0 +1,9 @@
+include go.mod go.sum
+recursive-include tokenizer *.go
+recursive-include internal/native *.go
+include cmd/bntok-shared/main.go
+recursive-include tests *.py
+prune data
+prune models
+prune reports
+prune .tools

@@ -53,6 +53,11 @@ data/raw/
 data/processed/
 models/
 bin/
+src/bn_tokenizers_embedding/_go.*
+reports/train-*.txt
+reports/*.stdout.txt
+reports/tests.txt
+reports/python-build.txt
 *.log
 logs/
 tmp/

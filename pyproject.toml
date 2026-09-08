@@ -1,17 +1,31 @@
 [project]
 name = "bn-tokenizers-embedding"
 version = "0.1.0"
-description = "Add your description here"
+description = "Bangla, English and Banglish tokenizers with a native Go engine"
 readme = "README.md"
 authors = [
     { name = "Aber Islam", email = "aber.islam.dev@gmail.com" }
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.10"
 dependencies = []
 
-[project.scripts]
-bn-tokenizers-embedding = "bn_tokenizers_embedding:main"
+[project.urls]
+Repository = "https://github.com/iamaber/bn-tokenizers-embedding"
 
 [build-system]
-requires = ["uv_build>=0.12.7,<0.13.0"]
-build-backend = "uv_build"
+requires = ["setuptools>=77", "wheel>=0.45"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["bn_tokenizers_embedding*"]
+
+[tool.setuptools.package-data]
+bn_tokenizers_embedding = ["py.typed"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

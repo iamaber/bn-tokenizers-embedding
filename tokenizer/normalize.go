@@ -2,8 +2,8 @@
 package tokenizer
 
 import (
-	"strings"
 	"golang.org/x/text/unicode/norm"
+	"strings"
 )
 
 const Normalization = "nfc-whitespace-v1"

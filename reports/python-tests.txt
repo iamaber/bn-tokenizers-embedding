@@ -1,0 +1,9 @@
+test_close_and_errors (test_python.TokenizerTests.test_close_and_errors) ... ok
+test_concurrent_encoding (test_python.TokenizerTests.test_concurrent_encoding) ... ok
+test_normalization_contract (test_python.TokenizerTests.test_normalization_contract) ... ok
+test_round_trip_and_batch (test_python.TokenizerTests.test_round_trip_and_batch) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.634s
+
+OK

@@ -1,0 +1,34 @@
+{
+  "input_records": 691979,
+  "quality_rejected": 9011,
+  "duplicates_removed": 88001,
+  "near_duplicate_links": 1072,
+  "split_bucket_records": {
+    "test/bangla": 5955,
+    "test/banglish": 7020,
+    "test/code-mixed": 226,
+    "test/english": 3511,
+    "train/bangla": 173108,
+    "train/banglish": 218723,
+    "train/code-mixed": 4709,
+    "train/english": 166936,
+    "validation/bangla": 4925,
+    "validation/banglish": 6160,
+    "validation/code-mixed": 156,
+    "validation/english": 3538
+  },
+  "split_bucket_characters": {
+    "test/bangla": 1046400,
+    "test/banglish": 490590,
+    "test/code-mixed": 18307,
+    "test/english": 111701,
+    "train/bangla": 43368936,
+    "train/banglish": 16946172,
+    "train/code-mixed": 400072,
+    "train/english": 5252680,
+    "validation/bangla": 918735,
+    "validation/banglish": 449509,
+    "validation/code-mixed": 11362,
+    "validation/english": 111634
+  }
+}

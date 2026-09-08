@@ -1,0 +1,11 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/iamaber/bn-tokenizers-embedding/tokenizer
+cpu: Apple M5
+BenchmarkTrained-10    	   48084	     25177 ns/op	  42.58 MB/s	   29120 B/op	     154 allocs/op
+BenchmarkTrained-10    	   47455	     24956 ns/op	  42.96 MB/s	   29120 B/op	     154 allocs/op
+BenchmarkTrained-10    	   47036	     28067 ns/op	  38.19 MB/s	   29120 B/op	     154 allocs/op
+BenchmarkTrained-10    	   47305	     25172 ns/op	  42.59 MB/s	   29120 B/op	     154 allocs/op
+BenchmarkTrained-10    	   47487	     25111 ns/op	  42.69 MB/s	   29120 B/op	     154 allocs/op
+PASS
+ok  	github.com/iamaber/bn-tokenizers-embedding/tokenizer	8.155s

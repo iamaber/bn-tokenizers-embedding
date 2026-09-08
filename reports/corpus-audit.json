@@ -1,0 +1,31 @@
+{
+  "canonical_text_overlap": 0,
+  "counts": {
+    "test": 16712,
+    "train": 563476,
+    "validation": 14779
+  },
+  "group_overlap": 0,
+  "groups": 435620,
+  "official_heldout_keys_checked": 7951,
+  "official_heldout_train_overlap": 0,
+  "sha256": {
+    "test": "3f39a8faf7ecc280ec32ce231d379cec788eb79a52d9a6e66917073500879834",
+    "train": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+    "validation": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d"
+  },
+  "sources": {
+    "test/banglatlit": 10416,
+    "test/tatoeba-ben": 216,
+    "test/tatoeba-fra": 3420,
+    "test/wikipedia-bn-20231101": 2660,
+    "train/banglatlit": 257678,
+    "train/tatoeba-ben": 10658,
+    "train/tatoeba-fra": 162026,
+    "train/wikipedia-bn-20231101": 133114,
+    "validation/banglatlit": 8538,
+    "validation/tatoeba-ben": 245,
+    "validation/tatoeba-fra": 3429,
+    "validation/wikipedia-bn-20231101": 2567
+  }
+}

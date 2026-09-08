@@ -1,0 +1,3 @@
+?   	github.com/iamaber/bn-tokenizers-embedding/cmd/bntok	[no test files]
+ok  	github.com/iamaber/bn-tokenizers-embedding/corpus	1.640s
+ok  	github.com/iamaber/bn-tokenizers-embedding/tokenizer	2.075s

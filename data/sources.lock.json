@@ -1,0 +1,68 @@
+[
+  {
+    "path": "banglatlit/train.csv",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/data/BanglaTLit_train.csv",
+    "sha256": "202fa1848d35956477204b42608eafafc50d027ea4e46df42424f1418c588cce",
+    "bytes": 35182176
+  },
+  {
+    "path": "banglatlit/validation.csv",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/data/BanglaTLiT_val.csv",
+    "sha256": "8b7f9711b7516a09008475f2f4b2670c38345710accab32d100458b224c9fb8c",
+    "bytes": 366164
+  },
+  {
+    "path": "banglatlit/test.csv",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/data/BanglaTLiT_test.csv",
+    "sha256": "2e6d3d3e3a1eab578011971be14807fdb20ae13384bc749c1d54eb209234c872",
+    "bytes": 611898
+  },
+  {
+    "path": "banglatlit/pretrain.txt",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/data/BanglaTLit-PT.txt",
+    "sha256": "3ba2a962f2b375d189101ebd4118c6c4fb877a5e26059d09c6c445b1d5666f86",
+    "bytes": 19301816
+  },
+  {
+    "path": "banglatlit/LICENSE",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/LICENSE",
+    "sha256": "ba15fda9d76721237b0d28e38b222d9e457c12fb048cd3c513685b263d69fe9d",
+    "bytes": 1068
+  },
+  {
+    "path": "banglatlit/README.md",
+    "url": "https://raw.githubusercontent.com/farhanishmam/BanglaTLit/f780fcdd5176ddfe6364ffe7948acb6a1c2ea58e/README.md",
+    "sha256": "48075811c6b532ae4672c7af806f51b527aad5c801c578a1ad999ee87931a98e",
+    "bytes": 9808
+  },
+  {
+    "path": "tatoeba/ben-eng.zip",
+    "url": "https://www.manythings.org/anki/ben-eng.zip",
+    "sha256": "45d4ce753f14b8de53e7ce21cec3f48fffd62b778c386c680547351d68bb378e",
+    "bytes": 245952
+  },
+  {
+    "path": "tatoeba/fra-eng.zip",
+    "url": "https://www.manythings.org/anki/fra-eng.zip",
+    "sha256": "9e35994767f7307dc1fa9d5efcc36681f3756a1bdaaa02c1381b3eb11461261e",
+    "bytes": 8242175
+  },
+  {
+    "path": "wikipedia/bn-0.parquet",
+    "url": "https://huggingface.co/datasets/wikimedia/wikipedia/resolve/main/20231101.bn/train-00000-of-00002.parquet",
+    "sha256": "98a8189cf1d0e4b41d647b3d88bd6201e571e002344b5648496c6bfda402841b",
+    "bytes": 192390559
+  },
+  {
+    "path": "wikipedia/bn-1.parquet",
+    "url": "https://huggingface.co/datasets/wikimedia/wikipedia/resolve/main/20231101.bn/train-00001-of-00002.parquet",
+    "sha256": "47c0095c58d6595f68d4bccc257ae6646f27a4669a7d259369c11626bd39565a",
+    "bytes": 151495440
+  },
+  {
+    "path": "wikipedia/README.md",
+    "url": "https://huggingface.co/datasets/wikimedia/wikipedia/raw/main/README.md",
+    "sha256": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21",
+    "bytes": 130835
+  }
+]

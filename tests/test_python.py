@@ -79,6 +79,39 @@ class TokenizerTests(unittest.TestCase):
             with ThreadPoolExecutor(max_workers=8) as pool:
                 self.assertEqual(list(pool.map(tok.encode, [text] * 200)), [expected] * 200)
 
+    def test_bpe_model(self) -> None:
+        path = Path(self.directory.name) / "bpe.json"
+        path.write_text(
+            json.dumps(
+                {
+                    "version": 1,
+                    "algorithm": "bpe",
+                    "normalization": "nfc-whitespace-v1",
+                    "pieces": [{"text": text, "score": 0} for text in ["a", "b", "ab"]],
+                    "merges": [{"left": 0, "right": 1, "result": 2}],
+                }
+            ),
+            encoding="utf-8",
+        )
+        with Tokenizer(path) as tok:
+            self.assertEqual(tok.encode("ab"), [262])
+            texts = ["ab", "আবার ab 🙂", "", "ab\0ab"]
+            self.assertEqual(tok.encode_batch(texts), [tok.encode(s) for s in texts])
+            self.assertEqual([tok.decode(ids) for ids in tok.encode_batch(texts)], texts)
+
+    def test_corrupt_model(self) -> None:
+        path = Path(self.directory.name) / "corrupt.json"
+        path.write_text('{"version": 999}', encoding="utf-8")
+        with self.assertRaises(ValueError):
+            Tokenizer(path)
+
+    def test_context_manager_releases_handle_on_error(self) -> None:
+        tok = Tokenizer(self.path)
+        with self.assertRaisesRegex(RuntimeError, "user code"):
+            with tok:
+                raise RuntimeError("user code")
+        self.assertTrue(tok.closed)
+
 
 if __name__ == "__main__":
     unittest.main()

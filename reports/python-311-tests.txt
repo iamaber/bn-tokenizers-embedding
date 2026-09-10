@@ -1,0 +1,12 @@
+test_bpe_model (test_python.TokenizerTests.test_bpe_model) ... ok
+test_close_and_errors (test_python.TokenizerTests.test_close_and_errors) ... ok
+test_concurrent_encoding (test_python.TokenizerTests.test_concurrent_encoding) ... ok
+test_context_manager_releases_handle_on_error (test_python.TokenizerTests.test_context_manager_releases_handle_on_error) ... ok
+test_corrupt_model (test_python.TokenizerTests.test_corrupt_model) ... ok
+test_normalization_contract (test_python.TokenizerTests.test_normalization_contract) ... ok
+test_round_trip_and_batch (test_python.TokenizerTests.test_round_trip_and_batch) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.279s
+
+OK

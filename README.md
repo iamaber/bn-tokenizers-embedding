@@ -44,6 +44,21 @@ python -m unittest discover -s tests -v
 
 The Python API deliberately stays small: `Tokenizer`, `normalize`, `encode`, `encode_batch`, `decode`, `vocab_size`, and lifecycle methods. Corpus preparation and training remain available through the Go CLI below. Native inference requires only `tokenizer/` and the Unicode dependency; Parquet processing is not linked into the wheel.
 
+## CI and Python API benchmarks
+
+[CI](.github/workflows/ci.yml) builds source archives and wheels on Linux and macOS for Python 3.10–3.14, then tests each installed wheel in a clean environment. It also runs formatting, Go race tests and vet with Go 1.24 and stable, and builds the CLI without CGo. Tests and benchmark smoke checks use tiny fixtures and require no corpus downloads. Uploaded wheels are CI artifacts; Linux release wheels still need portable platform packaging and validation before publishing.
+
+Locally, the same macOS arm64 wheel passed all seven tests on each of Python 3.10–3.14. The hosted Linux/macOS matrix has not run yet; it starts when these changes are pushed.
+
+Measure the installed Python API with a trained model:
+
+```sh
+python benchmarks/python_api.py --model models/unigram-32000.json > reports/python-api-unigram-32000.json
+python benchmarks/python_api.py --model models/bpe-32000.json > reports/python-api-bpe-32000.json
+```
+
+The benchmark alternates single-call and batch timing order across repeats and verifies matching IDs and normalized round trips outside timing. See [Python throughput results](reports/PYTHON_API.md) for methodology and limitations. Omitting `--model` runs a tiny smoke fixture, not a representative performance benchmark.
+
 ## Go tools
 
 Requires Go 1.24 or later. A checksum-verified Go 1.27.1 toolchain is already available locally at `.tools/go/bin/go` in this workspace. The Go library and CLI run without Python, CGo, a GPU, or network access. Corpus preparation additionally uses the Go Parquet reader.

@@ -1,0 +1,79 @@
+{
+  "python": "3.14.6",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "package_version": "0.1.0",
+  "model_sha256": "fc4a78ad3fcd3e3fdf432acf521e1591cf35e31196cd87d642280b2c48cd7d53",
+  "vocabulary": 32000,
+  "load_seconds": 0.016230666005867533,
+  "iterations": 100,
+  "repeats": 5,
+  "batch_size": 64,
+  "text_fixture_sha256": "af2419a3a67067e0a7db74b34836a159ebfb450cb7f7f05cff7ec76de6312fb4",
+  "round_trip_failures": 0,
+  "results": {
+    "short": {
+      "single": {
+        "sample_seconds": [
+          0.0615819160011597,
+          0.05986620800103992,
+          0.06039354200765956,
+          0.059812999999849126,
+          0.06032937500276603
+        ],
+        "median_seconds": 0.06032937500276603,
+        "microseconds_per_text": 9.426464844182192,
+        "texts_per_second": 106084.30801258206,
+        "input_MB_per_second": 9.28237695110093
+      },
+      "batch": {
+        "sample_seconds": [
+          0.03989533398998901,
+          0.0390361669997219,
+          0.03887925000162795,
+          0.038986957995803095,
+          0.03901479199703317
+        ],
+        "median_seconds": 0.03901479199703317,
+        "microseconds_per_text": 6.096061249536433,
+        "texts_per_second": 164040.34655590833,
+        "input_MB_per_second": 14.35353032364198
+      },
+      "batch_speedup": 1.546320559836733,
+      "tokens_per_batch": 1600,
+      "workload_sha256": "7488986b16117b54de7e958ce3a1b2f2d28694db64bfaa8b0d0ff8726a237444"
+    },
+    "long": {
+      "single": {
+        "sample_seconds": [
+          0.5868109580042074,
+          0.5846764169982634,
+          0.5853605000011157,
+          0.582618000000366,
+          0.5822070830035955
+        ],
+        "median_seconds": 0.5846764169982634,
+        "microseconds_per_text": 91.35569015597866,
+        "texts_per_second": 10946.225662491546,
+        "input_MB_per_second": 15.488909312425537
+      },
+      "batch": {
+        "sample_seconds": [
+          0.5573273750051158,
+          0.5575122089940123,
+          0.5515715829969849,
+          0.555838791988208,
+          0.5558802090090467
+        ],
+        "median_seconds": 0.5558802090090467,
+        "microseconds_per_text": 86.85628265766354,
+        "texts_per_second": 11513.271917719674,
+        "input_MB_per_second": 16.29127976357334
+      },
+      "batch_speedup": 1.0518029019967288,
+      "tokens_per_batch": 26560,
+      "workload_sha256": "2c1b4247b42590649c75438b804ad7e0e921c383f521b724f6f43d74cb363a56"
+    }
+  },
+  "model_kind": "trained"
+}

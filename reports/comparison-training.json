@@ -1,0 +1,42 @@
+{
+  "training_source_sha256": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+  "normalized_training_sha256": "92a1e81bbd8f124b8f9501407d8344447ee8e6f28f3f5a82a7a923025c3fe8f3",
+  "records_by_bucket": {
+    "banglish": 218723,
+    "bangla": 173108,
+    "code-mixed": 4709,
+    "english": 166936
+  },
+  "weighting": "one occurrence per training record; no bucket or word weights",
+  "sentencepiece_version": "0.2.2",
+  "tokenizers_version": "0.23.2",
+  "sentencepiece_settings": {
+    "model_type": "unigram",
+    "vocab_size": 32000,
+    "character_coverage": 1.0,
+    "byte_fallback": true,
+    "normalization_rule_name": "identity",
+    "num_threads": 1,
+    "shuffle_input_sentence": false,
+    "input_sentence_size": 0,
+    "max_sentence_length": 5417,
+    "max_sentencepiece_length": 12,
+    "hard_vocab_limit": false
+  },
+  "hf_settings": {
+    "algorithm": "ByteLevel BPE",
+    "vocab_size": 32000,
+    "min_frequency": 2,
+    "add_prefix_space": false,
+    "alphabet": "all 256 bytes",
+    "special_tokens": []
+  },
+  "training_seconds": {
+    "sentencepiece": 80.40879812499043,
+    "hf_bpe": 17.956484124995768
+  },
+  "model_hashes": {
+    "sentencepiece-32000.model": "6036178b02f20207dfcf291843a4508ba10fc267ceb1cb2b3d7e956c39197f82",
+    "hf-bpe-32000.json": "faee5eacefff6c9cea85cd1e2ea722920af9ffff7945d47b825df397bfd62075"
+  }
+}

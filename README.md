@@ -59,6 +59,8 @@ python benchmarks/python_api.py --model models/bpe-32000.json > reports/python-a
 
 The benchmark alternates single-call and batch timing order across repeats and verifies matching IDs and normalized round trips outside timing. See [Python throughput results](reports/PYTHON_API.md) for methodology and limitations. Omitting `--model` runs a tiny smoke fixture, not a representative performance benchmark.
 
+The [external framework comparison](reports/FRAMEWORK_COMPARISON.md) measures BNLP, SentencePiece and Hugging Face byte-level BPE on the full validation split. It includes encoding speed, normalized text preservation and sequence lengths, with reproducible scripts and explicit training differences. It does not establish downstream NLP accuracy.
+
 ## Go tools
 
 Requires Go 1.24 or later. A checksum-verified Go 1.27.1 toolchain is already available locally at `.tools/go/bin/go` in this workspace. The Go library and CLI run without Python, CGo, a GPU, or network access. Corpus preparation additionally uses the Go Parquet reader.
@@ -130,4 +132,4 @@ There are **563,476 training records / 65.97 million normalized characters**, pl
 
 The training mixture is 40% Bangla, 25% English, 25% Banglish, 10% script-mixed by weighted sentence contribution. Each sentence's weight is divided among its whitespace words; fitting ignores words longer than 64 runes. `-balanced` uses 25% each. The small code-mixed bucket is explicitly a script proxy and needs more natural data. Automatic privacy/near-duplicate filters are incomplete; inspect [CORPUS.md](data/CORPUS.md) before redistributing data or treating these splits as a publishable benchmark.
 
-Reports include fertility, sequence percentiles, byte fallback, vocabulary utilization, sequence-limit rates, round trips, and local throughput; a byte baseline counts UTF-8 bytes on the same text. They do not measure morphological correctness or semantic retrieval. External tokenizer comparisons, matched embedding encoders, retrieval evaluation, annotation and uncertainty across training seeds remain future research work.
+Reports include fertility, sequence percentiles, byte fallback, vocabulary utilization, sequence-limit rates, round trips, and local throughput; a byte baseline counts UTF-8 bytes on the same text. External subword comparisons now cover BNLP, SentencePiece and Hugging Face byte-level BPE. They do not measure morphological correctness or semantic retrieval. Matched embedding encoders, retrieval evaluation, annotation and uncertainty across training seeds remain future research work.

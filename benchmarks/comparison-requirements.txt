@@ -1,0 +1,4 @@
+# Benchmark-only dependencies; install our wheel separately.
+bnlp-toolkit==4.4.1
+sentencepiece==0.2.2
+tokenizers==0.23.2

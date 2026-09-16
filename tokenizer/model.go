@@ -33,13 +33,17 @@ type node struct {
 
 // Tokenizer is immutable after construction and safe for concurrent Encode calls.
 type Tokenizer struct {
-	model      Model
-	trie       []node
-	mergeRanks map[[2]int]int
-	characters map[rune]int
+	model         Model
+	trie          []node
+	mergeRanks    map[uint64]int
+	characters    map[rune]int
+	encodedPieces map[string][]int
 }
 
 func New(m Model) (*Tokenizer, error) {
+	if uint64(len(m.Pieces)) > math.MaxUint32-PieceOffset {
+		return nil, fmt.Errorf("vocabulary exceeds 32-bit token IDs")
+	}
 	if m.Version != 1 || (m.Algorithm != "unigram" && m.Algorithm != "bpe") || m.Normalization != Normalization {
 		return nil, fmt.Errorf("unsupported model contract")
 	}
@@ -84,7 +88,20 @@ func Load(path string) (*Tokenizer, error) {
 	if err = json.Unmarshal(b, &m); err != nil {
 		return nil, err
 	}
-	return New(m)
+	t, err := New(m)
+	if err != nil {
+		return nil, err
+	}
+	// Loaded models serve repeated inference. Cache only vocabulary strings, never
+	// caller text, and compute their actual segmentation rather than assuming that
+	// every learned piece wins against competing Unigram paths or BPE merge ranks.
+	t.encodedPieces = make(map[string][]int, len(m.Pieces))
+	for _, piece := range m.Pieces {
+		if !strings.Contains(piece.Text, " ") && piece.Text == Normalize(piece.Text) {
+			t.encodedPieces[piece.Text] = t.Encode(piece.Text)
+		}
+	}
+	return t, nil
 }
 
 func (m Model) Save(path string) error {
@@ -118,45 +135,54 @@ func (t *Tokenizer) matches(s string, start int, visit func(end, id int)) {
 func (t *Tokenizer) Encode(text string) []int {
 	s := Normalize(text)
 	ids := make([]int, 0, len(s)/2)
-	for i, w := range strings.Split(s, " ") {
-		if i > 0 {
+	var local [128]viterbiState
+	scratch := local[:]
+	for len(s) > 0 {
+		w, rest, _ := strings.Cut(s, " ")
+		if len(ids) > 0 {
 			ids = append(ids, ByteOffset+32)
 		}
-		ids = append(ids, t.encodeWord(w)...)
+		if cached, ok := t.encodedPieces[w]; ok {
+			ids = append(ids, cached...)
+		} else if t.model.Algorithm == "bpe" {
+			ids = t.appendBPE(ids, w)
+		} else {
+			if len(scratch) < len(w)+1 {
+				scratch = make([]viterbiState, len(w)+1)
+			}
+			ids = t.appendUnigram(ids, w, scratch[:len(w)+1])
+		}
+		s = rest
 	}
 	return ids
 }
 
-func (t *Tokenizer) encodeWord(s string) []int {
-	if t.model.Algorithm == "bpe" {
-		return t.encodeBPE(s)
-	}
-	dp := make([]float64, len(s)+1)
-	prev := make([]int, len(s)+1)
-	token := make([]int, len(s)+1)
+type viterbiState struct {
+	score       float64
+	prev, token int
+}
+
+func (t *Tokenizer) appendUnigram(ids []int, s string, states []viterbiState) []int {
+	states[0] = viterbiState{}
 	for i := 1; i <= len(s); i++ {
-		dp[i] = math.Inf(-1)
+		states[i].score = math.Inf(-1)
 	}
 	for i := 0; i < len(s); i++ {
 		// Byte fallback competes only at a low fixed score. It guarantees coverage.
-		if v := dp[i] - 30; v > dp[i+1] {
-			dp[i+1] = v
-			prev[i+1] = i
-			token[i+1] = ByteOffset + int(s[i])
+		if v := states[i].score - 30; v > states[i+1].score {
+			states[i+1] = viterbiState{v, i, ByteOffset + int(s[i])}
 		}
 		t.matches(s, i, func(end, id int) {
-			if v := dp[i] + t.model.Pieces[id].Score; v > dp[end] {
-				dp[end] = v
-				prev[end] = i
-				token[end] = PieceOffset + id
+			if v := states[i].score + t.model.Pieces[id].Score; v > states[end].score {
+				states[end] = viterbiState{v, i, PieceOffset + id}
 			}
 		})
 	}
-	ids := make([]int, 0, len(s))
-	for end := len(s); end > 0; end = prev[end] {
-		ids = append(ids, token[end])
+	start := len(ids)
+	for end := len(s); end > 0; end = states[end].prev {
+		ids = append(ids, states[end].token)
 	}
-	for i, j := 0, len(ids)-1; i < j; i, j = i+1, j-1 {
+	for i, j := start, len(ids)-1; i < j; i, j = i+1, j-1 {
 		ids[i], ids[j] = ids[j], ids[i]
 	}
 	return ids

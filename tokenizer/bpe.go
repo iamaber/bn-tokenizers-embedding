@@ -19,7 +19,7 @@ type Merge struct {
 
 func (t *Tokenizer) initBPE() error {
 	t.model.Merges = append([]Merge(nil), t.model.Merges...)
-	t.mergeRanks = map[[2]int]int{}
+	t.mergeRanks = map[uint64]int{}
 	t.characters = map[rune]int{}
 	available := map[int]bool{}
 	for i, p := range t.model.Pieces {
@@ -36,7 +36,7 @@ func (t *Tokenizer) initBPE() error {
 		if t.model.Pieces[m.Result].Text != t.model.Pieces[m.Left].Text+t.model.Pieces[m.Right].Text {
 			return fmt.Errorf("BPE merge text mismatch")
 		}
-		pair := [2]int{m.Left, m.Right}
+		pair := pairKey(PieceOffset+m.Left, PieceOffset+m.Right)
 		if _, ok := t.mergeRanks[pair]; ok {
 			return fmt.Errorf("duplicate BPE merge")
 		}
@@ -49,8 +49,12 @@ func (t *Tokenizer) initBPE() error {
 	return nil
 }
 
-func (t *Tokenizer) encodeBPE(s string) []int {
-	ids := make([]int, 0, len(s))
+func pairKey(left, right int) uint64 {
+	return uint64(uint32(left))<<32 | uint64(uint32(right))
+}
+
+func (t *Tokenizer) appendBPE(ids []int, s string) []int {
+	start := len(ids)
 	for _, r := range s {
 		if id, ok := t.characters[r]; ok {
 			ids = append(ids, PieceOffset+id)
@@ -62,8 +66,8 @@ func (t *Tokenizer) encodeBPE(s string) []int {
 	}
 	for {
 		best, pos := len(t.model.Merges), -1
-		for i := 0; i+1 < len(ids); i++ {
-			rank, ok := t.mergeRanks[[2]int{ids[i] - PieceOffset, ids[i+1] - PieceOffset}]
+		for i := start; i+1 < len(ids); i++ {
+			rank, ok := t.mergeRanks[pairKey(ids[i], ids[i+1])]
 			if ok && rank < best {
 				best, pos = rank, i
 			}
@@ -74,8 +78,8 @@ func (t *Tokenizer) encodeBPE(s string) []int {
 		merge := t.model.Merges[best]
 		// Replace every non-overlapping occurrence in one pass, matching training.
 		// Repeated long words must not rescan/shift the entire slice per occurrence.
-		out := ids[:0]
-		for i := 0; i < len(ids); i++ {
+		out := ids[:start]
+		for i := start; i < len(ids); i++ {
 			if i+1 < len(ids) && ids[i] == PieceOffset+merge.Left && ids[i+1] == PieceOffset+merge.Right {
 				out = append(out, PieceOffset+merge.Result)
 				i++

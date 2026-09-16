@@ -52,6 +52,17 @@ class TokenizerTests(unittest.TestCase):
     def test_normalization_contract(self) -> None:
         self.assertEqual(normalize("  e\u0301\tHello\n"), "é Hello")
 
+    def test_text_validation_order(self) -> None:
+        with Tokenizer(self.path) as tok:
+            with self.assertRaises(UnicodeEncodeError):
+                tok.encode_batch(["\ud800", None])
+            with self.assertRaises(TypeError):
+                tok.encode_batch([None, "\ud800"])
+            with self.assertRaises(TypeError):
+                tok.encode(123)
+        with self.assertRaises(UnicodeEncodeError):
+            normalize("\ud800")
+
     def test_close_and_errors(self) -> None:
         tok = Tokenizer(self.path)
         with self.assertRaises(ValueError):

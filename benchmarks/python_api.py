@@ -1,4 +1,4 @@
-"""Measure the installed Python API, including validation and JSON/CGo overhead."""
+"""Measure the installed Python API, including validation and native bridge overhead."""
 
 import argparse
 import hashlib

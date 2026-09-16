@@ -4,14 +4,12 @@ import os
 import weakref
 from collections.abc import Sequence
 
-from ._native import call, library, release
+from ._native import call, encode, library, release
 
 
 def _text(value: str) -> str:
     if not isinstance(value, str):
         raise TypeError("text must be a string")
-    # Python permits isolated surrogates; the Go engine accepts Unicode scalar text.
-    value.encode("utf-8")
     return value
 
 
@@ -51,19 +49,14 @@ class Tokenizer:
 
     def encode(self, text: str) -> list[int]:
         self._check_open()
-        return call(self._lib, {"op": "encode", "handle": self._handle, "text": _text(text)}).get(
-            "ids", []
-        )
+        return encode(self._lib, self._handle, [_text(text).encode("utf-8")])[0]
 
     def encode_batch(self, texts: Sequence[str]) -> list[list[int]]:
         """Encode a batch in one native call, preserving input order."""
         self._check_open()
         if isinstance(texts, (str, bytes)):
             raise TypeError("texts must be a sequence of strings, not a single string")
-        return call(
-            self._lib,
-            {"op": "encode_batch", "handle": self._handle, "texts": [_text(s) for s in texts]},
-        ).get("batch", [])
+        return encode(self._lib, self._handle, [_text(s).encode("utf-8") for s in texts])
 
     def decode(self, ids: Sequence[int]) -> str:
         self._check_open()

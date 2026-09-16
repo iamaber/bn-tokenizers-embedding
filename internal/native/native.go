@@ -1,4 +1,4 @@
-// Package native owns the small JSON ABI used by the Python binding.
+// Package native owns the JSON control and binary encoding interfaces used by Python.
 // No Go pointers cross the C boundary; callers receive numeric model handles.
 package native
 

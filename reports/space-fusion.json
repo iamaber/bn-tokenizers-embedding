@@ -1,0 +1,61 @@
+{
+  "experiment": {
+    "experimental_format": "prefix-space-fusion-v1",
+    "base_model_sha256": "77ac7594a514f76eb78b22c95b173c96fb83b08f0e75338af60261bebfa28306",
+    "base_vocab": 16000,
+    "vocab_size": 29341,
+    "prefix_space_id": 36,
+    "training_sha256": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+    "weighting": "unweighted occurrence counts of space+token in training split"
+  },
+  "model_sha256": "fc6e41cfd360255c15648efe2329974cebc45bed265a9e09d769c013590bb668",
+  "validation_sha256": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+  "round_trip_failures": 0,
+  "buckets": {
+    "all": {
+      "texts": 14779,
+      "words": 240495,
+      "base_tokens": 601516,
+      "fused_tokens": 375823,
+      "fused_over_510": 1,
+      "tokens_per_word": 1.5627060853656,
+      "reduction_from_base_percent": 37.52069770380173
+    },
+    "bangla": {
+      "texts": 4925,
+      "words": 138501,
+      "base_tokens": 360228,
+      "fused_tokens": 226669,
+      "fused_over_510": 1,
+      "tokens_per_word": 1.636587461462372,
+      "reduction_from_base_percent": 37.07624060317355
+    },
+    "banglish": {
+      "texts": 6160,
+      "words": 77760,
+      "base_tokens": 190211,
+      "fused_tokens": 118614,
+      "fused_over_510": 0,
+      "tokens_per_word": 1.5253858024691358,
+      "reduction_from_base_percent": 37.64083044618871
+    },
+    "code-mixed": {
+      "texts": 156,
+      "words": 2023,
+      "base_tokens": 5072,
+      "fused_tokens": 3208,
+      "fused_over_510": 0,
+      "tokens_per_word": 1.5857637172516066,
+      "reduction_from_base_percent": 36.75078864353313
+    },
+    "english": {
+      "texts": 3538,
+      "words": 22211,
+      "base_tokens": 46005,
+      "fused_tokens": 27332,
+      "fused_over_510": 0,
+      "tokens_per_word": 1.2305614335239297,
+      "reduction_from_base_percent": 40.589066405825456
+    }
+  }
+}

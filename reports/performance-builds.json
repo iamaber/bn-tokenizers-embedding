@@ -1,0 +1,31 @@
+{
+  "baseline_source_commit": "2471dc6e061b9009aac8b2c409321c6fe2b8f8c7",
+  "source_sha256": {
+    "tokenizer/model.go": "aaf34ca6da0671be1ec64a53fc9b180e15554a76fe10b5695ab86f7c0d67d6c3",
+    "tokenizer/bpe.go": "f4b90e7da34bbd5b6a3945e9ea905ff8924a4ed667a680ee78f8fa04e4abe167",
+    "tokenizer/normalize.go": "0b6f9cb24df7f048709551d3c71cffd6f5a8512ebd2344190570a1eccfc3da9c",
+    "internal/native/encode.go": "b702cb13d77936d0a13d764514dddd720f836d666386a52e05007a6501f55d04",
+    "internal/native/native.go": "482b6d08315da45a049efef5aa47cbb109449119c8d964935d3fe8096bc108e7",
+    "cmd/bntok-shared/main.go": "d5c7cc0efcbeae3045d9812be9276da90b14f93a27b2db8b403d9937a4d43045",
+    "src/bn_tokenizers_embedding/_native.py": "845e85217f82afa93f5cf0ef1336145581eac2b9882b3271e6c6e9419084ee87",
+    "src/bn_tokenizers_embedding/_tokenizer.py": "a0138d81a68d4f4a8888a0a67f4a7b64d04a939edd9f0244ba82a3b851fa4d12"
+  },
+  "wheels": {
+    "baseline": {
+      "filename": "bn_tokenizers_embedding-0.1.0-py3-none-macosx_26_0_arm64.whl",
+      "sha256": "8556050ee2728ed4fe0bc97a9ecc975a21ec6b4cf42b2d9e17adf207d39f0e4c",
+      "native_library_sha256": "2c01502cc47d162cfce9acb6baddcad507aa845389dd61abb96c7fe9b67b8edc"
+    },
+    "measured_after": {
+      "filename": "bn_tokenizers_embedding-0.1.0-py3-none-macosx_26_0_arm64.whl",
+      "sha256": "d111a7877a4e7c4a5356eb7495dad604dde4d3b5593a3db2a799d6ecfde92260",
+      "native_library_sha256": "7dc7ae7317160a64f7c6493e4a21b561f704216301e5d81bec73759ee5722303"
+    },
+    "final_local_build": {
+      "filename": "bn_tokenizers_embedding-0.1.0-py3-none-macosx_26_0_arm64.whl",
+      "sha256": "ea07eb43369837112f0f30ecfc0b22dfb0108b990b376e80c027919285d01f74",
+      "native_library_sha256": "7dc7ae7317160a64f7c6493e4a21b561f704216301e5d81bec73759ee5722303"
+    }
+  },
+  "changes_after_timing": "Comments and docstrings only; final installed-wheel tests and ID fingerprint checks passed."
+}

@@ -1,0 +1,28 @@
+{
+  "model": "models/unigram-32000.json",
+  "samples": [
+    {
+      "seconds": 0.015293083008145913,
+      "peak_process_rss_bytes": 44531712
+    },
+    {
+      "seconds": 0.01493079200736247,
+      "peak_process_rss_bytes": 44007424
+    },
+    {
+      "seconds": 0.015415667003253475,
+      "peak_process_rss_bytes": 44613632
+    },
+    {
+      "seconds": 0.015373125002952293,
+      "peak_process_rss_bytes": 44072960
+    },
+    {
+      "seconds": 0.015523416019277647,
+      "peak_process_rss_bytes": 44138496
+    }
+  ],
+  "median_load_seconds": 0.015373125002952293,
+  "median_peak_process_rss_bytes": 44138496,
+  "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+}

@@ -61,6 +61,8 @@ The benchmark alternates single-call and batch timing order across repeats and v
 
 The [external framework comparison](reports/FRAMEWORK_COMPARISON.md) measures BNLP, SentencePiece and Hugging Face byte-level BPE on the full validation split. It includes encoding speed, normalized text preservation and sequence lengths, with reproducible scripts and explicit training differences. It does not establish downstream NLP accuracy.
 
+The [optimization report](reports/PERFORMANCE_IMPROVEMENTS.md) records approximately 2× faster Python encoding with unchanged IDs, plus a separate space-fusion vocabulary experiment. Encoding now uses length-prefixed UTF-8 and packed integer buffers; each call accepts less than 2 GiB of input including framing. Loaded models cache vocabulary-piece segmentations, increasing startup time and memory in exchange for faster repeated inference. The experimental vocabulary is not supported by the production loader.
+
 ## Go tools
 
 Requires Go 1.24 or later. A checksum-verified Go 1.27.1 toolchain is already available locally at `.tools/go/bin/go` in this workspace. The Go library and CLI run without Python, CGo, a GPU, or network access. Corpus preparation additionally uses the Go Parquet reader.

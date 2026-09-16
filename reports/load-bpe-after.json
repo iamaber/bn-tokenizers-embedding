@@ -1,0 +1,28 @@
+{
+  "model": "models/bpe-32000.json",
+  "samples": [
+    {
+      "seconds": 0.039579000003868714,
+      "peak_process_rss_bytes": 62095360
+    },
+    {
+      "seconds": 0.03990166701260023,
+      "peak_process_rss_bytes": 62046208
+    },
+    {
+      "seconds": 0.04198041700874455,
+      "peak_process_rss_bytes": 63602688
+    },
+    {
+      "seconds": 0.04113541601691395,
+      "peak_process_rss_bytes": 61669376
+    },
+    {
+      "seconds": 0.03915758299990557,
+      "peak_process_rss_bytes": 62144512
+    }
+  ],
+  "median_load_seconds": 0.03990166701260023,
+  "median_peak_process_rss_bytes": 62095360,
+  "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+}

@@ -8,10 +8,6 @@ from importlib.metadata import version
 from pathlib import Path
 from time import perf_counter
 
-import sentencepiece as spm
-
-from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
-
 
 def normalized(text: str) -> str:
     return " ".join(unicodedata.normalize("NFC", text).split())
@@ -22,6 +18,10 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
+    import sentencepiece as spm
+
+    from tokenizers import Tokenizer, decoders, models, pre_tokenizers, trainers
+
     if os.environ.get("TOKENIZERS_PARALLELISM") != "false":
         raise ValueError("set TOKENIZERS_PARALLELISM=false before training")
     source = Path("data/processed/train.jsonl")

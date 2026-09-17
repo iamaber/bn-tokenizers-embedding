@@ -115,21 +115,6 @@ func (m Model) Save(path string) error {
 	return os.WriteFile(path, b, 0644)
 }
 
-// matches walks byte trie edges; learned pieces always end on rune boundaries.
-func (t *Tokenizer) matches(s string, start int, visit func(end, id int)) {
-	n := 0
-	for j := start; j < len(s); j++ {
-		v, ok := t.trie[n].next[s[j]]
-		if !ok {
-			break
-		}
-		n = v
-		if t.trie[n].id >= 0 {
-			visit(j+1, t.trie[n].id)
-		}
-	}
-}
-
 // Encode returns the maximum-likelihood segmentation. Whitespace is an explicit
 // byte token, so literal SentencePiece markers and special-token strings round-trip.
 func (t *Tokenizer) Encode(text string) []int {
@@ -153,37 +138,6 @@ func (t *Tokenizer) Encode(text string) []int {
 			ids = t.appendUnigram(ids, w, scratch[:len(w)+1])
 		}
 		s = rest
-	}
-	return ids
-}
-
-type viterbiState struct {
-	score       float64
-	prev, token int
-}
-
-func (t *Tokenizer) appendUnigram(ids []int, s string, states []viterbiState) []int {
-	states[0] = viterbiState{}
-	for i := 1; i <= len(s); i++ {
-		states[i].score = math.Inf(-1)
-	}
-	for i := 0; i < len(s); i++ {
-		// Byte fallback competes only at a low fixed score. It guarantees coverage.
-		if v := states[i].score - 30; v > states[i+1].score {
-			states[i+1] = viterbiState{v, i, ByteOffset + int(s[i])}
-		}
-		t.matches(s, i, func(end, id int) {
-			if v := states[i].score + t.model.Pieces[id].Score; v > states[end].score {
-				states[end] = viterbiState{v, i, PieceOffset + id}
-			}
-		})
-	}
-	start := len(ids)
-	for end := len(s); end > 0; end = states[end].prev {
-		ids = append(ids, states[end].token)
-	}
-	for i, j := start, len(ids)-1; i < j; i, j = i+1, j-1 {
-		ids[i], ids[j] = ids[j], ids[i]
 	}
 	return ids
 }

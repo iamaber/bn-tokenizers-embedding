@@ -19,32 +19,7 @@ func (t *Tokenizer) Sample(text string, alpha float64, rng *rand.Rand) ([]int, e
 		if n > 0 {
 			ids = append(ids, ByteOffset+32)
 		}
-		beta := make([]float64, len(s)+1)
-		for i := len(s) - 1; i >= 0; i-- {
-			beta[i] = -30*alpha + beta[i+1]
-			t.matches(s, i, func(end, id int) { beta[i] = logAdd(beta[i], t.model.Pieces[id].Score*alpha+beta[end]) })
-		}
-		for i := 0; i < len(s); {
-			type choice struct {
-				end, id     int
-				probability float64
-			}
-			choices := []choice{{i + 1, ByteOffset + int(s[i]), math.Exp(-30*alpha + beta[i+1] - beta[i])}}
-			t.matches(s, i, func(end, id int) {
-				choices = append(choices, choice{end, PieceOffset + id, math.Exp(t.model.Pieces[id].Score*alpha + beta[end] - beta[i])})
-			})
-			u := rng.Float64()
-			selected := choices[len(choices)-1]
-			for _, c := range choices {
-				u -= c.probability
-				if u <= 0 {
-					selected = c
-					break
-				}
-			}
-			ids = append(ids, selected.id)
-			i = selected.end
-		}
+		ids = t.appendUnigramSample(ids, s, alpha, rng)
 	}
 	return ids, nil
 }

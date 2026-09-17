@@ -4,9 +4,7 @@ import (
 	"container/heap"
 	"fmt"
 	"io"
-	"math"
 	"sort"
-	"strings"
 	"unicode/utf8"
 )
 
@@ -121,23 +119,11 @@ func TrainBPE(counts map[string]float64, vocab, maxPieceRunes int, log io.Writer
 	if vocab <= PieceOffset || maxPieceRunes < 1 {
 		return m, fmt.Errorf("invalid BPE configuration")
 	}
-	keys := make([]string, 0, len(counts))
-	chars := map[string]bool{}
-	for s, n := range counts {
-		if s == "" || s != Normalize(s) || strings.Contains(s, " ") || n <= 0 || math.IsNaN(n) || math.IsInf(n, 0) {
-			return m, fmt.Errorf("invalid word")
-		}
-		keys = append(keys, s)
-		for _, r := range s {
-			chars[string(r)] = true
-		}
+	input, valid := prepareTrainingInput(counts)
+	if !valid {
+		return m, fmt.Errorf("invalid word")
 	}
-	sort.Strings(keys)
-	alphabet := make([]string, 0, len(chars))
-	for s := range chars {
-		alphabet = append(alphabet, s)
-	}
-	sort.Strings(alphabet)
+	alphabet := input.alphabet()
 	if len(alphabet)+PieceOffset > vocab {
 		return m, fmt.Errorf("vocabulary too small")
 	}
@@ -146,11 +132,11 @@ func TrainBPE(counts map[string]float64, vocab, maxPieceRunes int, log io.Writer
 		index[s] = len(m.Pieces)
 		m.Pieces = append(m.Pieces, Piece{s, 0})
 	}
-	words := make([][]int, len(keys))
-	freq := make([]float64, len(keys))
-	for i, s := range keys {
-		freq[i] = counts[s]
-		for _, r := range s {
+	words := make([][]int, len(input.words))
+	freq := make([]float64, len(input.words))
+	for i, w := range input.words {
+		freq[i] = w.count
+		for _, r := range w.text {
 			words[i] = append(words[i], index[string(r)])
 		}
 	}

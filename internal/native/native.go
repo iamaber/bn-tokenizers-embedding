@@ -76,25 +76,43 @@ func (r *Registry) call(req request) (response, error) {
 		r.mu.Unlock()
 		return response{}, nil
 	}
-	r.mu.RLock()
-	model, ok := r.models[req.Handle]
-	r.mu.RUnlock()
-	if !ok {
-		return response{}, fmt.Errorf("unknown or closed tokenizer handle")
+	if req.Operation == "encode_batch" {
+		batch, err := r.encodeBatch(req.Handle, req.Texts)
+		return response{Batch: batch}, err
+	}
+	model, err := r.model(req.Handle)
+	if err != nil {
+		return response{}, err
 	}
 	switch req.Operation {
 	case "encode":
 		return response{IDs: model.Encode(req.Text)}, nil
-	case "encode_batch":
-		batch := make([][]int, len(req.Texts))
-		for i, text := range req.Texts {
-			batch[i] = model.Encode(text)
-		}
-		return response{Batch: batch}, nil
 	case "decode":
 		text, err := model.Decode(req.IDs)
 		return response{Text: text}, err
 	default:
 		return response{}, fmt.Errorf("unknown operation %q", req.Operation)
 	}
+}
+
+func (r *Registry) model(handle uint64) (*tokenizer.Tokenizer, error) {
+	r.mu.RLock()
+	model, ok := r.models[handle]
+	r.mu.RUnlock()
+	if !ok {
+		return nil, fmt.Errorf("unknown or closed tokenizer handle")
+	}
+	return model, nil
+}
+
+func (r *Registry) encodeBatch(handle uint64, texts []string) ([][]int, error) {
+	model, err := r.model(handle)
+	if err != nil {
+		return nil, err
+	}
+	batch := make([][]int, len(texts))
+	for i, text := range texts {
+		batch[i] = model.Encode(text)
+	}
+	return batch, nil
 }

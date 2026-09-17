@@ -20,16 +20,16 @@ func (r *Registry) EncodeBinary(handle uint64, data []byte) []byte {
 		texts = append(texts, string(data[:int(n)]))
 		data = data[int(n):]
 	}
-	result, err := r.call(request{Operation: "encode_batch", Handle: handle, Texts: texts})
+	batch, err := r.encodeBatch(handle, texts)
 	if err != nil {
 		return encodeError(err.Error())
 	}
 	size := 1
-	for _, ids := range result.Batch {
+	for _, ids := range batch {
 		size += 4 + 4*len(ids)
 	}
 	output := make([]byte, 1, size)
-	for _, ids := range result.Batch {
+	for _, ids := range batch {
 		output = binary.LittleEndian.AppendUint32(output, uint32(len(ids)))
 		for _, id := range ids {
 			output = binary.LittleEndian.AppendUint32(output, uint32(id))

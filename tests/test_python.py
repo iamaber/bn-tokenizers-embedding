@@ -1,12 +1,14 @@
 """Integration tests exercise the actual installed Go library, without mocks."""
 
+import gc
 import json
 import tempfile
 import unittest
+import weakref
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from bn_tokenizers_embedding import Tokenizer, normalize
+from bn_tokenizers_embedding import Tokenizer, _native, normalize
 
 
 class TokenizerTests(unittest.TestCase):
@@ -122,6 +124,31 @@ class TokenizerTests(unittest.TestCase):
             with tok:
                 raise RuntimeError("user code")
         self.assertTrue(tok.closed)
+
+    def test_closed_validation_precedence(self) -> None:
+        tok = Tokenizer(self.path)
+        tok.close()
+        self.assertEqual(tok.vocab_size, 262)
+        for action in (
+            lambda: tok.encode(None),
+            lambda: tok.encode_batch("not a batch"),
+            lambda: tok.decode([True]),
+            lambda: tok.__enter__(),
+        ):
+            with self.assertRaisesRegex(RuntimeError, "tokenizer is closed"):
+                action()
+
+    def test_forgotten_handle_is_released(self) -> None:
+        native = _native.NativeHandle(str(self.path))
+        # Retain only the numeric handle to check the real Go registry after collection.
+        handle = native._handle
+        reference = weakref.ref(native)
+        native.cycle = native
+        del native
+        gc.collect()
+        self.assertIsNone(reference())
+        with self.assertRaisesRegex(ValueError, "unknown or closed tokenizer handle"):
+            _native.call(_native.library(), {"op": "decode", "handle": handle, "ids": []})
 
 
 if __name__ == "__main__":

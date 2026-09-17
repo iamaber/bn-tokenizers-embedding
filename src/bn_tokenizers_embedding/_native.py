@@ -4,6 +4,7 @@ import ctypes
 import json
 import struct
 import sys
+import weakref
 from functools import lru_cache
 from pathlib import Path
 from typing import TypedDict, cast
@@ -52,6 +53,38 @@ def call(lib: ctypes.CDLL, request: dict[str, object]) -> Response:
 
 def release(lib: ctypes.CDLL, handle: int) -> None:
     call(lib, {"op": "close", "handle": handle})
+
+
+def normalize(text: str) -> str:
+    return call(library(), {"op": "normalize", "text": text})["text"]
+
+
+class NativeHandle:
+    """Own a loaded model and keep its wire formats private to this module."""
+
+    def __init__(self, path: str) -> None:
+        self._lib = library()
+        response = call(self._lib, {"op": "load", "path": path})
+        self._handle = response["handle"]
+        self.vocab_size = response["vocabulary"]
+        self._finalizer = weakref.finalize(self, release, self._lib, self._handle)
+
+    @property
+    def closed(self) -> bool:
+        return not self._finalizer.alive
+
+    def check_open(self) -> None:
+        if self.closed:
+            raise RuntimeError("tokenizer is closed")
+
+    def encode(self, texts: list[bytes]) -> list[list[int]]:
+        return encode(self._lib, self._handle, texts)
+
+    def decode(self, ids: list[int]) -> str:
+        return call(self._lib, {"op": "decode", "handle": self._handle, "ids": ids})["text"]
+
+    def close(self) -> None:
+        self._finalizer()
 
 
 def encode(lib: ctypes.CDLL, handle: int, texts: list[bytes]) -> list[list[int]]:

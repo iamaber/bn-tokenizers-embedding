@@ -44,11 +44,9 @@ python -m unittest discover -s tests -v
 
 The Python API deliberately stays small: `Tokenizer`, `normalize`, `encode`, `encode_batch`, `decode`, `vocab_size`, and lifecycle methods. Corpus preparation and training remain available through the Go CLI below. Native inference requires only `tokenizer/` and the Unicode dependency; Parquet processing is not linked into the wheel.
 
-## CI and Python API benchmarks
+## Python API benchmarks
 
-[CI](.github/workflows/ci.yml) builds source archives and wheels on Linux and macOS for Python 3.10–3.14, then tests each installed wheel in a clean environment. It also runs formatting, Go race tests and vet with Go 1.24 and stable, and builds the CLI without CGo. Tests and benchmark smoke checks use tiny fixtures and require no corpus downloads. Uploaded wheels are CI artifacts; Linux release wheels still need portable platform packaging and validation before publishing.
-
-Locally, the same macOS arm64 wheel passed all seven tests on each of Python 3.10–3.14. The hosted Linux/macOS matrix has not run yet; it starts when these changes are pushed.
+The package has been validated locally on macOS arm64 across Python 3.10–3.14. There is no repository-hosted CI workflow; run the Go tests, vet, formatting checks and installed-wheel tests manually before publishing or merging changes.
 
 Measure the installed Python API with a trained model:
 

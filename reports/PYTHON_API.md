@@ -13,6 +13,6 @@ Each workload contains 64 texts cycling through four fixed Bangla, English, Bang
 
 Timing includes Python validation, JSON conversion, the native call, Go tokenization and returned Python IDs. Model loading is timed separately, and warmup, ID equivalence and normalized round-trip checks run outside the timed region. Both models passed these correctness checks. Batch calls reduce overhead most noticeably for short inputs on this fixture.
 
-These are synthetic local microbenchmarks, not corpus throughput, retrieval scores or a cross-machine performance guarantee. They do not isolate native binding overhead. The earlier Go benchmarks use different inputs, so their numbers cannot establish a direct Go/Python ratio. CI runs only a tiny model smoke fixture and does not enforce a throughput threshold.
+These are synthetic local microbenchmarks, not corpus throughput, retrieval scores or a cross-machine performance guarantee. They do not isolate native binding overhead. The earlier Go benchmarks use different inputs, so their numbers cannot establish a direct Go/Python ratio. No automated benchmark threshold is enforced.
 
-The same macOS wheel passed seven native API tests on each of Python 3.10, 3.11, 3.12, 3.13 and 3.14; logs are saved as `python-310-tests.txt` through `python-314-tests.txt`. Hosted Linux/macOS CI execution remains pending until the workflow is pushed.
+The same macOS wheel passed the recorded native API tests on each of Python 3.10, 3.11, 3.12, 3.13 and 3.14; logs are saved as `python-310-tests.txt` through `python-314-tests.txt`. Cross-platform validation remains a manual follow-up.

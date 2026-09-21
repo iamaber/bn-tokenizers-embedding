@@ -1,0 +1,263 @@
+{
+  "status": "development proxy; source pairs are unreviewed relevance assumptions",
+  "manifest": {
+    "task": "paired-sentence retrieval; development proxy, not human search relevance",
+    "seed": 20260921,
+    "queries": 300,
+    "documents": 2000,
+    "buckets": {
+      "banglish": 292,
+      "code-mixed": 8
+    },
+    "independent_groups": 300,
+    "training_canonical_or_group_overlap": 0,
+    "frozen_test_opened": false,
+    "human_review_completed": false,
+    "unjudged_documents": "unknown relevance; treated as zero for provisional metrics",
+    "inputs": {
+      "data/processed/train.jsonl": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+      "data/processed/validation.jsonl": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+      "data/raw/banglatlit/train.csv": "202fa1848d35956477204b42608eafafc50d027ea4e46df42424f1418c588cce",
+      "data/raw/banglatlit/validation.csv": "8b7f9711b7516a09008475f2f4b2670c38345710accab32d100458b224c9fb8c"
+    },
+    "files": {
+      "documents.jsonl": "6860eb3671845e193f391160a645a0c9cd82663a9efa44ada9ede1d0bdd27d15",
+      "queries.jsonl": "288170724b2f510cab9cc0414a6ac5619cb74c1aa2a3153c5befe9afc7886d50",
+      "qrels.jsonl": "1f027f573defc85ec97aedfdb333e57b0a8b07b9b02694872f1f873f78c52edd"
+    }
+  },
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "python": "3.12.13",
+  "review_pairs": 3152,
+  "implementations": {
+    "metrics.py": "92d358d9e5e78a13521760723f98ff9d5efe5b30901b82d15598e4f2d6dd5cee",
+    "test_retrieval.py": "f3b076ca20037237d1157966ccbad06211f2af9c1f79d0e5be9ea57768615b57",
+    "evaluate.py": "21e61f7384bd2a86bc80d56c5a7d95ef6ef2e5479a396c3a0068b3906cb28406",
+    "prepare.py": "dcff463fa5d100787bc36008b96a9414042440ae08ce6a5cf5aa9d9b85d93674"
+  },
+  "results": {
+    "bm25": {
+      "all": {
+        "queries": 300,
+        "groups": 300,
+        "weighting": "equal group weight",
+        "bootstrap_repeats": 2000,
+        "metrics": {
+          "recall_at_10": {
+            "mean": 0.016666666666666666,
+            "bootstrap_95_percentile": [
+              0.0033333333333333335,
+              0.03333333333333333
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.012725097884359783,
+            "bootstrap_95_percentile": [
+              0.002725097884359782,
+              0.026058431217693117
+            ]
+          },
+          "mrr_at_10": {
+            "mean": 0.0115,
+            "bootstrap_95_percentile": [
+              0.0015,
+              0.024666666666666667
+            ]
+          }
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 292,
+          "groups": 292,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        },
+        "code-mixed": {
+          "queries": 8,
+          "groups": 8,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 0.625,
+              "bootstrap_95_percentile": [
+                0.25,
+                1.0
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.4771911706634918,
+              "bootstrap_95_percentile": [
+                0.17883456975917414,
+                0.7810257404226659
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.43125,
+              "bootstrap_95_percentile": [
+                0.125,
+                0.75
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "index_seconds": 0.014181416991050355,
+        "query_and_search_seconds": 0.0018457080004736781,
+        "no_matching_term_queries": 275,
+        "k1": 1.5,
+        "b": 0.75,
+        "query_term_frequency": "binary",
+        "normalization": "NFC, lowercase, Unicode letters/marks/numbers",
+        "zero_score_documents": "not returned"
+      }
+    },
+    "multilingual-e5-small": {
+      "all": {
+        "queries": 300,
+        "groups": 300,
+        "weighting": "equal group weight",
+        "bootstrap_repeats": 2000,
+        "metrics": {
+          "recall_at_10": {
+            "mean": 0.7566666666666667,
+            "bootstrap_95_percentile": [
+              0.7066666666666667,
+              0.8066666666666666
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.6558861731742845,
+            "bootstrap_95_percentile": [
+              0.6114321758632062,
+              0.7013461361897279
+            ]
+          },
+          "mrr_at_10": {
+            "mean": 0.6234722222222222,
+            "bootstrap_95_percentile": [
+              0.5755277777777777,
+              0.6707420634920634
+            ]
+          }
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 292,
+          "groups": 292,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 0.7534246575342466,
+              "bootstrap_95_percentile": [
+                0.702054794520548,
+                0.8013698630136986
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.6498830546311143,
+              "bootstrap_95_percentile": [
+                0.6001695352740302,
+                0.6993789967074018
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.6165810502283106,
+              "bootstrap_95_percentile": [
+                0.566687051532942,
+                0.6683015329419439
+              ]
+            }
+          }
+        },
+        "code-mixed": {
+          "queries": 8,
+          "groups": 8,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 0.875,
+              "bootstrap_95_percentile": [
+                0.625,
+                1.0
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.875,
+              "bootstrap_95_percentile": [
+                0.625,
+                1.0
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.875,
+              "bootstrap_95_percentile": [
+                0.625,
+                1.0
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "model": "intfloat/multilingual-e5-small",
+        "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+        "device": "cpu",
+        "threads": 4,
+        "batch_size": 16,
+        "maximum_tokens": 512,
+        "pooling": "attention-mask mean, L2 normalization; cosine search",
+        "query_prefix": "query: ",
+        "document_prefix": "passage: ",
+        "load_seconds": 0.8165233329928014,
+        "document_encode_seconds": 6.782509999989998,
+        "query_encode_seconds": 0.8028537920035888,
+        "search_seconds": 0.006991875008679926,
+        "truncated_documents": 0,
+        "truncated_queries": 0,
+        "timing_scope": "one local pass, no latency guarantee; excludes length audit",
+        "packages": {
+          "torch": "2.14.0",
+          "transformers": "5.17.0",
+          "tokenizers": "0.23.2"
+        },
+        "model_files": {
+          "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+          "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+          "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+          "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b"
+        }
+      }
+    }
+  }
+}

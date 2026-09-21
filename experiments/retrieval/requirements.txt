@@ -1,0 +1,4 @@
+# Research-only; the tokenizer package still has no Python runtime dependencies.
+torch==2.14.0
+transformers==5.17.0
+sentencepiece==0.2.2

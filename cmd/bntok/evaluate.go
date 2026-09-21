@@ -36,6 +36,7 @@ type metrics struct {
 	MBPerSecond           float64 `json:"encode_MB_per_second"`
 	lengths               []int
 	used                  map[int]bool
+	baseTokens            int
 }
 
 func evaluate(f *flag.FlagSet, args []string) error {
@@ -81,10 +82,17 @@ func evaluate(f *flag.FlagSet, args []string) error {
 		m.Characters += utf8.RuneCountInString(normalized)
 		m.ByteBaselineTokens += len(normalized)
 		for _, id := range ids {
+			m.used[id] = true
+		}
+		baseIDs, err := t.Expand(ids)
+		if err != nil {
+			return err
+		}
+		m.baseTokens += len(baseIDs)
+		for _, id := range baseIDs {
 			if id == tokenizer.ByteOffset+32 {
 				m.SpaceTokens++
 			}
-			m.used[id] = true
 			if id >= tokenizer.ByteOffset && id < tokenizer.PieceOffset && id != tokenizer.ByteOffset+32 {
 				m.FallbackTokens++
 			}
@@ -106,10 +114,10 @@ func evaluate(f *flag.FlagSet, args []string) error {
 		m.P50 = m.lengths[(len(m.lengths)-1)*50/100]
 		m.P95 = m.lengths[(len(m.lengths)-1)*95/100]
 		m.P99 = m.lengths[(len(m.lengths)-1)*99/100]
-		m.Fertility = float64(m.Tokens-m.SpaceTokens) / float64(m.Words)
+		m.Fertility = float64(m.baseTokens-m.SpaceTokens) / float64(m.Words)
 		m.SequenceTokensPerWord = float64(m.Tokens) / float64(m.Words)
 		m.TruncationRate = float64(m.Truncated) / float64(m.Examples)
-		m.FallbackRate = float64(m.FallbackTokens) / float64(max(1, m.Tokens-m.SpaceTokens))
+		m.FallbackRate = float64(m.FallbackTokens) / float64(max(1, m.baseTokens-m.SpaceTokens))
 		m.UsedIDs = len(m.used)
 		m.VocabUtilization = float64(m.UsedIDs) / float64(t.VocabSize())
 		m.MBPerSecond = float64(m.Bytes) / 1e6 / m.EncodeSeconds

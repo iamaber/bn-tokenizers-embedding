@@ -118,6 +118,29 @@ class TokenizerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             Tokenizer(path)
 
+    def test_fused_model_and_training_cache(self) -> None:
+        path = Path(self.directory.name) / "fused.json"
+        path.write_text(
+            json.dumps(
+                {
+                    "version": 2,
+                    "algorithm": "bpe",
+                    "normalization": "nfc-whitespace-v1",
+                    "pieces": [{"text": "a", "score": 0}],
+                    "space_fusion": [260],
+                    "cache_words": ["aa"],
+                }
+            ),
+            encoding="utf-8",
+        )
+        with Tokenizer(path) as tok:
+            self.assertEqual(tok.vocab_size, 262)
+            self.assertEqual(tok.encode("aa aa"), [260, 260, 261, 260])
+            texts = ["aa aa", "🙂 aa বাংলা", "", "a\0a aa"]
+            batch = tok.encode_batch(texts)
+            self.assertEqual(batch, [tok.encode(text) for text in texts])
+            self.assertEqual([tok.decode(ids) for ids in batch], texts)
+
     def test_context_manager_releases_handle_on_error(self) -> None:
         tok = Tokenizer(self.path)
         with self.assertRaisesRegex(RuntimeError, "user code"):

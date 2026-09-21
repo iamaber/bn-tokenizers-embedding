@@ -59,7 +59,11 @@ The benchmark alternates single-call and batch timing order across repeats and v
 
 The [external framework comparison](reports/FRAMEWORK_COMPARISON.md) measures BNLP, SentencePiece and Hugging Face byte-level BPE on the full validation split. It includes encoding speed, normalized text preservation and sequence lengths, with reproducible scripts and explicit training differences. It does not establish downstream NLP accuracy.
 
-The [optimization report](reports/PERFORMANCE_IMPROVEMENTS.md) records approximately 2× faster Python encoding with unchanged IDs, plus a separate space-fusion vocabulary experiment. Encoding now uses length-prefixed UTF-8 and packed integer buffers; each call accepts less than 2 GiB of input including framing. Loaded models cache vocabulary-piece segmentations, increasing startup time and memory in exchange for faster repeated inference. The experimental vocabulary is not supported by the production loader.
+The [optimization report](reports/PERFORMANCE_IMPROVEMENTS.md) records approximately 2× faster Python encoding with unchanged IDs. The subsequent [word-cache and native space-fusion experiment](reports/SPEED_EXPERIMENT.md) measures a batch-speed advantage over the tested BNLP model. Encoding uses length-prefixed UTF-8 and packed integer buffers; each call accepts less than 2 GiB of input including framing. Loaded models cache vocabulary-piece segmentations and optional training words, increasing startup time and memory in exchange for faster repeated inference. Version-2 BPE models support native space fusion; they change token IDs and require a compatible, trained encoder.
+
+## Retrieval research pilot
+
+The [retrieval pilot](experiments/retrieval/README.md) prepares 300 existing Bangla–Banglish validation pairs, audits overlap with tokenizer training, runs BM25 and a pinned multilingual E5 baseline, and creates blank human-review queues. [Initial results](reports/RETRIEVAL_PILOT.md) are sentence-counterpart retrieval measurements with provisional labels; they do not demonstrate an embedding-accuracy improvement from our tokenizer. The frozen test remains unused.
 
 ## Go tools
 

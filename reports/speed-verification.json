@@ -1,0 +1,285 @@
+{
+  "validation_sha256": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+  "models": {
+    "bpe-cache-0.json": {
+      "model_sha256": "469b774523e12e742e31f6e0055e5e9015f86458ae28756e01832dac85ba6bfd",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "IDs equal 32k base",
+      "load": {
+        "model": "models/speed/bpe-cache-0.json",
+        "samples": [
+          {
+            "seconds": 0.04110566699819174,
+            "peak_process_rss_bytes": 60030976
+          },
+          {
+            "seconds": 0.04145825000159675,
+            "peak_process_rss_bytes": 60719104
+          },
+          {
+            "seconds": 0.04047708299913211,
+            "peak_process_rss_bytes": 59768832
+          },
+          {
+            "seconds": 0.04008566699849325,
+            "peak_process_rss_bytes": 59965440
+          },
+          {
+            "seconds": 0.04016258300180198,
+            "peak_process_rss_bytes": 59408384
+          }
+        ],
+        "median_load_seconds": 0.04047708299913211,
+        "median_peak_process_rss_bytes": 59965440,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "bpe-cache-128000.json": {
+      "model_sha256": "567b9115713cbd0038fba31cb6e5f0b65dc6b1b813a94a6c03f943bfdbc0cd6d",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "IDs equal 32k base",
+      "load": {
+        "model": "models/speed/bpe-cache-128000.json",
+        "samples": [
+          {
+            "seconds": 0.17417920799925923,
+            "peak_process_rss_bytes": 104382464
+          },
+          {
+            "seconds": 0.174698000002536,
+            "peak_process_rss_bytes": 103579648
+          },
+          {
+            "seconds": 0.17273679199934122,
+            "peak_process_rss_bytes": 96665600
+          },
+          {
+            "seconds": 0.17130229100075667,
+            "peak_process_rss_bytes": 95977472
+          },
+          {
+            "seconds": 0.17239333299949067,
+            "peak_process_rss_bytes": 103579648
+          }
+        ],
+        "median_load_seconds": 0.17273679199934122,
+        "median_peak_process_rss_bytes": 103579648,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "bpe-cache-16000.json": {
+      "model_sha256": "2a14e598955dc562411fb5035080c9bb340644d0e8dc874693ea083f3e80f81c",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "IDs equal 32k base",
+      "load": {
+        "model": "models/speed/bpe-cache-16000.json",
+        "samples": [
+          {
+            "seconds": 0.05534845799775212,
+            "peak_process_rss_bytes": 64323584
+          },
+          {
+            "seconds": 0.05540695899981074,
+            "peak_process_rss_bytes": 64503808
+          },
+          {
+            "seconds": 0.054942709000897594,
+            "peak_process_rss_bytes": 63258624
+          },
+          {
+            "seconds": 0.05471458300235099,
+            "peak_process_rss_bytes": 64503808
+          },
+          {
+            "seconds": 0.05570487499790033,
+            "peak_process_rss_bytes": 64274432
+          }
+        ],
+        "median_load_seconds": 0.05534845799775212,
+        "median_peak_process_rss_bytes": 64323584,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "bpe-cache-64000.json": {
+      "model_sha256": "cd274e8eed635bb8dabaac11be632c5a83d6d36b032f017fd03491ba3f38b0ac",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "IDs equal 32k base",
+      "load": {
+        "model": "models/speed/bpe-cache-64000.json",
+        "samples": [
+          {
+            "seconds": 0.1024203339984524,
+            "peak_process_rss_bytes": 75694080
+          },
+          {
+            "seconds": 0.10409362499922281,
+            "peak_process_rss_bytes": 76316672
+          },
+          {
+            "seconds": 0.10443075000148383,
+            "peak_process_rss_bytes": 77348864
+          },
+          {
+            "seconds": 0.10479141599716968,
+            "peak_process_rss_bytes": 76677120
+          },
+          {
+            "seconds": 0.10163245799776632,
+            "peak_process_rss_bytes": 76398592
+          }
+        ],
+        "median_load_seconds": 0.10409362499922281,
+        "median_peak_process_rss_bytes": 76398592,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "fused-cache-0.json": {
+      "model_sha256": "129389748b5db4e84809ddbb10cc9d94892a6faebe1214d41fce498233aa9fda",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "expanded fused IDs equal 16k base",
+      "load": {
+        "model": "models/speed/fused-cache-0.json",
+        "samples": [
+          {
+            "seconds": 0.01781950000076904,
+            "peak_process_rss_bytes": 40697856
+          },
+          {
+            "seconds": 0.01754070799870533,
+            "peak_process_rss_bytes": 40665088
+          },
+          {
+            "seconds": 0.017494042000180343,
+            "peak_process_rss_bytes": 40370176
+          },
+          {
+            "seconds": 0.017728250000800472,
+            "peak_process_rss_bytes": 40321024
+          },
+          {
+            "seconds": 0.017730833002133295,
+            "peak_process_rss_bytes": 40484864
+          }
+        ],
+        "median_load_seconds": 0.017728250000800472,
+        "median_peak_process_rss_bytes": 40484864,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "fused-cache-128000.json": {
+      "model_sha256": "edc7b993279b0f1181c658be466f4c44f3dfcccf78146eb367823b2781bd233e",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "expanded fused IDs equal 16k base",
+      "load": {
+        "model": "models/speed/fused-cache-128000.json",
+        "samples": [
+          {
+            "seconds": 0.14008108300185995,
+            "peak_process_rss_bytes": 82984960
+          },
+          {
+            "seconds": 0.14246929100045236,
+            "peak_process_rss_bytes": 81772544
+          },
+          {
+            "seconds": 0.14541654099957668,
+            "peak_process_rss_bytes": 81969152
+          },
+          {
+            "seconds": 0.1418901669967454,
+            "peak_process_rss_bytes": 82198528
+          },
+          {
+            "seconds": 0.14187408299767412,
+            "peak_process_rss_bytes": 83771392
+          }
+        ],
+        "median_load_seconds": 0.1418901669967454,
+        "median_peak_process_rss_bytes": 82198528,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "fused-cache-16000.json": {
+      "model_sha256": "31cd76bcf0a26bc3c0ff0cc92e6bc6605d6913883daab0efdd8e0f3128c68a49",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "expanded fused IDs equal 16k base",
+      "load": {
+        "model": "models/speed/fused-cache-16000.json",
+        "samples": [
+          {
+            "seconds": 0.03223041700039175,
+            "peak_process_rss_bytes": 45793280
+          },
+          {
+            "seconds": 0.031778833999851486,
+            "peak_process_rss_bytes": 45252608
+          },
+          {
+            "seconds": 0.03197629200076335,
+            "peak_process_rss_bytes": 45596672
+          },
+          {
+            "seconds": 0.0314850419999857,
+            "peak_process_rss_bytes": 45744128
+          },
+          {
+            "seconds": 0.03186729199660476,
+            "peak_process_rss_bytes": 45596672
+          }
+        ],
+        "median_load_seconds": 0.03186729199660476,
+        "median_peak_process_rss_bytes": 45596672,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    },
+    "fused-cache-64000.json": {
+      "model_sha256": "b9aa94056fb41cfc16954e9a0f34a2505a25f772c27aab4b6fed06a31dd8638f",
+      "checked_sequences": 14795,
+      "id_equivalence_failures": 0,
+      "round_trip_failures": 0,
+      "equivalence": "expanded fused IDs equal 16k base",
+      "load": {
+        "model": "models/speed/fused-cache-64000.json",
+        "samples": [
+          {
+            "seconds": 0.07643991700024344,
+            "peak_process_rss_bytes": 59719680
+          },
+          {
+            "seconds": 0.0771065830012958,
+            "peak_process_rss_bytes": 60276736
+          },
+          {
+            "seconds": 0.07691937500203494,
+            "peak_process_rss_bytes": 64126976
+          },
+          {
+            "seconds": 0.07850129199869116,
+            "peak_process_rss_bytes": 61833216
+          },
+          {
+            "seconds": 0.07836829200095963,
+            "peak_process_rss_bytes": 62816256
+          }
+        ],
+        "median_load_seconds": 0.0771065830012958,
+        "median_peak_process_rss_bytes": 61833216,
+        "scope": "fresh process; Tokenizer constructor includes native library startup; RSS is whole-process peak, not isolated model memory"
+      }
+    }
+  }
+}

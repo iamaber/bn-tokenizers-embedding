@@ -1,0 +1,55 @@
+{
+  "training_sha256": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+  "fusion_sha256": "fc6e41cfd360255c15648efe2329974cebc45bed265a9e09d769c013590bb668",
+  "selection": "training occurrence count descending, lexical tie break; exclude pieces; maximum 1024 UTF-8 bytes per word",
+  "artifacts": {
+    "bpe-cache-0.json": {
+      "sha256": "469b774523e12e742e31f6e0055e5e9015f86458ae28756e01832dac85ba6bfd",
+      "base_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "cache_words": 0,
+      "vocabulary": 32000
+    },
+    "bpe-cache-16000.json": {
+      "sha256": "2a14e598955dc562411fb5035080c9bb340644d0e8dc874693ea083f3e80f81c",
+      "base_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "cache_words": 16000,
+      "vocabulary": 32000
+    },
+    "bpe-cache-64000.json": {
+      "sha256": "cd274e8eed635bb8dabaac11be632c5a83d6d36b032f017fd03491ba3f38b0ac",
+      "base_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "cache_words": 64000,
+      "vocabulary": 32000
+    },
+    "bpe-cache-128000.json": {
+      "sha256": "567b9115713cbd0038fba31cb6e5f0b65dc6b1b813a94a6c03f943bfdbc0cd6d",
+      "base_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "cache_words": 128000,
+      "vocabulary": 32000
+    },
+    "fused-cache-0.json": {
+      "sha256": "129389748b5db4e84809ddbb10cc9d94892a6faebe1214d41fce498233aa9fda",
+      "base_sha256": "77ac7594a514f76eb78b22c95b173c96fb83b08f0e75338af60261bebfa28306",
+      "cache_words": 0,
+      "vocabulary": 29341
+    },
+    "fused-cache-16000.json": {
+      "sha256": "31cd76bcf0a26bc3c0ff0cc92e6bc6605d6913883daab0efdd8e0f3128c68a49",
+      "base_sha256": "77ac7594a514f76eb78b22c95b173c96fb83b08f0e75338af60261bebfa28306",
+      "cache_words": 16000,
+      "vocabulary": 29341
+    },
+    "fused-cache-64000.json": {
+      "sha256": "b9aa94056fb41cfc16954e9a0f34a2505a25f772c27aab4b6fed06a31dd8638f",
+      "base_sha256": "77ac7594a514f76eb78b22c95b173c96fb83b08f0e75338af60261bebfa28306",
+      "cache_words": 64000,
+      "vocabulary": 29341
+    },
+    "fused-cache-128000.json": {
+      "sha256": "edc7b993279b0f1181c658be466f4c44f3dfcccf78146eb367823b2781bd233e",
+      "base_sha256": "77ac7594a514f76eb78b22c95b173c96fb83b08f0e75338af60261bebfa28306",
+      "cache_words": 128000,
+      "vocabulary": 29341
+    }
+  }
+}

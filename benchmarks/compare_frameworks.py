@@ -18,10 +18,11 @@ from time import perf_counter
 
 import sentencepiece as spm
 from bnlp import SentencepieceTokenizer
+from tokenizers import Tokenizer as HFTokenizer
 from train_comparison import normalized, sha256
 
 from bn_tokenizers_embedding import Tokenizer as GoTokenizer
-from tokenizers import Tokenizer as HFTokenizer
+from bn_tokenizers_embedding import _native
 
 STRESS_TEXTS = [
     "আমি বাংলায় গান গাই।",
@@ -188,6 +189,7 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--cpu-model", default=platform.processor())
     parser.add_argument("--output", type=Path, default=Path("reports/framework-comparison.json"))
+    parser.add_argument("--model", type=Path, action="append", default=[], help="extra Go models")
     args = parser.parse_args()
     if min(args.repeats, args.batch_size) < 1:
         parser.error("repeats and batch-size must be positive")
@@ -207,6 +209,24 @@ def main() -> None:
     go_models: list[GoTokenizer] = []
     try:
         engines = candidates(go_models)
+        for path in args.model:
+            name = f"extra-{path.stem}"
+            if any(engine.name == name for engine in engines):
+                raise ValueError(f"duplicate candidate name: {name}")
+            tok = GoTokenizer(path)
+            go_models.append(tok)
+            engines.append(
+                Candidate(
+                    name,
+                    path,
+                    tok.vocab_size,
+                    tok.encode,
+                    tok.encode_batch,
+                    tok.decode,
+                    1,
+                    "native batch",
+                )
+            )
         speed = timings(engines, texts, args.repeats, args.batch_size)
         scores = {}
         for engine in engines:
@@ -258,6 +278,7 @@ def main() -> None:
             "each API's internal preprocessing remains timed",
             "sequence_p95_method": "nearest rank: ceil(0.95 * n)",
             "harness_sha256": sha256(Path(__file__)),
+            "native_library_sha256": sha256(Path(_native.library()._name)),
             "candidates": scores,
         }
         args.output.parent.mkdir(parents=True, exist_ok=True)

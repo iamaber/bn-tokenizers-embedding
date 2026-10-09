@@ -37,8 +37,15 @@ may be revised before selection, with a versioned record and rationale.
 
 ## External dependencies
 
-Independent human judgments and human-written queries cannot be manufactured by
-the implementation agent. An asynchronous request for reviewers and target domain
-was sent on 9 October. Continue all implementation, data audits and clearly labeled
-feasibility work while those are pending. Do not mark the five-item goal complete
-until the requested empirical outcomes have authoritative evidence.
+On 9 October the user explicitly requested that the implementation agent create
+and judge the material, targeting business, banking, technology, science, general
+conversation and QA. The implementation will therefore provide agent-authored,
+agent-reviewed domain evaluation and label that provenance explicitly. It must not
+claim independent human review or naturally collected user queries. Those remain
+limits on generalization, not a reason to stop the user-authorized experiments.
+
+This user decision supersedes the initial human-review dependency in items 1–2.
+Complete the annotation, evaluation and matched experiments with the authorized
+agent judgments; preserve rubric, source records, exclusions and disagreement
+support so independent reviewers can audit them later. Do not mark the five-item
+goal complete until the requested implemented and executed outcomes are verified.

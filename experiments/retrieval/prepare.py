@@ -19,16 +19,33 @@ def canonical(text: str) -> str:
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def read_rows(path: Path) -> list[dict]:
-    with path.open() as stream:
+    with path.open(encoding="utf-8") as stream:
         return [json.loads(line) for line in stream]
 
 
 def write_rows(path: Path, rows: list[dict]) -> None:
-    path.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows))
+    path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8"
+    )
+
+
+def verify_manifest(directory: Path) -> dict:
+    manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
+    files = manifest["files"]
+    if not {"documents.jsonl", "queries.jsonl", "qrels.jsonl"} <= files.keys():
+        raise ValueError("manifest must cover documents, queries and relevance judgments")
+    for name, digest in files.items():
+        if Path(name).name != name or sha256(directory / name) != digest:
+            raise ValueError(f"dataset checksum mismatch: {name}")
+    return manifest
 
 
 def prepare(root: Path, output: Path, count: int, documents: int, seed: int) -> dict:
@@ -170,7 +187,7 @@ def prepare(root: Path, output: Path, count: int, documents: int, seed: int) -> 
         "inputs": {str(path): sha256(path) for path in [training, validation, *raw_paths]},
         "files": {
             f"{name}.jsonl": sha256(output / f"{name}.jsonl")
-            for name in ("documents", "queries", "qrels")
+            for name in ("documents", "queries", "qrels", "authoring")
         },
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

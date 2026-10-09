@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 from evaluate import bm25, evaluate, terms
-from metrics import query_metrics, summarize
+from metrics import paired_difference, query_metrics, summarize
 from prepare import prepare, read_rows, write_rows
 
 
@@ -46,6 +46,21 @@ class MetricsTests(unittest.TestCase):
         )
         self.assertEqual(ranking, [["a"], []])
         self.assertEqual(info["no_matching_term_queries"], 1)
+
+    def test_paired_bootstrap_cancels_shared_variation(self) -> None:
+        base = [{"query_id": str(i), "group": str(i), "metrics": query_metrics(rank, {"a": 1})}
+                for i, rank in enumerate((["a"], [], ["a"]))]
+        identical = paired_difference(base, base, repeats=100)
+        for metric in identical["metrics"].values():
+            self.assertEqual(metric["bootstrap_95_percentile"], [0, 0])
+        improved = [dict(r, metrics=query_metrics(["a"], {"a": 1})) for r in base]
+        self.assertAlmostEqual(paired_difference(base, improved)["metrics"]["recall_at_10"]["mean"],
+                               1 / 3)
+        with self.assertRaisesRegex(ValueError, "identical"):
+            paired_difference(base, improved[:-1])
+        changed = [dict(r, group="wrong") for r in base]
+        with self.assertRaisesRegex(ValueError, "groups differ"):
+            paired_difference(base, changed)
 
 
 class PilotTests(unittest.TestCase):

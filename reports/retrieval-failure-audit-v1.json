@@ -1,0 +1,27 @@
+{
+  "queries": 300,
+  "misses_at_10": 73,
+  "misses_by_bucket": {
+    "banglish": 72,
+    "code-mixed": 1
+  },
+  "label_status": "unreviewed source counterparts",
+  "causal_categories_completed": false,
+  "suggested_categories": [
+    "spelling_variation",
+    "english_insertion",
+    "name_or_number",
+    "negation",
+    "wrong_source_pair",
+    "domain_gap",
+    "other"
+  ],
+  "note": "Observed script/digit/length features do not establish a failure cause.",
+  "inputs": {
+    "data/processed/retrieval-pilot-v1/manifest.json": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+    "data/processed/retrieval-pilot-v1/ranking-multilingual-e5-small.jsonl": "91ba4f3e5998684be1cca7a6de266790c7a1aba1452fbe11832e3f6f7559b6fa"
+  },
+  "files": {
+    "failure-review.jsonl": "39a46d7aee329fcef2972cbf63c9a9f05017ab83b41722f8b066600fea116913"
+  }
+}

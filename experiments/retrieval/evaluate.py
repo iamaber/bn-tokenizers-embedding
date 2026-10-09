@@ -12,7 +12,7 @@ from importlib.metadata import version
 from pathlib import Path
 
 from metrics import query_metrics, summarize
-from prepare import read_rows, sha256, write_rows
+from prepare import read_rows, sha256, verify_manifest, write_rows
 
 
 def terms(text: str) -> list[str]:
@@ -122,10 +122,7 @@ def dense(documents: list[dict], queries: list[dict], path: Path) -> tuple[list[
 def evaluate(directory: Path, report: Path, model: Path | None) -> dict:
     if (directory / "review-pool.jsonl").exists():
         raise ValueError("review pool exists; preserve annotations and use a new pilot directory")
-    manifest = json.loads((directory / "manifest.json").read_text())
-    for name, digest in manifest["files"].items():
-        if sha256(directory / name) != digest:
-            raise ValueError(f"pilot checksum mismatch: {name}")
+    manifest = verify_manifest(directory)
     documents = sorted(read_rows(directory / "documents.jsonl"), key=lambda r: r["id"])
     queries = read_rows(directory / "queries.jsonl")
     qrels: dict[str, dict[str, int]] = defaultdict(dict)
@@ -148,6 +145,7 @@ def evaluate(directory: Path, report: Path, model: Path | None) -> dict:
         for q, ranked in zip(queries, rankings, strict=True):
             scored.append(
                 {
+                    "query_id": q["id"],
                     "group": q["group"],
                     "bucket": q["bucket"],
                     "metrics": query_metrics(ranked, qrels[q["id"]]),
@@ -164,6 +162,7 @@ def evaluate(directory: Path, report: Path, model: Path | None) -> dict:
             "execution": details,
         }
         write_rows(directory / f"ranking-{name}.jsonl", saved)
+        write_rows(directory / f"scores-{name}.jsonl", scored)
     # Pool candidates without showing systems, ranks, or the assumed positive to reviewers.
     lookup = {d["id"]: d for d in documents}
     review = []
@@ -191,7 +190,9 @@ def evaluate(directory: Path, report: Path, model: Path | None) -> dict:
     review_path = directory / "review-pool.jsonl"
     write_rows(review_path, review)
     result = {
-        "status": "development proxy; source pairs are unreviewed relevance assumptions",
+        "status": manifest.get(
+            "label_status", "development proxy; source pairs are unreviewed relevance assumptions"
+        ),
         "manifest": manifest,
         "platform": platform.platform(),
         "python": platform.python_version(),

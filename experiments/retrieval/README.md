@@ -70,7 +70,7 @@ For `review-pool.jsonl`, grade **semantic correspondence of sentences**:
 - 0: unrelated or contradicts the query.
 - Leave null and explain if uncertain/unreadable; null is never a negative label.
 
-Each reviewer should see only their own working copy. System identity, rank and the provisional source-positive flag are absent from the pool. Record independent grades before resolving disagreements. Do not assume retrieved non-counterparts are hard negatives; they may be alternate positives. Add candidate pooling from future systems and random candidates before claiming comprehensive relevance coverage. The current evaluator does not import manual grades; freeze a separately versioned adjudicated qrels file and update its manifest for that stage.
+Each reviewer should see only their own working copy. System identity, rank and the provisional source-positive flag are absent from the pool. Record independent grades before resolving disagreements. Do not assume retrieved non-counterparts are hard negatives; they may be alternate positives. Add candidate pooling from future systems and random candidates before claiming comprehensive relevance coverage. Use `review.py` to freeze a separately versioned reviewed qrels file; grades, rationale, reviewer identity/origin and pair/privacy decisions are required. Single-agent judgments are supported and explicitly distinguished from human or independent review.
 
 `natural_bengali_query`, `banglish_paraphrase` and `mixed_query` are blank authoring fields, not already validated evaluation queries. Any variants must remain in the same group. Do not copy a candidate sentence verbatim as a Bengali query and interpret self-matching as search accuracy.
 
@@ -83,3 +83,40 @@ Each reviewer should see only their own working copy. System identity, rank and 
 5. **Final test:** freeze decisions before evaluating a fresh human-labeled source/intent holdout. Do not select models on this test or interpret today's pilot as a final result.
 
 Training full encoders is intentionally downstream of the annotation gate: the repository still lacks a reviewed relevance set, a selected target domain and a concrete encoder compute budget.
+
+## Review and paired comparison tools
+
+On 9 October the user authorized agent-created and agent-judged material for
+business, banking, technology, science, general conversation and QA. Such material
+is a controlled domain proxy; it is not naturally collected human search traffic.
+The original pilot remains unchanged while new reviewed versions are created.
+
+```sh
+python3.12 experiments/retrieval/review.py export \
+  --pilot data/processed/retrieval-pilot-v1 --output data/processed/retrieval-review-v1
+python3.12 experiments/retrieval/analyze.py \
+  --pilot data/processed/retrieval-pilot-v1 \
+  --ranking data/processed/retrieval-pilot-v1/ranking-multilingual-e5-small.jsonl \
+  --output data/processed/retrieval-failure-audit-v1
+# After completing all pooled judgments and pair/privacy decisions:
+python3.12 experiments/retrieval/review.py import \
+  --pilot data/processed/retrieval-pilot-v1 \
+  --judgments data/processed/retrieval-review-v1/reviewer-1.jsonl \
+  --pair-review data/processed/retrieval-review-v1/pair-review.jsonl \
+  --output data/processed/retrieval-reviewed-v1
+python3.12 experiments/retrieval/compare.py \
+  --dataset data/processed/retrieval-pilot-v1 \
+  --reference data/processed/retrieval-pilot-v1/ranking-bm25.jsonl \
+  --candidate data/processed/retrieval-pilot-v1/ranking-multilingual-e5-small.jsonl \
+  --report reports/retrieval-paired-reference-v1.json
+```
+
+Packets contain separate calibration/full files for two potential reviewers;
+no grades or human identities are pre-filled. Import preserves provenance and
+exclusion reasons, validates immutable source text, and removes privacy-excluded
+groups from all copied text artifacts. The failure audit reproduces 73 E5 misses
+(72 Banglish, one mixed-script) with causal categories left for judgment.
+Comparison rescans both rankings against the same qrels and bootstraps paired
+differences by intent group. Its interval covers query sampling, not seed variance.
+Proposed success thresholds are versioned in `criteria.json`; see the
+[five-item implementation ledger](../../reports/IMPROVEMENT_PLAN.md).

@@ -1,0 +1,134 @@
+{
+  "dataset_sha256": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+  "label_status": "unreviewed source counterparts",
+  "ranking_sha256": {
+    "reference": "1c687675fc85919f37a039be92e1a6a8b0dcfc521d5daf08c51785be870991c5",
+    "candidate": "91ba4f3e5998684be1cca7a6de266790c7a1aba1452fbe11832e3f6f7559b6fa"
+  },
+  "seed": 17,
+  "all": {
+    "queries": 300,
+    "groups": 300,
+    "weighting": "equal group weight",
+    "bootstrap_repeats": 2000,
+    "metrics": {
+      "recall_at_10": {
+        "mean": 0.74,
+        "bootstrap_95_percentile": [
+          0.69,
+          0.79
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.6431610752899247,
+        "bootstrap_95_percentile": [
+          0.5952400865679377,
+          0.6886682506743548
+        ]
+      },
+      "mrr_at_10": {
+        "mean": 0.6119722222222223,
+        "bootstrap_95_percentile": [
+          0.5624603174603174,
+          0.6595952380952381
+        ]
+      }
+    },
+    "effect": "candidate minus reference; paired equal-group bootstrap"
+  },
+  "buckets": {
+    "banglish": {
+      "queries": 292,
+      "groups": 292,
+      "weighting": "equal group weight",
+      "bootstrap_repeats": 2000,
+      "metrics": {
+        "recall_at_10": {
+          "mean": 0.7534246575342466,
+          "bootstrap_95_percentile": [
+            0.702054794520548,
+            0.8013698630136986
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.6498830546311143,
+          "bootstrap_95_percentile": [
+            0.6007356916229029,
+            0.6969001832140197
+          ]
+        },
+        "mrr_at_10": {
+          "mean": 0.6165810502283106,
+          "bootstrap_95_percentile": [
+            0.5644732550554469,
+            0.6655577299412916
+          ]
+        }
+      },
+      "effect": "candidate minus reference; paired equal-group bootstrap"
+    },
+    "code-mixed": {
+      "queries": 8,
+      "groups": 8,
+      "weighting": "equal group weight",
+      "bootstrap_repeats": 2000,
+      "metrics": {
+        "recall_at_10": {
+          "mean": 0.25,
+          "bootstrap_95_percentile": [
+            0.0,
+            0.625
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.3978088293365082,
+          "bootstrap_95_percentile": [
+            0.125,
+            0.7016433990956823
+          ]
+        },
+        "mrr_at_10": {
+          "mean": 0.44375,
+          "bootstrap_95_percentile": [
+            0.125,
+            0.7625
+          ]
+        }
+      },
+      "effect": "candidate minus reference; paired equal-group bootstrap"
+    }
+  },
+  "domains": {
+    "unspecified": {
+      "queries": 300,
+      "groups": 300,
+      "weighting": "equal group weight",
+      "bootstrap_repeats": 2000,
+      "metrics": {
+        "recall_at_10": {
+          "mean": 0.74,
+          "bootstrap_95_percentile": [
+            0.69,
+            0.79
+          ]
+        },
+        "ndcg_at_10": {
+          "mean": 0.6431610752899247,
+          "bootstrap_95_percentile": [
+            0.5952400865679377,
+            0.6886682506743548
+          ]
+        },
+        "mrr_at_10": {
+          "mean": 0.6119722222222223,
+          "bootstrap_95_percentile": [
+            0.5624603174603174,
+            0.6595952380952381
+          ]
+        }
+      },
+      "effect": "candidate minus reference; paired equal-group bootstrap"
+    }
+  },
+  "uncertainty_scope": "query-group sampling; single run, excludes training-seed variance"
+}

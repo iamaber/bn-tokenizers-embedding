@@ -27,6 +27,8 @@ def query_metrics(ranking: list[str], relevant: dict[str, int]) -> dict[str, flo
 
 
 def summarize(rows: list[dict], seed: int = 20260921, repeats: int = 2000) -> dict:
+    if repeats < 40:
+        raise ValueError("require at least 40 bootstrap draws")
     groups: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
         groups[row["group"]].append(row["metrics"])
@@ -59,3 +61,29 @@ def summarize(rows: list[dict], seed: int = 20260921, repeats: int = 2000) -> di
             for m in metrics
         },
     }
+
+
+def paired_difference(
+    reference: list[dict], candidate: list[dict], seed: int = 17, repeats: int = 2000,
+) -> dict:
+    """Resample the same intent groups in both systems; variants share group weight."""
+    left = {r["query_id"]: r for r in reference}
+    right = {r["query_id"]: r for r in candidate}
+    if len(left) != len(reference) or len(right) != len(candidate) or left.keys() != right.keys():
+        raise ValueError("paired comparison requires identical unique query IDs")
+    differences = []
+    for query_id, base in sorted(left.items()):
+        other = right[query_id]
+        if base["group"] != other["group"]:
+            raise ValueError("paired query groups differ")
+        if base["metrics"].keys() != other["metrics"].keys():
+            raise ValueError("paired metric sets differ")
+        if any(not math.isfinite(value) for r in (base, other) for value in r["metrics"].values()):
+            raise ValueError("paired metrics must be finite")
+        differences.append({
+            "group": base["group"], "query_id": query_id,
+            "metrics": {m: other["metrics"][m] - value for m, value in base["metrics"].items()},
+        })
+    result = summarize(differences, seed, repeats)
+    result["effect"] = "candidate minus reference; paired equal-group bootstrap"
+    return result

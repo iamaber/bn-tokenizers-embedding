@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "primary_metric": "ndcg_at_10",
+  "primary_bucket": "banglish",
+  "minimum_absolute_gain": 0.03,
+  "paired_interval_lower_bound_must_exceed": 0.0,
+  "maximum_english_regression": 0.01,
+  "maximum_query_latency_ratio": 1.25,
+  "maximum_peak_memory_ratio": 1.25,
+  "required_training_seeds": [17, 29, 43],
+  "final_test_rule": "freeze selection before final test; no tuning on test",
+  "provenance_rule": "report agent authorship/judgment; never claim human review",
+  "comparison_rule": "same encoder body/data/objective; count initialization and adaptation cost"
+}

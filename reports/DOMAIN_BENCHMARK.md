@@ -21,14 +21,34 @@ directions does not create additional independent observations.
 All 360 document/query surfaces were checked against the tokenizer's 563,476
 training records using NFC/case/punctuation-insensitive canonical keys: no exact
 canonical overlaps. This does not rule out semantic overlap or pretrained-model
-contamination. The existing project's frozen test split was not opened. New test
-scores remain uncomputed pending model selection.
+contamination. The existing project's frozen test was read only for holdout
+integrity checks, never scored or used for selection. Expanded training also
+excludes all 360 benchmark surfaces. The new reserved domain test was scored
+after the development choice was frozen; that choice remains unchanged E5.
+
+## Complete agent intent review
+
+The reviewed v2 corpus uses the committed
+[3,600-label intent matrix](../experiments/retrieval/domain_intent_judgments_v1.jsonl),
+bound to its source material and label checksums. The agent compared every
+question intent with every answer passage: 60 own-intent answers receive grade 2,
+and 3,540 other-intent answers receive grade 0. No alternative passage supplies
+the requested specific facts. The shared intent labels are projected across the
+authored parallel language forms; this is not independent language review.
+
+Both language surfaces and the original 42/18 split are byte-identical to v1.
+Every candidate has an explicit label: 15,876 query-document judgments across
+nine development directions and 2,916 across nine test directions. The
+[reviewed manifest](domain-benchmark-reviewed-v2.json) records coverage and
+provenance. Unlike the small original sentence pilot's pooled judgments, this
+controlled corpus has no unjudged candidates.
 
 ## Unchanged E5-small development baseline
 
 Pinned revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`, original tokenizer,
 prefixes, masked mean pooling and cosine ranking; same CPU settings as the pilot.
-Each direction uses its own corpus and source-answer relevance labels.
+Each direction uses its own corpus. The complete intent review preserved the
+baseline relevance labels, so the following development results remain valid.
 
 | Query → document | Recall@10 | nDCG@10 | MRR@10 |
 |---|---:|---:|---:|
@@ -48,10 +68,17 @@ rankings, per-query scores and newly pooled alternatives are under
 this small corpus cannot establish broad real-search generalization or a useful
 tokenizer effect by itself. No tokenizer-swap gain is established here.
 
-## Reproduction
+## Encoder comparison and reproduction
+
+All 18 adapted checkpoints and the unchanged encoder have now been evaluated on
+development and reserved test, across all nine directions. See the
+[comparison](ENCODER_COMPARISON.md) for quality, paired intervals, latency,
+memory and the frozen decision. Custom tokenizers failed the declared development
+quality and English-retention gates under both budgets.
 
 ```sh
 python3.12 experiments/retrieval/domains.py \
+  --judgments experiments/retrieval/domain_intent_judgments_v1.jsonl \
   --output data/processed/domain-benchmark-repro
 HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
   experiments/retrieval/evaluate.py \
@@ -60,7 +87,7 @@ HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
   --model models/hf-cache/models--intfloat--multilingual-e5-small/snapshots/614241f622f53c4eeff9890bdc4f31cfecc418b3
 ```
 
-Run the other development directories for the remaining directions. Freeze model
-selection before scoring test. Keep both the much larger sentence pilot and this
-controlled QA proxy in the encoder comparison; report their label limitations
-separately. Pool adapted systems' alternatives before accepting final judgments.
+Run the other development directories for the remaining directions. The immutable
+selection and test-suite hashes allow auditing the ordering of the executed
+experiments. Sentence-pilot review and scoring remain separate ongoing work;
+they cannot revise the domain choice after test scoring.

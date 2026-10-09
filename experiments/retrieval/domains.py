@@ -12,13 +12,39 @@ LANGUAGES = {"bn": "bangla", "bl": "banglish", "en": "english"}
 DOMAINS = {"business", "banking", "technology", "science", "conversation", "qa"}
 
 
-def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
+def build(
+    material: Path, training: Path, output: Path, seed: int = 17, judgments: Path | None = None
+) -> dict:
     if output.exists():
         raise ValueError("benchmark output exists; preserve frozen versions")
     records = read_rows(material)
     ids = {r["id"] for r in records}
     if len(ids) != len(records) or {r["domain"] for r in records} != DOMAINS:
         raise ValueError("require unique intent IDs and all six requested domains")
+    reviewed = {}
+    if judgments:
+        provenance = json.loads(judgments.with_suffix(".manifest.json").read_text())
+        if provenance["material_sha256"] != sha256(material) or provenance[
+            "intent_judgments_sha256"
+        ] != sha256(judgments):
+            raise ValueError("domain review source/judgments checksum mismatch")
+        for row in read_rows(judgments):
+            key = (row["query_intent"], row["document_intent"])
+            if (
+                key in reviewed
+                or not set(key) <= ids
+                or type(row["grade"]) is not int
+                or row["grade"] not in (0, 1, 2)
+                or not row.get("rationale")
+                or row.get("reviewer_origin") != "agent"
+                or not row.get("reviewer_id")
+            ):
+                raise ValueError("invalid or duplicate domain intent judgment")
+            reviewed[key] = row
+        if reviewed.keys() != {(q, d) for q in ids for d in ids}:
+            raise ValueError("domain review must cover every query/document intent pair")
+        if any(not any(reviewed[q, d]["grade"] > 0 for d in ids) for q in ids):
+            raise ValueError("every authored intent needs a reviewed positive")
     surfaces = {}
     for row in records:
         for language in LANGUAGES:
@@ -52,6 +78,14 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
         rng.shuffle(group_ids)
         test_ids = set(group_ids[: max(1, len(group_ids) * 3 // 10)])
         assignment.update({i: "test" if i in test_ids else "development" for i in group_ids})
+    if judgments:
+        for query_id in ids:
+            if not any(
+                reviewed[query_id, document_id]["grade"] > 0
+                for document_id in ids
+                if assignment[document_id] == assignment[query_id]
+            ):
+                raise ValueError("authored query has no reviewed positive in its reserved split")
     output.mkdir(parents=True)
     files = {}
     for split in ("development", "test"):
@@ -88,7 +122,7 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
                             "source": f"agent-domain:{row['id']}",
                             "domain": row["domain"],
                             "bucket": LANGUAGES[query_language],
-                        "target_language": LANGUAGES[document_language],
+                            "target_language": LANGUAGES[document_language],
                             "split": split,
                             "author": "implementation-agent",
                             "author_origin": "agent",
@@ -107,6 +141,23 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
                             ),
                         }
                     )
+                if judgments:
+                    qrels = []
+                    for query in queries:
+                        for document in documents:
+                            label = reviewed[
+                                query["group"].split(":", 1)[1], document["group"].split(":", 1)[1]
+                            ]
+                            qrels.append(
+                                {
+                                    "query_id": query["id"],
+                                    "document_id": document["id"],
+                                    "grade": label["grade"],
+                                    "reviewer_id": label["reviewer_id"],
+                                    "label_origin": "agent_reviewed_intent_matrix",
+                                    "rationale": label["rationale"],
+                                }
+                            )
                 for name, rows in (
                     ("documents", documents),
                     ("queries", queries),
@@ -122,13 +173,19 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
                     "independent_groups": len(subset),
                     "seed": seed,
                     "domains": dict(Counter(r["domain"] for r in subset)),
-                    "label_status": "agent-authored and agent-reviewed reference-answer labels",
+                    "label_status": (
+                        "agent-authored; all candidate intent pairs explicitly agent-reviewed"
+                        if judgments
+                        else "agent-authored and agent-reviewed reference-answer labels"
+                    ),
                     "human_review_completed": False,
                     "independent_review_verified": False,
                     "training_canonical_overlap": 0,
                     "frozen_project_test_opened": False,
                     "unjudged_documents": (
-                        "assumed unrelated by authored intent; pool new retrieved alternatives"
+                        "none within this controlled candidate set"
+                        if judgments
+                        else "assumed unrelated by authored intent; pool new retrieved alternatives"
                     ),
                     "limitations": [
                         "small controlled corpus",
@@ -142,6 +199,15 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
                         for n in ("documents", "queries", "qrels")
                     },
                 }
+                if judgments:
+                    manifest["inputs"][str(judgments)] = sha256(judgments)
+                    review_manifest = judgments.with_suffix(".manifest.json")
+                    manifest["inputs"][str(review_manifest)] = sha256(review_manifest)
+                    manifest["judgments"] = len(qrels)
+                    manifest["judgment_projection"] = (
+                        "shared reviewed intent meanings projected across authored parallel forms; "
+                        "single author/judge, no independent language review"
+                    )
                 (destination / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
                 files[f"{split}/{direction}/manifest.json"] = sha256(destination / "manifest.json")
     result = {
@@ -155,6 +221,7 @@ def build(material: Path, training: Path, output: Path, seed: int = 17) -> dict:
         "files": files,
         "test_policy": "do not evaluate test rankings until model selection is frozen",
         "provenance": "user-authorized agent-authored and agent-judged proxy, not human data",
+        "intent_judgments_sha256": sha256(judgments) if judgments else None,
     }
     (output / "manifest.json").write_text(json.dumps(result, indent=2) + "\n")
     return result
@@ -167,6 +234,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--training", type=Path, default=Path("data/processed/train.jsonl"))
     parser.add_argument("--output", type=Path, default=Path("data/processed/domain-benchmark-v1"))
+    parser.add_argument("--judgments", type=Path, help="complete agent-reviewed intent matrix")
     args = parser.parse_args()
-    result = build(args.material, args.training, args.output)
+    result = build(args.material, args.training, args.output, judgments=args.judgments)
     print(json.dumps({k: v for k, v in result.items() if k != "files"}, indent=2))

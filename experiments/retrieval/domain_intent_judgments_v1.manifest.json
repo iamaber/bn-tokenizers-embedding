@@ -1,0 +1,31 @@
+{
+  "material_sha256": "d6714f4695de24d6f1d680dada9b1ff9f7a7a7d9e82038c7dd4f4ae214753ed1",
+  "intent_judgments_sha256": "74f6cf794d42d0eafa9da1131ff318b4eec6d65fe4bb8a216d4f267f8822f8d2",
+  "reviewer_id": "implementation-agent",
+  "reviewer_origin": "agent",
+  "independent_human_review": false,
+  "intent_pairs": 3600,
+  "grades": {
+    "2": 60,
+    "1": 0,
+    "0": 3540
+  },
+  "rubric": {
+    "2": "answers the requested facts",
+    "1": "supplies some requested facts but misses others",
+    "0": "supplies none of the requested facts; topic or numeric coincidence is insufficient"
+  },
+  "method": "Author reviewed all 60 question/reference meanings as a shared intent matrix; parallel language forms inherit those judgments.",
+  "checks": [
+    "Specific people, objects, numbers, conditions and actions distinguish the information needs.",
+    "Photosynthesis and producer classification share a topic but do not answer each other\u2019s requested fact.",
+    "Area and perimeter both yield sixteen in different examples; the other shape/calculation does not answer the question.",
+    "Different bank identifiers, document purposes, policy actions and deadlines are not interchangeable answers."
+  ],
+  "limits": [
+    "same agent authors and judges",
+    "controlled fictional policy passages",
+    "no natural user traffic",
+    "no independent multilingual reviewer"
+  ]
+}

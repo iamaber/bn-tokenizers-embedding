@@ -1,0 +1,118 @@
+{
+  "runs": [
+    {
+      "name": "unchanged",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/unchanged",
+      "report_sha256": "84a01bdb524e5fba44b4dfab14dff70ef9d4a8a26725bfba0eba89e45e01d209"
+    },
+    {
+      "name": "equal-data/original-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/original-seed17",
+      "report_sha256": "5318420e3f45ca5ebcaa2faeb5110efb2fdc6af279558e66bf3eef447daddb56"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/unigram-32000-seed17",
+      "report_sha256": "07ad7120064417c301fc7b9120b363d5ad729489460faa9bd23ec2f7281ae47c"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/bpe-32000-seed17",
+      "report_sha256": "c03721fbb65a67142d2d6e9c6805559a0883dfc62986c5c96321a9c32c2a27c3"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/unigram-32000-seed29",
+      "report_sha256": "2977c28031f408023a1ecf8400cd4e601ce16dc8bc48ab1a4dce1ffa3b6a2f39"
+    },
+    {
+      "name": "equal-data/original-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/original-seed29",
+      "report_sha256": "434623240b6e6a5caf31ba8896de0c4609e43a192f4f90bd2dc85b10bb856730"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/bpe-32000-seed29",
+      "report_sha256": "39653846f0592041abbba9c3d3802820bf357e85082d3fa5356c985ae15eba97"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/bpe-32000-seed43",
+      "report_sha256": "2ea6478756cf00263541bf18b00235c044055dba8d619e57d2f83401ebebc207"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/unigram-32000-seed43",
+      "report_sha256": "fd7e38cde5ca8a5bbe97230cdee49283b0c4dbc2d70beb3ac3d4b1fe03fa64b5"
+    },
+    {
+      "name": "equal-data/original-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-data/original-seed43",
+      "report_sha256": "809bddbf4053bbcb5afdd569ab23f051b0ada4762f00e8ad27e9726aa09d944a"
+    },
+    {
+      "name": "equal-compute/original-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/original-seed17",
+      "report_sha256": "a5bce4218a4082de190f80f0d9a0bfc0f4e806f3422b7368f8634bbab131eab1"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/unigram-32000-seed17",
+      "report_sha256": "fd2e2f988988404e0b5d1c5905102061456d270e4809f0ce974b31ab4b6ce4c4"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/bpe-32000-seed17",
+      "report_sha256": "d75a6fa72e468920a5a8de039a8ea345a5d14ea20d419467247918ea189d0747"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/unigram-32000-seed29",
+      "report_sha256": "9c750b5540807c965d35f56c305e750602ee98ca1e060637ee1ce1680501d5ad"
+    },
+    {
+      "name": "equal-compute/original-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/original-seed29",
+      "report_sha256": "30f737a46e29d2e6a58c07f7df4ce47605d3fc354993f908b13aacd014897044"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/bpe-32000-seed29",
+      "report_sha256": "21551751b7603821a781243f1fd2d03fbd865e63a1aeec4e1d909b29634292bf"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/bpe-32000-seed43",
+      "report_sha256": "835cb2ed8f63e95bc93a0ceae782032fbd8c1ae42bbb4003be6814374ee10fe3"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/unigram-32000-seed43",
+      "report_sha256": "16aefac297afb234461f127dbb5dd86a19d0fb559e038ad80547bf163d633b2f"
+    },
+    {
+      "name": "equal-compute/original-seed43",
+      "directory": "data/processed/encoder-evaluation-test-reviewed-v2/equal-compute/original-seed43",
+      "report_sha256": "173d2ffbaa7165f2933b14401a625c02a7a1e369d0e12686f49f0218292c5e9d"
+    }
+  ],
+  "datasets": {
+    "bl-bl": "4eae2942386896ec802c29539652dacca43c03b5019b952ae29095ab50530f0e",
+    "bl-bn": "0422f99f59c9ef8dbe452894fcadc8d70353565297cdc8a11837e2357ff84978",
+    "bl-en": "ebfce665969c3662ed1901c0fb0ffeb2407e419ca6abd7407adf2f7137ba2daa",
+    "bn-bl": "6a57d15fd8bfe8520acd6281ae5a58bda11f815fe799c8b88fceec624009d80b",
+    "bn-bn": "73e67d3fdb11a754b7fbe75cd9a6258f607735a398d66fd789db652ad4c9d589",
+    "bn-en": "462678e723880118e4966ff11ee535cc823ff9d983bf274f50412007b6bd86ae",
+    "en-bl": "29e1bf38f1947c8a789d05e7a7db65e75d29c804a3a7b651ba7cdffac6111af3",
+    "en-bn": "6f2e53676484e7a5f7387bacb7ca2d4793a16ff720ca758731dca59bbadfd548",
+    "en-en": "da277d4766b97cf27271438b86d5c23b13b7cebea87b9dfc9ac7b64b9ed3404e"
+  },
+  "matrix_files": {
+    "reports/encoder-equal-data-matrix-verified-v1.json": "62918e838342f0c3b22b7c6d9e799009870ab1ea037a8da0c67b69dd05580802",
+    "reports/encoder-equal-compute-matrix-verified-v2.json": "1c4fcf05c4ca81559239cad487ed942316b6452263721fead6fbf2e703e97ac1"
+  },
+  "runtime_repeats": 5,
+  "same_inference_workload_verified": true,
+  "process_rule": "one fresh subprocess per model; sequential after training",
+  "frozen_selection_sha256": "d6e5795faeb83b1162f0686f62489a9f75ce4ba20f22db699a225cb789a65967"
+}

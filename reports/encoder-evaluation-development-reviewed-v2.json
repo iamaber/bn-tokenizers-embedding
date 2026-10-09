@@ -1,0 +1,118 @@
+{
+  "runs": [
+    {
+      "name": "unchanged",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/unchanged",
+      "report_sha256": "c143e7de922895a3abffe7ebcb4f0048b5c6b61984e7d137408d7c069518b55a"
+    },
+    {
+      "name": "equal-data/original-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/original-seed17",
+      "report_sha256": "c0d1386ab9d895e18679a885add3f6949007c81f2a40e600a195ccf8dbc1a2c0"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/unigram-32000-seed17",
+      "report_sha256": "cd99b4a5e98e3698073059b547ae705bc9a88188a60538baece9fc10329b3e5e"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/bpe-32000-seed17",
+      "report_sha256": "57e6cd48e0d1264cf21b9e4bf7678685280b4e08003e3222b4eef2289c5fd2da"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/unigram-32000-seed29",
+      "report_sha256": "f400191e995e565f1a30a3666e2356ce1147bf4b9176f22f9a9d5814eda841bc"
+    },
+    {
+      "name": "equal-data/original-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/original-seed29",
+      "report_sha256": "643857afe9b2d98c64234ac72d60780025612681f253a20ba9bcebef3b443fc4"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/bpe-32000-seed29",
+      "report_sha256": "69524a0963dcd7e9d8298499f21822ba54391c750c5c2f866cfd566241ea9b95"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/bpe-32000-seed43",
+      "report_sha256": "72bbfcb084c9e8d6f170ddd6fa0825844ea37cefed5eb33ff4b43da296924623"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/unigram-32000-seed43",
+      "report_sha256": "e95aa00d7aa071ce17d2ad2c1047fe3ba9dbad688ebf948ef6b57ca7fb9e049e"
+    },
+    {
+      "name": "equal-data/original-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-data/original-seed43",
+      "report_sha256": "940f66ccd16320bbace96a97c5f32d0e031969ff50f71453e2200d6d95880c9b"
+    },
+    {
+      "name": "equal-compute/original-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/original-seed17",
+      "report_sha256": "3cc5e2a4215525b7ee3ba11e7f16e146a28128b08e695b20610e1390d4b33769"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/unigram-32000-seed17",
+      "report_sha256": "a291b66d8f705c1dff859c4cbc48a854facc8c8c9f41e739a5e78ce4613519aa"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/bpe-32000-seed17",
+      "report_sha256": "d171e85412f294a5fd2e35fa8bddee5669f857731b35a8e28926c748681433e6"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/unigram-32000-seed29",
+      "report_sha256": "a6a36907843571391ee06f24e49a4e98fc133dd23e8797c25f87d435cf31bd36"
+    },
+    {
+      "name": "equal-compute/original-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/original-seed29",
+      "report_sha256": "b0b44cbc19f9b206d8892f81a68e870f4299592b6ab2bfec167a5217965ef992"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/bpe-32000-seed29",
+      "report_sha256": "2783597a3cfd290ae0f2e9fccaa0ef41a076a9e45b617e2d76986de8ac8a90f2"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/bpe-32000-seed43",
+      "report_sha256": "a6a766a9f8808f4a580f8d096c5599f3fe908d09d2da1795d5423f9581ecba6f"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/unigram-32000-seed43",
+      "report_sha256": "5334b5e8847836b76a7063cf4f4c0a947626df289325c810b975a354e2548907"
+    },
+    {
+      "name": "equal-compute/original-seed43",
+      "directory": "data/processed/encoder-evaluation-development-reviewed-v2/equal-compute/original-seed43",
+      "report_sha256": "129cda057e555ca2c5039f49c1f28cf9f923f0dbe899fd7edf3c0d8fcd659950"
+    }
+  ],
+  "datasets": {
+    "bl-bl": "44c10984dc6715a838b0f81f4440156bc2ae18ef132f15046d898994abe794a0",
+    "bl-bn": "9a68451f93502bac04b4e9eddcdb0c4e610e61540b87161ebeef4d81495d62b2",
+    "bl-en": "37920550619c86ea493a1768dd51edf3558bbca81c825d4df5044c3712fa9d3f",
+    "bn-bl": "056a12b7fd9eb2bbe8fa9c95141aeaf2404b07ccd5e7c6dc870d7d695493680b",
+    "bn-bn": "9e64bcda3d1ea4e1f88ab19712058641236f2acd089581ac2237abf8c0b911a4",
+    "bn-en": "2c8ad0db595c32b1b4a79789c617de36d9f47310db3b552e3da88035b41429ec",
+    "en-bl": "4d345ed3efa5caa67d30290a64ae198dfe12178e804cfe0e0b12a104628efa7e",
+    "en-bn": "b8ea18a380808bd41b3e0b37ec6b53cd1c4806e74a326422bd5556e4df0383fd",
+    "en-en": "5337a24acf2c89a115b5990903c17fb14b5569ba5cb6d2ce525ee8ecf1db4e6b"
+  },
+  "matrix_files": {
+    "reports/encoder-equal-data-matrix-verified-v1.json": "62918e838342f0c3b22b7c6d9e799009870ab1ea037a8da0c67b69dd05580802",
+    "reports/encoder-equal-compute-matrix-verified-v2.json": "1c4fcf05c4ca81559239cad487ed942316b6452263721fead6fbf2e703e97ac1"
+  },
+  "runtime_repeats": 5,
+  "same_inference_workload_verified": true,
+  "process_rule": "one fresh subprocess per model; sequential after training",
+  "frozen_selection_sha256": null
+}

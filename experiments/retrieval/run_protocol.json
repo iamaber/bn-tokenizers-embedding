@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "base_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "alignment_directory": "data/processed/alignment-expanded-v1",
+  "alignment_manifest_sha256": "e0d2630a7fda26c206f56c6aac96a6b2069c2792911683bb00e66783fb58e063",
+  "arms": [
+    "original",
+    "unigram-32000",
+    "bpe-32000"
+  ],
+  "training_seeds": [
+    17,
+    29,
+    43
+  ],
+  "equal_data": {
+    "representation_steps": 64,
+    "contrastive_steps": 128
+  },
+  "equal_compute": {
+    "total_wall_seconds": 120,
+    "representation_remaining_fraction": 0.35
+  },
+  "batch_size": 16,
+  "maximum_training_tokens": 128,
+  "maximum_evaluation_tokens": 512,
+  "device": "cpu",
+  "threads": 4,
+  "initialization": "subword mean with explicit control remap; then common teacher distillation",
+  "selection": "development-only; freeze chosen arm before scoring reserved domain test",
+  "evaluation": [
+    "original 300-query sentence pilot",
+    "all nine domain QA language directions"
+  ],
+  "cost": "include initialization/adaptation/contrastive wall time; standalone latency/RSS after training",
+  "limitations": [
+    "agent-authored domain proxy",
+    "small adaptation budget",
+    "heuristic swap initialization"
+  ]
+}

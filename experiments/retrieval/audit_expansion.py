@@ -32,7 +32,8 @@ def audit(directory: Path, original: Path, material: Path) -> dict:
     for split in ("validation", "test"):
         reserved.update(canonical(row["text"]) for row in rows(original / f"{split}.jsonl"))
     reserved.update(
-        canonical(row[field]) for row in rows(material)
+        canonical(row[field])
+        for row in rows(material)
         for field in ("bn", "bl", "en", "q_bn", "q_bl", "q_en")
     )
     groups = {}
@@ -48,12 +49,17 @@ def audit(directory: Path, original: Path, material: Path) -> dict:
                 raise ValueError("expanded group crosses splits")
             counts[split] += 1
     return {
-        "status": "passed", "manifest_sha256": sha256(directory / "manifest.json"),
-        "reserved_canonical_keys": len(reserved), "expanded_rows_by_split": dict(counts),
-        "checks": ["all original source val/test forms excluded from train",
-                   "all project val/test forms excluded from train",
-                   "all authored benchmark forms excluded from train",
-                   "reserve-only sources absent from every split", "no group crosses splits"],
+        "status": "passed",
+        "manifest_sha256": sha256(directory / "manifest.json"),
+        "reserved_canonical_keys": len(reserved),
+        "expanded_rows_by_split": dict(counts),
+        "checks": [
+            "all original source val/test forms excluded from train",
+            "all project val/test forms excluded from train",
+            "all authored benchmark forms excluded from train",
+            "reserve-only sources absent from every split",
+            "no group crosses splits",
+        ],
         "scope": "integrity only; no frozen test evaluation",
     }
 
@@ -62,8 +68,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--expanded", type=Path, required=True)
     parser.add_argument("--original", type=Path, default=Path("data/processed"))
-    parser.add_argument("--material", type=Path,
-                        default=Path("experiments/retrieval/domain_material.jsonl"))
+    parser.add_argument(
+        "--material", type=Path, default=Path("experiments/retrieval/domain_material.jsonl")
+    )
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
     if args.report.exists():

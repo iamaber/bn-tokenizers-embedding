@@ -1,0 +1,70 @@
+{
+  "protocol_sha256": "2ce5a5d7b44226d3e706477495b5b7dc2ac60204b857937a47c797c22b937463",
+  "budget": "equal-data",
+  "runs": [
+    {
+      "arm": "original",
+      "seed": 17,
+      "directory": "models/encoders/equal-data/original-seed17",
+      "training_report_sha256": "a310b13ee5c2d72c6b15735f797a866ff95bb86c9b4eeac130ff9aa03fb3c081",
+      "seconds": 108.32716779198381
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 17,
+      "directory": "models/encoders/equal-data/unigram-32000-seed17",
+      "training_report_sha256": "242d64d1cdd18c91c06c352c6622a6b82ee8676376225d5ecf23e824ce722963",
+      "seconds": 102.0225995000219
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 17,
+      "directory": "models/encoders/equal-data/bpe-32000-seed17",
+      "training_report_sha256": "2050c3e38e6b20e0b2f8df48c898f0cb863df60e26afe18f5664507bd1b0f32d",
+      "seconds": 102.67329766598414
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 29,
+      "directory": "models/encoders/equal-data/unigram-32000-seed29",
+      "training_report_sha256": "d2f96e1d7cfe89de765f3289be677eb5ffb968845359794df2f19d85fa524db7",
+      "seconds": 112.62070945900632
+    },
+    {
+      "arm": "original",
+      "seed": 29,
+      "directory": "models/encoders/equal-data/original-seed29",
+      "training_report_sha256": "f45d06b0692faacff7293d98d7f5a578285a79afcb2a5e3b2847224ba51cc8e9",
+      "seconds": 137.4525450830115
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 29,
+      "directory": "models/encoders/equal-data/bpe-32000-seed29",
+      "training_report_sha256": "8bd4015c377de3599f18b5370170e73ff79536e4ad43e7ffcad97f30e4ceb62e",
+      "seconds": 120.15290495901718
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 43,
+      "directory": "models/encoders/equal-data/bpe-32000-seed43",
+      "training_report_sha256": "1bc36907f794de0e553774c3ea62bea8c3a34995050d031bf4ef290969140afb",
+      "seconds": 126.6703257909976
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 43,
+      "directory": "models/encoders/equal-data/unigram-32000-seed43",
+      "training_report_sha256": "4a2b97dcd3e8342892b196557e10b7094d2b0cf5d0551a030502c3f2ca81f76b",
+      "seconds": 123.49943387499661
+    },
+    {
+      "arm": "original",
+      "seed": 43,
+      "directory": "models/encoders/equal-data/original-seed43",
+      "training_report_sha256": "f77590a6bf8e23d01fc201d83631abfdee10849755e23ecdf41e43b39762be3c",
+      "seconds": 141.99869104201207
+    }
+  ],
+  "equal_data_sample_order_verified": true
+}

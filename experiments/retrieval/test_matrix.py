@@ -19,27 +19,39 @@ class MatrixResumeTests(unittest.TestCase):
             alignment.mkdir()
             (alignment / "manifest.json").write_text("{}")
             protocol = root / "protocol.json"
-            protocol.write_text(json.dumps({
-                "alignment_directory": str(alignment),
-                "alignment_manifest_sha256": sha256(alignment / "manifest.json"),
-                "base_revision": base.name, "training_seeds": [17], "arms": ["original"],
-                "batch_size": 16, "maximum_training_tokens": 128,
-                "equal_data": {"representation_steps": 64, "contrastive_steps": 128},
-            }))
+            protocol.write_text(
+                json.dumps(
+                    {
+                        "alignment_directory": str(alignment),
+                        "alignment_manifest_sha256": sha256(alignment / "manifest.json"),
+                        "base_revision": base.name,
+                        "training_seeds": [17],
+                        "arms": ["original"],
+                        "batch_size": 16,
+                        "maximum_training_tokens": 128,
+                        "equal_data": {"representation_steps": 64, "contrastive_steps": 128},
+                    }
+                )
+            )
             checkpoint = root / "encoders/equal-data/original-seed17"
             checkpoint.mkdir(parents=True)
             (checkpoint / "model.safetensors").write_bytes(b"checkpoint")
             metadata = checkpoint / "encoder.json"
             metadata.write_text(json.dumps({"custom_tokenizer": None}))
             valid = {
-                "seed": 17, "budget_kind": "equal-data", "batch_size": 16,
+                "seed": 17,
+                "budget_kind": "equal-data",
+                "batch_size": 16,
                 "maximum_tokens": 128,
                 "alignment_manifest_sha256": sha256(alignment / "manifest.json"),
-                "tokenizer_initialization": {"method": "retain original tokenizer and input embeddings"},
+                "tokenizer_initialization": {
+                    "method": "retain original tokenizer and input embeddings"
+                },
                 "base_model_files": {"model.safetensors": sha256(base / "model.safetensors")},
                 "stages": {"representation": {"steps": 64}, "contrastive": {"steps": 128}},
                 "checkpoint_files": {"model.safetensors": sha256(checkpoint / "model.safetensors")},
-                "total_training_seconds": 100, "training_sequence_sha256": "sequence",
+                "total_training_seconds": 100,
+                "training_sequence_sha256": "sequence",
             }
             report = checkpoint / "training-report.json"
             report.write_text(json.dumps(valid))

@@ -1,0 +1,70 @@
+{
+  "protocol_sha256": "2ce5a5d7b44226d3e706477495b5b7dc2ac60204b857937a47c797c22b937463",
+  "budget": "equal-compute",
+  "runs": [
+    {
+      "arm": "original",
+      "seed": 17,
+      "directory": "models/encoders/equal-compute/original-seed17",
+      "training_report_sha256": "91e13f99f6eee0b03c085b5e30baed2bfd38d11d0518bb6955a6ac4f5445ab63",
+      "seconds": 120.24904395901831
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 17,
+      "directory": "models/encoders/equal-compute/unigram-32000-seed17",
+      "training_report_sha256": "3570d1d714b7f3ec6ba43cece5fd6333862a1f16e65e253d7548b59f021341c4",
+      "seconds": 120.32685029201093
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 17,
+      "directory": "models/encoders/equal-compute/bpe-32000-seed17",
+      "training_report_sha256": "cf4c62667535116251fa10e6d40efe62c28f77eb152b3bec2c5d97631b94c870",
+      "seconds": 120.79827883301186
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 29,
+      "directory": "models/encoders/equal-compute/unigram-32000-seed29",
+      "training_report_sha256": "075e1f92bf3038fce66740607a3af5184f4f971764e75c6eeac3b47f46c4a244",
+      "seconds": 120.5027350409946
+    },
+    {
+      "arm": "original",
+      "seed": 29,
+      "directory": "models/encoders/equal-compute/original-seed29",
+      "training_report_sha256": "bc889b0b6ab3c9ee7932b9a3723ed5dc882d4c21452355c31f3e80c5793f3df0",
+      "seconds": 120.599452208
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 29,
+      "directory": "models/encoders/equal-compute/bpe-32000-seed29",
+      "training_report_sha256": "d6e53cee0529ab031bfc51b845433cea19d61c61f27b260293d69b03d305713b",
+      "seconds": 120.66589654199197
+    },
+    {
+      "arm": "bpe-32000",
+      "seed": 43,
+      "directory": "models/encoders/equal-compute/bpe-32000-seed43",
+      "training_report_sha256": "96f777959c0b2f111161b7cb503fefddffb391ddb2be200607f0e668bd3c56dc",
+      "seconds": 120.41727616699063
+    },
+    {
+      "arm": "unigram-32000",
+      "seed": 43,
+      "directory": "models/encoders/equal-compute/unigram-32000-seed43",
+      "training_report_sha256": "247c6a74a6b0eba0364b5e052eb92d57e1a8fd24d39d3fd296927645e397a3d7",
+      "seconds": 120.61184695901466
+    },
+    {
+      "arm": "original",
+      "seed": 43,
+      "directory": "models/encoders/equal-compute/original-seed43",
+      "training_report_sha256": "a84bd43b7b11a7016fc9190fa274a198ab7381d79a5a9bc2bf8c28b2a3486959",
+      "seconds": 120.02534449999803
+    }
+  ],
+  "equal_data_sample_order_verified": false
+}

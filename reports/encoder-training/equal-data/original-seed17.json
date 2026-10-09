@@ -1,0 +1,175 @@
+{
+  "seed": 17,
+  "budget_kind": "equal-data",
+  "total_training_budget_seconds": null,
+  "total_training_seconds": 108.32716779198381,
+  "budget_overrun_seconds": 0,
+  "budget_granularity": "checked between optimizer steps; report last-step overrun",
+  "initialization_and_loading_seconds": 1.3881012499914505,
+  "tokenizer_initialization": {
+    "method": "retain original tokenizer and input embeddings",
+    "seconds": 0.0
+  },
+  "stages": {
+    "representation": {
+      "steps": 64,
+      "requested_steps": 64,
+      "examples": 1024,
+      "mean_loss": 4.652873678878677e-05,
+      "first_loss": 5.383192910812795e-05,
+      "last_loss": 4.394343704916537e-05,
+      "seconds": 39.04649475001497,
+      "untruncated_tokens": 41333,
+      "emitted_tokens": 41274,
+      "padded_token_positions": 112416,
+      "truncated_texts": 2
+    },
+    "contrastive": {
+      "steps": 128,
+      "requested_steps": 128,
+      "examples": 2048,
+      "mean_loss": 0.16379918066468235,
+      "first_loss": 1.9634501934051514,
+      "last_loss": 0.0033546537160873413,
+      "seconds": 67.89250200000242,
+      "untruncated_tokens": 84482,
+      "emitted_tokens": 84482,
+      "padded_token_positions": 219328,
+      "truncated_texts": 0
+    }
+  },
+  "history": [
+    {
+      "stage": "representation",
+      "step": 1,
+      "loss": 5.383192910812795e-05,
+      "elapsed_seconds": 2.922146500000963
+    },
+    {
+      "stage": "representation",
+      "step": 17,
+      "loss": 5.122362563270144e-05,
+      "elapsed_seconds": 11.973639792005997
+    },
+    {
+      "stage": "representation",
+      "step": 33,
+      "loss": 4.44853758381214e-05,
+      "elapsed_seconds": 20.45898033300182
+    },
+    {
+      "stage": "representation",
+      "step": 49,
+      "loss": 4.409303073771298e-05,
+      "elapsed_seconds": 30.878132541984087
+    },
+    {
+      "stage": "representation",
+      "step": 64,
+      "loss": 4.394343704916537e-05,
+      "elapsed_seconds": 40.43458041700069
+    },
+    {
+      "stage": "contrastive",
+      "step": 1,
+      "loss": 1.9634501934051514,
+      "elapsed_seconds": 40.815313375002006
+    },
+    {
+      "stage": "contrastive",
+      "step": 17,
+      "loss": 0.050488755106925964,
+      "elapsed_seconds": 48.4418749169854
+    },
+    {
+      "stage": "contrastive",
+      "step": 33,
+      "loss": 0.10243451595306396,
+      "elapsed_seconds": 56.290528417011956
+    },
+    {
+      "stage": "contrastive",
+      "step": 49,
+      "loss": 0.12121474742889404,
+      "elapsed_seconds": 64.7284135830123
+    },
+    {
+      "stage": "contrastive",
+      "step": 65,
+      "loss": 0.024217745289206505,
+      "elapsed_seconds": 74.1253390829952
+    },
+    {
+      "stage": "contrastive",
+      "step": 81,
+      "loss": 0.008836468681693077,
+      "elapsed_seconds": 82.03740454200306
+    },
+    {
+      "stage": "contrastive",
+      "step": 97,
+      "loss": 0.01677427627146244,
+      "elapsed_seconds": 91.00375299999723
+    },
+    {
+      "stage": "contrastive",
+      "step": 113,
+      "loss": 0.0014581065624952316,
+      "elapsed_seconds": 99.36199075001059
+    },
+    {
+      "stage": "contrastive",
+      "step": 128,
+      "loss": 0.0033546537160873413,
+      "elapsed_seconds": 108.32713070799946
+    }
+  ],
+  "batch_size": 16,
+  "maximum_tokens": 128,
+  "threads": 4,
+  "device": "cpu",
+  "objective": "teacher pooled-vector MSE then symmetric in-batch contrastive CE, temperature .05",
+  "deterministic_algorithms": true,
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01
+  },
+  "parameters": {
+    "total": 117653760,
+    "embedding": 96014208,
+    "body": 21639552
+  },
+  "training_sequence_sha256": "8f0aafda8a5934689df07f6f0e41ad2af888ce3b643d34707c3c2966e259e46f",
+  "alignment_manifest_sha256": "e0d2630a7fda26c206f56c6aac96a6b2069c2792911683bb00e66783fb58e063",
+  "base_model_files": {
+    "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+    "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+    "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+    "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+    "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b"
+  },
+  "criteria_sha256": "9579a755326c68913d3a19e1e8db61fb07a5dbd67666e4b5ebd39105a2798e4b",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "torch": "2.14.0",
+  "process_peak_rss_mib": 5992.296875,
+  "memory_scope": "training process including teacher, optimizer and loaded tokenizers",
+  "checkpoint_files": {
+    "config.json": "d3e1cf0a6fef0ae92f8bc55ec4ce6d01baa2525df33712f2d5937bd2162d2006",
+    "encoder.json": "ca72038a164060441c6922c48985e9b467a1d283b7c44a0b22a94025e7e9186d",
+    "model.safetensors": "7f74a8f41a919ac17767bd281cd194edf23d261c0533fca031e223e865ab8cb1",
+    "tokenizer.json": "5b58593a7e63f3c8b69801a92415fc0813dd287a3ba2f767cdf33106806fca11",
+    "tokenizer_config.json": "073baeda1d4206d2884440810a167a690bfbf44c2ddc38185418fb7bb0e2dc79"
+  },
+  "implementations": {
+    "encoder.py": "30c39c819d5d9bfe210b29fc52e776d0c95e5f60bc7884ed19528dae95c1bf5b",
+    "train_encoder.py": "be532cc6041e873dc2e8e5ccbc8c90fd3448ae6bda9ad200d0e3ba26985c9d3e"
+  },
+  "limitations": [
+    "small adaptation budget",
+    "decomposition initialization is heuristic",
+    "original and replacement embedding table capacities differ",
+    "distinct source groups do not guarantee semantic negative validity"
+  ]
+}

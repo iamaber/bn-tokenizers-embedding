@@ -1,6 +1,6 @@
 # Bangla–English–Banglish tokenizers: Python API, Go engine
 
-Python package backed by native Go Unigram/BPE tokenization, with Go training tools, a collected checksum-locked corpus, grouped held-out splits, and reproducible intrinsic evaluation. The initial Unigram/BPE models use 16k, 32k and 48k vocabularies. These are tokenizer candidates for embedding experiments, **not a trained embedding model or a demonstrated retrieval improvement**.
+Python package backed by native Go Unigram/BPE tokenization, with Go training tools, a collected checksum-locked corpus, grouped held-out splits, and reproducible intrinsic evaluation. The initial Unigram/BPE models use 16k, 32k and 48k vocabularies. These are tokenizer candidates. The controlled encoder experiment now includes 18 adapted checkpoints, but **no custom-tokenizer retrieval improvement passed the declared domain criteria**; unchanged E5 remains the selected reference.
 
 Read [the research audit](RESEARCH_AUDIT.md), [corpus documentation](data/CORPUS.md), and [measured results](reports/RESULTS.md). The original [research plan](RESEARCH.md) remains the downstream experimental roadmap.
 
@@ -63,7 +63,7 @@ The [optimization report](reports/PERFORMANCE_IMPROVEMENTS.md) records approxima
 
 ## Retrieval research pilot
 
-The [retrieval pilot](experiments/retrieval/README.md) prepares 300 existing Bangla–Banglish validation pairs, audits overlap with tokenizer training, runs BM25 and a pinned multilingual E5 baseline, and creates blank human-review queues. [Initial results](reports/RETRIEVAL_PILOT.md) are sentence-counterpart retrieval measurements with provisional labels; they do not demonstrate an embedding-accuracy improvement from our tokenizer. The frozen test remains unused.
+The [retrieval experiments](experiments/retrieval/README.md) now include complete agent review of 3,152 pooled judgments and 300 source pairs, a six-domain Bengali/Banglish/English proxy, audited natural training expansion, and controlled encoder adaptation over three seeds in two budgets. All 19 encoders were scored on domain development, reserved test and sentence cohorts. [Measured results](reports/ENCODER_COMPARISON.md) retain unchanged E5: both custom tokenizers failed domain quality and English-retention gates. [Sentence review](reports/RETRIEVAL_REVIEW.md) records exclusions, alternatives, the 73-case historical failure audit and incomplete-pool limitations. The original project test was read only for holdout integrity; the new domain test was scored after selection froze.
 
 ## Go tools
 
@@ -136,4 +136,4 @@ There are **563,476 training records / 65.97 million normalized characters**, pl
 
 The training mixture is 40% Bangla, 25% English, 25% Banglish, 10% script-mixed by weighted sentence contribution. Each sentence's weight is divided among its whitespace words; fitting ignores words longer than 64 runes. `-balanced` uses 25% each. The small code-mixed bucket is explicitly a script proxy and needs more natural data. Automatic privacy/near-duplicate filters are incomplete; inspect [CORPUS.md](data/CORPUS.md) before redistributing data or treating these splits as a publishable benchmark.
 
-Reports include fertility, sequence percentiles, byte fallback, vocabulary utilization, sequence-limit rates, round trips, and local throughput; a byte baseline counts UTF-8 bytes on the same text. External subword comparisons now cover BNLP, SentencePiece and Hugging Face byte-level BPE. They do not measure morphological correctness or semantic retrieval. Matched embedding encoders, retrieval evaluation, annotation and uncertainty across training seeds remain future research work.
+Reports include fertility, sequence percentiles, byte fallback, vocabulary utilization, sequence-limit rates, round trips, and local throughput; a byte baseline counts UTF-8 bytes on the same text. External subword comparisons now cover BNLP, SentencePiece and Hugging Face byte-level BPE. They do not measure morphological correctness or semantic retrieval. The [controlled encoder comparison](reports/ENCODER_COMPARISON.md) adds actual matched adaptation, retrieval evaluation, agent annotation, crossed seed/group uncertainty, and repeated latency/RSS measurements. Independent human review, adapted-system sentence pooling and larger natural-search validation remain future work.

@@ -1,122 +1,65 @@
-# Cross-script retrieval pilot
+# Retrieval experiments
 
-This is the first executable research milestone: a **development-only paired-sentence retrieval proxy**, baseline scores, and pending human-review material. It is not a benchmark of natural search relevance or evidence that our tokenizer improves embeddings.
+The requested five improvements are implemented and executed: reviewed sentence labels, a multilingual domain proxy, controlled encoder adaptation, audited natural-data expansion, and frozen quality/cost selection with paired uncertainty. See the [implementation ledger](../../reports/IMPROVEMENT_PLAN.md) and [measured comparison](../../reports/ENCODER_COMPARISON.md).
 
-## Current artifacts
+**Current choice: unchanged multilingual E5-small.** Both custom 32k tokenizers failed the declared domain quality and English-retention gates under both budgets. All 18 adapted checkpoints were trained, and 19 encoders were evaluated on development, reserved test and both sentence cohorts. This is a small feasibility experiment; it does not settle whether better vocabulary transfer or longer training can help.
 
-Prepared on 21 September 2026 from existing validation data:
+## Datasets and review
 
-- 300 queries from 300 distinct corpus groups: 292 Banglish and eight script-mixed.
-- 2,000 Bengali candidate sentences, all from BanglaTLit to avoid easy source-domain distractors.
-- One provisional positive per query, recovered from an exact original transliteration pair.
-- Zero group/canonical-text overlap with tokenizer training. The frozen test was never opened.
-- No synthetic spelling variants, human grades, or natural search questions were invented.
+The original `data/processed/retrieval-pilot-v1` remains unchanged: 300 BanglaTLit validation query groups, 2,000 Bengali documents and provisional source qrels. Its historical E5 Recall@10 is 0.7567. The reviewed version `data/processed/retrieval-reviewed-v1` has 240 queries and 1,996 documents, with all original 3,152 pooled labels and 300 pair/privacy decisions completed. Sixty query groups are excluded with reasons, including four privacy exclusions. All 73 historical misses have diagnostic notes. See the [review report](../../reports/RETRIEVAL_REVIEW.md).
 
-Local data lives in `data/processed/retrieval-pilot-v1/`, ignored by Git:
+The original pool covers E5/BM25/source candidates, not all 1,996 documents for every query. Unknown labels remain unknown. Numerical proxy scoring counts unknowns as zero and reports coverage. The sentence comparison includes a strict grade-2 sensitivity view because grade 1 means only partial correspondence. Corpus deduplication groups alone do not establish exact pairs or independent semantic intents.
 
-| File | Purpose |
-|---|---|
-| `documents.jsonl` | Candidate text, IDs, source groups and attribution |
-| `queries.jsonl` | Query text, IDs, corpus group, language bucket |
-| `qrels.jsonl` | Provisional source-pair positives, explicitly marked unreviewed |
-| `manifest.json` | Selection seed, input/output hashes, split audit |
-| `ranking-*.jsonl` | Top-10 IDs from each baseline |
-| `review-pool.jsonl` | 3,152 shuffled candidate judgments; blank reviewer fields |
-| `authoring.jsonl` | 300 rows for checking pairs/privacy and authoring natural query variants |
+The [domain material](domain_material.jsonl) has 60 intents, ten per requested domain: business, banking, technology, science, conversation and QA. Each has separately phrased questions and passages in Bengali, Banglish and English. Seed 17 reserves 42 development and 18 test intents; every language form stays in the same split. The complete 3,600-label shared intent matrix projects to all nine language directions, giving explicit labels for every candidate. Policies and personal plans are fictional. See the [benchmark report](../../reports/DOMAIN_BENCHMARK.md).
 
-See [results and limitations](../../reports/RETRIEVAL_PILOT.md) and [raw results](../../reports/retrieval-pilot-v1.json).
+The user explicitly authorized agent authorship and judgments. All reviewed artifacts say `agent`; no human identity or independent human review is invented. Separate blank reviewer/calibration packets remain available for future independent review. Raw corpus text stays local and ignored by Git; committed sentence archives contain only IDs, labels, rationale, provenance and checksums.
 
-## Method
+## Natural training expansion
 
-`prepare.py` joins raw `train.csv` and `validation.csv` pairs to exact normalized texts in the processed validation split. Raw training-file membership alone does not make a pair eligible: both sides must be in the saved validation split and share its connected group. The raw test file is not read. Group IDs alone cannot establish pairing because corpus deduplication sometimes joins multiple original pairs.
+Only audited original Vashantor v2 training forms were added. The expanded grouped corpus has 586,181 train records, including 22,765 accepted Vashantor training forms. Every original project holdout, original Vashantor validation/test form and authored benchmark surface is excluded from train. The project test was read only for integrity, never scored or used for selection. Reserve-only benchmark rows are suppressed from all corpus outputs.
 
-Candidates have at least three whitespace words on both sides. Seeded sampling retains at most one query per connected group, avoids canonical duplicate queries/positives, and fills the candidate pool with canonically distinct Bengali validation sentences. Corpus groups are an approximation, not human-verified independent semantic intents. Audit checks use Unicode letter/mark/number canonical keys and saved group IDs; they do not rule out semantic paraphrase leakage or E5 pretraining overlap.
+The frozen alignment sample has 8,000 clean training groups: 4,800 BanglaTLit, 1,600 Tatoeba and 1,600 Vashantor. Both forms must belong to the same train group; identities and duplicated canonical text are rejected. Source locks, expanded manifests and repeatable audits record provenance. The merged BanglaDual Wikipedia subset overlaps an existing upstream dump and uses generated Romanization, so it was not used as a new natural-data source.
 
-BM25 uses NFC, lowercasing, Unicode letters/marks/numbers, k1=1.5, b=0.75, binary query-term frequency, and no transliteration. It returns only positive-scoring documents, so zero-overlap queries do not receive arbitrary tied hits. This is deliberately a simple lexical floor.
+## Encoder protocol
 
-E5 uses its **original tokenizer and pretrained weights** at revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`. Inputs use `query: ` / `passage: ` prefixes, attention-mask mean pooling, L2 normalization and exact cosine ranking, following the [official model card](https://huggingface.co/intfloat/multilingual-e5-small). Maximum length is 512 tokens, batch size 16, four CPU threads. No text is sent to an inference API. Model artifacts are downloaded once, then evaluation runs offline. No custom tokenizer was substituted into E5.
+The base is `intfloat/multilingual-e5-small` revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`. All arms share its encoder body, texts, objectives and optimizer. Original/custom control IDs are remapped explicitly; masked mean pooling and L2 normalization use `query: ` / `passage: ` prefixes.
 
-Recall@10, nDCG@10 and MRR@10 treat the source counterpart as relevant and all unjudged candidates as zero. This is an incomplete-label proxy: another candidate may also be valid. Results use equal corpus-group weight and 2,000 seeded group-bootstrap draws, with percentile intervals. Intervals reflect query sampling only; they do not account for uncertain labels, model seeds or corpus construction. Eight mixed-script examples cannot support a robust subgroup claim.
+The custom vocabulary starts with mean original-subword embeddings and explicit byte/control fallbacks. This is heuristic initialization, not FOCUS or ZeTT. Every adapted arm receives frozen-teacher representation distillation followed by symmetric in-batch contrastive training. The original-tokenizer control receives the same stages.
 
-## Reproduce
+[Run protocol](run_protocol.json): seeds 17, 29 and 43, CPU/four threads, batch 16, training maximum 128 tokens. Equal data is 64 representation plus 128 contrastive steps. Equal compute is 120 wall seconds including loading, vocabulary initialization and both stages; a final optimizer-step overrun is reported. Saving is excluded. Same seeded data order is verified for equal-data arms. All checkpoint/report/model/data/code hashes are recorded and checked on resume.
 
-Run from the repository root. Preparation and evaluation refuse to overwrite existing pilot/review directories so annotations are not silently lost. Use a new directory for each run.
+[Criteria](criteria.json) were frozen before adapted domain scoring. A custom candidate must gain at least 0.03 absolute Banglish→Bengali nDCG over adapted original, have a positive paired interval, lose no more than 0.01 English-query mean nDCG, and stay within 1.25× latency/RSS in every seed under both budgets. Uncertainty jointly resamples training seeds and intent groups. The domain choice was frozen before reserved-test scoring; secondary sentence results cannot revise it.
+
+Evaluation uses 512 tokens, batch 16 and fresh sequential processes. Five warm batch-throughput passes and 60 batch-1 requests include tokenization, encoding and exact cached-document search. RSS includes model loading and evaluation. These small CPU measurements do not establish production latency or large-index performance.
+
+## Reproduction
+
+Run from the repository root with the pinned environment in `requirements.txt`, the source-lock data, native tokenizer models and pinned E5 snapshot present. All evaluation runs offline. Outputs refuse to overwrite reviewed versions.
+
+Restore the completed review against its checksum-bound original packet:
 
 ```sh
-python3.12 -m venv .venv/retrieval
-.venv/retrieval/bin/python -m pip install -r experiments/retrieval/requirements.txt
-.venv/retrieval/bin/python -c 'from huggingface_hub import snapshot_download; print(snapshot_download("intfloat/multilingual-e5-small", revision="614241f622f53c4eeff9890bdc4f31cfecc418b3", cache_dir="models/hf-cache", allow_patterns=["config.json", "model.safetensors", "tokenizer.json", "tokenizer_config.json", "special_tokens_map.json", "sentencepiece.bpe.model"]))'
-python3.12 experiments/retrieval/prepare.py --output data/processed/retrieval-pilot-repro
+.venv/retrieval/bin/python experiments/retrieval/annotation_archive.py restore \
+  --pilot data/processed/retrieval-pilot-v1 \
+  --archive experiments/retrieval/pilot-annotation-complete-v1 \
+  --output data/processed/retrieval-review-repro
+.venv/retrieval/bin/python experiments/retrieval/review.py import \
+  --pilot data/processed/retrieval-pilot-v1 \
+  --judgments data/processed/retrieval-review-repro/reviewer-1.jsonl \
+  --pair-review data/processed/retrieval-review-repro/pair-review.jsonl \
+  --output data/processed/retrieval-reviewed-repro
+.venv/retrieval/bin/python experiments/retrieval/domains.py \
+  --judgments experiments/retrieval/domain_intent_judgments_v1.jsonl \
+  --output data/processed/domain-benchmark-repro
+```
+
+`vashantor.py`, `audit_expansion.py` and `alignment.py` build/audit the expanded training inputs. `run_matrix.py` executes the fixed training protocol; the committed verified matrices and individual training reports document the completed runs. `run_evaluations.py` evaluates all checkpoints and validates resumed artifacts. `seed_analysis.py` freezes development selection; `confirm.py` checks reserved-test evidence against that exact selection. `sentence_analysis.py` reports raw/reviewed/strict correspondence, paired comparisons and unknown-candidate coverage.
+
+The final suite reports are `reports/encoder-evaluation-{development-reviewed-v2,test-reviewed-v2,sentence-v1}.json`; full model reports are under `reports/encoder-evaluation/`. Rankings, scores, corpora and checkpoint weights stay local in their hash-bound directories. To regenerate model results, use a new output directory with the same verified matrices and datasets.
+
+```sh
 HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
-  experiments/retrieval/evaluate.py \
-  --pilot data/processed/retrieval-pilot-repro \
-  --report reports/retrieval-pilot-repro.json \
-  --model models/hf-cache/models--intfloat--multilingual-e5-small/snapshots/614241f622f53c4eeff9890bdc4f31cfecc418b3
-python3.12 -m unittest discover -s experiments/retrieval -p 'test_*.py' -v
+  -m unittest discover -s experiments/retrieval -p 'test_*.py'
 ```
 
-Omit `--model` to run only the standard-library BM25 baseline. Research dependencies are separate from package runtime requirements. Dependency and model-file hashes are recorded in the report; the reviewed model revision and original tokenizer must stay fixed for a comparable rerun.
-
-## Human review: the next gate
-
-Begin with 30 randomly selected query groups to calibrate the rubric, then review all 300. Use two fluent Bangla/Banglish readers independently, followed by adjudication. The JSONL files are local annotation material; no reviewers have been contacted and no judgments have been completed.
-
-For `authoring.jsonl`, check whether the source pair conveys the same meaning and whether the text is appropriate for the study. Mark privacy concerns, unclear language, wrong transliteration, near-duplicate intent and unsuitable content for exclusion/review. Preserve source attribution and review the corpus licensing before redistribution. An exclusion must produce a new version and an explicit reason, not silently change the scored dataset.
-
-For `review-pool.jsonl`, grade **semantic correspondence of sentences**:
-
-- 2: same essential meaning, including negation, names and numbers.
-- 1: meaningfully related but incomplete or partly different.
-- 0: unrelated or contradicts the query.
-- Leave null and explain if uncertain/unreadable; null is never a negative label.
-
-Each reviewer should see only their own working copy. System identity, rank and the provisional source-positive flag are absent from the pool. Record independent grades before resolving disagreements. Do not assume retrieved non-counterparts are hard negatives; they may be alternate positives. Add candidate pooling from future systems and random candidates before claiming comprehensive relevance coverage. Use `review.py` to freeze a separately versioned reviewed qrels file; grades, rationale, reviewer identity/origin and pair/privacy decisions are required. Single-agent judgments are supported and explicitly distinguished from human or independent review.
-
-`natural_bengali_query`, `banglish_paraphrase` and `mixed_query` are blank authoring fields, not already validated evaluation queries. Any variants must remain in the same group. Do not copy a candidate sentence verbatim as a Bengali query and interpret self-matching as search accuracy.
-
-## Research milestones after this pilot
-
-1. **Reviewed sentence benchmark:** correct source pairs, judge alternatives, measure agreement, and expand naturally mixed-script coverage. Use this set for development only.
-2. **Real search benchmark:** choose a target domain, collect independent documents and natural information needs, and obtain passage-level judgments. Reserve source/intent groups before model selection. The current sentence counterpart need not answer the user's question and cannot stand in for this stage.
-3. **Matched encoder feasibility:** compare SentencePiece, original BPE and fused BPE using the same encoder architecture/data/objective; give each its own trained/adapted embedding table. Keep the unchanged E5 system as the practical reference. Define equal-data and equal-compute runs separately and record embedding parameter-count differences.
-4. **Ablations and uncertainty:** language weighting, fusion and alignment training one at a time; at least three training seeds for promising candidates; paired group-bootstrap differences, not just separate score intervals. Caching is an inference optimization and has no ID-based accuracy effect.
-5. **Final test:** freeze decisions before evaluating a fresh human-labeled source/intent holdout. Do not select models on this test or interpret today's pilot as a final result.
-
-Training full encoders is intentionally downstream of the annotation gate: the repository still lacks a reviewed relevance set, a selected target domain and a concrete encoder compute budget.
-
-## Review and paired comparison tools
-
-On 9 October the user authorized agent-created and agent-judged material for
-business, banking, technology, science, general conversation and QA. Such material
-is a controlled domain proxy; it is not naturally collected human search traffic.
-The original pilot remains unchanged while new reviewed versions are created.
-
-```sh
-python3.12 experiments/retrieval/review.py export \
-  --pilot data/processed/retrieval-pilot-v1 --output data/processed/retrieval-review-v1
-python3.12 experiments/retrieval/analyze.py \
-  --pilot data/processed/retrieval-pilot-v1 \
-  --ranking data/processed/retrieval-pilot-v1/ranking-multilingual-e5-small.jsonl \
-  --output data/processed/retrieval-failure-audit-v1
-# After completing all pooled judgments and pair/privacy decisions:
-python3.12 experiments/retrieval/review.py import \
-  --pilot data/processed/retrieval-pilot-v1 \
-  --judgments data/processed/retrieval-review-v1/reviewer-1.jsonl \
-  --pair-review data/processed/retrieval-review-v1/pair-review.jsonl \
-  --output data/processed/retrieval-reviewed-v1
-python3.12 experiments/retrieval/compare.py \
-  --dataset data/processed/retrieval-pilot-v1 \
-  --reference data/processed/retrieval-pilot-v1/ranking-bm25.jsonl \
-  --candidate data/processed/retrieval-pilot-v1/ranking-multilingual-e5-small.jsonl \
-  --report reports/retrieval-paired-reference-v1.json
-```
-
-Packets contain separate calibration/full files for two potential reviewers;
-no grades or human identities are pre-filled. Import preserves provenance and
-exclusion reasons, validates immutable source text, and removes privacy-excluded
-groups from all copied text artifacts. The failure audit reproduces 73 E5 misses
-(72 Banglish, one mixed-script) with causal categories left for judgment.
-Comparison rescans both rankings against the same qrels and bootstraps paired
-differences by intent group. Its interval covers query sampling, not seed variance.
-Proposed success thresholds are versioned in `criteria.json`; see the
-[five-item implementation ledger](../../reports/IMPROVEMENT_PLAN.md).
+Future work includes adapted-system candidate pooling, independent fluent review, larger natural-search corpora, edition-specific external retrieval data, better vocabulary-transfer methods and longer adaptation budgets. These are limits and follow-up experiments, not results already established by this run.

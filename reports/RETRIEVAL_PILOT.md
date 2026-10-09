@@ -1,6 +1,6 @@
-# First retrieval pilot — 21 September 2026
+# First retrieval pilot — historical results from 21 September 2026
 
-The repository now has a reproducible development pilot and two executed baselines. **These scores evaluate finding a Bengali sentence corresponding to a Banglish input, not natural search relevance or our tokenizer's embedding accuracy.**
+This report preserves the original development pilot and its two executed baselines. The [completed review](RETRIEVAL_REVIEW.md) and [encoder comparison](ENCODER_COMPARISON.md) supersede its pending-work status, while the original scores remain unchanged. **These scores evaluate finding a Bengali sentence corresponding to a Banglish input, not natural search relevance or our tokenizer's embedding accuracy.**
 
 | Baseline | Recall@10 | nDCG@10 | MRR@10 |
 |---|---:|---:|---:|
@@ -28,4 +28,4 @@ The runtime was Python 3.12.13 with torch 2.14.0, transformers 5.17.0 and tokeni
 
 Local `data/processed/retrieval-pilot-v1/review-pool.jsonl` contains 3,152 query–candidate rows pooled from both systems' top ten and the source counterpart, shuffled with model names/ranks hidden and all judgment fields blank. `authoring.jsonl` has 300 source-pair review and query-authoring forms. Data is not committed or redistributed.
 
-The next action is a 30-group reviewer calibration, followed by pair verification, alternative-positive judgments and natural query collection. The [protocol and reproduction instructions](../experiments/retrieval/README.md) define grading, limitations, and the matched-encoder experiments that follow. This pilot makes evaluation executable; it does not resolve annotation, real search coverage or scientific novelty.
+On 9 October, the user authorized agent judgments. All 3,152 pooled labels and 300 pair reviews are now complete; the reviewed cohort has 240 queries and 1,996 documents. All 73 historical misses have observations. Independent human review and natural query collection remain future validation. The [protocol and reproduction instructions](../experiments/retrieval/README.md) define grading, limitations, and the matched-encoder experiments that follow. This pilot makes evaluation executable; it does not resolve annotation, real search coverage or scientific novelty.

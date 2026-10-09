@@ -1,0 +1,111 @@
+{
+  "runs": [
+    {
+      "name": "unchanged",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/unchanged",
+      "report_sha256": "34ac755763d2d91d171992cb45357fdf4f68b284cca8c3326766df5448d2d4c7"
+    },
+    {
+      "name": "equal-data/original-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/original-seed17",
+      "report_sha256": "2f6fe846e764a345df7ae77febed5f66f45ba81ae2136ac29f06238df9d88964"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/unigram-32000-seed17",
+      "report_sha256": "59ae09270e2f57930bd0aa89dbc8bfbc51032b4b397a8b0cfadcff853ec51f0a"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/bpe-32000-seed17",
+      "report_sha256": "0204c505d95cc3be1fe6be759d43470cfa0da887875e1c58dd6d3b52f69de3ad"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/unigram-32000-seed29",
+      "report_sha256": "24e337354a61d88c3bec41ffe94f95c4a4d48dcd503dea3d1e1a125186ddfabd"
+    },
+    {
+      "name": "equal-data/original-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/original-seed29",
+      "report_sha256": "a4dc3f2c28edbca443b16ac31e619345e8d6429d44de2c038b80cc8fb5b2f4ca"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/bpe-32000-seed29",
+      "report_sha256": "de755d5c4b69666f14b2adf7cc9bfb76f7cc9ef032d98efb4400eec01474fcde"
+    },
+    {
+      "name": "equal-data/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/bpe-32000-seed43",
+      "report_sha256": "a626af8127a082f56942c0a369bfbd63e538b9f65ec3b7f958724e52944dcb5e"
+    },
+    {
+      "name": "equal-data/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/unigram-32000-seed43",
+      "report_sha256": "14c26cd80ab40638ed31849d1e2a803efb0065b6e0695eb9fd44734fae2ab56d"
+    },
+    {
+      "name": "equal-data/original-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-data/original-seed43",
+      "report_sha256": "85dd45d6bb2e17b7854d22cfd7707f4f7c369aa79ba72dab2ffcfd32143c49e0"
+    },
+    {
+      "name": "equal-compute/original-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/original-seed17",
+      "report_sha256": "5bc2db10f17b925cc825c37d3fc8534adfeded2c187b8cc9e87c3fa54735c0d8"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/unigram-32000-seed17",
+      "report_sha256": "ce5da89f770ea36374470e412f37f5a74e1f3d2d620525ddd7734dee66865443"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed17",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/bpe-32000-seed17",
+      "report_sha256": "85602f40e303e91502de66d21c1549914fc1cc46360167fe8d9bc33f090e32d7"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/unigram-32000-seed29",
+      "report_sha256": "19d9f8b2aa8852174880e678d6e0205781ad54bd17c45c10be11b338fa90da1e"
+    },
+    {
+      "name": "equal-compute/original-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/original-seed29",
+      "report_sha256": "2c689c275ff0e582ff70476daa7f845c4b2e6976345c36e685dfadf40abb1882"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed29",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/bpe-32000-seed29",
+      "report_sha256": "1fbe6bca6aa49c09a305a8d043db9899326e398719ebfaae7b4c9caad2f85749"
+    },
+    {
+      "name": "equal-compute/bpe-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/bpe-32000-seed43",
+      "report_sha256": "28fd1ad996eb8f7259b906f0d92f6f6b5cb271e49aa847a1325a9d033ce7ad00"
+    },
+    {
+      "name": "equal-compute/unigram-32000-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/unigram-32000-seed43",
+      "report_sha256": "0944acc3f9949eb2575b72e39df35c6b881d0b49aa4b71bad8f065c493340707"
+    },
+    {
+      "name": "equal-compute/original-seed43",
+      "directory": "data/processed/encoder-evaluation-sentence-v1/equal-compute/original-seed43",
+      "report_sha256": "c0a4d0ac0e0ce4d372353c951012f40e7e22a94b2490259aa54782214105253f"
+    }
+  ],
+  "datasets": {
+    "retrieval-pilot-v1": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+    "retrieval-reviewed-v1": "c226d0969ad7a23f6781b5a2cc676f081a1c93eaeb4f9192b74de4355abaf1d0"
+  },
+  "matrix_files": {
+    "reports/encoder-equal-data-matrix-verified-v1.json": "62918e838342f0c3b22b7c6d9e799009870ab1ea037a8da0c67b69dd05580802",
+    "reports/encoder-equal-compute-matrix-verified-v2.json": "1c4fcf05c4ca81559239cad487ed942316b6452263721fead6fbf2e703e97ac1"
+  },
+  "runtime_repeats": 5,
+  "same_inference_workload_verified": true,
+  "process_rule": "one fresh subprocess per model; sequential after training",
+  "frozen_selection_sha256": "d6e5795faeb83b1162f0686f62489a9f75ce4ba20f22db699a225cb789a65967"
+}

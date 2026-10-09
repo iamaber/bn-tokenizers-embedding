@@ -5,13 +5,13 @@ script is not evidence that human annotation, model training or final evaluation
 has finished. This ledger records those separately. Existing frozen test text is
 not used for development or model selection.
 
-| Improvement | Required outcome | Current evidence / remaining work |
+| Improvement | Completed outcome | Evidence / limits |
 |---|---|---|
-| 1. Reviewed labels and failure analysis | Independent reviewer calibration, adjudicated pairs and alternatives, immutable reviewed qrels, categorized E5 failures | Review packets/importer and 73-miss audit implemented and independently code-reviewed (4d5b71f). User authorized agent judgments; 30-group calibration and 132 full query pools (1,383 judgments) reviewed so far; finish remaining labels and 73 failure explanations. Text-free annotation archive supports reproducible restoration against frozen source hashes. |
-| 2. Natural search benchmark | Human-authored Bengali/Banglish/English queries against independent domain documents, source/intent holdout, relevance judgments | Agent-authored 60-intent/six-domain benchmark implemented, with 42 development / 18 reserved test intents and all nine language directions. All 3,600 intent pairs explicitly agent-reviewed and projected across nine directions; 19 encoders scored on development and reserved test after frozen selection. Complete controlled proxy, with authored-data limitations. |
-| 3. Controlled encoder comparison | Unchanged E5, adapted original tokenizer, adapted 32k Unigram and BPE; same texts/objective; compute and initialization costs measured | Pinned E5 input/vocabulary adapter, teacher representation adaptation, matched contrastive training and strict resumable matrix runner implemented and independently reviewed; Both full three-seed matrices executed: nine equal-data and nine equal-compute checkpoints; sample-order and artifact checks passed. All 19 encoders evaluated on reviewed domain development and test with repeated full-query inference costs; original sentence-pilot scoring remains pending annotation completion. |
-| 4. Natural-data expansion | Provenance-audited additions, held-out groups excluded from adaptation and contrastive data, rebuilt grouped splits | Audited original Vashantor v2; expanded grouped corpus has 586,181 train records, including 22,765 accepted natural Vashantor train forms. Repeatable audit excludes every original/project holdout and all 360 authored benchmark surfaces. Frozen shared alignment has 8,000 clean groups (4,800 BanglaTLit, 1,600 Tatoeba, 1,600 Vashantor), with English retention and hashed adaptation text. |
-| 5. Success criteria and uncertainty | Criteria frozen before model selection; paired group differences, three seeds for promising candidates, English regression and repeat-based end-to-end cost | Paired group-difference comparison and frozen criteria implemented and reviewed (c66a92d). Three-seed training completed in both budgets. Crossed paired seed/group analysis, fresh-process RSS, five-repeat batch throughput and batch-1 latency, and reserved-test gate implemented and independently reviewed; development selection frozen to unchanged E5; reserved-test confirmation executed without changing that decision. Custom arms fail quality/English gates and pass latency/memory gates in both budgets. See ENCODER_COMPARISON.md. |
+| 1. Reviewed labels and failure analysis | All 3,152 original pooled labels and 300 source-pair decisions completed; 240 retained queries / 1,996 documents; all 73 historical misses annotated | [Review report](RETRIEVAL_REVIEW.md), immutable text-free archive and reviewed manifest. User-authorized agent review; independent human review is not claimed. Outside-pool relevance stays unknown. |
+| 2. Domain search proxy | 60 intents across six requested domains in Bengali/Banglish/English; 42 development / 18 reserved test; all 3,600 intent pairs judged and projected over nine directions | [Benchmark](DOMAIN_BENCHMARK.md). All 19 encoders scored on both splits after frozen selection. Authored proxy replaces the initial human-data dependency at the user's request; no natural-traffic claim. |
+| 3. Controlled encoder comparison | Unchanged E5 and adapted original/32k Unigram/32k BPE; both budgets, three seeds; 18 actual checkpoints and 19 model evaluations on domain and sentence cohorts | [Comparison](ENCODER_COMPARISON.md), verified matrices and training/evaluation reports. Same data/objectives; heuristic initialization and small feasibility budgets. |
+| 4. Natural-data expansion | Provenance-audited original Vashantor additions; expanded train has 586,181 records, including 22,765 accepted new-source train forms; shared 8,000-group alignment | Source locks and repeatable audit preserve original/project/benchmark holdouts and remove reserve-only corpus rows. No training overlap found by canonical/group checks; semantic overlap cannot be ruled out. |
+| 5. Success criteria and uncertainty | Criteria frozen before adapted scoring; crossed paired seed/group intervals, English guardrail, repeated full-query latency and fresh-process RSS; reserved test bound to frozen decision | Both custom arms fail quality/English gates and pass latency/memory gates in both budgets. Choice remains unchanged E5; test and secondary sentence results cannot revise it. |
 
 ## Experimental decisions
 
@@ -19,7 +19,7 @@ not used for development or model selection.
   changing model size while measuring tokenizer effects.
 - Primary quality metric: group-weighted nDCG@10 for Banglish → Bengali retrieval.
   Secondary metrics: Recall@10 and MRR@10; report every query language/direction.
-- Proposed practical gain: at least +0.03 absolute nDCG@10 over the adapted
+- Declared practical gain: at least +0.03 absolute nDCG@10 over the adapted
   original-tokenizer control, with the paired 95% interval above zero.
 - English guardrail: at most 0.01 absolute nDCG@10 regression, assessed on reviewed
   English queries. Missing English evaluation means the guardrail is unverified.
@@ -29,8 +29,7 @@ not used for development or model selection.
   time budget on the same device. Steps and token counts alone are not equal compute.
 - Count initialization, representation adaptation and contrastive training toward
   total cost. Report embedding-table size separately from encoder body size.
-- Use three fixed training seeds (17, 29, 43) for candidates reaching the practical
-  gain on development data. Freeze choices before running the final reviewed test.
+- Use three fixed training seeds (17, 29, 43) for all declared arms; all were run. Freeze choices before running the final reviewed test.
 
 These are project decisions, not thresholds established by the literature. They
 were frozen before adapted development scoring and cannot be revised from reserved-test results.
@@ -49,3 +48,7 @@ Complete the annotation, evaluation and matched experiments with the authorized
 agent judgments; preserve rubric, source records, exclusions and disagreement
 support so independent reviewers can audit them later. Do not mark the five-item
 goal complete until the requested implemented and executed outcomes are verified.
+
+## Completion
+
+The user-authorized implemented and executed outcomes above are complete. Larger natural-search corpora, independent fluent review, adapted-system sentence pooling, longer training, vocabulary-size ablations and stronger transfer methods are follow-up research. They are not claimed as completed results. The original frozen project test was read only for integrity and never scored; the separately reserved domain test was scored only after the model decision froze.

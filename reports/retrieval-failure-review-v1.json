@@ -1,0 +1,38 @@
+{
+  "original_queries": 300,
+  "original_misses_at_10": 73,
+  "all_original_misses_reviewed": true,
+  "reviewer_origin": "agent",
+  "independent_human_review": false,
+  "diagnostic_category_counts": {
+    "intent_or_scope": 12,
+    "negation": 10,
+    "spelling_variation": 4,
+    "wrong_source_pair": 15,
+    "english_insertion": 8,
+    "short_context_dependent": 10,
+    "lexical_mapping": 5,
+    "alternate_positive": 6,
+    "wrong_provisional_target": 1,
+    "name_or_number": 2
+  },
+  "reviewed_disposition_counts": {
+    "retained_miss": 49,
+    "reviewed_positive_retrieved": 9,
+    "excluded_source_pair": 15
+  },
+  "causal_explanations_proven": false,
+  "scope": "Historical raw E5 top-10 misses against provisional qrels; exclusions and positives are taken from completed agent review. New reviewed-cohort miss counts are reported separately.",
+  "inputs": {
+    "data/processed/retrieval-failure-audit-v1/failure-review.jsonl": "39a46d7aee329fcef2972cbf63c9a9f05017ab83b41722f8b066600fea116913",
+    "experiments/retrieval/pilot-annotation-complete-v1/manifest.json": "d04602f2892ea114955652e2fb915e308000d752f13a288234b2d546d1bcc507",
+    "experiments/retrieval/pilot-annotation-complete-v1/judgments.jsonl": "00509d7877d0854f80b40792e5c0759e7363eeff8708c533531e56f7a19267e7",
+    "experiments/retrieval/pilot-annotation-complete-v1/pairs.jsonl": "4210e3a993cdd6121b5344479dea3474ad4f79b0dd802a192d0d004257c5b903"
+  },
+  "annotations_sha256": "f421d77cbb4707f8a1031b2b9a68478bcbb64a422e9f2433060748c275bc06b7",
+  "limits": [
+    "Single agent judgments",
+    "Pool covers original E5 and BM25 plus source pairs; outside-pool relevance remains unknown",
+    "Partial grade-1 positives are separate from exact grade-2 correspondence"
+  ]
+}

@@ -40,7 +40,7 @@ The body is the pinned E5-small snapshot `614241f622f53c4eeff9890bdc4f31cfecc418
 
 Custom embeddings start from means of original subword embeddings, with explicit control/byte fallbacks. This is heuristic initialization, not a reproduction of FOCUS or ZeTT. The feasibility budgets are small; these results do not rule out benefits from longer adaptation, better transfer or different objectives.
 
-The six-domain corpus is agent-authored and agent-judged at the user’s request. All 3,600 intent-passage pairs have explicit labels projected across the authored parallel forms. There is no independent human or language-review claim. The corpus is small and several metrics approach their ceiling. Original sentence-pilot review and encoder scoring remain work in progress.
+The six-domain corpus is agent-authored and agent-judged at the user’s request. All 3,600 intent-passage pairs have explicit labels projected across the authored parallel forms. There is no independent human or language-review claim. The corpus is small and several metrics approach their ceiling. Original sentence-pilot review and all 19 encoder scores are complete; see the [sentence report](RETRIEVAL_REVIEW.md) for its pool-coverage limits.
 
 ## Evidence
 

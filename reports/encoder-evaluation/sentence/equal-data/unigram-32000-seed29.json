@@ -1,0 +1,213 @@
+{
+  "model": "models/encoders/equal-data/unigram-32000-seed29",
+  "model_files": {
+    "config.json": "21cda71297505e736a32b578195b95d68793b2c98c0ab221cfcab723c07a08c2",
+    "encoder.json": "f835988c1dea2d0c8319afe17f4eee5cdc5572ce9d21b2ab66364bcc2d9a7fe3",
+    "go-tokenizer.json": "fc4a78ad3fcd3e3fdf432acf521e1591cf35e31196cd87d642280b2c48cd7d53",
+    "model.safetensors": "4c4e591c57d98ec470bef06f8e9ba441bb9f143b1d62220758ee8ba78171aa55",
+    "training-report.json": "d2f96e1d7cfe89de765f3289be677eb5ffb968845359794df2f19d85fa524db7"
+  },
+  "custom_tokenizer": true,
+  "maximum_tokens": 512,
+  "batch_size": 16,
+  "cpu_threads": 4,
+  "load_seconds": 0.1112859160057269,
+  "document_encoding": {
+    "untruncated_tokens": 58786,
+    "emitted_tokens": 58786,
+    "padded_token_positions": 158704,
+    "truncated_texts": 0,
+    "seconds": 8.088888041995233
+  },
+  "query_encoding": {
+    "untruncated_tokens": 8331,
+    "emitted_tokens": 8331,
+    "padded_token_positions": 21548,
+    "truncated_texts": 0,
+    "seconds": 1.0968477909918875
+  },
+  "runtime": {
+    "repeat_seconds": [
+      1.0629488749837037,
+      1.067676875012694,
+      1.0680603330256417,
+      1.0644346659828443,
+      1.0676626250206027
+    ],
+    "median_seconds": 1.0676626250206027,
+    "median_seconds_per_query": 0.0035588754167353424,
+    "queries_per_pass": 300,
+    "cached_documents": 2000,
+    "scope": "warm batch throughput: tokenize + encode + exact cached-document search; excludes loading/indexing",
+    "single_query": {
+      "repeat_seconds": [
+        0.005229417001828551,
+        0.0062249579932540655,
+        0.0047659169940743595,
+        0.004326791007770225,
+        0.00467600001138635,
+        0.0056682919966988266,
+        0.005936874978942797,
+        0.006052375014405698,
+        0.004908292001346126,
+        0.006143083999631926,
+        0.0048234589921776205,
+        0.004274000006262213,
+        0.004304707981646061,
+        0.00578612502431497,
+        0.006354500015731901,
+        0.006017707986757159,
+        0.004887291026534513,
+        0.006578832981176674,
+        0.0045697090099565685,
+        0.0044191249762661755,
+        0.004254624975146726,
+        0.005787625006632879,
+        0.0060646249912679195,
+        0.005943166994256899,
+        0.005071874998975545,
+        0.006128416018327698,
+        0.004544041003100574,
+        0.004401916987262666,
+        0.004336291982326657,
+        0.005640292016323656,
+        0.005940542003372684,
+        0.006302708003204316,
+        0.004721959005109966,
+        0.00616404099855572,
+        0.004840999987209216,
+        0.004379749996587634,
+        0.004254625004250556,
+        0.005830334004713222,
+        0.006364707980537787,
+        0.005800416023703292
+      ],
+      "median_seconds": 0.005434854509076104,
+      "requests": 40,
+      "unique_queries": 8,
+      "workload_sha256": "8f91a2890dab013f2ee0ac99e93cd3385e78fd17cf11bbb845143dfce79920f9",
+      "scope": "warm batch-1 tokenize + encode + exact cached-document search"
+    },
+    "query_workload_sha256": "8b4c67159bd0595a3edcc49a0c34ae82b7a1bb76c7100b6375f578ba1765ce3c",
+    "document_workload_sha256": "3c6edfa59c2ed6c78b374513e66d41c9a5765fbf61997856cd592c92b26f8d9a"
+  },
+  "peak_process_rss_bytes": 721174528,
+  "memory_scope": "fresh-process peak including model load, encoding and ranking; not training memory",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "packages": {
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2"
+  },
+  "implementation_sha256": {
+    "evaluate_encoder.py": "a3e4603efdca9584201e63e9c9b4a408eb2324819e9df7bc820cb3106c5d8f71",
+    "encoder.py": "3d24c23c4e7ae4777dbaa32e4c7950e0fe4a1f3676af0271c2bf84bb02972f46",
+    "compare.py": "c30c8ed5cc1baf1081d0a2a07ff53013717f6f98c69887ab020dda1bcd18eb2c",
+    "metrics.py": "87a72dedb057da3a7a2fbdfcd8bec21893268284ad595a9d5fb272e808be7e3b"
+  },
+  "results": {
+    "retrieval-pilot-v1": {
+      "dataset": "data/processed/sentence-evaluation-inputs-v1/retrieval-pilot-v1",
+      "dataset_manifest_sha256": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+      "label_status": "unreviewed source counterparts",
+      "all": {
+        "queries": 300,
+        "groups": 300,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9433333333333334,
+          "ndcg_at_10": 0.873223755199386,
+          "mrr_at_10": 0.8504761904761905
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 292,
+          "groups": 292,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9417808219178082,
+            "ndcg_at_10": 0.8697504334240268,
+            "mrr_at_10": 0.8463796477495108
+          }
+        },
+        "code-mixed": {
+          "queries": 8,
+          "groups": 8,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "domains": {
+        "unspecified": {
+          "queries": 300,
+          "groups": 300,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9433333333333334,
+            "ndcg_at_10": 0.873223755199386,
+            "mrr_at_10": 0.8504761904761905
+          }
+        }
+      },
+      "ranking_sha256": "babc56896ddb0a4bdaa4de7a792f1e006c87b265104eb5c5d89d1b5c67fd7bbc",
+      "scores_sha256": "b53fc880eb1ee05194717415105deefd6641e5a786be22a1ee2ec48c44878984"
+    },
+    "retrieval-reviewed-v1": {
+      "dataset": "data/processed/sentence-evaluation-inputs-v1/retrieval-reviewed-v1",
+      "dataset_manifest_sha256": "c226d0969ad7a23f6781b5a2cc676f081a1c93eaeb4f9192b74de4355abaf1d0",
+      "label_status": "reviewed development sentence correspondence; see reviewer provenance",
+      "all": {
+        "queries": 240,
+        "groups": 240,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.8325347222222222,
+          "ndcg_at_10": 0.8424813870809109,
+          "mrr_at_10": 0.8778521825396826
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 236,
+          "groups": 236,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8320503766478343,
+            "ndcg_at_10": 0.842276873476561,
+            "mrr_at_10": 0.8757818805488297
+          }
+        },
+        "code-mixed": {
+          "queries": 4,
+          "groups": 4,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8611111111111112,
+            "ndcg_at_10": 0.8545476897375511,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "domains": {
+        "unspecified": {
+          "queries": 240,
+          "groups": 240,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8325347222222222,
+            "ndcg_at_10": 0.8424813870809109,
+            "mrr_at_10": 0.8778521825396826
+          }
+        }
+      },
+      "ranking_sha256": "35147bd47b1a55468a0c730a23eea85a8ef9b403dcabfe8dd67b504633fffd9a",
+      "scores_sha256": "c612e9ceab00c9be80aeaf631d0ac83c3ba31d914e0aecc2ec954aff2f9ac08d"
+    }
+  }
+}

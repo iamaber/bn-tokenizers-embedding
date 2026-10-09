@@ -1,0 +1,28 @@
+{
+  "completed_improvements": 5,
+  "agent_provenance_verified": true,
+  "original_pool_judgments": 3152,
+  "original_pair_decisions": 300,
+  "retained_sentence_queries": 240,
+  "excluded_sentence_queries": 60,
+  "historical_misses_reviewed": 73,
+  "domain_intents": 60,
+  "development_intents": 42,
+  "reserved_test_intents": 18,
+  "explicit_domain_intent_labels": 3600,
+  "adapted_checkpoints_hash_verified": 18,
+  "full_model_evaluation_reports_hash_verified": 57,
+  "selection": "unchanged",
+  "frozen_selection_sha256": "d6e5795faeb83b1162f0686f62489a9f75ce4ba20f22db699a225cb789a65967",
+  "latest_retrieval_checks": {
+    "tests": 36,
+    "result": "passed"
+  },
+  "natural_expansion_audit": "reports/vashantor-expanded-repro-audit-v2.json",
+  "limits": [
+    "Single-agent authored/judged domain proxy",
+    "Incomplete adapted-system sentence-pool coverage",
+    "Small feasibility training budgets and small domain holdout",
+    "No production or independent-human validation claim"
+  ]
+}

@@ -89,5 +89,5 @@ HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
 
 Run the other development directories for the remaining directions. The immutable
 selection and test-suite hashes allow auditing the ordering of the executed
-experiments. Sentence-pilot review and scoring remain separate ongoing work;
+experiments. Sentence-pilot review and scoring are complete and reported [separately](RETRIEVAL_REVIEW.md);
 they cannot revise the domain choice after test scoring.

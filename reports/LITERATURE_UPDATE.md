@@ -4,7 +4,7 @@ This is an automated, multi-source literature review of the central question in 
 
 > At comparable training cost, does a dedicated joint Bangla–English–Banglish tokenizer improve embedding retrieval beyond what better alignment/contrastive data alone gives an existing multilingual encoder?
 
-**None of the sources reviewed answers this question.** This targeted search does not establish that no published study exists. None of the verified sources measures sentence-embedding or retrieval quality as a function of the tokenizer for Bengali or Banglish. Every link from tokenizer to retrieval below is inferred from LLM perplexity, classification, intrinsic metrics, or bitext mining on other languages. The [retrieval pilot](RETRIEVAL_PILOT.md) remains the project's only retrieval evidence, and it does not test our tokenizer. See the [source audit](LITERATURE_SOURCE_CHECK.md) and [implementation plan](IMPROVEMENT_PLAN.md).
+**None of the sources reviewed answers this question.** This targeted search does not establish that no published study exists. None of the verified sources measures sentence-embedding or retrieval quality as a function of the tokenizer for Bengali or Banglish. Every link from tokenizer to retrieval below is inferred from LLM perplexity, classification, intrinsic metrics, or bitext mining on other languages. The project now has a [controlled encoder comparison](ENCODER_COMPARISON.md) that tests both 32k tokenizers, plus a [reviewed sentence pilot](RETRIEVAL_REVIEW.md). Neither custom tokenizer passed the declared domain quality and English-retention criteria; unchanged E5 remains selected. This is project evidence from small agent-reviewed proxies, not a result established by the cited literature. See the [source audit](LITERATURE_SOURCE_CHECK.md) and [implementation plan](IMPROVEMENT_PLAN.md).
 
 ## Method
 
@@ -82,3 +82,9 @@ The original review incorrectly rejected a valid paper-specific MMTEB result: MT
 - **Open questions:**
   - Does a tokenizer advantage appear only when training from scratch?
   - Are BanglaDual plus BanglaTLit and FIRE CMIR enough for statistically reliable evaluation, or do we need a held-out, human-written Banglish cross-script test set?
+
+## Executed project follow-up — 9 October 2026
+
+At the user’s request, the implementation agent authored and judged business, banking, technology, science, conversation and QA material. This replaces the initial human-review dependency for the requested implementation; no independent human review is claimed. All five implementation outcomes are recorded in the [ledger](IMPROVEMENT_PLAN.md).
+
+The 60-intent domain proxy has all candidate intent pairs judged and 42/18 development/test holdouts. Both training budgets and all three seeds were executed, with inference costs and paired intervals. Custom vocabulary initialization used mean original-subword embeddings followed by shared teacher distillation, so this is a heuristic feasibility experiment rather than a FOCUS/ZeTT reproduction. Natural expansion used audited original Vashantor training forms while preserving all holdouts. The completed original sentence review and 73-case audit are documented separately. Future independent review and natural-search validation remain necessary before broad generalization claims.

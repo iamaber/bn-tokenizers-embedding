@@ -1,0 +1,285 @@
+{
+  "task": "paired-sentence retrieval; development proxy, not human search relevance",
+  "seed": 20260921,
+  "queries": 240,
+  "documents": 1996,
+  "buckets": {
+    "banglish": 236,
+    "code-mixed": 4
+  },
+  "independent_groups": 240,
+  "training_canonical_or_group_overlap": 0,
+  "frozen_test_opened": false,
+  "human_review_completed": false,
+  "unjudged_documents": "unknown; pooled judged set is incomplete outside its coverage",
+  "inputs": {
+    "data/processed/train.jsonl": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+    "data/processed/validation.jsonl": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+    "data/raw/banglatlit/train.csv": "202fa1848d35956477204b42608eafafc50d027ea4e46df42424f1418c588cce",
+    "data/raw/banglatlit/validation.csv": "8b7f9711b7516a09008475f2f4b2670c38345710accab32d100458b224c9fb8c"
+  },
+  "files": {
+    "documents.jsonl": "cc15908c467c8b3e84e8007ac7341fdf26f4420029467eb2235ea394c5a215a2",
+    "queries.jsonl": "827b639969d6b219d07ce9ac3846909087823625b789de90a5ec393a26d79191",
+    "qrels.jsonl": "fa309e159b93f9e9974b0c02f10289c0b3bf442d9dda69975b2a543bb6e35a99",
+    "judgments.jsonl": "279dc04b66770c50f4a985ab81683989d89f892d6d1e26614eed77ef60ed22b4",
+    "pair-review.jsonl": "3b926ef58d80eb3ffcd4dbb86df15fd66ee81f8351e277847f99f80edbb5033d"
+  },
+  "label_status": "reviewed development sentence correspondence; see reviewer provenance",
+  "independent_review_verified": false,
+  "reviewer_ids": [
+    "implementation-agent"
+  ],
+  "judgment_origins": {
+    "agent": 3152
+  },
+  "exclusions": [
+    {
+      "query_id": "banglatlit:04297fe3-343d-4a02-b911-93cc4eff67e3",
+      "reason": "The new-YouTuber self-description is rendered as new YouTube, losing the creator-role claim; other channel facts remain related."
+    },
+    {
+      "query_id": "banglatlit:0e9b72d8-7a4b-4b91-b9b9-b7050354488e",
+      "reason": "Author is rendered as kothar (a different word), changing the requested publishing role."
+    },
+    {
+      "query_id": "banglatlit:0fd2dd63-2646-4a22-b7bc-3ca1847800bc",
+      "reason": "The requested object examlal is ambiguous in Banglish and becomes exam lal in Bengali; a stable essential sentence meaning cannot be established."
+    },
+    {
+      "query_id": "banglatlit:14ab86f1-0c5d-489b-b904-d59073413a47",
+      "reason": "Query exposes a personal searchable Facebook handle; the paired source anonymizes it, changing contact identity. Exclude for privacy and incorrect correspondence."
+    },
+    {
+      "query_id": "banglatlit:171cf39e-2212-4ead-829b-88ec74c66473",
+      "reason": "Source anonymizes the named author Yeasin; exact sentence correspondence is uncertain."
+    },
+    {
+      "query_id": "banglatlit:1a176d6d-aabd-4183-875a-1a21dfb4f95d",
+      "reason": "The specifically named addressee Mizan is anonymized to User; none of the generic alternatives preserves that identity."
+    },
+    {
+      "query_id": "banglatlit:1c1f58e7-3e8c-4a2f-a7a4-96e72a67f6d9",
+      "reason": "The UI action click to post is rendered kick to post, changing the publishing instruction."
+    },
+    {
+      "query_id": "banglatlit:1ef04331-94be-4890-a401-3b90a9afeea2",
+      "reason": "Memu emulator is rendered as memo, leaving the named software ambiguous."
+    },
+    {
+      "query_id": "banglatlit:248b3b5c-6eeb-42e2-b41d-e7f7e8b154fa",
+      "reason": "BB Codes is rendered as BB korche rather than codes, losing the essential navigation target."
+    },
+    {
+      "query_id": "banglatlit:24b5cd88-ca33-4fd0-99f5-d73a22ba3dc8",
+      "reason": "Ba Chokha phrase cannot be interpreted confidently; exclude rather than invent its intent."
+    },
+    {
+      "query_id": "banglatlit:26699b55-0dc0-45b3-aa5b-8fc8adbfd734",
+      "reason": "The technical SEO action is split into ordinary Bengali words se o; the requested optimization action is no longer clear."
+    },
+    {
+      "query_id": "banglatlit:2920341f-3c4a-49a2-9939-c251ee1a295f",
+      "reason": "Named gratitude recipient Sajid Blue is anonymized to User Blue, losing attribution."
+    },
+    {
+      "query_id": "banglatlit:30060957-c33e-4989-9d05-095aaec54aed",
+      "reason": "Named contact Israfil Hossain is replaced with Omk, changing the requested person's identity."
+    },
+    {
+      "query_id": "banglatlit:30654041-406b-46b9-bc6d-54688f9c3f9c",
+      "reason": "The SMS-number qualifier kob is unintelligible in both surfaces; only the data-required question can be reliably judged."
+    },
+    {
+      "query_id": "banglatlit:3fb9420e-c17a-4787-b54c-3ffa2dd47ba7",
+      "reason": "The named addressee Rana is replaced with User, changing who is asked to inspect the three posts."
+    },
+    {
+      "query_id": "banglatlit:4269cda0-d63a-42aa-bb99-0bdf50fb2b3a",
+      "reason": "Time unit after 3 is absent from both forms; essential timing cannot be interpreted reliably."
+    },
+    {
+      "query_id": "banglatlit:4473dd4e-49bd-4f7b-a7cc-cc652d75bc8f",
+      "reason": "Query contains a direct personal Facebook profile URL which the paired Bengali sentence omits; remove the group for privacy and incorrect correspondence."
+    },
+    {
+      "query_id": "banglatlit:469430b3-0031-4b7e-b93a-5bdc9fd95fde",
+      "reason": "The bad-luck qualification becomes lakh kharap, altering the explanation for the numeric chance claim."
+    },
+    {
+      "query_id": "banglatlit:4b4ab40d-bedd-4fba-8345-93119db133ec",
+      "reason": "Technical code is mistranscribed as court, changing the essential referent."
+    },
+    {
+      "query_id": "banglatlit:4ccd6541-005c-456d-afaf-73e437bae5f2",
+      "reason": "The named addressee Sakib is replaced with User, changing the specific request recipient."
+    },
+    {
+      "query_id": "banglatlit:4d480fd6-20f9-4498-b3a2-6bf404b63030",
+      "reason": "The core purpose fun is changed to ban/baan in the paired source; the sentence intent is not preserved."
+    },
+    {
+      "query_id": "banglatlit:4e82f5f8-fa5d-4bdb-a18a-d1730941693b",
+      "reason": "The query explicitly refers to AI; the paired source drops that referent and only says this does not work."
+    },
+    {
+      "query_id": "banglatlit:533e8953-165b-4ae2-8e10-c145e4e2df00",
+      "reason": "Both named gratitude recipients Saiful and Sajadul Islam are replaced with User; attribution is lost."
+    },
+    {
+      "query_id": "banglatlit:54f32438-5255-4cb3-9dbb-552310b07d5d",
+      "reason": "YouTube Premium is rendered as Premier, changing the named product."
+    },
+    {
+      "query_id": "banglatlit:55692282-e5ee-4885-8bc3-5ffe97203df1",
+      "reason": "Earn is rendered as aan, leaving the essential earnings question ambiguous."
+    },
+    {
+      "query_id": "banglatlit:593b3c38-2dd7-4da5-91d5-85aa3e26e4a0",
+      "reason": "The core action babhor (use) is rendered as bhabor, an unintelligible action word, so PHP-site usage meaning is not reliably preserved."
+    },
+    {
+      "query_id": "banglatlit:5b1907f0-7582-4023-b059-258b477cc7ad",
+      "reason": "Named platform Wapkiz is rendered as Opkij in the paired source; the requested live-code platform is changed."
+    },
+    {
+      "query_id": "banglatlit:5f22b28d-71c8-4a8c-9417-7df93274d638",
+      "reason": "The alternative marketplace Aco market.com is rendered as SEO market.com, changing the recommendation target."
+    },
+    {
+      "query_id": "banglatlit:5f85d716-9a5d-4943-abd6-b91743be859c",
+      "reason": "The query's app referent is omitted and both income-intention clauses are incomplete; essential correspondence cannot be established reliably."
+    },
+    {
+      "query_id": "banglatlit:65acaa52-e3ef-4a11-9c05-80daeaaef602",
+      "reason": "Contains an unredacted eleven-digit personal contact/account identifier; paired wording also changes follow-back to flow-black."
+    },
+    {
+      "query_id": "banglatlit:6c400569-f03d-4d64-b4b4-e5ce11e8b8ad",
+      "reason": "The choose-font feature is rendered choose-front, changing the named setting."
+    },
+    {
+      "query_id": "banglatlit:6ca7c77d-48e5-484f-a87e-71915a5bc188",
+      "reason": "The phrase kolotibablo bhot and its paired transliteration are unintelligible; no stable essential meaning can be judged."
+    },
+    {
+      "query_id": "banglatlit:6dbc0c3c-cbc7-4d61-9570-19b4f180d446",
+      "reason": "Gaan (song) becomes gyan (knowledge), and nasheed becomes nasik; the central audio-content contrast is changed."
+    },
+    {
+      "query_id": "banglatlit:6e1a3aaf-c096-4fc9-b59c-ef66f17a737e",
+      "reason": "The requested IBAM field is inconsistently changed to IBM and IDM in the paired source, altering the essential code identifier."
+    },
+    {
+      "query_id": "banglatlit:73a62fd5-40af-41eb-8eac-75450a2075de",
+      "reason": "Modifier/font name Shodho is unclear and source renders shobdo; exact referent cannot be verified."
+    },
+    {
+      "query_id": "banglatlit:7c9a022a-8451-40fa-837f-31ca80515a61",
+      "reason": "Source changes named addressee Monir to Is Ar."
+    },
+    {
+      "query_id": "banglatlit:8304ccad-170b-4c5d-b5ad-dc080df86fcd",
+      "reason": "Named blamed actor Sohag was replaced with User, changing the sentence's essential attribution."
+    },
+    {
+      "query_id": "banglatlit:837693c8-7d91-4dcb-82a1-83dd9bb0ffd9",
+      "reason": "The proposed trainer/tuner competition is rendered with an unintelligible role word, so its essential competition type is not preserved."
+    },
+    {
+      "query_id": "banglatlit:849a5775-bed9-4403-8a5b-d50f607c90a6",
+      "reason": "The core speed-quality claim loses speed and becomes an isolated letter P in the paired sentence."
+    },
+    {
+      "query_id": "banglatlit:8cbd8038-77c7-46f1-9ded-f9b940477e64",
+      "reason": "Source changes temon (much/such) to kemon (how/what kind), making the claim unclear."
+    },
+    {
+      "query_id": "banglatlit:9387365f-f6b0-4b2d-88f5-7d0a61e553b1",
+      "reason": "Where are the ads is changed to where am I; essential object and question intent differ."
+    },
+    {
+      "query_id": "banglatlit:98693316-86a5-492d-b83d-6d517ccaa0ab",
+      "reason": "Source drops domain from the requested WordPress setup steps, so the multi-part request is incomplete."
+    },
+    {
+      "query_id": "banglatlit:9a68cba9-fbce-457d-8485-1ad071ce2a6b",
+      "reason": "The named addressee Rana is anonymized to User, changing the request recipient."
+    },
+    {
+      "query_id": "banglatlit:9be7126a-fc95-4c48-972d-d3227056cba6",
+      "reason": "The named addressee Nasir is replaced with User, losing the essential recipient attribution."
+    },
+    {
+      "query_id": "banglatlit:9cd71a59-29ed-4623-b564-50a9bf748734",
+      "reason": "Report action is rendered as pot, dropping the essential moderation instruction."
+    },
+    {
+      "query_id": "banglatlit:a0993ac4-ca05-46a9-b77a-ed7dde268c48",
+      "reason": "Gig creation (gig) is mistranscribed as ki; the category-selection context is lost."
+    },
+    {
+      "query_id": "banglatlit:a3cf105a-1a80-4658-a2e9-c4e20e3d1066",
+      "reason": "The final named-service praise changes CircleFTP to Cycle TP, making the entity attribution inconsistent."
+    },
+    {
+      "query_id": "banglatlit:a61f162f-045a-4705-8445-916d46cffcf8",
+      "reason": "The query exposes a personal account handle and the paired sentence anonymizes it; exclude the group for privacy and changed recipient identity."
+    },
+    {
+      "query_id": "banglatlit:a7f06549-2306-45da-a17a-ad7bc2c37769",
+      "reason": "The named author Sumon Saha is anonymized to User, losing source attribution."
+    },
+    {
+      "query_id": "banglatlit:ae25caf3-a262-4c9a-9e66-7bc653847490",
+      "reason": "Rana is anonymized to User and approve is changed to upload, altering both recipient and publishing outcome."
+    },
+    {
+      "query_id": "banglatlit:b6ae6c44-45a4-4686-af2a-18d8bb0c366d",
+      "reason": "Source mistranscribes check as je; the support-team action is missing."
+    },
+    {
+      "query_id": "banglatlit:b8145136-2aac-41d2-b93a-1c112b566ff9",
+      "reason": "The first named operator GP is rendered as GB/JB in the source, changing the price claim's operator attribution."
+    },
+    {
+      "query_id": "banglatlit:c7fcb516-b9d1-4658-9a13-958aaca64d65",
+      "reason": "The verification action check is rendered as chokh (eye); the source does not faithfully preserve that action."
+    },
+    {
+      "query_id": "banglatlit:ccd1d159-3254-42c9-8330-e62d63f9a8b3",
+      "reason": "The requested author role is changed to offer in the paired source; the opening addressee is also dropped."
+    },
+    {
+      "query_id": "banglatlit:d159ba53-78d2-4920-b8a0-25415632a711",
+      "reason": "The query says I searched a lot (onek khujci); the source says I am very happy (onek khushi), changing the claim."
+    },
+    {
+      "query_id": "banglatlit:d71de3eb-8a9f-47cb-8925-e1e1d8fc59ce",
+      "reason": "The named addressee From Fahad is replaced with From User, losing essential recipient attribution."
+    },
+    {
+      "query_id": "banglatlit:d8deac0d-620f-4b1e-b809-3a46f2a410cb",
+      "reason": "The named URL romclaims.com is misspelled in the paired Bengali surface, so the requested destination is changed."
+    },
+    {
+      "query_id": "banglatlit:dbb8a6d0-5fc7-4645-935c-22741dc96f9a",
+      "reason": "The release-state term beta is rendered as byata (a different Bangla word), leaving the essential beta/original contrast ambiguous."
+    },
+    {
+      "query_id": "banglatlit:f05eb9d1-fea5-4952-83a5-3641f092e0c7",
+      "reason": "YouTube Vanced is rendered as YouTube Danced in the paired source, changing a named product."
+    },
+    {
+      "query_id": "banglatlit:ff4202a8-d4a4-4e72-ad3c-13f0d59d52df",
+      "reason": "The request for an M3U link is rendered as an M3U league, changing the requested object."
+    }
+  ],
+  "review_inputs": {
+    "data/processed/retrieval-pilot-v1/manifest.json": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+    "data/processed/retrieval-pilot-v1/review-pool.jsonl": "b7cd6fab4d1595c62b4cfb94d25105da97bb23408959b2a611c4a8142a33520f",
+    "data/processed/retrieval-pilot-v1/authoring.jsonl": "baf863b15f8d58657633642ddb7a0e7f7a36ababe222f10175b312632584faaf",
+    "data/processed/retrieval-agent-restored-v1/reviewer-1.jsonl": "75d74dcf86b9c816c312d6921b95eac82b8960ba9ce900f37b8e685a01fe431c",
+    "data/processed/retrieval-agent-restored-v1/pair-review.jsonl": "9568eb538e6983c2d0a04be62510824f64520864f97a702bb1dd04958dfd01ff"
+  }
+}

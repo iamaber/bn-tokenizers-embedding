@@ -1,0 +1,15 @@
+{
+  "sources": {
+    "manifest.json": "1ab91afa625bc816f6ca4482b18e04527e67fa632dd30bbc6be645fb546adfd9",
+    "review-pool.jsonl": "b7cd6fab4d1595c62b4cfb94d25105da97bb23408959b2a611c4a8142a33520f",
+    "authoring.jsonl": "baf863b15f8d58657633642ddb7a0e7f7a36ababe222f10175b312632584faaf"
+  },
+  "files": {
+    "judgments.jsonl": "00509d7877d0854f80b40792e5c0759e7363eeff8708c533531e56f7a19267e7",
+    "pairs.jsonl": "4210e3a993cdd6121b5344479dea3474ad4f79b0dd802a192d0d004257c5b903"
+  },
+  "judgments": 3152,
+  "pairs": 300,
+  "annotation_coverage_complete": true,
+  "scope": "text-free annotation archive; final import still validates labels and exclusions"
+}

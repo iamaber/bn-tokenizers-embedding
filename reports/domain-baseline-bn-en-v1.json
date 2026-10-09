@@ -1,0 +1,223 @@
+{
+  "status": "agent-authored and agent-reviewed reference-answer labels",
+  "manifest": {
+    "task": "agent-authored domain QA retrieval proxy",
+    "split": "development",
+    "direction": "bn-en",
+    "queries": 42,
+    "documents": 42,
+    "independent_groups": 42,
+    "seed": 17,
+    "domains": {
+      "business": 7,
+      "banking": 7,
+      "technology": 7,
+      "science": 7,
+      "conversation": 7,
+      "qa": 7
+    },
+    "label_status": "agent-authored and agent-reviewed reference-answer labels",
+    "human_review_completed": false,
+    "independent_review_verified": false,
+    "training_canonical_overlap": 0,
+    "frozen_project_test_opened": false,
+    "unjudged_documents": "assumed unrelated by authored intent; pool new retrieved alternatives",
+    "limitations": [
+      "small controlled corpus",
+      "single-agent author and reference judge",
+      "no naturally collected search traffic",
+      "canonical overlap audit only"
+    ],
+    "inputs": {
+      "experiments/retrieval/domain_material.jsonl": "d6714f4695de24d6f1d680dada9b1ff9f7a7a7d9e82038c7dd4f4ae214753ed1",
+      "data/processed/train.jsonl": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39"
+    },
+    "files": {
+      "documents.jsonl": "333a2739771c0eacd6109e9bfcd4cda8979e8e7e5edd9ab5ff357c9a3b7ad794",
+      "queries.jsonl": "5c039dee59edfdcb2e8b70be1d83cef16c290557ba793191e8784c6a662b79a0",
+      "qrels.jsonl": "106b65d0d6c7bc0a61290eeb6cc38ba73a3d131dc37ec135d6d8fdeadc0feb09"
+    }
+  },
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "review_pairs": 420,
+  "implementations": {
+    "metrics.py": "87a72dedb057da3a7a2fbdfcd8bec21893268284ad595a9d5fb272e808be7e3b",
+    "test_retrieval.py": "59d79ebe26c33913b3f86ebd73792dd5a2798c1e253dedc36d2f88d2df7459c6",
+    "domains.py": "b902535836232eaebb6232a8b548a3698ce1ebb330ff6ec170135a61fc304b26",
+    "review.py": "9f2c3bfb95b9517aab4500ce21267bb264ffcdb2334947907d56a82cf85cf017",
+    "test_domains.py": "e0829372a82a6898bdc7b22dc7e10b984efd26195e010850d74dc9ecbd8d7271",
+    "evaluate.py": "88d14da7bdd026317085d03fd0c3e47fddfc4184304278eb596f5f6718969c14",
+    "compare.py": "c30c8ed5cc1baf1081d0a2a07ff53013717f6f98c69887ab020dda1bcd18eb2c",
+    "prepare.py": "26b6743759fdc23bfe09aa6158f398496a377352f4dcb4e61c018d3020f5d068",
+    "analyze.py": "30df81c0da5d6f597e7aa619a8db2b596db687a8837a2ab0c228f6f22a11cf72",
+    "test_review.py": "ef1ec4d6e038a0bb321f45de88b74efcbad87871e1fdb82e4840559f84277ef0"
+  },
+  "results": {
+    "bm25": {
+      "all": {
+        "queries": 42,
+        "groups": 42,
+        "weighting": "equal group weight",
+        "bootstrap_repeats": 2000,
+        "metrics": {
+          "recall_at_10": {
+            "mean": 0.0,
+            "bootstrap_95_percentile": [
+              0.0,
+              0.0
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.0,
+            "bootstrap_95_percentile": [
+              0.0,
+              0.0
+            ]
+          },
+          "mrr_at_10": {
+            "mean": 0.0,
+            "bootstrap_95_percentile": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 42,
+          "groups": 42,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.0,
+              "bootstrap_95_percentile": [
+                0.0,
+                0.0
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "index_seconds": 0.0003941670001950115,
+        "query_and_search_seconds": 0.0002630829985719174,
+        "no_matching_term_queries": 42,
+        "k1": 1.5,
+        "b": 0.75,
+        "query_term_frequency": "binary",
+        "normalization": "NFC, lowercase, Unicode letters/marks/numbers",
+        "zero_score_documents": "not returned"
+      }
+    },
+    "multilingual-e5-small": {
+      "all": {
+        "queries": 42,
+        "groups": 42,
+        "weighting": "equal group weight",
+        "bootstrap_repeats": 2000,
+        "metrics": {
+          "recall_at_10": {
+            "mean": 1.0,
+            "bootstrap_95_percentile": [
+              1.0,
+              1.0
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": 0.9912126131802728,
+            "bootstrap_95_percentile": [
+              0.9736378395408184,
+              1.0
+            ]
+          },
+          "mrr_at_10": {
+            "mean": 0.9880952380952381,
+            "bootstrap_95_percentile": [
+              0.9642857142857143,
+              1.0
+            ]
+          }
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 42,
+          "groups": 42,
+          "weighting": "equal group weight",
+          "bootstrap_repeats": 2000,
+          "metrics": {
+            "recall_at_10": {
+              "mean": 1.0,
+              "bootstrap_95_percentile": [
+                1.0,
+                1.0
+              ]
+            },
+            "ndcg_at_10": {
+              "mean": 0.9912126131802728,
+              "bootstrap_95_percentile": [
+                0.9736378395408184,
+                1.0
+              ]
+            },
+            "mrr_at_10": {
+              "mean": 0.9880952380952381,
+              "bootstrap_95_percentile": [
+                0.9642857142857143,
+                1.0
+              ]
+            }
+          }
+        }
+      },
+      "execution": {
+        "model": "intfloat/multilingual-e5-small",
+        "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+        "device": "cpu",
+        "threads": 4,
+        "batch_size": 16,
+        "maximum_tokens": 512,
+        "pooling": "attention-mask mean, L2 normalization; cosine search",
+        "query_prefix": "query: ",
+        "document_prefix": "passage: ",
+        "load_seconds": 0.5784606669913046,
+        "document_encode_seconds": 0.08982062499853782,
+        "query_encode_seconds": 0.058744833018863574,
+        "search_seconds": 7.791598909534514e-05,
+        "truncated_documents": 0,
+        "truncated_queries": 0,
+        "timing_scope": "one local pass, no latency guarantee; excludes length audit",
+        "packages": {
+          "torch": "2.14.0",
+          "transformers": "5.17.0",
+          "tokenizers": "0.23.2"
+        },
+        "model_files": {
+          "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+          "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+          "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39",
+          "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b"
+        }
+      }
+    }
+  }
+}

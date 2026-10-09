@@ -1,0 +1,35 @@
+{
+  "seed": 17,
+  "requested_pairs": 6000,
+  "pairs": 6000,
+  "pairs_by_source": {
+    "banglatlit": 4500,
+    "tatoeba-ben": 1500
+  },
+  "candidate_pairs_by_source": {
+    "banglatlit": 32565,
+    "tatoeba-ben": 5603
+  },
+  "dropped": {
+    "unexpected_language_bucket": 1504,
+    "not_same_training_group": 214021,
+    "short_pair": 564
+  },
+  "unique_groups": 6000,
+  "validation_canonical_or_group_overlap": 0,
+  "frozen_test_opened": false,
+  "adaptation_scope": "only the exact same clean training groups; full PT corpus not used",
+  "limitations": "group/lexical deduplication cannot eliminate all semantic false negatives",
+  "inputs": {
+    "data/processed/train.jsonl": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+    "data/processed/validation.jsonl": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+    "data/raw/banglatlit/train.csv": "202fa1848d35956477204b42608eafafc50d027ea4e46df42424f1418c588cce",
+    "data/raw/banglatlit/validation.csv": "8b7f9711b7516a09008475f2f4b2670c38345710accab32d100458b224c9fb8c",
+    "data/raw/tatoeba/ben-eng.zip": "45d4ce753f14b8de53e7ce21cec3f48fffd62b778c386c680547351d68bb378e",
+    "data/sources.lock.json": "43073fe7dec8beb1b81477f03c20faa2782c0e9d468837fe9acb7a2871a72756"
+  },
+  "files": {
+    "pairs.jsonl": "57f90d5a16a311d433f7638e00e6386d98968fbf2bae629385f2168a634e63ad",
+    "adaptation.jsonl": "875105f9f4729d03a836a691b4b4e7c2981fa8bc8b9e48a7f05a5631db249441"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "seed": 17,
+  "requested_pairs": 8000,
+  "pairs": 8000,
+  "pairs_by_source": {
+    "vashantor": 1600,
+    "banglatlit": 4800,
+    "tatoeba-ben": 1600
+  },
+  "pairs_by_query_language": {
+    "english": 2084,
+    "banglish": 5916
+  },
+  "candidate_pairs_by_source": {
+    "banglatlit": 32564,
+    "tatoeba-ben": 5581,
+    "vashantor": 25820
+  },
+  "dropped": {
+    "unexpected_language_bucket": 1504,
+    "not_same_training_group": 216316,
+    "short_pair": 597
+  },
+  "unique_groups": 8000,
+  "validation_canonical_or_group_overlap": 0,
+  "frozen_test_opened": false,
+  "adaptation_scope": "only the exact same clean training groups; full PT corpus not used",
+  "limitations": "group/lexical deduplication cannot eliminate all semantic false negatives",
+  "inputs": {
+    "data/processed/vashantor-expanded-v2/prepared/train.jsonl": "0d1ac59a18c5c0b37b4934a6e3bd789fa96b392334ea8429eb2639f54c3feb8b",
+    "data/processed/vashantor-expanded-v2/prepared/validation.jsonl": "f0e223cfd2b9cd75a05826462ffd70f9c49a5fcbd97da81e7c7d7f3b24109343",
+    "data/raw/banglatlit/train.csv": "202fa1848d35956477204b42608eafafc50d027ea4e46df42424f1418c588cce",
+    "data/raw/banglatlit/validation.csv": "8b7f9711b7516a09008475f2f4b2670c38345710accab32d100458b224c9fb8c",
+    "data/raw/tatoeba/ben-eng.zip": "45d4ce753f14b8de53e7ce21cec3f48fffd62b778c386c680547351d68bb378e",
+    "data/sources.lock.json": "43073fe7dec8beb1b81477f03c20faa2782c0e9d468837fe9acb7a2871a72756",
+    "data/processed/vashantor-expanded-v2/manifest.json": "ac17cff9d59c4936d89028960a8c82ecbca8c359a8d850bc3278f6afddf99977",
+    "data/processed/vashantor-expanded-v2/original-pairs.jsonl": "c9aa8663283d57b9373d65560506db109ab61526e24b04b8416c097e85e6fad3"
+  },
+  "files": {
+    "pairs.jsonl": "05fdfd3864202c89178606dfd367483f90f97a8fec9f4cfda101fd070ddb40d3",
+    "adaptation.jsonl": "371eab6c9640a0e501d7dd5054859d124bfc9131354a74d5352146ac7482169d"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    "all original Vashantor val/test forms excluded from train",
+    "all existing project val/test forms excluded from train",
+    "all authored benchmark forms excluded from train",
+    "reserve-only sources absent from every expanded split"
+  ],
+  "expanded_rows_by_split": {
+    "train": 586181,
+    "validation": 18382,
+    "test": 22148
+  },
+  "reserved_canonical_keys": 39892,
+  "manifest_sha256": "ac17cff9d59c4936d89028960a8c82ecbca8c359a8d850bc3278f6afddf99977",
+  "scope": "integrity only; no frozen test evaluation"
+}

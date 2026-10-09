@@ -68,6 +68,30 @@ func run(args []string) error {
 			return err
 		}
 		return corpus.CopyJSON(os.Stdout, s)
+	case "prepare-records":
+		input := f.String("input", "", "provenance-preserving corpus records JSONL")
+		out := f.String("out", "", "new split directory; existing paths are refused")
+		if err := f.Parse(args[1:]); err != nil {
+			return err
+		}
+		if *input == "" || *out == "" {
+			return fmt.Errorf("prepare-records requires -input and -out")
+		}
+		if _, err := os.Stat(*out); !os.IsNotExist(err) {
+			return fmt.Errorf("output exists or cannot be inspected; use a new split directory")
+		}
+		var records []corpus.Record
+		if err := corpus.Read(*input, func(r corpus.Record) error {
+			records = append(records, r)
+			return nil
+		}); err != nil {
+			return err
+		}
+		s, err := corpus.Prepare(records, *out)
+		if err != nil {
+			return err
+		}
+		return corpus.CopyJSON(os.Stdout, s)
 	case "train":
 		algorithm := f.String("algorithm", "unigram", "unigram or bpe")
 		input := f.String("input", "data/processed/train.jsonl", "training records")

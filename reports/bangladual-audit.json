@@ -1,0 +1,273 @@
+{
+  "audit_date": "2026-10-09",
+  "dataset": "BanglaDual",
+  "doi": "10.17632/pxw2bb4wyt.1",
+  "dataset_url": "https://data.mendeley.com/datasets/pxw2bb4wyt/1",
+  "data_download_cap_bytes": 400000000,
+  "downloaded_data_bytes": 16297297,
+  "full_files": [
+    {
+      "filename": "banglish_bangla_transliteration.parquet",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/99739ee2-e2da-434c-b528-13fef099ab50/file_downloaded",
+      "upstream_bytes": 565546277,
+      "upstream_sha256": "07efe2b58c3ad95f291c99d3a0f5abcd717fc0f6a873eb21ab7451a178d4fd7e",
+      "downloaded_in_full": false,
+      "verified_full_sha256": null
+    },
+    {
+      "filename": "banglish_english_translation.parquet",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/7e10dbc7-5454-4fb4-b61e-0ee8ce505f64/file_downloaded",
+      "upstream_bytes": 14990189,
+      "upstream_sha256": "f8ef6384dd8b6c33e7371cfe460761b29dedf354b89be374538e2b7ca8692488",
+      "downloaded_in_full": true,
+      "verified_full_sha256": "f8ef6384dd8b6c33e7371cfe460761b29dedf354b89be374538e2b7ca8692488"
+    },
+    {
+      "filename": "banglish_merged_dual_task.parquet",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/d172dbab-8682-4956-8114-ee3e2ee3d4db/file_downloaded",
+      "upstream_bytes": 576401227,
+      "upstream_sha256": "9844f02570cab98b3f084cab79e1708078590a12033cbe8a234de42df7a9d409",
+      "downloaded_in_full": false,
+      "verified_full_sha256": null
+    },
+    {
+      "filename": "Vashantor_CSV_Format.zip",
+      "url": "https://data.mendeley.com/public-files/datasets/bj5jgk878b/files/ff221f8b-b38d-4db1-b579-fe310fc92b4a/file_downloaded",
+      "upstream_bytes": 1073445,
+      "upstream_sha256": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919",
+      "downloaded_in_full": true,
+      "verified_full_sha256": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919"
+    }
+  ],
+  "small_downloads": [
+    {
+      "path": "data/raw/bangladual/bangla_samples.csv",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/ed800da4-29f5-490a-8027-b10b5909fc42/file_downloaded",
+      "bytes": 24861,
+      "sha256": "19969f4925a1f1ef6aaef8e2dc6efa1aae2ed289be172920d5ccfb19dc060660",
+      "file_id": "ed800da4-29f5-490a-8027-b10b5909fc42"
+    },
+    {
+      "path": "data/raw/bangladual/english_samples.csv",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/9b9c11bc-5c49-442f-b53a-418e1a6817c1/file_downloaded",
+      "bytes": 8827,
+      "sha256": "dfba48bcbbca913da282604f202008cd39edd8d02089fda1a0acf57ff3b4b71b",
+      "file_id": "9b9c11bc-5c49-442f-b53a-418e1a6817c1"
+    },
+    {
+      "path": "data/raw/bangladual/sample_merged_data.csv",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/10462a71-bf18-4ab8-babf-08679651b0d3/file_downloaded",
+      "bytes": 34530,
+      "sha256": "51ce3ca1946a6901ab302d9052ece797e11633bfeb27331a4801f096beb028dd",
+      "file_id": "10462a71-bf18-4ab8-babf-08679651b0d3"
+    },
+    {
+      "path": "data/raw/bangladual/banglish_to_bangla_pipeline.py",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/6ce23359-5a99-447b-a6a7-9abde3e6c4d0/file_downloaded",
+      "bytes": 19068,
+      "sha256": "f7a49d11831139d55453cb2e87194a8f50521964fbe3ec905a8e6b7d2c0e4173",
+      "file_id": "6ce23359-5a99-447b-a6a7-9abde3e6c4d0"
+    },
+    {
+      "path": "data/raw/bangladual/banglish_to_english_pipeline.py",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/c1118714-3d28-4b2c-b8dc-2c892858cbe0/file_downloaded",
+      "bytes": 15843,
+      "sha256": "f6def780aafc4cc933309b68898a0557c668c0a14c9ea58ca44f9ce1071e8be5",
+      "file_id": "c1118714-3d28-4b2c-b8dc-2c892858cbe0"
+    },
+    {
+      "path": "data/raw/bangladual/merge_datasets.py",
+      "url": "https://data.mendeley.com/public-files/datasets/pxw2bb4wyt/files/88da4049-1c76-4467-9353-5adff5ddac01/file_downloaded",
+      "bytes": 1608,
+      "sha256": "4864166bfb5daa5b980bda54f5c6dcfdc69a33f43bf3144033ff318c9bdb60ca",
+      "file_id": "88da4049-1c76-4467-9353-5adff5ddac01"
+    }
+  ],
+  "merged_source_column_ranges": [
+    {
+      "filename": "merged-source-chunk-537805722-537878299.bin",
+      "bytes": 72578,
+      "sha256": "9251555ce06f12fd091b9a8668320e45159a866511abeaab44ec05e524414ffe"
+    },
+    {
+      "filename": "merged-source-chunk-537878300-537923260.bin",
+      "bytes": 44961,
+      "sha256": "f4842d66deb4a3a82c7a860f260993180996486b0abc0b1c9b602a40f0ceb53d"
+    },
+    {
+      "filename": "merged-source-chunk-576389848-576390945.bin",
+      "bytes": 1098,
+      "sha256": "1983a9ef77a75e82552df03108118f90c7a7c808f9f6e2a7c3759e3b7195f9c3"
+    },
+    {
+      "filename": "merged-source-chunk-576390946-576391770.bin",
+      "bytes": 825,
+      "sha256": "ea3829a3ee612a9efaadbe39b816690eef81e92dd20e4837fb364d73dc5a6eb5"
+    }
+  ],
+  "merged_footer_sha256": "7da41da65aa681d846ee3fc6490ce8ef20a2126b2014aea881935d7031ee2e5e",
+  "merged_rows": 1122998,
+  "merged_target_null_counts": {
+    "Banglish": 0,
+    "Bangla": 467,
+    "English": 1002396
+  },
+  "merged_source_counts": {
+    "rows": 1122998,
+    "complete_target_rows_by_matching_source_nulls": 120135,
+    "both_sources_null": 0,
+    "source_bangla": {
+      "Modeling Romanized Hindi and Bengali: Dataset Creation and Multilingual LLM Integration": 957730,
+      "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 80266,
+      "BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 39896,
+      "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 37350,
+      "null": 467,
+      "Automatic back transliteration of Romanized Bengali (Banglish) to Bengali": 4789,
+      "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 2500
+    },
+    "source_english": {
+      "null": 1002396,
+      "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 80280,
+      "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 37352,
+      "Updated BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 470,
+      "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 2500
+    }
+  },
+  "complete_triple_count": 120135,
+  "complete_triple_count_basis": "Source-column nonnull conjunction. Null counts match targets in each row group; outer-join construction implies target/source presence correspondence. Target text columns not downloaded.",
+  "samples": {
+    "bangla_samples.csv": {
+      "rows": 60,
+      "columns": [
+        "Banglish",
+        "Bangla",
+        "Source"
+      ],
+      "complete_triples": 0,
+      "sources": {
+        "Source": {
+          "Automatic back transliteration of Romanized Bengali (Banglish) to Bengali": 10,
+          "BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 10,
+          "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 10,
+          "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 10,
+          "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 10,
+          "Modeling Romanized Hindi and Bengali: Dataset Creation and Multilingual LLM Integration": 10
+        }
+      }
+    },
+    "english_samples.csv": {
+      "rows": 40,
+      "columns": [
+        "Banglish",
+        "English",
+        "Source"
+      ],
+      "complete_triples": 0,
+      "sources": {
+        "Source": {
+          "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 10,
+          "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 10,
+          "Updated BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 10,
+          "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 10
+        }
+      }
+    },
+    "sample_merged_data.csv": {
+      "rows": 70,
+      "columns": [
+        "Banglish",
+        "Bangla",
+        "English",
+        "Source_bangla",
+        "Source_english"
+      ],
+      "complete_triples": 31,
+      "sources": {
+        "Source_bangla": {
+          "Automatic back transliteration of Romanized Bengali (Banglish) to Bengali": 11,
+          "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 10,
+          "BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 10,
+          "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 10,
+          "Modeling Romanized Hindi and Bengali: Dataset Creation and Multilingual LLM Integration": 10,
+          "<missing>": 9,
+          "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 10
+        },
+        "Source_english": {
+          "<missing>": 30,
+          "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 10,
+          "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 10,
+          "Updated BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 10,
+          "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 10
+        }
+      }
+    }
+  },
+  "english_task": {
+    "rows": 119727,
+    "columns": [
+      "Banglish",
+      "English",
+      "Source"
+    ],
+    "sources": {
+      "BanTH: A Multi-label Hate Speech Detection Dataset for Transliterated Bangla": 37350,
+      "Vashantor: A Large-scale Multilingual Benchmark Dataset for Automated Translation of Bangla Regional Dialects to Bangla Language": 2500,
+      "Updated BanglaTLit: A Benchmark Dataset for Back-Transliteration of Romanized Bangla": 470,
+      "Bengali & Banglish: A Monolingual Dataset for Emotion Detection in Linguistically Diverse Contexts": 79407
+    },
+    "empty_input": 0,
+    "empty_target": 0,
+    "distinct_input": 119554
+  },
+  "vashantor_preliminary_integrity": {
+    "archive_rows": 12500,
+    "unique_core_bangla_keys": 2507,
+    "rows_by_original_split": {
+      "test": 1875,
+      "train": 9375,
+      "validation": 1250
+    },
+    "core_groups_by_split_membership": {
+      "test": 381,
+      "train": 1876,
+      "train+validation": 1,
+      "validation": 249
+    },
+    "core_groups_reserved_original_val_or_test": 631,
+    "eligible_original_train_rows": 9370,
+    "eligible_original_train_core_groups": 1876,
+    "candidate_groups_overlapping_project_heldout_any_form": 4,
+    "candidate_groups_overlapping_project_train_any_form": 123,
+    "candidate_groups_without_project_train_any_form": 1753,
+    "candidate_clean_core_groups": 1872,
+    "dedup_key": "NFC + letter/number/mark lowercase; whitespace/punctuation ignored",
+    "test_opened_for": "integrity overlap exclusion only; no scoring or model selection"
+  },
+  "decision": {
+    "exclude_rule_based_wikipedia": true,
+    "exclude_repackaged_banglatlit_by_default": true,
+    "preferred_natural_expansion": "Original Vashantor v2 CSV archive with preserved official splits and all multilingual forms connected before heldout exclusion",
+    "other_sources": "BanTH naturally authored inputs but translated target creation uncertain; emotion resource natural/script-generated distinctions insufficiently documented in inspected metadata",
+    "production_import_complete": false
+  },
+  "limits": [
+    "No full Bangla or merged task file download; no full hash verification for those files.",
+    "Footer/source ranges verify null counts and provenance distributions, not semantic alignment or target quality.",
+    "Published random splits were not downloaded or accepted.",
+    "Vashantor integrity counts are preliminary core-based keys; production grouping must connect all forms and run quality/near-duplicate exclusions.",
+    "No private text copied to reports."
+  ],
+  "vashantor_dataset_metadata": {
+    "path": "data/raw/bangladual/vashantor-dataset-metadata.json",
+    "sha256": "125542bc2a027bbc56e6311658828af82cf84bc1d6a037bdf0a087759abca3fb",
+    "url": "https://data.mendeley.com/public-api/datasets/bj5jgk878b?version=2",
+    "license": {
+      "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+      "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+      "url": "http://creativecommons.org/licenses/by/4.0",
+      "category": "Creative",
+      "short_name": "CC BY 4.0",
+      "full_name": "Creative Commons Attribution 4.0 International"
+    }
+  }
+}

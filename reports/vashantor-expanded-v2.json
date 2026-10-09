@@ -1,0 +1,76 @@
+{
+  "source": "original Vashantor v2",
+  "archive_sha256": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919",
+  "original_rows": 12500,
+  "original_splits": {
+    "test": 1875,
+    "train": 9375,
+    "validation": 1250
+  },
+  "accepted_vashantor_records": {
+    "train/bangla": 10512,
+    "train/banglish": 10592,
+    "train/english": 1661,
+    "validation/banglish": 1665,
+    "validation/bangla": 1655,
+    "validation/english": 236,
+    "test/bangla": 2506,
+    "test/banglish": 2513,
+    "test/english": 404
+  },
+  "reserve_records_suppressed": 360,
+  "prepare_stats": {
+    "input_records": 657827,
+    "quality_rejected": 375,
+    "duplicates_removed": 30381,
+    "near_duplicate_links": 0,
+    "split_bucket_records": {
+      "train/banglish": 229312,
+      "train/bangla": 183596,
+      "train/code-mixed": 4709,
+      "train/english": 168564,
+      "validation/banglish": 7827,
+      "validation/bangla": 6601,
+      "validation/english": 3798,
+      "validation/code-mixed": 156,
+      "test/banglish": 9534,
+      "test/bangla": 8464,
+      "test/english": 3924,
+      "test/code-mixed": 226
+    },
+    "split_bucket_characters": {
+      "train/banglish": 17356193,
+      "train/bangla": 43754379,
+      "train/code-mixed": 400072,
+      "train/english": 5318219,
+      "validation/banglish": 501172,
+      "validation/bangla": 968206,
+      "validation/english": 119455,
+      "validation/code-mixed": 11362,
+      "test/banglish": 593728,
+      "test/bangla": 1144014,
+      "test/english": 128152,
+      "test/code-mixed": 18307
+    },
+    "reserve_records_suppressed": 360
+  },
+  "grouping": "Go paired/core groups, all canonical forms and long-text SimHash",
+  "split_priority": "test > validation > hash assignment; rejected text carries holdout",
+  "frozen_project_test_read_for_integrity_only": true,
+  "frozen_project_test_scored": false,
+  "benchmark_forms": "reserve-only records cannot enter train",
+  "quality": "existing Go length/corruption/PII heuristics; not complete privacy detection",
+  "inputs": {
+    "data/raw/bangladual/Vashantor_CSV_Format.zip": "5abb437220ad6fede5344b974f1abe48f4be8d5a9c250b807c0fea6fe4899919",
+    "experiments/retrieval/domain_material.jsonl": "d6714f4695de24d6f1d680dada9b1ff9f7a7a7d9e82038c7dd4f4ae214753ed1",
+    "data/processed/train.jsonl": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+    "data/processed/validation.jsonl": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+    "data/processed/test.jsonl": "3f39a8faf7ecc280ec32ce231d379cec788eb79a52d9a6e66917073500879834"
+  },
+  "files": {
+    "original-pairs.jsonl": "c9aa8663283d57b9373d65560506db109ab61526e24b04b8416c097e85e6fad3",
+    "prepared/train.jsonl": "0d1ac59a18c5c0b37b4934a6e3bd789fa96b392334ea8429eb2639f54c3feb8b",
+    "prepared/validation.jsonl": "f0e223cfd2b9cd75a05826462ffd70f9c49a5fcbd97da81e7c7d7f3b24109343",
+    "prepared/test.jsonl": "3e274bed163d4184fbb03658f6f54c98a178594b5cd65e8d20cd73f3cc8513ea"
+  }
+}

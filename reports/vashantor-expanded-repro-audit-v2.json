@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "manifest_sha256": "ac17cff9d59c4936d89028960a8c82ecbca8c359a8d850bc3278f6afddf99977",
+  "reserved_canonical_keys": 39892,
+  "expanded_rows_by_split": {
+    "train": 586181,
+    "validation": 18382,
+    "test": 22148
+  },
+  "checks": [
+    "all original source val/test forms excluded from train",
+    "all project val/test forms excluded from train",
+    "all authored benchmark forms excluded from train",
+    "reserve-only sources absent from every split",
+    "no group crosses splits"
+  ],
+  "scope": "integrity only; no frozen test evaluation"
+}

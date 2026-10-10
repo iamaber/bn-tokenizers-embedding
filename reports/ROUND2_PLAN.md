@@ -6,11 +6,11 @@ remain frozen. This file tracks the new work; pending work is not a result.
 
 | Work | Required outcome | Status |
 |---|---|---|
-| Expanded judgments | Union of all 19 existing encoders' top-10 candidates; explicitly judge every new pair, preserve prior labels, recompute comparisons and coverage | In progress |
-| Harder benchmark | Larger source-grounded six-domain benchmark, confusing neighbours and Banglish spelling variants; source-disjoint development/test groups and training-overlap audit | Source research in progress |
-| Original-tokenizer training | Longer training, reviewed hard negatives and balanced English replay; execute matched runs and score fresh development/test after frozen selection | Pending |
-| Stronger transfer | Implement and measure a compatible transfer method, with mean-initialization control and matched training budgets | Source research in progress |
-| Deployment workloads | Execute fresh-process cold starts, larger real-document indexes, long inputs and concurrent requests; report throughput, p50/p95/p99 and memory | Pending |
+| Expanded judgments | Union of all 19 existing encoders' top-10 candidates; explicitly judge every new pair, preserve prior labels, recompute comparisons and coverage | Pool frozen: 6,711 new pairs; 1,138 reviewed so far. Complete import/scoring pending. |
+| Harder benchmark | Larger source-grounded six-domain benchmark, confusing neighbours and Banglish spelling variants; source-disjoint development/test groups and training-overlap audit | Source audit and pinned downloads complete; material/labels/split pending. |
+| Original-tokenizer training | Longer training, reviewed hard negatives and balanced English replay; execute matched runs and score fresh development/test after frozen selection | TRAIN-only 128-pair negative pool mined; 48 reviewed. Extended trainer implemented; bank/protocol/execution pending. |
+| Stronger transfer | Implement and measure a compatible transfer method, with mean-initialization control and matched training budgets | Both sparse context tables built; real apply/inference/reload verified. Matched training and quality comparison pending. |
+| Deployment workloads | Execute fresh-process cold starts, larger real-document indexes, long inputs and concurrent requests; report throughput, p50/p95/p99 and memory | Executed for unchanged and three seed-17 controls: 18 workloads/model, three cold loads/model; concurrent/serial rankings identical. [Report](DEPLOYMENT_WORKLOADS.md). |
 
 Agent-authored queries and agent judgments are authorized by the user. They must
 carry that provenance; independent human review and natural user traffic are not

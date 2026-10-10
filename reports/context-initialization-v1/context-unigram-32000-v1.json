@@ -1,0 +1,44 @@
+{
+  "method": "FOCUS-inspired exact-overlap and hashed-PPMI sparsemax transfer",
+  "focus_reproduction": false,
+  "build_seconds": 2.754327958013164,
+  "tokenizer_sha256": "fc4a78ad3fcd3e3fdf432acf521e1591cf35e31196cd87d642280b2c48cd7d53",
+  "alignment_manifest_sha256": "e0d2630a7fda26c206f56c6aac96a6b2069c2792911683bb00e66783fb58e063",
+  "base_files": {
+    "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+    "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+    "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+    "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+    "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+  },
+  "embedding_sha256": "9dad5b5a076511db9d94316ebbdc1e8dc54a5bed9f8ec9e280641ef5b29a6e0a",
+  "shape": [
+    32000,
+    384
+  ],
+  "exact_overlap_anchors": 8806,
+  "observed_context_anchors": 4201,
+  "context_initialized_pieces": 11404,
+  "decomposition_fallback_pieces": 11530,
+  "controls_and_bytes": "retain existing semantic control remap and byte decomposition",
+  "anchor_rule": "exact raw piece string equals original token; boundary markers not stripped",
+  "contexts": {
+    "texts": 16000,
+    "dimensions": 512,
+    "symmetric_window": 2,
+    "hash": "((token_id * 2654435761) & 0xffffffff) % 512",
+    "transform": "positive PMI then L2 normalization",
+    "observed_tokens": 15606
+  },
+  "sparse_support": {
+    "mean": 20.228779375657663,
+    "maximum": 259
+  },
+  "implementation_sha256": "80156816e2b1b73db7ae77149a68f7f7ca940f9b9932e7b27d9db959c97e7fbf",
+  "limitations": [
+    "hashed co-occurrence replaces FOCUS fastText space",
+    "native pieces lack original boundary semantics",
+    "initialization quality must be measured after matched adaptation"
+  ]
+}

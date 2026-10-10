@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "base_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "alignment": {
+    "directory": "data/processed/alignment-round2-v1",
+    "manifest_sha256": "951db65e8cd505c6e0116be4336d827cf991a3498f95d792affb8f3f030c3a25"
+  },
+  "hard_negatives": {
+    "directory": "data/processed/hard-negatives-reviewed-v1",
+    "manifest_sha256": "983641e01dc9f6c111a8773e7ee65b4a14419eefed150702c330a6c13ada21ac"
+  },
+  "training_seeds": [
+    17,
+    29,
+    43
+  ],
+  "representation_steps": 2,
+  "contrastive_steps": 3,
+  "equal_compute_seconds": 360,
+  "batch_size": 16,
+  "maximum_tokens": 128,
+  "english_retention_weight": 0.2,
+  "arms": {
+    "original": {
+      "tokenizer": null,
+      "initialization": null
+    },
+    "unigram-mean": {
+      "tokenizer": "models/unigram-32000.json",
+      "tokenizer_sha256": "fc4a78ad3fcd3e3fdf432acf521e1591cf35e31196cd87d642280b2c48cd7d53",
+      "initialization": null
+    },
+    "unigram-context": {
+      "tokenizer": "models/unigram-32000.json",
+      "tokenizer_sha256": "fc4a78ad3fcd3e3fdf432acf521e1591cf35e31196cd87d642280b2c48cd7d53",
+      "initialization": "models/initializations/context-unigram-32000-v2",
+      "initialization_manifest_sha256": "6e3e91d829a2cfa81405e105e179452de7739149179e12ec654fe05bab5e4bba"
+    },
+    "bpe-mean": {
+      "tokenizer": "models/bpe-32000.json",
+      "tokenizer_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "initialization": null
+    },
+    "bpe-context": {
+      "tokenizer": "models/bpe-32000.json",
+      "tokenizer_sha256": "b3fcc85abb34e27648fc297dfc8052cf871f7c86482a4d4e91626a72513a0bc3",
+      "initialization": "models/initializations/context-bpe-32000-v2",
+      "initialization_manifest_sha256": "eef538c51f44a160765443cf5f52067c09b7d4b2b421700eb268613a1a35553b"
+    }
+  },
+  "selection": "fresh source-grounded development only; freeze before fresh reserved test; previous completed choice unchanged",
+  "evaluation_material_status": "authoring in progress; datasets and labels must freeze before any adapted quality evaluation",
+  "budget_scope": "model loading, embedding initialization, optimizer/training; context-table build conservatively charged in full per run; input validation and checkpoint saving excluded",
+  "compute_stage_rule": "35% of remaining charged time representation,65% contrastive; boundarycheckedoptimizersteps; reportoverrun"
+}

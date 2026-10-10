@@ -1,0 +1,24 @@
+{
+  "protocol_sha256": "e5237a266ec2c2938600d0badac2e7d6bd2c91a08b4e4b8e61a2d32d4551cd7a",
+  "runs": [
+    {
+      "arm": "original",
+      "report_sha256": "aa23435965f39ff80bf6fa3cee70d0fa202d46d6d74b80c02ed2c7b8b8f56c25",
+      "representation_steps": 2,
+      "contrastive_steps": 3,
+      "verified_negative_examples": 16,
+      "finite_normalized_vectors": true,
+      "save_reload_bitwise_equal": true
+    },
+    {
+      "arm": "unigram-context",
+      "report_sha256": "e95f363277a0062522893bd9ded1bcfd27cf2c97da1889a5969fb07730a36ebd",
+      "representation_steps": 2,
+      "contrastive_steps": 3,
+      "verified_negative_examples": 16,
+      "finite_normalized_vectors": true,
+      "save_reload_bitwise_equal": true
+    }
+  ],
+  "benchmark_scores_computed": false
+}

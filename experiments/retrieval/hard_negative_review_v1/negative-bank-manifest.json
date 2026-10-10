@@ -1,0 +1,15 @@
+{
+  "mining_manifest_sha256": "3be30c0895c8b7398336b7f59f4d9377ea595cab33e4ddd0561a229996999ce6",
+  "alignment_manifest_sha256": "e0d2630a7fda26c206f56c6aac96a6b2069c2792911683bb00e66783fb58e063",
+  "judgments_sha256": "abf30a5ba0eed98e5c42b97771f640830d2fe17121ac06243aa1bae337980be6",
+  "accepted": 79,
+  "accepted_by_language": {
+    "banglish": 44,
+    "english": 35
+  },
+  "excluded": 49,
+  "label_origin": "explicit single-agent review; not independent human judgments",
+  "files": {
+    "pairs.jsonl": "2cd584dd673268ac30f9f0c2951008014ff8c8d0808b190d2b4fbf0099e2f5f0"
+  }
+}

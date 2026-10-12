@@ -1,0 +1,24 @@
+{
+  "packet_sha256": "1dd61463eb400dc8b77bf80702c6c82a098511c45509e0517b51ba79a8b0a7a2",
+  "pool_manifest_sha256": "d9fca759b795f2b3253f310da10f2dddc6dbb451ae730feff4dbbc41ce339c27",
+  "judgments_sha256": "e1d0eba2e1533d08fd0c3f93ae1071d6e480301c20167f1c63c277226db8c655",
+  "complete_pairs": 6711,
+  "grade_counts": {
+    "0": 6316,
+    "1": 362,
+    "2": 33
+  },
+  "reviewer_counts": {
+    "implementation-agent": 1309,
+    "review-round2-training": 1770,
+    "review-pool-middle": 1748,
+    "review-pool-last": 1884
+  },
+  "origin": "explicit implementation/review agent judgments; no independent human review",
+  "parts": {
+    "new-judgments.jsonl": "5ae78114bfa70cf629512959cbadc4201541d04d0d7d1937fa7ff4706d41393f",
+    "reviewer-grades-46-109.jsonl": "048b987f410e77cca5057f8ef9f8906bfa8dcbc2dfd6ba84d4bcfa7ea81e5dbf",
+    "reviewer-grades-110-174.jsonl": "d02ce619e758516b07ee7d5f12c4b1790d881dbd68f04196858513e213aa18c6",
+    "reviewer-grades-175-239.jsonl": "2ac9cce313ac3aabd4a264d82bcb06f8def455ad342d20e7a1fceb0fcd2f5a49"
+  }
+}

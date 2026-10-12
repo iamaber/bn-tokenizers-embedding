@@ -59,6 +59,8 @@ class PoolTests(unittest.TestCase):
         self.assertEqual(result["new_labels"], 9)
         self.assertEqual(read_rows(output / "qrels.jsonl")[0], self.previous)
         self.assertEqual(len(read_rows(output / "qrels.jsonl")), 10)
+        self.assertEqual(result["reviewer_ids"], ["test"])
+        self.assertEqual(result["judgment_origins"], {"agent": 10})
 
     def test_missing_or_unresolved_labels_fail_before_creating_dataset(self):
         rows = read_rows(self.labels)

@@ -133,6 +133,9 @@ def import_labels(pool: Path, labels: Path, output: Path) -> dict:
         "new_grade_counts": dict(Counter(r["grade"] for r in additions)),
         "previous_labels_preserved": len(previous),
         "new_labels": len(additions), "pooled_system_top10_coverage": 1.0,
+        "reviewer_ids": sorted({r["reviewer_id"] for r in previous + additions if r.get("reviewer_id")}),
+        "judgment_origins": dict(Counter(r.get("label_origin", "unknown").split("_", 1)[0]
+                                         for r in previous + additions)),
         "human_review_completed": False, "independent_review_verified": False,
         "files": {name: sha256(output / name) for name in (
             "queries.jsonl", "documents.jsonl", "qrels.jsonl"

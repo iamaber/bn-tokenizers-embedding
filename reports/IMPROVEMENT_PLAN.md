@@ -51,4 +51,6 @@ goal complete until the requested implemented and executed outcomes are verified
 
 ## Completion
 
-The user-authorized implemented and executed outcomes above are complete. Larger natural-search corpora, independent fluent review, adapted-system sentence pooling, longer training, vocabulary-size ablations and stronger transfer methods are follow-up research. They are not claimed as completed results. The original frozen project test was read only for integrity and never scored; the separately reserved domain test was scored only after the model decision froze.
+The user-authorized implemented and executed outcomes above are complete. Larger natural-search corpora, independent fluent review, longer training, vocabulary-size ablations and stronger transfer methods are follow-up research. They are not claimed as completed results. The original frozen project test was read only for integrity and never scored; the separately reserved domain test was scored only after the model decision froze.
+
+Adapted-system sentence pooling is now complete; see the [second-experiment ledger](ROUND2_PLAN.md) and [expanded analysis](encoder-expanded-pool-analysis-v1.json).

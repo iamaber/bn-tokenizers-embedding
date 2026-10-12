@@ -62,4 +62,49 @@ HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
   -m unittest discover -s experiments/retrieval -p 'test_*.py'
 ```
 
-Future work includes adapted-system candidate pooling, independent fluent review, larger natural-search corpora, edition-specific external retrieval data, better vocabulary-transfer methods and longer adaptation budgets. These are limits and follow-up experiments, not results already established by this run.
+Future work includes independent fluent review, larger natural-search corpora, edition-specific external retrieval data, better vocabulary-transfer methods and longer adaptation budgets. These are limits and follow-up experiments, not results already established by this run.
+
+## Expanded-pool reproduction
+
+The [completed archive](expanded_pool_review_v1/) contains 6,711 additional agent judgments. Together with the 2,496 preserved labels, these cover every top-10 candidate from all 19 frozen encoders. The [expanded report](../../reports/encoder-expanded-pool-analysis-v1.json) includes graded and exact grade-2 comparisons without changing the frozen domain choice. Raw text and rankings remain local; the same source dataset and frozen evaluation outputs are required.
+
+Run from the repository root. Use fresh output paths, since the commands refuse overwrites. Rebuild the packet, verify it against the archived checksums, import the archived judgments, then rescore:
+
+```sh
+.venv/retrieval/bin/python experiments/retrieval/expand_pool.py build \
+  --source data/processed/retrieval-reviewed-v1 \
+  --suite reports/encoder-evaluation-sentence-v1.json \
+  --output data/processed/retrieval-expanded-pool-repro
+
+.venv/retrieval/bin/python - <<'PYVERIFY'
+import hashlib
+import json
+from pathlib import Path
+
+archive = Path("experiments/retrieval/expanded_pool_review_v1")
+pool = Path("data/processed/retrieval-expanded-pool-repro")
+manifest = json.loads((archive / "manifest.json").read_text())
+for path, key in (
+    (pool / "packet.jsonl", "packet_sha256"),
+    (pool / "manifest.json", "pool_manifest_sha256"),
+    (archive / "pool-manifest.json", "pool_manifest_sha256"),
+    (archive / "judgments.jsonl", "judgments_sha256"),
+):
+    if hashlib.sha256(path.read_bytes()).hexdigest() != manifest[key]:
+        raise ValueError(f"Archive checksum mismatch: {path}")
+print("Packet, pool manifest and archived judgments verified")
+PYVERIFY
+
+.venv/retrieval/bin/python experiments/retrieval/expand_pool.py import \
+  --pool data/processed/retrieval-expanded-pool-repro \
+  --labels experiments/retrieval/expanded_pool_review_v1/judgments.jsonl \
+  --output data/processed/retrieval-reviewed-expanded-repro
+
+.venv/retrieval/bin/python experiments/retrieval/expanded_analysis.py \
+  --dataset data/processed/retrieval-reviewed-expanded-repro \
+  --suite reports/encoder-evaluation-sentence-v1.json \
+  --selection reports/encoder-domain-selection-v2.json \
+  --output data/processed/retrieval-expanded-analysis-repro.json
+```
+
+Reproduction paths differ from the saved report's paths; compare coverage and label-view results rather than whole-file hashes. The report records checksums for the analysis and its scoring, coverage, uncertainty and input-validation helpers. Labels outside the pool remain unknown, and the bootstrap does not include annotation uncertainty.

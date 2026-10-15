@@ -108,3 +108,7 @@ PYVERIFY
 ```
 
 Reproduction paths differ from the saved report's paths; compare coverage and label-view results rather than whole-file hashes. The report records checksums for the analysis and its scoring, coverage, uncertainty and input-validation helpers. Labels outside the pool remain unknown, and the bootstrap does not include annotation uncertainty.
+
+## Label audit and fresh source-backed follow-up
+
+The [blinded label audit](../../reports/LABEL_AUDIT.md) checks all 395 added positive pairs and 120 sampled negatives, records disagreements without replacing labels, and prepares a blank human review packet. The [fresh source-backed benchmark](../../reports/SOURCE_BENCHMARK.md) has 90 intents with complete same-split candidate judgments, source-disjoint development/test material and audited lexical training exclusion. Its report includes the original-only longer-training and frozen-selection reproduction commands; execution status is tracked in the [second-experiment ledger](../../reports/ROUND2_PLAN.md).

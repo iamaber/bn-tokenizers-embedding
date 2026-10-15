@@ -170,6 +170,7 @@ def build(root: Path, overlap: Path, output: Path) -> dict:
                             "queries": len(queries), "documents": len(documents),
                             "source_groups": len({r["source_group"] for r in subset}),
                             "metric_weighting": "equal domain weight; variants share their domain block",
+                            "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
                             "human_review_completed": False, "unjudged_candidates": 0,
                             "files": {f"{n}.jsonl": sha256(destination / f"{n}.jsonl")
                                       for n in ("documents", "queries", "qrels")}}

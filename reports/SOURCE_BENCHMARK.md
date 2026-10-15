@@ -6,7 +6,7 @@ Pinned SBA, CFPB, NIST, NASA, GSA and USGS snapshots ground the material. Canoni
 
 Two agents reviewed all 90 intents against every same-split candidate, including cross-domain candidates, and checked parallel forms and variants. Translation and variant issues were corrected and rechecked before freezing. The 4,500 same-split intent pairs have explicit reviewed grades; those judgments project across the nine language directions and the meaning-preserving Banglish variants. This projection assumes the reviewed translations preserve meaning and does not constitute human language validation.
 
-The [material, source provenance and review](../experiments/retrieval/source_benchmark_v1/) and [dataset manifest](source-benchmark-v1.json) bind the frozen inputs. The [overlap audit](source-benchmark-overlap-v1.json) found zero canonical or near-copy matches across original train/validation/test, expanded training, actual alignment pairs and reviewed negatives. Eight-word shingle containment detects longer verbatim reuse; it cannot rule out semantic overlap or base-model pretraining exposure. Original project test text was inspected only for integrity, never scored.
+The [material, source provenance and review](../experiments/retrieval/source_benchmark_v1/) and [dataset manifest](source-benchmark-v2.json) bind the frozen inputs. The [overlap audit](source-benchmark-overlap-v1.json) found zero canonical or near-copy matches across original train/validation/test, expanded training, actual alignment pairs and reviewed negatives. Eight-word shingle containment detects longer verbatim reuse; it cannot rule out semantic overlap or base-model pretraining exposure. Original project test text was inspected only for integrity, never scored.
 
 Metrics give equal weight to six domains. Banglish spelling variants remain inside their domain block. Paired uncertainty jointly resamples training seeds and six domain blocks; variants are not treated as independent evidence. Annotation uncertainty is excluded.
 
@@ -40,3 +40,19 @@ HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
   --root models/encoders-round2 \
   --output reports/round2-original-training-v1.json
 ```
+
+After all six original-tokenizer runs complete, execute the fresh comparison:
+
+```sh
+HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false .venv/retrieval/bin/python \
+  experiments/retrieval/original_comparison.py \
+  --benchmark data/processed/source-benchmark-v2 \
+  --inventory reports/round2-original-training-v1.json \
+  --base models/hf-cache/models--intfloat--multilingual-e5-small/snapshots/614241f622f53c4eeff9890bdc4f31cfecc418b3 \
+  --criteria experiments/retrieval/round2_original_criteria.json \
+  --output data/processed/round2-original-comparison-v1
+```
+
+The runner verifies trained checkpoint identity and checksums, records frozen inputs, evaluates all 13 models on development, saves the development selection, and only then evaluates reserved test. The 13 models are unchanged E5 plus six short and six longer original-tokenizer runs. Short and longer protocols have different exposure/time budgets; the comparison measures their joint intervention rather than attributing any gain to one training change.
+
+Dataset v2 adds the explicit reviewed-label status consumed by the evaluator. Texts, judgments, splits and overlap evidence are byte-identical to v1.

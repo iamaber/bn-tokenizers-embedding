@@ -1,0 +1,51 @@
+{
+  "intent_groups": 90,
+  "split_counts": {
+    "development": 60,
+    "test": 30
+  },
+  "material_sha256": {
+    "banking.jsonl": "1588773bed0b64bc5d0f8f831898584a280b2cdce9a5c8432e316d01e9fc50e3",
+    "business.jsonl": "4b8de17cae52724178fdddb6aa6488238f78ee6c0f028735a14698e9fa4e7b9c",
+    "conversation.jsonl": "929de8a9c2b2298fd34091b9e2bbe7dfcc00370a79a974659117565e27d8f969",
+    "qa.jsonl": "0cac2c7fba2edc8b7c89af22f64f208b7f2d4b4a9d5828f477578c916e0ebc4d",
+    "science.jsonl": "c50584ac57ee449bc11ec9009be113bd06d8b6ac86ca8a969a6df391826bba8d",
+    "technology.jsonl": "92f0c9a753e7367375d8eee1af23afcd545a63db0e5d6896bff7e7fb3b4f54b0"
+  },
+  "sources_sha256": "f57d2edcce651d4d5a4484b67374819c0ae75e39ce0938df0686248bcdce9f99",
+  "reviews": {
+    "review-a.json": "fac44797811d7568e64503d40638bb7c041d5988812f6eb16790a6a0f2e93416",
+    "review-b.json": "07616e74511c1d3fd05d2ea7a6830d7fa85bf804406bc85c5c4cd4f2aa074382"
+  },
+  "overlap_audit_sha256": "342b1f2a1690952bfbfb2f87bc8717c06044f486b00c53cd1a599a0d73e77c04",
+  "files": {
+    "development/bn-bn/manifest.json": "d14db3e5dbb660d9eaf28c6f07303d33435b13c4d2a028ffe01ba6caa4e5ddfc",
+    "development/bn-bl/manifest.json": "9a923c469a4919277d76f12c737e0ac042cb02372b9f8080667f3626eeb1aefd",
+    "development/bn-en/manifest.json": "bd477b74854b970688ec5e83f909f9f9e387e7e65b57dae4e599b1e7accdec79",
+    "development/bl-bn/manifest.json": "b452c9c7cfbd73923c5e22466fbb3d910af6dd6da1209025ea8e74ed162f3906",
+    "development/bl-bl/manifest.json": "79e0aa2302ad793eaf3f399047f23282104d14c253dca6427f54f84fc1fb93ea",
+    "development/bl-en/manifest.json": "95986791bb2801a77797e2f79b89909963790fc8362ee730be581f08394ba934",
+    "development/en-bn/manifest.json": "b6d5330f3114f0249da90e79bab2f35c1466af6035ef6b8265593d4528554006",
+    "development/en-bl/manifest.json": "82b9dda5ba6f5df3508028fcbba76431bf34e64923ad4b325a8136a5a3b3b119",
+    "development/en-en/manifest.json": "8a95d14863b0d4a91ae72d71729855ce5c97826054464a8645f8e8a608ed86b1",
+    "test/bn-bn/manifest.json": "7163b0ef468ba8f9aa053e9542d7a35f41d04e26b98ef2f81e9ec087a48d0349",
+    "test/bn-bl/manifest.json": "428e4f8f99149a5cd96019695349dfee6d797ba1e724e330bf4b49dfdac58c42",
+    "test/bn-en/manifest.json": "818b6bd307cb7984b7c9cdc6b9e54855ce1458de453227a88c35a96a7c6f7680",
+    "test/bl-bn/manifest.json": "cfaa765f3fc43ba009ffb08b689a5aa9f67387c6cdfc57f67bea66b4b85923b6",
+    "test/bl-bl/manifest.json": "198305c445133375a12561cd50eeb593b77338faff32ef0e6261e43714e7afe8",
+    "test/bl-en/manifest.json": "09af2e2d6ca038445291fae97338eb173f26dbd687c7f9a5156b814ed819d272",
+    "test/en-bn/manifest.json": "9e056773c61bedb5d61ab448dc61515e8705303a417b221336e3aa751c147183",
+    "test/en-bl/manifest.json": "f8f5606ce09c19f452b0592fb8a24846ae071b871a0bbb9d09a42257cd0d3177",
+    "test/en-en/manifest.json": "8dfc598d66db1fcb48d6361f92fb41b2818361cc54aa726c8e1b8507a01db536"
+  },
+  "implementation_sha256": "e71f303c1018c311d4ea2b139462081fb6fc146997ef915b9b81176d8c588a3d",
+  "test_policy": "freeze development choice before reserved-test scoring",
+  "limits": [
+    "90 agent-authored intents; not the proposed 180-intent benchmark",
+    "source/topic shifts between splits and few independent source groups",
+    "uncertainty resamples six domain blocks and training seeds, not individual variants",
+    "agent-translated documents and synthetic spelling variants; not natural traffic",
+    "short source extracts/summaries; not a long-document benchmark",
+    "agent review only; lexical overlap audit cannot exclude semantic or pretraining overlap"
+  ]
+}

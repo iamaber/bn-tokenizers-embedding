@@ -6,9 +6,10 @@ import subprocess
 import sys
 from pathlib import Path
 
-from prepare import read_rows, sha256, verify_manifest
-from seed_analysis import combine_directions, paired_seeds
 from compare import score_rankings
+from prepare import read_rows, sha256, verify_manifest
+from run_extended_matrix import verify
+from seed_analysis import combine_directions, paired_seeds
 
 
 def save_frozen(path: Path, result: dict) -> None:
@@ -103,9 +104,29 @@ def evaluate_split(models: dict, benchmark: Path, split: str, root: Path) -> tup
     return reports, scores
 
 
-def run(benchmark: Path, inventory: Path, base: Path, criteria: Path, root: Path) -> dict:
+def verify_short(directory: Path, base: Path, budget: str, seed: int) -> None:
+    report = json.loads((directory / "training-report.json").read_text())
+    metadata = json.loads((directory / "encoder.json").read_text())
+    if ((report["seed"], report["budget_kind"]) != (seed, budget)
+            or metadata["custom_tokenizer"] is not None
+            or report["tokenizer_initialization"]["method"] != "retain original tokenizer and input embeddings"):
+        raise ValueError("short control identity differs")
+    if report["base_model_files"] != {p.name: sha256(p) for p in base.iterdir() if p.is_file()}:
+        raise ValueError("short control uses a different base snapshot")
+    files = {p.name for p in directory.iterdir() if p.is_file()} - {"training-report.json"}
+    if files != report["checkpoint_files"].keys():
+        raise ValueError("short control checkpoint inventory changed")
+    for filename, digest in report["checkpoint_files"].items():
+        if Path(filename).name != filename or sha256(directory / filename) != digest:
+            raise ValueError("short control checkpoint changed")
+
+
+def run(benchmark: Path, inventory: Path, base: Path, criteria: Path, root: Path,
+        protocol: Path) -> dict:
     rules = json.loads(criteria.read_text())
     matrix = json.loads(inventory.read_text())
+    if matrix["protocol_sha256"] != sha256(protocol):
+        raise ValueError("training inventory uses a different protocol")
     models = {"unchanged": base}
     expected = {f"{b}/original-seed{s}" for b in rules["required_budgets"] for s in rules["required_training_seeds"]}
     if {r["name"] for r in matrix["runs"]} != expected or len(matrix["runs"]) != len(expected):
@@ -114,8 +135,13 @@ def run(benchmark: Path, inventory: Path, base: Path, criteria: Path, root: Path
         directory = Path(row["directory"])
         if sha256(directory / "training-report.json") != row["training_report_sha256"]:
             raise ValueError("training report changed")
+        budget, seed_name = row["name"].split("/")
+        seed = int(seed_name.removeprefix("original-seed"))
+        verify(directory, protocol, base, "original", seed, budget)
         models[f"long/{row['name']}"] = directory
-        models[f"short/{row['name']}"] = Path("models/encoders") / row["name"]
+        short = Path("models/encoders") / row["name"]
+        verify_short(short, base, budget, seed)
+        models[f"short/{row['name']}"] = short
     benchmark_manifest = json.loads((benchmark / "manifest.json").read_text())
     for filename, digest in benchmark_manifest["files"].items():
         if sha256(benchmark / filename) != digest:
@@ -123,10 +149,11 @@ def run(benchmark: Path, inventory: Path, base: Path, criteria: Path, root: Path
         verify_manifest((benchmark / filename).parent)
     frozen = {"benchmark_manifest_sha256": sha256(benchmark / "manifest.json"),
               "training_inventory_sha256": sha256(inventory), "criteria_sha256": sha256(criteria),
+              "training_protocol_sha256": sha256(protocol),
               "models": {name: {p.name: sha256(p) for p in model.iterdir() if p.is_file()} for name, model in models.items()},
               "implementations": {name: sha256(Path(__file__).with_name(name)) for name in
                                   ("original_comparison.py", "evaluate_encoder.py", "encoder.py", "prepare.py",
-                                   "compare.py", "metrics.py", "seed_analysis.py")}}
+                                   "compare.py", "metrics.py", "seed_analysis.py", "run_extended_matrix.py")}}
     save_frozen(root / "frozen-inputs.json", frozen)
     reports, scores = evaluate_split(models, benchmark, "development", root)
     development = compare(scores, reports, rules)
@@ -154,5 +181,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("benchmark", "inventory", "base", "criteria", "output"):
         parser.add_argument(f"--{name}", type=Path, required=True)
+    parser.add_argument("--protocol", type=Path,
+                        default=Path(__file__).with_name("round2_training_protocol.json"))
     args = parser.parse_args()
-    run(args.benchmark, args.inventory, args.base, args.criteria, args.output)
+    run(args.benchmark, args.inventory, args.base, args.criteria, args.output, args.protocol)

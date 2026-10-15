@@ -1,0 +1,39 @@
+{
+  "original_judgments_sha256": "e1d0eba2e1533d08fd0c3f93ae1071d6e480301c20167f1c63c277226db8c655",
+  "dataset_manifest_sha256": "64929c0ed35f07c5153b914db9f46919244198680e68f4538bb51750325d1932",
+  "reviews": {
+    "experiments/retrieval/expanded_label_audit_v1/audit-0.jsonl": "1304238ffcec1e82571173022001dc38a2f8040eacc930a7c24e37205b10199b",
+    "experiments/retrieval/expanded_label_audit_v1/audit-1.jsonl": "b2b44c5d6c62975eb03c318faba88942010eef90563144890e1524688ccb0f13",
+    "experiments/retrieval/expanded_label_audit_v1/audit-2.jsonl": "21d70eb74a42128a1cbfcfc7a26de12715c4af4e20446804f75e86131d6f1a9d"
+  },
+  "sampling_seed": 20261012,
+  "reviewed_pairs": 515,
+  "positive_pairs": 395,
+  "sampled_negatives": 120,
+  "confusion_original_to_audit": {
+    "0->0": 113,
+    "0->1": 7,
+    "1->0": 12,
+    "1->1": 318,
+    "1->2": 32,
+    "2->2": 33
+  },
+  "agreement_fraction": 0.9009708737864077,
+  "disagreements": 51,
+  "original_labels_modified": false,
+  "human_review_completed": false,
+  "independent_human_review_verified": false,
+  "human_packet": "data/processed/expanded-label-audit-complete-v1/human-review-packet.jsonl",
+  "files": {
+    "human-review-packet.jsonl": "c6865613407f947376cc2972e82f7ecefc7b0b334c5cee58ec520cdd2776203b",
+    "disagreements.jsonl": "ad3784071a115a2667695348a15964e649a457b63b700e2805416a0636bdddd8"
+  },
+  "implementation_sha256": "09cd93b612d416add4c1ce471cb3a0ac12e40ecdf1bc487b9c7a460d6e2cc956",
+  "limitations": [
+    "second-pass agent review, not human language validation",
+    "sample deliberately includes every positive; overall agreement is not a population estimate",
+    "negative sample is uniform and seeded; unsampled errors remain possible",
+    "disagreements require adjudication, not automatic replacement",
+    "informal transliteration and missing conversation context remain ambiguous"
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "reviewer_id": "benchmark-review-a",
+  "reviewer_origin": "agent",
+  "material_sha256": {
+    "banking.jsonl": "1588773bed0b64bc5d0f8f831898584a280b2cdce9a5c8432e316d01e9fc50e3",
+    "business.jsonl": "4b8de17cae52724178fdddb6aa6488238f78ee6c0f028735a14698e9fa4e7b9c",
+    "conversation.jsonl": "929de8a9c2b2298fd34091b9e2bbe7dfcc00370a79a974659117565e27d8f969",
+    "qa.jsonl": "0cac2c7fba2edc8b7c89af22f64f208b7f2d4b4a9d5828f477578c916e0ebc4d",
+    "science.jsonl": "c50584ac57ee449bc11ec9009be113bd06d8b6ac86ca8a969a6df391826bba8d",
+    "technology.jsonl": "92f0c9a753e7367375d8eee1af23afcd545a63db0e5d6896bff7e7fb3b4f54b0"
+  },
+  "review_scope": {
+    "records_read": 90,
+    "query_count": 45,
+    "same_split_candidate_count": 2250,
+    "policy": "Reviewed all 60 development documents for each of 30 assigned development queries and all 30 test documents for each of 15 assigned test queries. Every unlisted same-split candidate is reviewed grade 0. Grade 2 fully answers, grade 1 supplies substantive part of the answer; topical similarity alone receives 0. Queries are evaluated against candidate passage text, not the larger source.",
+    "source_grounding": "All 15 business excerpts matched pinned SBA blocks exactly. All 15 banking excerpts matched pinned CFPB text. Read all 15 pinned GSA markdown sources and confirmed the conversation summaries are grounded. Translation/variant observations above are agent review, not human validation."
+  },
+  "issues": [
+    {
+      "record_id": "conversation-10",
+      "field": "bn",
+      "severity": "medium",
+      "kind": "translation",
+      "detail": "পাঠক আলাদা কিছু বোঝাতে পারেন means readers may mean something else, rather than readers may think the writer refers to something else. Use পাঠক ভিন্ন কিছু বোঝানো হয়েছে বলে ভাবতে পারেন or similar.",
+      "status": "resolved",
+      "resolution": "Bengali now correctly says readers may think something different is meant."
+    },
+    {
+      "record_id": "banking-14",
+      "field": "q_bl_variants[0]",
+      "severity": "medium",
+      "kind": "variant",
+      "detail": "bank fee chara can ask for fee-free overdraft coverage; the original asks for alternatives to the bank paying the transaction for a fee. The source does not promise linked-account/card/credit-line transfers are free. Preserve fee-based payment as the contrasted mechanism.",
+      "status": "resolved",
+      "resolution": "Variant now contrasts bank payment for a fee with transfers from linked sources; it no longer promises no fee."
+    },
+    {
+      "record_id": "conversation-05",
+      "field": "q_bl_variants[0]",
+      "severity": "medium",
+      "kind": "variant",
+      "detail": "active passive kontay narrows the broad writing-choice question to a forced choice and supplies the expected term. Direct-address conversation-01 partially answers the original but not this variant; rephrase without naming active/passive.",
+      "status": "resolved",
+      "resolution": "Variant now asks for the writing practice without supplying active/passive choices."
+    },
+    {
+      "record_id": "conversation-07",
+      "field": "q_bl_variants[0]",
+      "severity": "low",
+      "kind": "variant",
+      "detail": "The variant supplies all three expected words must/must not/should, whereas the primary asks which words to use. It changes word retrieval into explanation of an already named mapping.",
+      "status": "resolved",
+      "resolution": "Variant now asks for the English words without supplying must/must not/should."
+    },
+    {
+      "record_id": "business-15",
+      "field": "q_bl_variants[0]",
+      "severity": "low",
+      "kind": "variant",
+      "detail": "The variant asks only which company type avoids C-corp double tax and drops the explicit passing-profits-to-personal-income condition. Intended target remains the same, but query meaning and specificity are reduced.",
+      "status": "resolved",
+      "resolution": "Variant restores profits passing into owner personal income and C-corp double-tax avoidance."
+    },
+    {
+      "record_id": "business-09",
+      "field": "q_bn,q_bl",
+      "severity": "low",
+      "kind": "translation",
+      "detail": "English asks whether the expenses recur; Bengali/Banglish ask the broader category. Both can be answered by one-time expenses, but a yes/no classification has changed into an open category question.",
+      "status": "resolved",
+      "resolution": "Bengali and Banglish primary questions now both ask whether the expenses recur."
+    },
+    {
+      "record_id": "business-13",
+      "field": "q_bl_variants[0]",
+      "severity": "low",
+      "kind": "variant",
+      "detail": "Variant asks whether house/car are protected, supplying two assets and dropping savings; primary asks which personal assets are protected. Same target but a narrower yes/no task.",
+      "status": "resolved",
+      "resolution": "Variant now asks which personal assets are usually protected without supplying house/car."
+    },
+    {
+      "record_id": "banking-09",
+      "field": "bn",
+      "severity": "low",
+      "kind": "translation",
+      "detail": "Bengali passage adds হিসাব খুলতে (to open the account). Pinned English only says the account might require a minimum deposit. This is plausible context but more specific than the supplied source.",
+      "status": "resolved",
+      "resolution": "Bengali passage now states a minimum-deposit requirement without adding account-opening context."
+    },
+    {
+      "record_id": "technology-07",
+      "field": "q_bl",
+      "severity": "medium",
+      "kind": "script",
+      "detail": "Observed while reading all candidate records: shamলabe contains Bengali ল inside the romanized query. It should be consistently romanized, e.g. shamlabe.",
+      "status": "resolved",
+      "resolution": "Banglish shamlabe is now entirely Latin-script."
+    }
+  ],
+  "queries": {
+    "business-01": {
+      "positive_grades": {
+        "business-01": 2,
+        "business-02": 1
+      },
+      "rationale": "business-01 lists age, wealth, family and interests. business-02 contributes demographics and household incomes, but not the full range of customer characteristics. business-03 discusses direct research about logos and buying experience rather than demographic characteristics. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-02": {
+      "positive_grades": {
+        "business-02": 2
+      },
+      "rationale": "business-02 explicitly warns existing data may not fit the particular audience. business-01 lists demographics but no limitation of existing sources; business-03 describes direct research without explaining existing data limitations. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-03": {
+      "positive_grades": {
+        "business-03": 2
+      },
+      "rationale": "business-03 gives both nuanced audience understanding and time/money cost of direct logo research. business-02 concerns the benefits and limitations of existing sources, not the requested direct research tradeoff; business-09 concerns paying a logo designer, not research. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-04": {
+      "positive_grades": {
+        "business-04": 2
+      },
+      "rationale": "business-04 names competitive analysis and its purpose. business-03 mentions where customers might go instead but does not identify the requested analysis; business-01 concerns demographics. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-05": {
+      "positive_grades": {
+        "business-05": 2
+      },
+      "rationale": "business-05 identifies traditional plans with detailed sections and dozens of pages. business-06 describes the opposite, short lean format, and does not name the detailed format. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-06": {
+      "positive_grades": {
+        "business-06": 2
+      },
+      "rationale": "business-06 identifies lean startup plans and their typical one-page length. business-05 gives the traditional format and many pages, not the one-page alternative. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-07": {
+      "positive_grades": {
+        "business-07": 2
+      },
+      "rationale": "business-07 directly states no loss or gain when total cost equals revenue. business-08 supplies a units formula but never states the profit/loss meaning; business-04 mentions sustainable revenue without break-even. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-08": {
+      "positive_grades": {
+        "business-08": 2
+      },
+      "rationale": "business-08 gives fixed costs divided by price minus variable costs. business-07 defines equality of costs and revenues but gives neither the units calculation nor its necessary variables. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-09": {
+      "positive_grades": {
+        "business-09": 2
+      },
+      "rationale": "business-09 classifies equipment and logo design as one-time expenses. business-10 lists recurring salaries/rent/utilities but does not classify the queried equipment and designer; business-03 is logo research rather than designer expenditure. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-10": {
+      "positive_grades": {
+        "business-10": 2
+      },
+      "rationale": "business-10 states at least one year and ideally five years of monthly expenses. business-09 defines initial expenses without a budgeting horizon; banking-02 also mentions five years but is about CD maturity, not startup budgeting. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-11": {
+      "positive_grades": {
+        "business-11": 2
+      },
+      "rationale": "business-11 says sole-proprietor business and personal liabilities are not separate. business-12 concerns partners, and business-13 concerns LLC protection; neither establishes the rule for a sole proprietor. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-12": {
+      "positive_grades": {
+        "business-12": 2
+      },
+      "rationale": "business-12 names the general partner as the unlimited-liability partner. business-11 explains a sole proprietor and business-13 an LLC; neither describes limited-partnership roles. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-13": {
+      "positive_grades": {
+        "business-13": 2
+      },
+      "rationale": "business-13 names vehicles, houses and savings as personal assets usually protected in an LLC lawsuit. business-11 discusses sole-proprietor exposure, not LLC protection; business-12 discusses partnership liability. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-14": {
+      "positive_grades": {
+        "business-14": 2,
+        "business-15": 1
+      },
+      "rationale": "business-14 explains tax first on corporate profits and then shareholder dividends. business-15 confirms regular C-corp double taxation and contrasts passing profits directly to owners without corporate rates, but does not explain the dividend tax stage. business-12 pass-through partnership tax is not C-corporation taxation. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "business-15": {
+      "positive_grades": {
+        "business-15": 2
+      },
+      "rationale": "business-15 identifies S corporations and direct pass-through avoiding C-corp double tax. business-14 describes double tax but not the S-corporation solution; business-12 mentions pass-through profits but is a partnership rather than the requested corporation. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-01": {
+      "positive_grades": {
+        "banking-01": 2,
+        "banking-03": 2
+      },
+      "rationale": "banking-01 explicitly requires a penalty fee for early CD withdrawal. banking-03 independently identifies a penalty for withdrawal before the term ends, enough to answer the consequence. banking-02 discusses maturity selection without a withdrawal consequence. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-02": {
+      "positive_grades": {
+        "banking-02": 2
+      },
+      "rationale": "banking-02 explicitly recommends considering a five-year CD for money needed in five years. banking-03 defines term but supplies no five-year choice; business-10 also mentions five years for unrelated startup expenses. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-03": {
+      "positive_grades": {
+        "banking-03": 2,
+        "banking-01": 1,
+        "banking-02": 1
+      },
+      "rationale": "banking-03 lists term, earned interest rate and early-withdrawal penalty amount. banking-01 supplies the commitment period and early penalty but omits interest rate and comparative amounts. banking-02 explains choosing maturity to fit needs, one of the three comparison details, but lacks rate and penalty. banking-06 discusses interest on a different product, not a CD offer. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-04": {
+      "positive_grades": {
+        "banking-04": 2
+      },
+      "rationale": "banking-04 maps bank CDs to FDIC and credit-union CDs to NCUA and states $250,000. banking-05 gives those insurers and that amount for money-market deposits, but neither the CD-specific statement nor the agency-to-provider mapping; shared insurers alone do not answer the specified passage question. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-05": {
+      "positive_grades": {
+        "banking-05": 2
+      },
+      "rationale": "banking-05 states $250,000 for money-market deposits of the same owner(s). banking-04 states a CD amount without money-market deposits or the owner condition; banking-06 only covers money-market interest. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-06": {
+      "positive_grades": {
+        "banking-06": 2
+      },
+      "rationale": "banking-06 directly says money-market accounts tend to pay higher rates than other savings accounts. banking-03 mentions comparing CD interest without making the requested comparison; banking-05 defines and insures money-market accounts without rate information. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-07": {
+      "positive_grades": {
+        "banking-07": 2
+      },
+      "rationale": "banking-07 names check, debit card and electronic transfer as number-limited methods. banking-08 lists the usually unlimited channels, without identifying which channels are limited; banking-10 mentions checks for investment funds, not deposit-account transaction limits. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-08": {
+      "positive_grades": {
+        "banking-08": 2
+      },
+      "rationale": "banking-08 supplies ATM, in-person, mail and telephone channels. banking-07 supplies the contrasting limited methods but does not name unlimited methods; banking-09 is about deposits rather than withdrawals. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-09": {
+      "positive_grades": {
+        "banking-09": 2
+      },
+      "rationale": "banking-09 says a minimum deposit may be required. banking-05 describes account providers and insurance rather than minimum deposits; banking-01 concerns leaving CD money in place rather than opening a money-market account. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-10": {
+      "positive_grades": {
+        "banking-10": 2
+      },
+      "rationale": "banking-10 explicitly says check-writing money-market mutual funds remain investments rather than savings/checking accounts. banking-05 describes deposit money-market accounts without distinguishing mutual funds; banking-07 mentions checks but gives no investment/deposit classification. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-11": {
+      "positive_grades": {
+        "banking-11": 2
+      },
+      "rationale": "banking-11 explicitly names overdraft for payment despite insufficient funds. banking-14 assumes the term while describing protection programs and does not give the insufficient-funds definition; banking-12 describes deposit availability but not the bank paying the transaction. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-12": {
+      "positive_grades": {
+        "banking-12": 2
+      },
+      "rationale": "banking-12 explains deposited money may not yet be available. banking-11 gives the general insufficient-funds definition, not why a fresh deposit can fail to prevent overdraft; banking-13 lists transaction types without deposit timing. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-13": {
+      "positive_grades": {
+        "banking-13": 2
+      },
+      "rationale": "banking-13 lists checks, ATM transactions, debit purchases, automatic bills and electronic/in-person withdrawals. banking-11 uses generic transaction, not types; banking-14 lists overdraft coverage sources rather than transaction types causing overdraft. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-14": {
+      "positive_grades": {
+        "banking-14": 2
+      },
+      "rationale": "banking-14 directly names transfers from a linked account, credit card or credit line as alternatives. banking-15 mentions linked-account and credit-line costs but does not state how these cover an overdraft or mention credit cards, so it is an adjacent cost-comparison passage rather than an answer to coverage alternatives. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "banking-15": {
+      "positive_grades": {
+        "banking-15": 2,
+        "banking-14": 1
+      },
+      "rationale": "banking-15 explicitly directs asking about protection, linked-account and credit-line costs. banking-14 supplies the bank payment fee, a substantive part of those costs, and identifies coverage mechanisms, but omits the comparison instruction and their costs. banking-11 defines overdraft without costs. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-01": {
+      "positive_grades": {
+        "conversation-01": 2,
+        "conversation-05": 1
+      },
+      "rationale": "conversation-01 supplies direct you address plus defining the referent. conversation-05 offers a substantive technique for the responsibility-clarity part, active voice identifying the actor, but not direct reader address. conversation-02 organizes separate audiences without telling how to address readers. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-02": {
+      "positive_grades": {
+        "conversation-02": 2,
+        "conversation-01": 1
+      },
+      "rationale": "conversation-02 directly says separate different audiences information. conversation-01 gives a partial multi-audience instruction, define whom you means, but not the requested separation/organization. conversation-04 offers single-topic paragraphs without identifying audience separation. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-03": {
+      "positive_grades": {
+        "conversation-03": 2
+      },
+      "rationale": "conversation-03 says split clause-heavy sentences into smaller one-idea units and preserve condition/outcome relationships. conversation-08 is about ordering rules and exceptions, not splitting overloaded sentences; conversation-04 is about paragraphs rather than sentences. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-04": {
+      "positive_grades": {
+        "conversation-04": 2
+      },
+      "rationale": "conversation-04 explicitly limits each paragraph to one topic. conversation-03 limits sentences to one idea but cannot establish paragraph scope; conversation-02 separates audiences rather than paragraph topics. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-05": {
+      "positive_grades": {
+        "conversation-05": 2,
+        "conversation-01": 1
+      },
+      "rationale": "conversation-05 explicitly identifies active voice as making the actor responsible clear. conversation-01 gives another concrete responsibility-clarifying writing practice, direct address with defined you, but does not explicitly explain identifying the action performer through sentence voice. The corrected variant now preserves the broad writing-choice question. conversation-07 specifies obligation words without identifying the actor. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-06": {
+      "positive_grades": {
+        "conversation-06": 2
+      },
+      "rationale": "conversation-06 says use contractions only where natural, not everywhere possible. conversation-09 addresses technical terminology rather than contractions; conversation-03 addresses sentence length, not contracted word forms. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-07": {
+      "positive_grades": {
+        "conversation-07": 2
+      },
+      "rationale": "conversation-07 maps must, must not and should to requirement, prohibition and recommendation. conversation-05 explains voice and actor identification, not modal meanings; conversation-08 discusses exceptions to rules without the required vocabulary. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-08": {
+      "positive_grades": {
+        "conversation-08": 2
+      },
+      "rationale": "conversation-08 explicitly rejects an absolute ordering rule and allows a short condition first to avoid misunderstanding. conversation-03 preserves condition/outcome relations during sentence splitting but does not authorize an exception before the rule; conversation-07 addresses modal verbs. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-09": {
+      "positive_grades": {
+        "conversation-09": 2
+      },
+      "rationale": "conversation-09 explicitly retains technical terms needed for accuracy. conversation-10 concerns consistent naming, not whether technical terms should be removed; conversation-06 discusses contractions, not jargon. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-10": {
+      "positive_grades": {
+        "conversation-10": 2
+      },
+      "rationale": "conversation-10 states synonyms for the same group may falsely suggest different referents. conversation-01 warns of ambiguous you referents without discussing switching names; conversation-09 discusses unnecessary technical language rather than synonym consistency. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-11": {
+      "positive_grades": {
+        "conversation-11": 2
+      },
+      "rationale": "conversation-11 identifies specific question headings and contrasts vague topic headings. conversation-12 says lists aid scanning but does not identify a heading type; conversation-15 describes link labels, not headings. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-12": {
+      "positive_grades": {
+        "conversation-12": 2
+      },
+      "rationale": "conversation-12 says number steps when chronological order matters. conversation-11 explains headings for scanning, not numbering; conversation-15 concerns link text and has no process-order instruction. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-13": {
+      "positive_grades": {
+        "conversation-13": 2
+      },
+      "rationale": "conversation-13 says define an unfamiliar unavoidable abbreviation on first use. conversation-14 says replace confusing Latin example abbreviations with words, not how to introduce unavoidable abbreviations; conversation-15 concerns descriptive link text. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-14": {
+      "positive_grades": {
+        "conversation-14": 2
+      },
+      "rationale": "conversation-14 recommends relevant examples for complex concepts with explicit introductory wording. conversation-13 explains abbreviations without discussing relevant examples; conversation-11 helps find answers using headings rather than explaining concepts. All other same-split candidates across the six domains provide no answer to this query."
+    },
+    "conversation-15": {
+      "positive_grades": {
+        "conversation-15": 2
+      },
+      "rationale": "conversation-15 recommends descriptive destination-indicating link text and short description if needed. conversation-11 addresses descriptive headings, not link labels; conversation-13 replaces unfamiliar abbreviations, not navigation labels. All other same-split candidates across the six domains provide no answer to this query."
+    }
+  },
+  "prior_material_sha256": {
+    "banking.jsonl": "386a32ddadb9f55d4e13dfa60eaeb1c7ccadd48fcdc93fc3ad2c6bfecb313f9a",
+    "business.jsonl": "979f1e48e61873a05ad482cc05843be677c7d0b2b45c2c53465dac903dcaccb3",
+    "conversation.jsonl": "56812971e9126474cb2e1e8da7872b20911d8be8d40b7be097425b9d4ba31411",
+    "qa.jsonl": "ce26ff007ccf91321611ae0c4a7108bec84e11bc25869f8d10fee021dfb5f033",
+    "science.jsonl": "2895be28d9a1a6d84a1c6c6764e731062afc782f992fe607b3af672a01372fe1",
+    "technology.jsonl": "3a05f28b59f1d16bca4e63f3ec2038714036ce013b024f7e8707c6de35123e5c"
+  },
+  "unresolved_issues": false,
+  "recheck": {
+    "reviewer_origin": "agent",
+    "result": "All nine recorded issues resolved. Re-read corrected records and all 90 English passages/queries/variants to check candidate relevance. Original 45-query positive_grades remain valid; no passage change creates another nonzero candidate for assigned queries. This recheck does not replace the other reviewer's translation/source review for science, technology, and qa.",
+    "positive_grades_changed": false
+  }
+}

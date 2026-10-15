@@ -1,0 +1,282 @@
+{
+  "sba-plan": {
+    "id": "sba-plan",
+    "url": "https://www.sba.gov/counseling/plan-your-business/",
+    "canonical_url": "https://www.sba.gov/counseling/plan-your-business/",
+    "file": "data/raw/round2-sources/sba-plan.html",
+    "bytes": 252846,
+    "sha256": "20a1c2a28141ef1420786212f91f31dfa84e8c9a4a337061536465101c73e9d4",
+    "attribution": "SBA; U.S. government public-domain information",
+    "rights_policy": "https://www.sba.gov/about-sba/open-government/about-the-sba-gov-website/",
+    "snapshot_date": "2026-10-09"
+  },
+  "sba-launch": {
+    "id": "sba-launch",
+    "url": "https://www.sba.gov/counseling/launch-your-business/",
+    "canonical_url": "https://www.sba.gov/counseling/launch-your-business/",
+    "file": "data/raw/round2-sources/sba-launch.html",
+    "bytes": 252669,
+    "sha256": "c6348ffb9266fa4aeb066026fd87e424a4267c4c076ec5a16c498b64b42db4e6",
+    "attribution": "SBA; U.S. government public-domain information",
+    "rights_policy": "https://www.sba.gov/about-sba/open-government/about-the-sba-gov-website/",
+    "snapshot_date": "2026-10-09"
+  },
+  "nist-cloud": {
+    "id": "nist-cloud",
+    "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+    "canonical_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf",
+    "file": "data/raw/round2-sources/nist-cloud.pdf",
+    "bytes": 85781,
+    "sha256": "7b0c1a9fdfc67218b8ba2098f448c100c27070db91736b3c87fed63bfa21d418",
+    "attribution": "Republished courtesy of the National Institute of Standards and Technology; agent paraphrases",
+    "rights_policy": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+    "snapshot_date": "2026-10-09"
+  },
+  "nist-auth": {
+    "id": "nist-auth",
+    "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+    "canonical_url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+    "file": "data/raw/round2-sources/nist-auth.html",
+    "bytes": 354118,
+    "sha256": "19bb9c2def2eac15247f632216247d3e3d531826c7eb69e902d51589ebcd76f0",
+    "attribution": "Republished courtesy of the National Institute of Standards and Technology; agent paraphrases",
+    "rights_policy": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+    "snapshot_date": "2026-10-09"
+  },
+  "nasa-sun": {
+    "id": "nasa-sun",
+    "url": "https://science.nasa.gov/sun/facts/",
+    "canonical_url": "https://science.nasa.gov/sun/facts/",
+    "file": "data/raw/round2-sources/nasa-sun.html",
+    "bytes": 325124,
+    "sha256": "cae697c70fd1f029468bfdb03a91c997c2f1439ce06b48c5e995bcef0fda2f1f",
+    "attribution": "NASA; agent-authored factual summaries; no imagery or third-party captions",
+    "rights_policy": "https://www.nasa.gov/nasa-brand-center/",
+    "snapshot_date": "2026-10-09"
+  },
+  "nasa-earth": {
+    "id": "nasa-earth",
+    "url": "https://science.nasa.gov/earth/facts/",
+    "canonical_url": "https://science.nasa.gov/earth/facts/",
+    "file": "data/raw/round2-sources/nasa-earth.html",
+    "bytes": 324000,
+    "sha256": "a96e82ce53646f2b385860ed659ee07afa672e8b7e8e13eb17c8b6fa2e089cf7",
+    "attribution": "NASA; agent-authored factual summaries; no imagery or third-party captions",
+    "rights_policy": "https://www.nasa.gov/nasa-brand-center/",
+    "snapshot_date": "2026-10-09"
+  },
+  "usgs-water": {
+    "id": "usgs-water",
+    "url": "https://www.usgs.gov/water-science-school/water-cycle",
+    "canonical_url": "https://www.usgs.gov/water-science-school/water-cycle",
+    "file": "data/raw/round2-sources/usgs-water.html",
+    "bytes": 102909,
+    "sha256": "d7b4a5827617ffc02309bca0562c14782441734e671adea92dbe88b5e62fd43e",
+    "attribution": "USGS; original agent summaries of facts; U.S. public-domain source",
+    "rights_policy": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "snapshot_date": "2026-10-09"
+  },
+  "usgs-volcano": {
+    "id": "usgs-volcano",
+    "url": "https://www.usgs.gov/programs/VHP/volcanoes-can-affect-climate",
+    "canonical_url": "https://www.usgs.gov/programs/VHP/volcanoes-can-affect-climate",
+    "file": "data/raw/round2-sources/usgs-volcano.html",
+    "bytes": 126295,
+    "sha256": "c67f96b9c85363825e6a628ecf0a4f89a3f277ca11c356fd86c6db0b7f2b8ffe",
+    "attribution": "USGS; original agent summaries of facts; U.S. public-domain source",
+    "rights_policy": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-address-the-user": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/audience/address-the-user.md",
+    "file": "data/raw/round2-sources/gsa-address-the-user.md",
+    "path": "_pages/guidelines/audience/address-the-user.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/audience/address-the-user.md",
+    "sha256": "2a16d00440b6a28da0df4de01271a9e5b26e7330d39c35bbe1ffdcd298097de7",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-address-separate-audiences-separately": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/audience/address-separate-audiences-separately.md",
+    "file": "data/raw/round2-sources/gsa-address-separate-audiences-separately.md",
+    "path": "_pages/guidelines/audience/address-separate-audiences-separately.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/audience/address-separate-audiences-separately.md",
+    "sha256": "b4d692f7f874d16eb362a6537925f816b56137e0d721f177450d6f3321dea16b",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-write-short-sentences": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/concise/write-short-sentences.md",
+    "file": "data/raw/round2-sources/gsa-write-short-sentences.md",
+    "path": "_pages/guidelines/concise/write-short-sentences.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/concise/write-short-sentences.md",
+    "sha256": "c2a1f7d3bef6987fc88f74ea66b8875f3cfc961935cf8ba731b40f045fed7ca5",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-write-short-paragraphs": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/concise/write-short-paragraphs.md",
+    "file": "data/raw/round2-sources/gsa-write-short-paragraphs.md",
+    "path": "_pages/guidelines/concise/write-short-paragraphs.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/concise/write-short-paragraphs.md",
+    "sha256": "ea59928c0562ce6b8e3909d6a52b19e99e789babfe35854e64aeedb86c406c0d",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-active-voice": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-active-voice.md",
+    "file": "data/raw/round2-sources/gsa-use-active-voice.md",
+    "path": "_pages/guidelines/conversational/use-active-voice.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-active-voice.md",
+    "sha256": "f1f45e977f2f1ada94c429344d966df622bfe39cc1b0e23a91c7384857ee2d7b",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-contractions": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-contractions.md",
+    "file": "data/raw/round2-sources/gsa-use-contractions.md",
+    "path": "_pages/guidelines/conversational/use-contractions.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-contractions.md",
+    "sha256": "bd8b884039801145e3e64299a74a1e4980487381d725e6b53a2cbbc4edb2c4b4",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-must-to-indicate-requirements": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+    "file": "data/raw/round2-sources/gsa-use-must-to-indicate-requirements.md",
+    "path": "_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-must-to-indicate-requirements.md",
+    "sha256": "17cc75696ca23a269bc2ffd0f7a89180cf3e181f38d2d578cf4dd48ebae5195b",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-place-the-main-idea-before-exceptions-and-conditions": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/place-the-main-idea-before-exceptions-and-conditions.md",
+    "file": "data/raw/round2-sources/gsa-place-the-main-idea-before-exceptions-and-conditions.md",
+    "path": "_pages/guidelines/organize/place-the-main-idea-before-exceptions-and-conditions.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/place-the-main-idea-before-exceptions-and-conditions.md",
+    "sha256": "456829b9a7e7cadcd717ec7f4343a94ee7bd844db0050eb4fcf04cb05d2f100b",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-avoid-jargon": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/avoid-jargon.md",
+    "file": "data/raw/round2-sources/gsa-avoid-jargon.md",
+    "path": "_pages/guidelines/words/avoid-jargon.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/avoid-jargon.md",
+    "sha256": "36c9c953fb1730f63055bd906465b819a7f1b2d7d7dfb23aff796bc3bbc965b9",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-the-same-terms-consistently": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/use-the-same-terms-consistently.md",
+    "file": "data/raw/round2-sources/gsa-use-the-same-terms-consistently.md",
+    "path": "_pages/guidelines/words/use-the-same-terms-consistently.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/use-the-same-terms-consistently.md",
+    "sha256": "cdedce076b46477d6bc8abb198c700d7644dca355245b5cbfb3911ed4e3ee26f",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-add-useful-headings": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/add-useful-headings.md",
+    "file": "data/raw/round2-sources/gsa-add-useful-headings.md",
+    "path": "_pages/guidelines/organize/add-useful-headings.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/add-useful-headings.md",
+    "sha256": "71473eba6a50bf7241a9c99bff2d2912c55aff9539a8c77bfc3dccd451c67f0a",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-lists": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/use-lists.md",
+    "file": "data/raw/round2-sources/gsa-use-lists.md",
+    "path": "_pages/guidelines/organize/use-lists.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/organize/use-lists.md",
+    "sha256": "7023d83ab1e14faadd006ac61105d04c5a221849249111b755b8c26d9efc0aed",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-minimize-abbreviations": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/minimize-abbreviations.md",
+    "file": "data/raw/round2-sources/gsa-minimize-abbreviations.md",
+    "path": "_pages/guidelines/words/minimize-abbreviations.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/words/minimize-abbreviations.md",
+    "sha256": "cc9a8158334f764518f693fdef55a83706bf55159643201feecefbac90ab135e",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-use-examples": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-examples.md",
+    "file": "data/raw/round2-sources/gsa-use-examples.md",
+    "path": "_pages/guidelines/conversational/use-examples.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/conversational/use-examples.md",
+    "sha256": "24216fee5769f81744a86693f14a08a39b48cf09b4a3197872a847f7f6a89bc5",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "gsa-write-effective-links": {
+    "url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/web/write-effective-links.md",
+    "file": "data/raw/round2-sources/gsa-write-effective-links.md",
+    "path": "_pages/guidelines/web/write-effective-links.md",
+    "commit": "fd7694740f19c0ed20ed71c2dd1dc92699e920fa",
+    "canonical_url": "https://raw.githubusercontent.com/GSA/plainlanguage.gov/fd7694740f19c0ed20ed71c2dd1dc92699e920fa/_pages/guidelines/web/write-effective-links.md",
+    "sha256": "670dff99f478574a1f3c158eccbef477239f8193406e1da92cffa5e4aae14716",
+    "attribution": "GSA plainlanguage.gov; CC0; agent summaries",
+    "rights_policy": "https://github.com/GSA/plainlanguage.gov#public-domain",
+    "snapshot_date": "2026-10-09"
+  },
+  "cfpb-cd": {
+    "file": "data/raw/round2-sources/cfpb-cd.txt",
+    "canonical_url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-certificate-of-deposit-cd-en-917/",
+    "capture": "web-rendered answer paragraphs captured 2026-10-09",
+    "sha256": "6bd0847c55793e3dc7dc38b7ed83c9010dff25657f2aad9e09d8f7a1ec142946",
+    "attribution": "CFPB; U.S. government public-domain information; U.S. policy snapshot, not local financial advice",
+    "rights_policy": "https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+    "snapshot_date": "2026-10-09"
+  },
+  "cfpb-money-market": {
+    "file": "data/raw/round2-sources/cfpb-money-market.txt",
+    "canonical_url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-money-market-account-en-1007/",
+    "capture": "web-rendered answer paragraphs captured 2026-10-09",
+    "sha256": "120bcb3669dca1c31cdf5f16dd2ceaa5ff716541b8da35760d8bcbf3372efa53",
+    "attribution": "CFPB; U.S. government public-domain information; U.S. policy snapshot, not local financial advice",
+    "rights_policy": "https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+    "snapshot_date": "2026-10-09"
+  },
+  "cfpb-overdraft": {
+    "file": "data/raw/round2-sources/cfpb-overdraft.txt",
+    "canonical_url": "https://www.consumerfinance.gov/ask-cfpb/what-is-an-overdraft-en-1035/",
+    "capture": "web-rendered answer paragraphs captured 2026-10-09",
+    "sha256": "5ca979e4db46b447add20b3d10151fdcde00375b5958f39ecb6f0e5df1b3b726",
+    "attribution": "CFPB; U.S. government public-domain information; U.S. policy snapshot, not local financial advice",
+    "rights_policy": "https://www.consumerfinance.gov/privacy/website-privacy-policy/",
+    "snapshot_date": "2026-10-09"
+  }
+}

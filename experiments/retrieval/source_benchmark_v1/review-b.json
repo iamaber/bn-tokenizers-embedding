@@ -1,0 +1,376 @@
+{
+  "reviewer_id": "benchmark-review-b",
+  "reviewer_origin": "agent",
+  "material_sha256": {
+    "banking.jsonl": "1588773bed0b64bc5d0f8f831898584a280b2cdce9a5c8432e316d01e9fc50e3",
+    "business.jsonl": "4b8de17cae52724178fdddb6aa6488238f78ee6c0f028735a14698e9fa4e7b9c",
+    "conversation.jsonl": "929de8a9c2b2298fd34091b9e2bbe7dfcc00370a79a974659117565e27d8f969",
+    "qa.jsonl": "0cac2c7fba2edc8b7c89af22f64f208b7f2d4b4a9d5828f477578c916e0ebc4d",
+    "science.jsonl": "c50584ac57ee449bc11ec9009be113bd06d8b6ac86ca8a969a6df391826bba8d",
+    "technology.jsonl": "92f0c9a753e7367375d8eee1af23afcd545a63db0e5d6896bff7e7fb3b4f54b0"
+  },
+  "review_scope": "Read all 90 records; judged every same-split candidate in all six domains for the 45 technology/science/qa queries. All candidates omitted from positive_grades are reviewed grade 0. Reviewed BN/BL passages and query variants against EN; source grounding checked against pinned NIST, NASA and USGS files. Agent audit only.",
+  "issues": [
+    {
+      "record_id": "technology-07",
+      "field": "q_bl",
+      "severity": "error",
+      "issue": "Mixed-script typo shamলabe contains Bengali ল inside the romanized Banglish query.",
+      "suggestion": "Use shamlabe or shamলabe corrected entirely to Latin: shamlabe.",
+      "status": "resolved",
+      "resolution_review": "q_bl now uses entirely Latin shamlabe; PaaS meaning preserved."
+    },
+    {
+      "record_id": "science-10",
+      "field": "q_bl_variants[0]",
+      "severity": "meaning_drift",
+      "issue": "Variant asks what follows the red giant stage, whereas main queries ask for all end-of-life stages. It presupposes one answer stage and narrows the request.",
+      "suggestion": "surjo jiboner shesh dike kon kon stage diye jabe?",
+      "status": "resolved",
+      "resolution_review": "Variant now asks for all late-life stages, matching the primary question."
+    },
+    {
+      "record_id": "science-07",
+      "field": "q_bl_variants[0]",
+      "severity": "minor_meaning_drift",
+      "issue": "noshto hote pare asks which systems may be damaged/ruined, stronger than disruption or bighno in the main queries.",
+      "suggestion": "earth er dike cme ele kon system e bighno hote pare?",
+      "status": "resolved",
+      "resolution_review": "Variant now asks about bighno (disruption), preserving main-query strength."
+    },
+    {
+      "record_id": "qa-11",
+      "field": "q_bl_variants[0]",
+      "severity": "meaning_drift",
+      "issue": "Variant asks why ash and SO2 climate effects differ in general, losing the main query's specifically shorter-lasting effect.",
+      "suggestion": "volcano ash er climate effect sulfur dioxide er cheye kom din thake keno?",
+      "status": "resolved",
+      "resolution_review": "Variant now explicitly asks about shorter-lasting climate effects."
+    },
+    {
+      "record_id": "qa-12",
+      "field": "q_bl_variants[0]",
+      "severity": "answer_hint",
+      "issue": "Variant supplies sunlight reflection, the key mechanism that the main query asks the retriever to find. This changes retrieval difficulty.",
+      "suggestion": "volcano er sulfate aerosol nicher atmosphere thanda kore kivabe?",
+      "status": "resolved",
+      "resolution_review": "Variant asks for cooling mechanism without supplying reflection."
+    },
+    {
+      "record_id": "technology-15",
+      "field": "bn, bl",
+      "severity": "minor_translation",
+      "issue": "The second sentence renders the source's mandatory federal use requirement as told to use (ব্যবহার করতে বলা হয়েছে / use korte bola hoy), weakening explicit requires in EN and SHALL in pinned NIST block 108.",
+      "suggestion": "Use explicit বাধ্যতামূলক / use korte hoy wording.",
+      "status": "resolved",
+      "resolution_review": "BN now says বাধ্যতামূলক and BL use korte hoy, preserving mandatory federal use."
+    },
+    {
+      "record_id": "qa-15",
+      "field": "q_bn",
+      "severity": "minor_translation",
+      "issue": "কার্বন নিঃসরণ omits ডাইঅক্সাইড, while EN/BL specify CO2; carbon emissions is common shorthand but broadens the literal query.",
+      "suggestion": "Use কার্বন ডাইঅক্সাইড নিঃসরণ.",
+      "status": "resolved",
+      "resolution_review": "BN query now explicitly specifies কার্বন ডাইঅক্সাইড."
+    }
+  ],
+  "queries": {
+    "technology-01": {
+      "positive_grades": {
+        "technology-01": 2
+      },
+      "rationale": "technology-01 identifies automatic provisioning without staff. technology-08 mentions provisioning storage but says nothing about avoiding provider interaction; technology-04 concerns demand scaling, not self-service."
+    },
+    "technology-02": {
+      "positive_grades": {
+        "technology-02": 2
+      },
+      "rationale": "technology-02 explicitly identifies broad network access across phones, tablets, laptops and workstations. technology-06 offers applications but does not specify heterogeneous device access."
+    },
+    "technology-03": {
+      "positive_grades": {
+        "technology-03": 2
+      },
+      "rationale": "technology-03 explains shared physical/virtual resources, multiple consumers and demand reassignment. technology-09 describes organization eligibility, not pooling mechanics."
+    },
+    "technology-04": {
+      "positive_grades": {
+        "technology-04": 2
+      },
+      "rationale": "technology-04 identifies rapid expansion and contraction with demand. technology-03 reallocates pooled resources but does not identify capacity elasticity or sudden scale changes."
+    },
+    "technology-05": {
+      "positive_grades": {
+        "technology-05": 2
+      },
+      "rationale": "technology-05 identifies resource metering, monitoring and reports. technology-03 allocates resources but supplies no consumption accounting."
+    },
+    "technology-06": {
+      "positive_grades": {
+        "technology-06": 2
+      },
+      "rationale": "technology-06 names SaaS and provider applications without OS management. technology-07 also removes OS management but deploys the consumer application, so does not answer the requested provider-app model."
+    },
+    "technology-07": {
+      "positive_grades": {
+        "technology-07": 2
+      },
+      "rationale": "technology-07 names PaaS for own-app deployment without managing the OS. technology-06 uses provider applications; technology-08 grants OS control. Neither meets the requested combination."
+    },
+    "technology-08": {
+      "positive_grades": {
+        "technology-08": 2
+      },
+      "rationale": "technology-08 explicitly assigns OS control to IaaS customers. technology-06 and technology-07 explicitly withhold it, so neither answers which model gives control."
+    },
+    "technology-09": {
+      "positive_grades": {
+        "technology-09": 2
+      },
+      "rationale": "technology-09 supplies both private and community customer groups. technology-10 names these deployment types but never defines their audiences."
+    },
+    "technology-10": {
+      "positive_grades": {
+        "technology-10": 2
+      },
+      "rationale": "technology-10 contrasts public access with combined distinct infrastructures and portability. technology-09 defines private/community audiences but no hybrid arrangement."
+    },
+    "technology-11": {
+      "positive_grades": {
+        "technology-11": 2
+      },
+      "rationale": "technology-11 directly permits single-factor AAL1. technology-13 concerns AAL2 and cannot answer AAL1 requirements."
+    },
+    "technology-12": {
+      "positive_grades": {
+        "technology-12": 2
+      },
+      "rationale": "technology-12 defines elapsed-since-authentication and inactivity timeouts. Other test documents do not address session expiration."
+    },
+    "technology-13": {
+      "positive_grades": {
+        "technology-13": 2
+      },
+      "rationale": "technology-13 directly requires two distinct AAL2 factors. technology-14 describes biometric plus physical authentication without specifying AAL2 requirements; technology-15 addresses phishing resistance, not factor count."
+    },
+    "technology-14": {
+      "positive_grades": {
+        "technology-14": 2
+      },
+      "rationale": "technology-14 explicitly rejects standalone biometrics and requires a physical authenticator. technology-13 requires two AAL2 factors but does not establish biometrics cannot be standalone authenticators."
+    },
+    "technology-15": {
+      "positive_grades": {
+        "technology-15": 2
+      },
+      "rationale": "technology-15 requires at least one phishing-resistant AAL2 option. technology-13 gives factor count, which does not answer phishing-resistance availability."
+    },
+    "science-01": {
+      "positive_grades": {
+        "science-01": 2,
+        "science-02": 1
+      },
+      "rationale": "science-01 explains the nonsolid plasma and different equatorial/polar periods. science-02 partially supplies the nonsolid premise, without rotation rates. science-09 is galactic revolution rather than differential rotation."
+    },
+    "science-02": {
+      "positive_grades": {
+        "science-02": 2
+      },
+      "rationale": "science-02 explicitly identifies the photosphere as emitting most visible sunlight. science-03 locates energy-generating fusion in the core but does not identify the layer emitting the visible light."
+    },
+    "science-03": {
+      "positive_grades": {
+        "science-03": 2
+      },
+      "rationale": "science-03 identifies hydrogen-to-helium fusion in the core. science-02 describes emitted visible light without its powering reaction."
+    },
+    "science-04": {
+      "positive_grades": {
+        "science-04": 2
+      },
+      "rationale": "science-04 names the corona and its greater temperature than the photosphere. science-03 gives a hotter core but that is not an outer region."
+    },
+    "science-05": {
+      "positive_grades": {
+        "science-05": 2
+      },
+      "rationale": "science-05 answers both the no-holes misconception and cooler appearance. science-02 identifies the photosphere but does not explain sunspots."
+    },
+    "science-06": {
+      "positive_grades": {
+        "science-06": 2
+      },
+      "rationale": "science-06 gives release of magnetic energy as the flare trigger and contrasts CMEs. science-07 describes CME clouds and damage but never gives a solar-flare trigger."
+    },
+    "science-07": {
+      "positive_grades": {
+        "science-07": 2
+      },
+      "rationale": "science-07 names satellites and power grids. science-06 describes flares/CMEs but no disrupted Earth systems."
+    },
+    "science-08": {
+      "positive_grades": {
+        "science-08": 2
+      },
+      "rationale": "science-08 names and defines the heliosphere. science-04 describes the corona rather than the large bubble beyond planets."
+    },
+    "science-09": {
+      "positive_grades": {
+        "science-09": 2
+      },
+      "rationale": "science-09 provides approximately 230 million years for galactic orbit. science-01 gives solar spin periods, not galactic travel time."
+    },
+    "science-10": {
+      "positive_grades": {
+        "science-10": 2
+      },
+      "rationale": "science-10 gives red giant then white dwarf. No other same-split passage supplies stellar end-of-life stages; science-09 only supplies orbital motion."
+    },
+    "science-11": {
+      "positive_grades": {
+        "science-11": 2
+      },
+      "rationale": "science-11 links tilt to different direct illumination while orbiting, explaining opposing seasons. science-14 gives atmospheric composition/protection, not seasonal geometry."
+    },
+    "science-12": {
+      "positive_grades": {
+        "science-12": 2
+      },
+      "rationale": "science-12 explicitly contrasts solid inner and liquid outer cores. science-13 discusses moving lithospheric plates, not core states."
+    },
+    "science-13": {
+      "positive_grades": {
+        "science-13": 2
+      },
+      "rationale": "science-13 lists sliding, overriding, collision and separation. science-12 locates mantle/crust but gives no plate motion causing earthquakes."
+    },
+    "science-14": {
+      "positive_grades": {
+        "science-14": 2
+      },
+      "rationale": "science-14 gives nitrogen at 78%, above oxygen and other gases. qa-15 discusses CO2 emissions, not atmospheric abundance."
+    },
+    "science-15": {
+      "positive_grades": {
+        "science-15": 2
+      },
+      "rationale": "science-15 explains trapped charged particles colliding with molecules and making them glow. science-14 describes atmospheric gases and radiation protection, not aurora creation. science-07 is in the other split and is excluded."
+    },
+    "qa-01": {
+      "positive_grades": {
+        "qa-01": 2,
+        "qa-02": 1,
+        "qa-03": 1,
+        "qa-05": 1,
+        "qa-06": 1
+      },
+      "rationale": "qa-01 covers atmosphere, surface and underground. qa-02 partially identifies aquifer groundwater storage. qa-03 partially locates groundwater and surface rivers/ocean in a return pathway. qa-05 partially identifies land, ocean and atmosphere water reservoirs through exchange, without underground. qa-06 partially identifies rivers, lakes, reservoirs and aquifers as water sources. qa-10 says storage matters but does not locate any stores."
+    },
+    "qa-02": {
+      "positive_grades": {
+        "qa-02": 2
+      },
+      "rationale": "qa-02 explicitly locates aquifer groundwater in rock cracks and pores. qa-01 says underground but not rock spaces; qa-03 says infiltration/recharge but not aquifer pore occupancy."
+    },
+    "qa-03": {
+      "positive_grades": {
+        "qa-03": 2
+      },
+      "rationale": "qa-03 names springs and discharge into rivers/ocean. qa-01 states movement between stores without explaining how groundwater emerges; qa-06 withdraws groundwater by people rather than natural return."
+    },
+    "qa-04": {
+      "positive_grades": {
+        "qa-04": 2
+      },
+      "rationale": "qa-04 assigns evaporation to solar energy and downhill flow/precipitation to gravity. qa-05 names up/down processes but does not attribute either to sunlight or gravity."
+    },
+    "qa-05": {
+      "positive_grades": {
+        "qa-05": 2,
+        "qa-04": 2
+      },
+      "rationale": "qa-05 directly names evapotranspiration and precipitation. qa-04 independently answers the broad up/down-process question with evaporation into vapor and falling rain/snow/hail. qa-01 merely mentions movement among stores without the mechanisms."
+    },
+    "qa-06": {
+      "positive_grades": {
+        "qa-06": 2
+      },
+      "rationale": "qa-06 directly says dams and drainage change storage and movement. qa-01 notes water stores but does not connect changes to dams or draining wetlands."
+    },
+    "qa-07": {
+      "positive_grades": {
+        "qa-07": 2
+      },
+      "rationale": "qa-07 explicitly names rainfall/irrigation washing fertilizers and pesticides into rivers/groundwater. qa-03 describes groundwater recharge but does not establish transport of farm chemicals."
+    },
+    "qa-08": {
+      "positive_grades": {
+        "qa-08": 2
+      },
+      "rationale": "qa-08 gives altered precipitation patterns and flood/drought frequency, intensity and duration. qa-09 addresses quality, not timing/extremes; qa-10 defines timing without climate effects."
+    },
+    "qa-09": {
+      "positive_grades": {
+        "qa-09": 2
+      },
+      "rationale": "qa-09 gives marine shell/skeleton damage and soot/ash contamination. qa-07 gives other pollution routes but not acidification or wildfire."
+    },
+    "qa-10": {
+      "positive_grades": {
+        "qa-10": 2,
+        "qa-07": 1,
+        "qa-08": 1,
+        "qa-09": 1
+      },
+      "rationale": "qa-10 explicitly requires quantity, timing and quality. qa-07 partially explains why quantity is insufficient by identifying chemical/sewage contamination. qa-08 partially explains variable timing and extremes; qa-09 partially explains quality loss through acidity and wildfire pollutants. qa-01 describes stores and movement but does not give a usable-supply limitation."
+    },
+    "qa-11": {
+      "positive_grades": {
+        "qa-11": 2,
+        "qa-12": 1,
+        "qa-13": 1
+      },
+      "rationale": "qa-11 directly contrasts rapid ash fallout with SO2-derived cooling aerosol. qa-12 partially explains the SO2 aerosol cooling side, without ash or residence time. qa-13 partially documents three-year cooling after SO2 injection, without ash comparison. qa-14 compares eruption emissions and regional cooling but provides no persistence explanation."
+    },
+    "qa-12": {
+      "positive_grades": {
+        "qa-12": 2
+      },
+      "rationale": "qa-12 explains reflection of sunlight back to space. qa-11 only states that SO2 can form cooling aerosols, without explaining how they cool; qa-13 gives an observed effect, not its radiative mechanism."
+    },
+    "qa-13": {
+      "positive_grades": {
+        "qa-13": 2
+      },
+      "rationale": "qa-13 explicitly gives three years. qa-14 mentions similar regional cooling but no duration; qa-11 gives ash fallout time, not Pinatubo cooling duration."
+    },
+    "qa-14": {
+      "positive_grades": {
+        "qa-14": 2,
+        "qa-13": 1
+      },
+      "rationale": "qa-14 directly gives Laki 120 million versus Pinatubo 20 million tons. qa-13 partially supplies the Pinatubo comparison value but cannot select the larger eruption alone. qa-11 and qa-12 contain no eruption-specific quantities."
+    },
+    "qa-15": {
+      "positive_grades": {
+        "qa-15": 2
+      },
+      "rationale": "qa-15 explicitly gives historical human/volcanic CO2 totals and 80–270 ratio. qa-14 compares SO2 from two volcanoes, not human versus volcanic CO2."
+    }
+  },
+  "initial_material_sha256": {
+    "banking.jsonl": "386a32ddadb9f55d4e13dfa60eaeb1c7ccadd48fcdc93fc3ad2c6bfecb313f9a",
+    "business.jsonl": "979f1e48e61873a05ad482cc05843be677c7d0b2b45c2c53465dac903dcaccb3",
+    "conversation.jsonl": "56812971e9126474cb2e1e8da7872b20911d8be8d40b7be097425b9d4ba31411",
+    "qa.jsonl": "ce26ff007ccf91321611ae0c4a7108bec84e11bc25869f8d10fee021dfb5f033",
+    "science.jsonl": "2895be28d9a1a6d84a1c6c6764e731062afc782f992fe607b3af672a01372fe1",
+    "technology.jsonl": "3a05f28b59f1d16bca4e63f3ec2038714036ce013b024f7e8707c6de35123e5c"
+  },
+  "unresolved_issues": false,
+  "recheck": {
+    "reviewer_origin": "agent",
+    "summary": "Re-read corrected issue-bearing records and corrected banking/business/conversation text. All seven issues in this review are resolved. Reviewer-a corrections preserve meaning and do not introduce relevant cross-domain candidates for the technology/science/qa query scope. All 45 positive_grades mappings and their same-split zero judgments remain valid. No material was edited by this reviewer.",
+    "positive_grades_reconfirmed": true
+  }
+}

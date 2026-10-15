@@ -1,0 +1,39 @@
+{
+  "inputs": {
+    "data/processed/train.jsonl": {
+      "sha256": "bda48c8388fcd1cd706b4578619367a609ccf75a7f3aa659fede8c88aa198b39",
+      "surfaces_checked": 563476
+    },
+    "data/processed/validation.jsonl": {
+      "sha256": "047e0acb94d621508467fcd0e7b3369204f7e040d4b9144b58614faac9f1cc2d",
+      "surfaces_checked": 14779
+    },
+    "data/processed/test.jsonl": {
+      "sha256": "3f39a8faf7ecc280ec32ce231d379cec788eb79a52d9a6e66917073500879834",
+      "surfaces_checked": 16712
+    },
+    "data/processed/vashantor-expanded-v2/prepared/train.jsonl": {
+      "sha256": "0d1ac59a18c5c0b37b4934a6e3bd789fa96b392334ea8429eb2639f54c3feb8b",
+      "surfaces_checked": 586181
+    },
+    "data/processed/alignment-round2-v1/pairs.jsonl": {
+      "sha256": "c224883c22b412a7d997be0a4d4599a852b17e21b128c81bd0ee6a43aa8c0089",
+      "surfaces_checked": 15964
+    },
+    "data/processed/hard-negatives-reviewed-v1/pairs.jsonl": {
+      "sha256": "2cd584dd673268ac30f9f0c2951008014ff8c8d0808b190d2b4fbf0099e2f5f0",
+      "surfaces_checked": 237
+    }
+  },
+  "matches": [],
+  "method": "canonical equality and >=80% benchmark eight-word shingle containment with >=3 shared shingles",
+  "limits": "lexical checks only; cannot rule out semantic overlap or base-model pretraining exposure",
+  "material_sha256": {
+    "banking.jsonl": "1588773bed0b64bc5d0f8f831898584a280b2cdce9a5c8432e316d01e9fc50e3",
+    "business.jsonl": "4b8de17cae52724178fdddb6aa6488238f78ee6c0f028735a14698e9fa4e7b9c",
+    "conversation.jsonl": "929de8a9c2b2298fd34091b9e2bbe7dfcc00370a79a974659117565e27d8f969",
+    "qa.jsonl": "0cac2c7fba2edc8b7c89af22f64f208b7f2d4b4a9d5828f477578c916e0ebc4d",
+    "science.jsonl": "c50584ac57ee449bc11ec9009be113bd06d8b6ac86ca8a969a6df391826bba8d",
+    "technology.jsonl": "92f0c9a753e7367375d8eee1af23afcd545a63db0e5d6896bff7e7fb3b4f54b0"
+  }
+}

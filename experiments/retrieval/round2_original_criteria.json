@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "candidate": "longer original-tokenizer adaptation",
+  "primary_direction": "bl-bn",
+  "primary_metric": "ndcg_at_10",
+  "minimum_gain_over_short_original": 0.03,
+  "paired_interval_lower_bound_must_exceed": 0.0,
+  "minimum_gain_over_unchanged": 0.0,
+  "maximum_english_regression_vs_unchanged": 0.01,
+  "maximum_query_latency_ratio_vs_unchanged": 1.25,
+  "maximum_peak_memory_ratio_vs_unchanged": 1.25,
+  "required_training_seeds": [17, 29, 43],
+  "required_budgets": ["equal-data", "equal-compute"],
+  "english_directions": ["en-bn", "en-bl", "en-en"],
+  "weighting": "equal domain means; Banglish variants remain within the same domain block",
+  "uncertainty": "paired crossed resampling of three training seeds and six domain blocks; excludes annotation uncertainty",
+  "selection_rule": "promote longer original only if every gate passes in both budgets; otherwise retain unchanged",
+  "test_rule": "freeze development decision before any fresh reserved-test scoring; test confirms or rejects, never tunes the choice",
+  "causal_limit": "longer exposure, English retention and hard negatives change together; this is not an isolated ablation"
+}

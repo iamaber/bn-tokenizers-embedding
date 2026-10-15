@@ -7,8 +7,8 @@ remain frozen. This file tracks the new work; pending work is not a result.
 | Work | Required outcome | Status |
 |---|---|---|
 | Expanded judgments | Union of all 19 existing encoders' top-10 candidates; explicitly judge every new pair, preserve prior labels, recompute comparisons and coverage | Complete: 6,711 new agent judgments added to 2,496 preserved labels; all 19 systems have complete top-10 coverage. Graded and exact-match rescoring preserve frozen selection. [Results](encoder-expanded-pool-analysis-v1.json). |
-| Harder benchmark | Larger source-grounded six-domain benchmark, confusing neighbours and Banglish spelling variants; source-disjoint development/test groups and training-overlap audit | Source audit and pinned downloads complete; material/labels/split pending. |
-| Original-tokenizer training | Longer training, reviewed hard negatives and balanced English replay; execute matched runs and score fresh development/test after frozen selection | All 128 mined candidates reviewed; 79 verified negatives retained, 18 known positive errors removed. Five-arm protocol frozen; original/context smoke and reload pass. Long runs and fresh evaluation pending. [Review](HARD_NEGATIVE_REVIEW.md). |
+| Harder benchmark | Larger source-grounded six-domain benchmark, confusing neighbours and Banglish spelling variants; source-disjoint development/test groups and training-overlap audit | Frozen 90-intent source-backed benchmark: 60 development / 30 test; all same-split candidates agent-reviewed, variants rechecked, zero audited lexical training overlap. Fresh quality evaluation pending. [Details](SOURCE_BENCHMARK.md). |
+| Original-tokenizer training | Longer training, reviewed hard negatives and balanced English replay; execute matched runs and score fresh development/test after frozen selection | All 128 mined candidates reviewed; 79 verified negatives retained, 18 known positive errors removed. Five-arm protocol frozen; original/context smoke and reload pass. Original-only longer runs are in progress; fresh evaluation pending. [Review](HARD_NEGATIVE_REVIEW.md). |
 | Stronger transfer | Implement and measure a compatible transfer method, with mean-initialization control and matched training budgets | Both sparse context tables rebuilt on the same revised 7,982-pair alignment; real apply, hard-negative training, inference and reload verified. Matched long training and quality comparison pending. |
 | Deployment workloads | Execute fresh-process cold starts, larger real-document indexes, long inputs and concurrent requests; report throughput, p50/p95/p99 and memory | Executed for unchanged and three seed-17 controls: 18 workloads/model, three cold loads/model; concurrent/serial rankings identical. [Report](DEPLOYMENT_WORKLOADS.md). |
 
@@ -20,3 +20,5 @@ New selection uses fresh development material and the original practical gates
 (+0.03 Banglish→Bengali nDCG, positive paired interval, ≤0.01 English loss,
 ≤1.25× latency/memory). The new protocol must bind data and training settings
 before adapted scoring. Reserved test is scored only after the new choice freezes.
+
+The [blinded expanded-label audit](LABEL_AUDIT.md) covers all 395 new positives plus 120 sampled negatives. It records 51 disagreements and prepares a blank human-review packet; original labels are preserved.

@@ -1,0 +1,187 @@
+{
+  "protocol_sha256": "0e8aa3abfebb25ea4e5d7f7bb04316f926df58a4494bb9eb6b8ccbfa0f104a2c",
+  "runs": [
+    {
+      "name": "equal-data/original-seed17",
+      "directory": "models/encoders-round2/equal-data/original-seed17",
+      "training_report_sha256": "0b843490ad1c230503a80b4ab9066b4b1e6b430673d9df3ada120be95b1210d4",
+      "stages": {
+        "representation": {
+          "steps": 192,
+          "mean_loss": 0.008352397135846937,
+          "first_loss": 0.009380882605910301,
+          "last_loss": 0.00944911316037178,
+          "query_languages": {
+            "english": 1536,
+            "banglish": 1536
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 384,
+          "mean_loss": 0.05878765329543967,
+          "first_loss": 1.0098216533660889,
+          "last_loss": 0.00940743274986744,
+          "query_languages": {
+            "english": 3072,
+            "banglish": 3072
+          },
+          "verified_negative_examples": 2048
+        }
+      },
+      "charged_seconds": 333.7217236669967
+    },
+    {
+      "name": "equal-data/original-seed29",
+      "directory": "models/encoders-round2/equal-data/original-seed29",
+      "training_report_sha256": "cd9a0bd74e990c7b89654bc4ff5a8527b570613e7b6a3b9f4e8a901dc00622f0",
+      "stages": {
+        "representation": {
+          "steps": 192,
+          "mean_loss": 0.00826758840897431,
+          "first_loss": 0.008649526163935661,
+          "last_loss": 0.007753271609544754,
+          "query_languages": {
+            "english": 1536,
+            "banglish": 1536
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 384,
+          "mean_loss": 0.06383228048071032,
+          "first_loss": 1.1827030181884766,
+          "last_loss": 0.009797298349440098,
+          "query_languages": {
+            "english": 3072,
+            "banglish": 3072
+          },
+          "verified_negative_examples": 2048
+        }
+      },
+      "charged_seconds": 326.3532178750029
+    },
+    {
+      "name": "equal-data/original-seed43",
+      "directory": "models/encoders-round2/equal-data/original-seed43",
+      "training_report_sha256": "1939e9fc062517e31e86a5665be0e8c806a2d4f518b29eec918082ae62da59ec",
+      "stages": {
+        "representation": {
+          "steps": 192,
+          "mean_loss": 0.008337184951718276,
+          "first_loss": 0.008900970220565796,
+          "last_loss": 0.007509483024477959,
+          "query_languages": {
+            "english": 1536,
+            "banglish": 1536
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 384,
+          "mean_loss": 0.0664294596184239,
+          "first_loss": 1.2162466049194336,
+          "last_loss": 0.011033207178115845,
+          "query_languages": {
+            "english": 3072,
+            "banglish": 3072
+          },
+          "verified_negative_examples": 2048
+        }
+      },
+      "charged_seconds": 327.3741476669675
+    },
+    {
+      "name": "equal-compute/original-seed17",
+      "directory": "models/encoders-round2/equal-compute/original-seed17",
+      "training_report_sha256": "5a80b7d5c8f80353011fba7eb53498b77def2cdac6e8cf67c55ee30abc1b34a6",
+      "stages": {
+        "representation": {
+          "steps": 206,
+          "mean_loss": 0.00831510325513997,
+          "first_loss": 0.009380882605910301,
+          "last_loss": 0.007982062175869942,
+          "query_languages": {
+            "english": 1648,
+            "banglish": 1648
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 380,
+          "mean_loss": 0.05813299074867054,
+          "first_loss": 1.0118727684020996,
+          "last_loss": 0.021104352548718452,
+          "query_languages": {
+            "english": 3040,
+            "banglish": 3040
+          },
+          "verified_negative_examples": 2016
+        }
+      },
+      "charged_seconds": 360.1362945419969
+    },
+    {
+      "name": "equal-compute/original-seed29",
+      "directory": "models/encoders-round2/equal-compute/original-seed29",
+      "training_report_sha256": "3c1513ba0a9fb567423db581d03502f796cd09233f44bad848531a85c3cf773b",
+      "stages": {
+        "representation": {
+          "steps": 198,
+          "mean_loss": 0.008254475835146326,
+          "first_loss": 0.008649526163935661,
+          "last_loss": 0.0077640097588300705,
+          "query_languages": {
+            "english": 1584,
+            "banglish": 1584
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 360,
+          "mean_loss": 0.0666066512129166,
+          "first_loss": 1.1968494653701782,
+          "last_loss": 0.010138421319425106,
+          "query_languages": {
+            "english": 2880,
+            "banglish": 2880
+          },
+          "verified_negative_examples": 1920
+        }
+      },
+      "charged_seconds": 360.4493909170269
+    },
+    {
+      "name": "equal-compute/original-seed43",
+      "directory": "models/encoders-round2/equal-compute/original-seed43",
+      "training_report_sha256": "0ddbc59dc7a7a1967cd8a39c493812a5217308b13fa87b6f6bf169177431ad0b",
+      "stages": {
+        "representation": {
+          "steps": 198,
+          "mean_loss": 0.00832869748425002,
+          "first_loss": 0.008900970220565796,
+          "last_loss": 0.007595133036375046,
+          "query_languages": {
+            "english": 1584,
+            "banglish": 1584
+          },
+          "verified_negative_examples": 0
+        },
+        "contrastive": {
+          "steps": 325,
+          "mean_loss": 0.07638704617722676,
+          "first_loss": 1.1847774982452393,
+          "last_loss": 0.013991332612931728,
+          "query_languages": {
+            "english": 2600,
+            "banglish": 2600
+          },
+          "verified_negative_examples": 1728
+        }
+      },
+      "charged_seconds": 360.05878079199465
+    }
+  ],
+  "scope": "original tokenizer only; stronger-transfer arms not run",
+  "limitations": "joint longer-training, negative and replay intervention; no isolated causal ablation"
+}

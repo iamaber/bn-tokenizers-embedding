@@ -1,0 +1,951 @@
+{
+  "model": "models/encoders-round2/equal-compute/original-seed43",
+  "model_files": {
+    "config.json": "d3e1cf0a6fef0ae92f8bc55ec4ce6d01baa2525df33712f2d5937bd2162d2006",
+    "encoder.json": "ca72038a164060441c6922c48985e9b467a1d283b7c44a0b22a94025e7e9186d",
+    "model.safetensors": "ae17d4bac09e5d98494020658f434458909c7258560088c5b30e67a45ffbb018",
+    "tokenizer.json": "5b58593a7e63f3c8b69801a92415fc0813dd287a3ba2f767cdf33106806fca11",
+    "tokenizer_config.json": "073baeda1d4206d2884440810a167a690bfbf44c2ddc38185418fb7bb0e2dc79",
+    "training-report.json": "0ddbc59dc7a7a1967cd8a39c493812a5217308b13fa87b6f6bf169177431ad0b"
+  },
+  "custom_tokenizer": false,
+  "maximum_tokens": 512,
+  "batch_size": 16,
+  "cpu_threads": 4,
+  "load_seconds": 1.4539915830246173,
+  "document_encoding": {
+    "untruncated_tokens": 4797,
+    "emitted_tokens": 4797,
+    "padded_token_positions": 7446,
+    "truncated_texts": 0,
+    "seconds": 0.6866634159814566
+  },
+  "query_encoding": {
+    "untruncated_tokens": 2679,
+    "emitted_tokens": 2679,
+    "padded_token_positions": 3832,
+    "truncated_texts": 0,
+    "seconds": 0.28687508299481124
+  },
+  "runtime": {
+    "repeat_seconds": [
+      0.503164249996189,
+      0.2658138330443762,
+      0.2885401250096038,
+      0.3157415409805253,
+      0.32291320798685774
+    ],
+    "median_seconds": 0.3157415409805253,
+    "median_seconds_per_query": 0.0026311795081710443,
+    "queries_per_pass": 120,
+    "cached_documents": 90,
+    "scope": "warm batch throughput: tokenize + encode + exact cached-document search; excludes loading/indexing",
+    "single_query": {
+      "repeat_seconds": [
+        0.004449750005733222,
+        0.005408709053881466,
+        0.0053345420164987445,
+        0.004264416988007724,
+        0.004329750023316592,
+        0.004329167015384883,
+        0.004354249977041036,
+        0.004108458000700921,
+        0.004370042006485164,
+        0.004142999998293817,
+        0.003985999966971576,
+        0.004281375033315271,
+        0.0040850419900380075,
+        0.005250624963082373,
+        0.0052100830362178385,
+        0.004145667015109211,
+        0.004053790995385498,
+        0.004219625028781593,
+        0.004193875007331371,
+        0.004029875039122999,
+        0.00439279101556167,
+        0.004100874997675419,
+        0.004072709009051323,
+        0.005113833991345018,
+        0.0049758339882828295,
+        0.005398000008426607,
+        0.0052797079551965,
+        0.004160041979048401,
+        0.004197540984023362,
+        0.004289874981623143,
+        0.0042634590063244104,
+        0.004063959000632167,
+        0.00436441705096513,
+        0.00405883404891938,
+        0.003949834033846855,
+        0.004273791972082108,
+        0.004120541037991643,
+        0.005245708976872265,
+        0.005181749991606921,
+        0.00408666703151539,
+        0.004045458044856787,
+        0.0043717079679481685,
+        0.0042808749713003635,
+        0.004163041012361646,
+        0.0045802079839631915,
+        0.0041965420241467655,
+        0.004074042022693902,
+        0.004465666017495096,
+        0.004396582953631878,
+        0.005466416012495756,
+        0.0052770000183954835,
+        0.0041907079867087305,
+        0.004178875009529293,
+        0.004327457980252802,
+        0.00424812501296401,
+        0.004045040986966342,
+        0.004379792022518814,
+        0.004119125020224601,
+        0.0040557089960202575,
+        0.004326292022597045
+      ],
+      "median_seconds": 0.004269104480044916,
+      "requests": 60,
+      "unique_queries": 12,
+      "workload_sha256": "693a1fe8041c3f0801585bbb8f7378a7d7b7148f9b6a39691144e12d271aff0a",
+      "scope": "warm batch-1 tokenize + encode + exact cached-document search"
+    },
+    "query_workload_sha256": "e582be48f92fed4be521204f245a2b81053f7cd66950f592f1dc1c13337eeadb",
+    "document_workload_sha256": "bca585f91d4df13a27d206f3d4b509c33c127249ca7e2f61b8c5f310a4aa789a"
+  },
+  "peak_process_rss_bytes": 971112448,
+  "memory_scope": "fresh-process peak including model load, encoding and ranking; not training memory",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "packages": {
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2"
+  },
+  "implementation_sha256": {
+    "evaluate_encoder.py": "a3e4603efdca9584201e63e9c9b4a408eb2324819e9df7bc820cb3106c5d8f71",
+    "encoder.py": "3d24c23c4e7ae4777dbaa32e4c7950e0fe4a1f3676af0271c2bf84bb02972f46",
+    "compare.py": "c30c8ed5cc1baf1081d0a2a07ff53013717f6f98c69887ab020dda1bcd18eb2c",
+    "metrics.py": "87a72dedb057da3a7a2fbdfcd8bec21893268284ad595a9d5fb272e808be7e3b"
+  },
+  "results": {
+    "bl-bl": {
+      "dataset": "data/processed/source-benchmark-v2/test/bl-bl",
+      "dataset_manifest_sha256": "198305c445133375a12561cd50eeb593b77338faff32ef0e6261e43714e7afe8",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.892948029629074,
+          "mrr_at_10": 0.8823809523809524
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.892948029629074,
+            "mrr_at_10": 0.8823809523809524
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7367265885406126,
+            "mrr_at_10": 0.66
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9427959031659772,
+            "mrr_at_10": 1.0
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8799611212967754,
+            "mrr_at_10": 0.9
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7982045647710789,
+            "mrr_at_10": 0.7342857142857143
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "033e27bf126512fc844068277af374f2eaeda921f0dab78227985fd40b380966",
+      "scores_sha256": "4f7263e55f27a84644857501183c5c8eb2b710e23fd5c35e1f0de6a3ef5bccbf"
+    },
+    "bl-bn": {
+      "dataset": "data/processed/source-benchmark-v2/test/bl-bn",
+      "dataset_manifest_sha256": "cfaa765f3fc43ba009ffb08b689a5aa9f67387c6cdfc57f67bea66b4b85923b6",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8614882783403963,
+          "mrr_at_10": 0.8338888888888889
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8614882783403963,
+            "mrr_at_10": 0.8338888888888889
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7135612497210404,
+            "mrr_at_10": 0.6291666666666667
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8478460439314337,
+            "mrr_at_10": 0.8333333333333334
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9630929753571458,
+            "mrr_at_10": 0.95
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9549440261091,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.6894853749236578,
+            "mrr_at_10": 0.5908333333333333
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "145a5108c7e8bed96e395c846f4fd24ae7d064c1d54cda95e6475e45e3b3ed59",
+      "scores_sha256": "7b82ba7c3efbfa48582002ec0d87544fb944da3aefede355ac7204268ca65051"
+    },
+    "bl-en": {
+      "dataset": "data/processed/source-benchmark-v2/test/bl-en",
+      "dataset_manifest_sha256": "09af2e2d6ca038445291fae97338eb173f26dbd687c7f9a5156b814ed819d272",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9171436375052298,
+          "mrr_at_10": 0.9029365079365079
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9171436375052298,
+            "mrr_at_10": 0.9029365079365079
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7343076110269439,
+            "mrr_at_10": 0.6533333333333333
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9086639139364378,
+            "mrr_at_10": 0.9
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9265569667346633,
+            "mrr_at_10": 0.95
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9333333333333333,
+            "mrr_at_10": 0.9142857142857143
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "6b8e3c071d38e91dc0737f63fde2249c26026c6f1bee2d8f1160b964193f8b69",
+      "scores_sha256": "2d769f5effcdef64d3f7b6ddc75f12df1fb5e695ea894f7d1e89d0bc2d36262b"
+    },
+    "bn-bl": {
+      "dataset": "data/processed/source-benchmark-v2/test/bn-bl",
+      "dataset_manifest_sha256": "428e4f8f99149a5cd96019695349dfee6d797ba1e724e330bf4b49dfdac58c42",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9333333333333333,
+          "ndcg_at_10": 0.8241704462366801,
+          "mrr_at_10": 0.8122222222222222
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9333333333333333,
+            "ndcg_at_10": 0.8241704462366801,
+            "mrr_at_10": 0.8122222222222222
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.6110535970137985,
+            "mrr_at_10": 0.5666666666666667
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8638917269023848,
+            "mrr_at_10": 0.9
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8927067920569889,
+            "mrr_at_10": 0.9
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.5773705614469083,
+            "mrr_at_10": 0.5066666666666667
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "5d6c5f1ae4e8f50412a89e048345ed55801f13a40e9501c3228f73ed0fd7a660",
+      "scores_sha256": "45ae70f695a1974f31f8301ca9a96609ba0f7b3fc9a25d3ed150755dfcf9c9c0"
+    },
+    "bn-bn": {
+      "dataset": "data/processed/source-benchmark-v2/test/bn-bn",
+      "dataset_manifest_sha256": "7163b0ef468ba8f9aa053e9542d7a35f41d04e26b98ef2f81e9ec087a48d0349",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9250803257535077,
+          "mrr_at_10": 0.9214285714285715
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9250803257535077,
+            "mrr_at_10": 0.9214285714285715
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7556362579785838,
+            "mrr_at_10": 0.6952380952380952
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9593415161981014,
+            "mrr_at_10": 1.0
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9642627429227566,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8712414374216044,
+            "mrr_at_10": 0.8333333333333334
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "ddf4cc8980d496882cb3b19cb8a3cc5bf9347deb2537567cc99d3ddfa7ae9e5c",
+      "scores_sha256": "29031ddf786a899cdc718453ab31d0945d52dcad5f467f1c332ab9ab0a551520"
+    },
+    "bn-en": {
+      "dataset": "data/processed/source-benchmark-v2/test/bn-en",
+      "dataset_manifest_sha256": "818b6bd307cb7984b7c9cdc6b9e54855ce1458de453227a88c35a96a7c6f7680",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9666666666666667,
+          "ndcg_at_10": 0.907497036707065,
+          "mrr_at_10": 0.8992063492063492
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9666666666666667,
+            "ndcg_at_10": 0.907497036707065,
+            "mrr_at_10": 0.8992063492063492
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.6927880866633307,
+            "mrr_at_10": 0.6666666666666666
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9593415161981014,
+            "mrr_at_10": 1.0
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9261859507142914,
+            "mrr_at_10": 0.9
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8666666666666667,
+            "mrr_at_10": 0.8285714285714285
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "1bf75aa6c317542cbfcbdccc544209486e4cdc87ea3e5dc6d69852be8499f18a",
+      "scores_sha256": "1e9a3aa439430b8c49254afa3d0df2bded3affa19c89cbf045060216d849e39f"
+    },
+    "en-bl": {
+      "dataset": "data/processed/source-benchmark-v2/test/en-bl",
+      "dataset_manifest_sha256": "f8f5606ce09c19f452b0592fb8a24846ae071b871a0bbb9d09a42257cd0d3177",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8408239532976811,
+          "mrr_at_10": 0.8087037037037037
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8408239532976811,
+            "mrr_at_10": 0.8087037037037037
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.6236133388501874,
+            "mrr_at_10": 0.5
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9593415161981014,
+            "mrr_at_10": 1.0
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9609064310965062,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.5010824336412916,
+            "mrr_at_10": 0.3522222222222222
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "303a7b6716dfb8e165e2d67013c8ec1ca03e8dcb4e7243f652b1dae7ac33c1f6",
+      "scores_sha256": "d54dcc734f42d4fa43597bfb47ba640e8663f9d0fc53092667eb2215d84e460c"
+    },
+    "en-bn": {
+      "dataset": "data/processed/source-benchmark-v2/test/en-bn",
+      "dataset_manifest_sha256": "9e056773c61bedb5d61ab448dc61515e8705303a417b221336e3aa751c147183",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.8854927376047472,
+          "mrr_at_10": 0.8714285714285714
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8854927376047472,
+            "mrr_at_10": 0.8714285714285714
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.797427388135896,
+            "mrr_at_10": 0.7333333333333333
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7900776776166762,
+            "mrr_at_10": 0.8
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9587846932092442,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7666666666666666,
+            "mrr_at_10": 0.6952380952380952
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "4e9a327f414262ea6c08cbd982ec3b4bf65c2fa01565d29e683befb414b277b8",
+      "scores_sha256": "2a958e033bce2786f8ff81c1181be6a3ee3cec0a36b97f39111ce1612e7c40f4"
+    },
+    "en-en": {
+      "dataset": "data/processed/source-benchmark-v2/test/en-en",
+      "dataset_manifest_sha256": "8dfc598d66db1fcb48d6361f92fb41b2818361cc54aa726c8e1b8507a01db536",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 30,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 1.0,
+          "ndcg_at_10": 0.9736867526644216,
+          "mrr_at_10": 0.975
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 30,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9736867526644216,
+            "mrr_at_10": 0.975
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8861353116146786,
+            "mrr_at_10": 0.85
+          }
+        },
+        "business": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9593415161981014,
+            "mrr_at_10": 1.0
+          }
+        },
+        "conversation": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9966436881737496,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        },
+        "technology": {
+          "queries": 5,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 1.0,
+            "mrr_at_10": 1.0
+          }
+        }
+      },
+      "ranking_sha256": "f59b64753c2f86c837486c4ee29ec9bc3f283a41ba27ad8e611e5baa82d7c353",
+      "scores_sha256": "01826a68a83d0fac2207349ea55aaf72af693b2c49af33916eea5028b0c6da19"
+    }
+  }
+}

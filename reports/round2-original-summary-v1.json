@@ -1,0 +1,50 @@
+{
+  "selection": "unchanged",
+  "splits": {
+    "development": {
+      "unchanged": {
+        "banglish_to_bengali_ndcg": 0.6835446086134951,
+        "english_query_mean_ndcg": 0.9071832047389833
+      },
+      "short/equal-data": {
+        "banglish_to_bengali_ndcg": 0.5291229573917616,
+        "english_query_mean_ndcg": 0.8469831746897599
+      },
+      "long/equal-data": {
+        "banglish_to_bengali_ndcg": 0.6295517644002736,
+        "english_query_mean_ndcg": 0.788306874935227
+      },
+      "short/equal-compute": {
+        "banglish_to_bengali_ndcg": 0.5163818475509707,
+        "english_query_mean_ndcg": 0.8469145681682124
+      },
+      "long/equal-compute": {
+        "banglish_to_bengali_ndcg": 0.6209553343655307,
+        "english_query_mean_ndcg": 0.7938996930788265
+      }
+    },
+    "test": {
+      "unchanged": {
+        "banglish_to_bengali_ndcg": 0.8873946535013755,
+        "english_query_mean_ndcg": 0.959716465633517
+      },
+      "short/equal-data": {
+        "banglish_to_bengali_ndcg": 0.8547364084523424,
+        "english_query_mean_ndcg": 0.9232670820587049
+      },
+      "long/equal-data": {
+        "banglish_to_bengali_ndcg": 0.885798555714737,
+        "english_query_mean_ndcg": 0.9113841230020912
+      },
+      "short/equal-compute": {
+        "banglish_to_bengali_ndcg": 0.8390226753524757,
+        "english_query_mean_ndcg": 0.9227011505974743
+      },
+      "long/equal-compute": {
+        "banglish_to_bengali_ndcg": 0.865425010738218,
+        "english_query_mean_ndcg": 0.90124422663377
+      }
+    }
+  },
+  "weighting": "equal six-domain means; three training seeds for adapted families"
+}

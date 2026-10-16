@@ -1,0 +1,3037 @@
+{
+  "selection": "unchanged",
+  "selection_sha256": "3471df6e0a4848bd39d6871fa77e8722fbee0d4f41e3f871e2f60482714666ee",
+  "selection_changed_using_test": false,
+  "test": {
+    "equal-data": {
+      "directions": {
+        "bl-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.025438639576551805,
+                "mrr_at_10": -0.03263888888888889
+              },
+              "29": {
+                "recall_at_10": -0.008333333333333333,
+                "ndcg_at_10": 0.009297954554703215,
+                "mrr_at_10": 0.016111111111111114
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.0016338421386595837,
+                "mrr_at_10": 0.000833333333333333
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.002777777777777778,
+                "bootstrap_95_percentile": [
+                  -0.011111111111111112,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.004835614294396336,
+                "bootstrap_95_percentile": [
+                  -0.049733301933265445,
+                  0.028281485991263764
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.005231481481481481,
+                "bootstrap_95_percentile": [
+                  -0.06527777777777778,
+                  0.03518518518518519
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.043352164918387705,
+                "mrr_at_10": -0.04470238095238095
+              },
+              "29": {
+                "recall_at_10": -0.008333333333333333,
+                "ndcg_at_10": -0.038850990890848786,
+                "mrr_at_10": -0.035833333333333335
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.03185964863583461,
+                "mrr_at_10": -0.03388888888888889
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.002777777777777778,
+                "bootstrap_95_percentile": [
+                  -0.011111111111111112,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0380209348150237,
+                "bootstrap_95_percentile": [
+                  -0.08180890983202303,
+                  0.0019087982135721354
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.03814153439153439,
+                "bootstrap_95_percentile": [
+                  -0.08448412698412698,
+                  0.007453703703703705
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0179135253418359,
+                "mrr_at_10": -0.012063492063492064
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.048148945445552004,
+                "mrr_at_10": -0.051944444444444446
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0334934907744942,
+                "mrr_at_10": -0.034722222222222224
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.033185320520627365,
+                "bootstrap_95_percentile": [
+                  -0.07669468616877118,
+                  0.008178750381925505
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.03291005291005291,
+                "bootstrap_95_percentile": [
+                  -0.07944444444444444,
+                  0.012962962962962964
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bl-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.055862053818562095,
+                "mrr_at_10": 0.07706349206349207
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.0009441927236419043,
+                "mrr_at_10": 0.0006481481481481494
+              },
+              "43": {
+                "recall_at_10": 0.008333333333333333,
+                "ndcg_at_10": 0.03638019524497978,
+                "mrr_at_10": 0.044537037037037035
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.002777777777777778,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.016666666666666666
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.03106214726239459,
+                "bootstrap_95_percentile": [
+                  -0.000115055262206568,
+                  0.08379691172335435
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.04074955908289242,
+                "bootstrap_95_percentile": [
+                  -0.002777777777777777,
+                  0.1158509700176367
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.0051584623802840065,
+                "mrr_at_10": 0.02074074074074074
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.004909166200340846,
+                "mrr_at_10": 0.0016666666666666611
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.005037589539858722,
+                "mrr_at_10": 0.0009920634920634885
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0015960977866385205,
+                "bootstrap_95_percentile": [
+                  -0.055229019695211955,
+                  0.05722311246582836
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0077998236331569635,
+                "bootstrap_95_percentile": [
+                  -0.06277777777777778,
+                  0.08287037037037036
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.05070359143827809,
+                "mrr_at_10": -0.05632275132275133
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0058533589239827466,
+                "mrr_at_10": 0.001018518518518517
+              },
+              "43": {
+                "recall_at_10": -0.008333333333333333,
+                "ndcg_at_10": -0.0414177847848385,
+                "mrr_at_10": -0.043544973544973546
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.002777777777777778,
+                "bootstrap_95_percentile": [
+                  -0.016666666666666666,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.03265824504903311,
+                "bootstrap_95_percentile": [
+                  -0.10577430264935712,
+                  0.03130640925928613
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.03294973544973545,
+                "bootstrap_95_percentile": [
+                  -0.1352777777777778,
+                  0.054003527336860674
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bl-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.016666666666666666,
+                "ndcg_at_10": 0.010332441867565241,
+                "mrr_at_10": 0.006944444444444441
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01960154221413516,
+                "mrr_at_10": -0.017638888888888888
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.0021489017379948965,
+                "mrr_at_10": -0.0012962962962962965
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.005555555555555556,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.03333333333333333
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0023733995361916744,
+                "bootstrap_95_percentile": [
+                  -0.03314112429120886,
+                  0.02735797011770777
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.003996913580246914,
+                "bootstrap_95_percentile": [
+                  -0.04296296296296297,
+                  0.029166666666666664
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01386643061694222,
+                "mrr_at_10": -0.017361111111111112
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.016480826220869,
+                "mrr_at_10": -0.010694444444444444
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.023826189707771315,
+                "mrr_at_10": -0.03208333333333333
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.018057815515194177,
+                "bootstrap_95_percentile": [
+                  -0.05709935852789534,
+                  0.012606831952048876
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.020046296296296295,
+                "bootstrap_95_percentile": [
+                  -0.05606481481481482,
+                  0.008796296296296297
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.016666666666666666,
+                "ndcg_at_10": -0.02419887248450746,
+                "mrr_at_10": -0.024305555555555552
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.003120715993266158,
+                "mrr_at_10": 0.006944444444444447
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.02597509144576621,
+                "mrr_at_10": -0.030787037037037036
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.005555555555555556,
+                "bootstrap_95_percentile": [
+                  -0.03333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.015684415979002504,
+                "bootstrap_95_percentile": [
+                  -0.05655852663161786,
+                  0.019191404468854215
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.01604938271604938,
+                "bootstrap_95_percentile": [
+                  -0.05169753086419753,
+                  0.01666666666666667
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.0244219529312707,
+                "mrr_at_10": 0.03523809523809524
+              },
+              "29": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.03055593763817764,
+                "mrr_at_10": 0.024999999999999998
+              },
+              "43": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": 0.0410991394952058,
+                "mrr_at_10": 0.06333333333333334
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.003703703703703702,
+                "bootstrap_95_percentile": [
+                  -0.044444444444444446,
+                  0.022222222222222227
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.03202567668821805,
+                "bootstrap_95_percentile": [
+                  -0.017371309306737193,
+                  0.08869166175055988
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.041190476190476194,
+                "bootstrap_95_percentile": [
+                  -0.015000000000000001,
+                  0.1138888888888889
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.040878433954439033,
+                "mrr_at_10": 0.0863888888888889
+              },
+              "29": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.02819616791956824,
+                "mrr_at_10": 0.060277777777777784
+              },
+              "43": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.05075994581701296,
+                "mrr_at_10": 0.09916666666666668
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.06666666666666667,
+                "bootstrap_95_percentile": [
+                  -0.13333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.03994484923034008,
+                "bootstrap_95_percentile": [
+                  0.0009538670778248366,
+                  0.07699204856523764
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.08194444444444446,
+                "bootstrap_95_percentile": [
+                  0.025370370370370366,
+                  0.13851851851851854
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.07777777777777778,
+                "ndcg_at_10": 0.016456481023168334,
+                "mrr_at_10": 0.051150793650793655
+              },
+              "29": {
+                "recall_at_10": -0.07777777777777778,
+                "ndcg_at_10": -0.0023597697186094045,
+                "mrr_at_10": 0.03527777777777778
+              },
+              "43": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": 0.009660806321807157,
+                "mrr_at_10": 0.035833333333333335
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.06296296296296297,
+                "bootstrap_95_percentile": [
+                  -0.13333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.007919172542122028,
+                "bootstrap_95_percentile": [
+                  -0.04838146935544241,
+                  0.058843864070538196
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.04075396825396826,
+                "bootstrap_95_percentile": [
+                  -0.031005291005291008,
+                  0.10240740740740742
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.00888260019132545,
+                "mrr_at_10": -0.0035714285714285718
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.008316558245021378,
+                "mrr_at_10": 0.017724867724867727
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.00869694846660308,
+                "mrr_at_10": 0.01634920634920635
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.011111111111111112,
+                "bootstrap_95_percentile": [
+                  -0.06666666666666667,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.002710302173433003,
+                "bootstrap_95_percentile": [
+                  -0.01680211827590451,
+                  0.026009521602844723
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.010167548500881834,
+                "bootstrap_95_percentile": [
+                  -0.004166666666666667,
+                  0.03392857142857143
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.053550783892547624,
+                "mrr_at_10": -0.04246031746031746
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.03863551331905946,
+                "mrr_at_10": -0.03412698412698413
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.028715632644455324,
+                "mrr_at_10": -0.022222222222222223
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.011111111111111112,
+                "bootstrap_95_percentile": [
+                  -0.06666666666666667,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.04030064328535414,
+                "bootstrap_95_percentile": [
+                  -0.08703314503388006,
+                  -0.01090493028397981
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.03293650793650794,
+                "bootstrap_95_percentile": [
+                  -0.09047619047619047,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.04466818370122218,
+                "mrr_at_10": -0.03888888888888889
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.046952071564080836,
+                "mrr_at_10": -0.05185185185185185
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.037412581111058406,
+                "mrr_at_10": -0.03857142857142857
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.04301094545878714,
+                "bootstrap_95_percentile": [
+                  -0.0834498283675681,
+                  -0.007895184575733238
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.04310405643738977,
+                "bootstrap_95_percentile": [
+                  -0.10007936507936507,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.03333333333333333,
+                "ndcg_at_10": 0.06617780619791046,
+                "mrr_at_10": 0.06805555555555556
+              },
+              "29": {
+                "recall_at_10": 0.03333333333333333,
+                "ndcg_at_10": 0.07429491912787498,
+                "mrr_at_10": 0.08055555555555556
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.03261361003468362,
+                "mrr_at_10": 0.04027777777777778
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.022222222222222223,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.08888888888888889
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.05769544512015635,
+                "bootstrap_95_percentile": [
+                  0.007970846874447093,
+                  0.12273488141918709
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.06296296296296297,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.13796296296296298
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.01602198357583978,
+                "mrr_at_10": -0.010833333333333328
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.0121815941995843,
+                "mrr_at_10": -0.006666666666666664
+              },
+              "43": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.0121815941995843,
+                "mrr_at_10": -0.006666666666666664
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.03333333333333333,
+                "bootstrap_95_percentile": [
+                  -0.1,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.013461723991669458,
+                "bootstrap_95_percentile": [
+                  -0.07669219947818633,
+                  0.049768751494847406
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.008055555555555552,
+                "bootstrap_95_percentile": [
+                  -0.08277777777777777,
+                  0.06666666666666667
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": -0.08219978977375024,
+                "mrr_at_10": -0.0788888888888889
+              },
+              "29": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": -0.08647651332745927,
+                "mrr_at_10": -0.08722222222222221
+              },
+              "43": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.044795204234267916,
+                "mrr_at_10": -0.04694444444444445
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.05555555555555555,
+                "bootstrap_95_percentile": [
+                  -0.13333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0711571691118258,
+                "bootstrap_95_percentile": [
+                  -0.18883443993171742,
+                  0.028723626967029424
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.07101851851851852,
+                "bootstrap_95_percentile": [
+                  -0.21166666666666667,
+                  0.05
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.0870527980756753,
+                "mrr_at_10": -0.10305555555555555
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.060410615310922455,
+                "mrr_at_10": -0.06111111111111111
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.06059967991561948,
+                "mrr_at_10": -0.08083333333333333
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.022222222222222223,
+                "bootstrap_95_percentile": [
+                  -0.08888888888888889,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.06935436443407242,
+                "bootstrap_95_percentile": [
+                  -0.17171789142690758,
+                  0.0
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.08166666666666667,
+                "bootstrap_95_percentile": [
+                  -0.1912962962962963,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.09435159487143478,
+                "mrr_at_10": -0.10472222222222223
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.06571453727352024,
+                "mrr_at_10": -0.06666666666666668
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.06623257636007522,
+                "mrr_at_10": -0.07805555555555556
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.022222222222222223,
+                "bootstrap_95_percentile": [
+                  -0.08888888888888889,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.07543290283501008,
+                "bootstrap_95_percentile": [
+                  -0.17864033198694507,
+                  -0.00630983249408423
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.08314814814814815,
+                "bootstrap_95_percentile": [
+                  -0.20314814814814816,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.007298796795759499,
+                "mrr_at_10": -0.0016666666666666663
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.005303921962597776,
+                "mrr_at_10": -0.005555555555555557
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.005632896444455737,
+                "mrr_at_10": 0.002777777777777777
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.006078538400937671,
+                "bootstrap_95_percentile": [
+                  -0.02499045095648915,
+                  0.012302341547618086
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.001481481481481482,
+                "bootstrap_95_percentile": [
+                  -0.022222222222222227,
+                  0.022222222222222223
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.022059439518298612,
+                "mrr_at_10": 0.03777777777777778
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.03332060481190622,
+                "mrr_at_10": 0.05722222222222222
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.030187248654800672,
+                "mrr_at_10": 0.031944444444444456
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0037037037037037043,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.014814814814814817
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.028522430995001836,
+                "bootstrap_95_percentile": [
+                  -0.03506743779293651,
+                  0.09754268060273158
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.04231481481481482,
+                "bootstrap_95_percentile": [
+                  -0.044444444444444446,
+                  0.13018518518518518
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.06856163335423532,
+                "mrr_at_10": -0.061111111111111116
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.05775316471691312,
+                "mrr_at_10": -0.05166666666666667
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0651540458532935,
+                "mrr_at_10": -0.07777777777777778
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.06382294797481398,
+                "bootstrap_95_percentile": [
+                  -0.13112121257791196,
+                  -0.009756507319145919
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.06351851851851853,
+                "bootstrap_95_percentile": [
+                  -0.14444444444444446,
+                  -0.0024074074074074085
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.011111111111111113,
+                "ndcg_at_10": -0.09062107287253393,
+                "mrr_at_10": -0.09888888888888889
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.09107376952881933,
+                "mrr_at_10": -0.1088888888888889
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.09534129450809417,
+                "mrr_at_10": -0.10972222222222222
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.0037037037037037043,
+                "bootstrap_95_percentile": [
+                  -0.014814814814814817,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.09234537896981582,
+                "bootstrap_95_percentile": [
+                  -0.1922436768213912,
+                  -0.021379898456421898
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.10583333333333333,
+                "bootstrap_95_percentile": [
+                  -0.24101851851851852,
+                  -0.011111111111111112
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.001264636258780031,
+                "mrr_at_10": 0.002777777777777777
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.012903418225197822,
+                "mrr_at_10": 0.016666666666666666
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.0013811143237101493,
+                "mrr_at_10": 0.002777777777777777
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.005183056269229334,
+                "bootstrap_95_percentile": [
+                  -0.0024602430262186483,
+                  0.023308946168066103
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.007407407407407407,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.02962962962962963
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.005158154726992754,
+                "mrr_at_10": 0.002777777777777777
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.007023699864304607,
+                "mrr_at_10": 0.0
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.005041676662062637,
+                "mrr_at_10": 0.002777777777777777
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0057411770844533324,
+                "bootstrap_95_percentile": [
+                  -0.020834525950121932,
+                  0.004155104767577902
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0018518518518518513,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.005555555555555554
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.006422790985772786,
+                "mrr_at_10": 0.0
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01992711808950243,
+                "mrr_at_10": -0.016666666666666666
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.006422790985772786,
+                "mrr_at_10": 0.0
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.010924233353682667,
+                "bootstrap_95_percentile": [
+                  -0.029332126636769096,
+                  0.0007072459624206514
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.005555555555555556,
+                "bootstrap_95_percentile": [
+                  -0.022222222222222223,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        }
+      },
+      "english_minus_unchanged": {
+        "groups": 6,
+        "queries": 90,
+        "training_seeds": [
+          17,
+          29,
+          43
+        ],
+        "bootstrap_repeats": 2000,
+        "per_seed_difference": {
+          "17": {
+            "recall_at_10": -0.011111111111111112,
+            "ndcg_at_10": -0.05602379431755429,
+            "mrr_at_10": -0.05435185185185185
+          },
+          "29": {
+            "recall_at_10": -0.011111111111111112,
+            "ndcg_at_10": -0.04349713395157932,
+            "mrr_at_10": -0.03944444444444444
+          },
+          "43": {
+            "recall_at_10": 0.0,
+            "ndcg_at_10": -0.04547609962514378,
+            "mrr_at_10": -0.05101851851851852
+          }
+        },
+        "metrics": {
+          "recall_at_10": {
+            "mean": -0.007407407407407408,
+            "bootstrap_95_percentile": [
+              -0.02962962962962963,
+              0.0
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": -0.0483323426314258,
+            "bootstrap_95_percentile": [
+              -0.09745875457648247,
+              -0.011464023789860871
+            ]
+          },
+          "mrr_at_10": {
+            "mean": -0.0482716049382716,
+            "bootstrap_95_percentile": [
+              -0.10910493827160495,
+              -0.005555555555555556
+            ]
+          }
+        },
+        "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+        "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+      },
+      "runtime_ratios": [
+        {
+          "seed": 17,
+          "latency": 0.38947936483737167,
+          "memory": 0.9998312264771902
+        },
+        {
+          "seed": 29,
+          "latency": 0.36649234710175993,
+          "memory": 1.0002025282273717
+        },
+        {
+          "seed": 43,
+          "latency": 0.5413020477337618,
+          "memory": 0.999324905908761
+        }
+      ],
+      "gates": {
+        "gain_over_short": true,
+        "positive_paired_interval": false,
+        "gain_over_unchanged": false,
+        "english_retention": false,
+        "query_latency": true,
+        "memory": true
+      },
+      "passes_all": false
+    },
+    "equal-compute": {
+      "directions": {
+        "bl-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0008631109712419492,
+                "mrr_at_10": 0.000859788359788359
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.005846219837301179,
+                "mrr_at_10": 0.004861111111111112
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.032900465437127956,
+                "mrr_at_10": 0.040158730158730165
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.012627858101062395,
+                "bootstrap_95_percentile": [
+                  -0.024101288569135234,
+                  0.05787238380301752
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.015293209876543212,
+                "bootstrap_95_percentile": [
+                  -0.031792328042328045,
+                  0.07222222222222223
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.034214620824711946,
+                "mrr_at_10": -0.03703703703703704
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.02763852740684108,
+                "mrr_at_10": -0.029027777777777777
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.033263082931314934,
+                "mrr_at_10": -0.03345238095238095
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.03170541038762265,
+                "bootstrap_95_percentile": [
+                  -0.06710123758569733,
+                  0.002826295586158673
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.033172398589065254,
+                "bootstrap_95_percentile": [
+                  -0.07595017636684304,
+                  0.008333333333333333
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.03335150985346999,
+                "mrr_at_10": -0.0378968253968254
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.033484747244142264,
+                "mrr_at_10": -0.03388888888888889
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.06616354836844289,
+                "mrr_at_10": -0.07361111111111111
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.044333268488685046,
+                "bootstrap_95_percentile": [
+                  -0.09857812971990262,
+                  0.0022213147250540006
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.04846560846560847,
+                "bootstrap_95_percentile": [
+                  -0.10842592592592594,
+                  0.00630952380952381
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bl-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.03333333333333333,
+                "ndcg_at_10": 0.026731098165482338,
+                "mrr_at_10": 0.013015873015873017
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.022395532823515252,
+                "mrr_at_10": 0.028452380952380955
+              },
+              "43": {
+                "recall_at_10": 0.016666666666666666,
+                "ndcg_at_10": 0.030080375168229465,
+                "mrr_at_10": 0.034219576719576726
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.016666666666666666,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.06666666666666667
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.02640233538574235,
+                "bootstrap_95_percentile": [
+                  0.0014338126336345758,
+                  0.04870462101514848
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.025229276895943564,
+                "bootstrap_95_percentile": [
+                  -0.007407407407407408,
+                  0.05780423280423281
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.030541966760795514,
+                "mrr_at_10": -0.030000000000000002
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.00946058636769783,
+                "mrr_at_10": -0.0037037037037037104
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.02590637516097925,
+                "mrr_at_10": -0.02500000000000001
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.02196964276315753,
+                "bootstrap_95_percentile": [
+                  -0.08996642262229422,
+                  0.043104275121380715
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.019567901234567905,
+                "bootstrap_95_percentile": [
+                  -0.11291666666666668,
+                  0.06342592592592593
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.05727306492627785,
+                "mrr_at_10": -0.04301587301587302
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.031856119191213075,
+                "mrr_at_10": -0.03215608465608466
+              },
+              "43": {
+                "recall_at_10": -0.016666666666666666,
+                "ndcg_at_10": -0.05598675032920871,
+                "mrr_at_10": -0.05921957671957673
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.016666666666666666,
+                "bootstrap_95_percentile": [
+                  -0.06666666666666667,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.04837197814889988,
+                "bootstrap_95_percentile": [
+                  -0.11986401713418338,
+                  0.022727112837413674
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.04479717813051147,
+                "bootstrap_95_percentile": [
+                  -0.14253968253968255,
+                  0.05046296296296296
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bl-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.016666666666666666,
+                "ndcg_at_10": -0.016149152181379783,
+                "mrr_at_10": -0.028214285714285716
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.018916493842338674,
+                "mrr_at_10": -0.03027777777777778
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.014401664121599107,
+                "mrr_at_10": 0.01599206349206349
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.005555555555555556,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.03333333333333333
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.006887993967373117,
+                "bootstrap_95_percentile": [
+                  -0.036379191854861354,
+                  0.0188005102864313
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.014166666666666668,
+                "bootstrap_95_percentile": [
+                  -0.05373015873015873,
+                  0.019378306878306877
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01478624288819851,
+                "mrr_at_10": -0.016805555555555556
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.009722701539961149,
+                "mrr_at_10": -0.014583333333333332
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.006033863940822688,
+                "mrr_at_10": -0.00609126984126984
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.010180936122994116,
+                "bootstrap_95_percentile": [
+                  -0.03677389459484272,
+                  0.010960798862938818
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.012493386243386242,
+                "bootstrap_95_percentile": [
+                  -0.03194444444444444,
+                  0.00418650793650794
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 60,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.016666666666666666,
+                "ndcg_at_10": 0.0013629092931812734,
+                "mrr_at_10": 0.011408730158730162
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.009193792302377527,
+                "mrr_at_10": 0.01569444444444445
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.020435528062421795,
+                "mrr_at_10": -0.022083333333333333
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.005555555555555556,
+                "bootstrap_95_percentile": [
+                  -0.03333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0032929421556209984,
+                "bootstrap_95_percentile": [
+                  -0.03952146247255428,
+                  0.030305219515329516
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0016732804232804255,
+                "bootstrap_95_percentile": [
+                  -0.031514550264550266,
+                  0.031408730158730164
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.02134847613544349,
+                "mrr_at_10": 0.023888888888888894
+              },
+              "29": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.04617942471823753,
+                "mrr_at_10": 0.04920634920634921
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.07059155741048669,
+                "mrr_at_10": 0.08857142857142858
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0074074074074074086,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.022222222222222227
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.04603981942138924,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.10888481071561985
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.053888888888888896,
+                "bootstrap_95_percentile": [
+                  -0.002910052910052909,
+                  0.12878306878306878
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.036936755691751456,
+                "mrr_at_10": 0.08250000000000002
+              },
+              "29": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.04992532713106833,
+                "mrr_at_10": 0.09559523809523811
+              },
+              "43": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": 0.02058840780689758,
+                "mrr_at_10": 0.058611111111111114
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.06666666666666667,
+                "bootstrap_95_percentile": [
+                  -0.13333333333333333,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.03581683020990579,
+                "bootstrap_95_percentile": [
+                  0.0017927337943657634,
+                  0.07101694949934771
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.07890211640211642,
+                "bootstrap_95_percentile": [
+                  0.03166666666666667,
+                  0.12503968253968256
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.07777777777777778,
+                "ndcg_at_10": 0.015588279556307962,
+                "mrr_at_10": 0.058611111111111114
+              },
+              "29": {
+                "recall_at_10": -0.07777777777777778,
+                "ndcg_at_10": 0.003745902412830803,
+                "mrr_at_10": 0.04638888888888889
+              },
+              "43": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": -0.050003149603589106,
+                "mrr_at_10": -0.029960317460317458
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.07407407407407407,
+                "bootstrap_95_percentile": [
+                  -0.14444444444444446,
+                  -0.0037037037037037043
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.010222989211483447,
+                "bootstrap_95_percentile": [
+                  -0.07752912651283636,
+                  0.04474253201739646
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.025013227513227515,
+                "bootstrap_95_percentile": [
+                  -0.05718253968253968,
+                  0.09101851851851853
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.013955867928318112,
+                "mrr_at_10": 0.011851851851851855
+              },
+              "29": {
+                "recall_at_10": 0.03333333333333333,
+                "ndcg_at_10": 0.01841030465755731,
+                "mrr_at_10": 0.012222222222222221
+              },
+              "43": {
+                "recall_at_10": 0.016666666666666666,
+                "ndcg_at_10": 0.015526707717111714,
+                "mrr_at_10": 0.022354497354497353
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.016666666666666666,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.06666666666666667
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.015964293434329046,
+                "bootstrap_95_percentile": [
+                  -0.008285647570716512,
+                  0.04801088818236504
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.015476190476190477,
+                "bootstrap_95_percentile": [
+                  -0.007777777777777777,
+                  0.044444444444444446
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.04157192191420269,
+                "mrr_at_10": -0.03722222222222222
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.02858453994525838,
+                "mrr_at_10": -0.02944444444444445
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.041117825684571827,
+                "mrr_at_10": -0.03690476190476191
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.037091429181344296,
+                "bootstrap_95_percentile": [
+                  -0.07666418878888859,
+                  -0.00876181713794108
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.034523809523809526,
+                "bootstrap_95_percentile": [
+                  -0.08785714285714287,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.055527789842520804,
+                "mrr_at_10": -0.04907407407407408
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.04699484460281569,
+                "mrr_at_10": -0.04166666666666667
+              },
+              "43": {
+                "recall_at_10": -0.016666666666666666,
+                "ndcg_at_10": -0.05664453340168354,
+                "mrr_at_10": -0.059259259259259255
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.016666666666666666,
+                "bootstrap_95_percentile": [
+                  -0.05555555555555556,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.053055722615673345,
+                "bootstrap_95_percentile": [
+                  -0.10209578234869346,
+                  -0.007978399523094667
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.05,
+                "bootstrap_95_percentile": [
+                  -0.1117283950617284,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "bn-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.06193021973948021,
+                "mrr_at_10": 0.08101851851851852
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.04620046638923735,
+                "mrr_at_10": 0.05777777777777778
+              },
+              "43": {
+                "recall_at_10": 0.03333333333333333,
+                "ndcg_at_10": 0.060874010925316434,
+                "mrr_at_10": 0.0630952380952381
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.011111111111111112,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.044444444444444446
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.05633489901801133,
+                "bootstrap_95_percentile": [
+                  0.0072357911792562376,
+                  0.10599732820312356
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.06729717813051146,
+                "bootstrap_95_percentile": [
+                  -0.005264550264550267,
+                  0.13261904761904764
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.004279027332596756,
+                "mrr_at_10": 0.005833333333333339
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.014663906565096665,
+                "mrr_at_10": -0.009444444444444445
+              },
+              "43": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.014317572516144291,
+                "mrr_at_10": -0.007460317460317459
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.03333333333333333,
+                "bootstrap_95_percentile": [
+                  -0.1,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.011086835471279238,
+                "bootstrap_95_percentile": [
+                  -0.07817485458994677,
+                  0.05368307024259508
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.003690476190476188,
+                "bootstrap_95_percentile": [
+                  -0.08292328042328043,
+                  0.07222222222222223
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.06620924707207697,
+                "mrr_at_10": -0.07518518518518519
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.060864372954334015,
+                "mrr_at_10": -0.06722222222222222
+              },
+              "43": {
+                "recall_at_10": -0.06666666666666667,
+                "ndcg_at_10": -0.07519158344146074,
+                "mrr_at_10": -0.07055555555555555
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.044444444444444446,
+                "bootstrap_95_percentile": [
+                  -0.11111111111111112,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.06742173448929058,
+                "bootstrap_95_percentile": [
+                  -0.1743189550992353,
+                  0.03414333569534766
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.07098765432098765,
+                "bootstrap_95_percentile": [
+                  -0.2047530864197531,
+                  0.05555555555555556
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-bl": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.06258593003837885,
+                "mrr_at_10": -0.07111111111111111
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.0917523418398908,
+                "mrr_at_10": -0.10074074074074074
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.08801209688187696,
+                "mrr_at_10": -0.1162962962962963
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.022222222222222223,
+                "bootstrap_95_percentile": [
+                  -0.08888888888888889,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.08078345625338221,
+                "bootstrap_95_percentile": [
+                  -0.17721825182610937,
+                  0.0
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.09604938271604939,
+                "bootstrap_95_percentile": [
+                  -0.20851851851851852,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.07963489774311949,
+                "mrr_at_10": -0.08499999999999999
+              },
+              "29": {
+                "recall_at_10": -0.03333333333333333,
+                "ndcg_at_10": -0.09585427824637702,
+                "mrr_at_10": -0.1062962962962963
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.08260556169068198,
+                "mrr_at_10": -0.09962962962962964
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.022222222222222223,
+                "bootstrap_95_percentile": [
+                  -0.08888888888888889,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.08603157922672616,
+                "bootstrap_95_percentile": [
+                  -0.18829416019632075,
+                  -0.010484753380431179
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.09697530864197532,
+                "bootstrap_95_percentile": [
+                  -0.21703703703703703,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.017048967704740643,
+                "mrr_at_10": -0.013888888888888892
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0041019364064862176,
+                "mrr_at_10": -0.005555555555555557
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.005406535191194987,
+                "mrr_at_10": 0.016666666666666666
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.0052481229733439575,
+                "bootstrap_95_percentile": [
+                  -0.023811706300303423,
+                  0.015589314955297464
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.0009259259259259273,
+                "bootstrap_95_percentile": [
+                  -0.022222222222222227,
+                  0.022222222222222223
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-bn": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.011111111111111113,
+                "ndcg_at_10": 0.004320181543949484,
+                "mrr_at_10": 0.012169312169312173
+              },
+              "29": {
+                "recall_at_10": -0.011111111111111113,
+                "ndcg_at_10": 0.04501891777350329,
+                "mrr_at_10": 0.06277777777777778
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01003765304377463,
+                "mrr_at_10": -0.01523809523809524
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  -0.014814814814814817,
+                  0.014814814814814817
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.013100482091226048,
+                "bootstrap_95_percentile": [
+                  -0.03847074144632714,
+                  0.07995344747399534
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.01990299823633157,
+                "bootstrap_95_percentile": [
+                  -0.044126984126984126,
+                  0.10848324514991181
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.10001370394698655,
+                "mrr_at_10": -0.10523809523809524
+              },
+              "29": {
+                "recall_at_10": -0.011111111111111113,
+                "ndcg_at_10": -0.05677992354337564,
+                "mrr_at_10": -0.061111111111111116
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.09011760065724625,
+                "mrr_at_10": -0.10357142857142858
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.0037037037037037043,
+                "bootstrap_95_percentile": [
+                  -0.014814814814814817,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.08230374271586949,
+                "bootstrap_95_percentile": [
+                  -0.160524931523318,
+                  -0.019763921174109994
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.08997354497354498,
+                "bootstrap_95_percentile": [
+                  -0.18492063492063493,
+                  -0.019074074074074077
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": -0.011111111111111113,
+                "ndcg_at_10": -0.10433388549093604,
+                "mrr_at_10": -0.1174074074074074
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.10179884131687893,
+                "mrr_at_10": -0.1238888888888889
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.08007994761347162,
+                "mrr_at_10": -0.08833333333333335
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": -0.0037037037037037043,
+                "bootstrap_95_percentile": [
+                  -0.014814814814814817,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.09540422480709553,
+                "bootstrap_95_percentile": [
+                  -0.18364218968854557,
+                  -0.02540302692900785
+                ]
+              },
+              "mrr_at_10": {
+                "mean": -0.10987654320987655,
+                "bootstrap_95_percentile": [
+                  -0.23833333333333334,
+                  -0.016666666666666666
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        },
+        "en-en": {
+          "long_minus_short": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.004910064374100372,
+                "mrr_at_10": 0.0
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0009296670738434135,
+                "mrr_at_10": 0.0
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": 0.005956209512873904,
+                "mrr_at_10": 0.0
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": 0.0033122022710436205,
+                "bootstrap_95_percentile": [
+                  -0.0009296670738434135,
+                  0.013248809084174484
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "long_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.0074689361245463175,
+                "mrr_at_10": 0.0
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.007352458059616199,
+                "mrr_at_10": 0.0
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.006422790985772786,
+                "mrr_at_10": 0.0
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.007081395056645101,
+                "bootstrap_95_percentile": [
+                  -0.020673049012254696,
+                  4.373395659585453e-05
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          },
+          "short_minus_unchanged": {
+            "groups": 6,
+            "queries": 30,
+            "training_seeds": [
+              17,
+              29,
+              43
+            ],
+            "bootstrap_repeats": 2000,
+            "per_seed_difference": {
+              "17": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01237900049864669,
+                "mrr_at_10": 0.0
+              },
+              "29": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.006422790985772786,
+                "mrr_at_10": 0.0
+              },
+              "43": {
+                "recall_at_10": 0.0,
+                "ndcg_at_10": -0.01237900049864669,
+                "mrr_at_10": 0.0
+              }
+            },
+            "metrics": {
+              "recall_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "ndcg_at_10": {
+                "mean": -0.01039359732768872,
+                "bootstrap_95_percentile": [
+                  -0.02593182843261291,
+                  0.0
+                ]
+              },
+              "mrr_at_10": {
+                "mean": 0.0,
+                "bootstrap_95_percentile": [
+                  0.0,
+                  0.0
+                ]
+              }
+            },
+            "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+            "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+          }
+        }
+      },
+      "english_minus_unchanged": {
+        "groups": 6,
+        "queries": 90,
+        "training_seeds": [
+          17,
+          29,
+          43
+        ],
+        "bootstrap_repeats": 2000,
+        "per_seed_difference": {
+          "17": {
+            "recall_at_10": -0.011111111111111112,
+            "ndcg_at_10": -0.06237251260488413,
+            "mrr_at_10": -0.06341269841269842
+          },
+          "29": {
+            "recall_at_10": -0.014814814814814815,
+            "ndcg_at_10": -0.05332888661645629,
+            "mrr_at_10": -0.055802469135802474
+          },
+          "43": {
+            "recall_at_10": 0.0,
+            "ndcg_at_10": -0.05971531777790034,
+            "mrr_at_10": -0.0677336860670194
+          }
+        },
+        "metrics": {
+          "recall_at_10": {
+            "mean": -0.008641975308641976,
+            "bootstrap_95_percentile": [
+              -0.02962962962962963,
+              0.0
+            ]
+          },
+          "ndcg_at_10": {
+            "mean": -0.05847223899974692,
+            "bootstrap_95_percentile": [
+              -0.11005548006830225,
+              -0.01840589699907752
+            ]
+          },
+          "mrr_at_10": {
+            "mean": -0.062316284538506767,
+            "bootstrap_95_percentile": [
+              -0.12528218694885362,
+              -0.014444444444444446
+            ]
+          }
+        },
+        "effect": "candidate minus reference; crossed paired seed/group bootstrap",
+        "uncertainty_scope": "empirical three-seed and intent sampling; excludes label uncertainty"
+      },
+      "runtime_ratios": [
+        {
+          "seed": 17,
+          "latency": 0.3659323257755367,
+          "memory": 0.9995949435452566
+        },
+        {
+          "seed": 29,
+          "latency": 0.40032776460175296,
+          "memory": 1.0003206696933384
+        },
+        {
+          "seed": 43,
+          "latency": 0.36665522631146585,
+          "memory": 1.0003544243979006
+        }
+      ],
+      "gates": {
+        "gain_over_short": false,
+        "positive_paired_interval": true,
+        "gain_over_unchanged": false,
+        "english_retention": false,
+        "query_latency": true,
+        "memory": true
+      },
+      "passes_all": false
+    }
+  },
+  "test_report_sha256": {
+    "unchanged": "56370e7d0366c25244326f1c3c986ed93ae5d96164cf58827584c808361c4618",
+    "long/equal-data/original-seed17": "d331aa874a07251dd347e4a59d60a7910fe5114ff471c5cf7bfe3682349020b2",
+    "short/equal-data/original-seed17": "7f014609ae7124c14991933c7fa6d1d633fbfeefb721ffb80b436837c024b715",
+    "long/equal-data/original-seed29": "f386f6069c430dc2e44d37dcb122fc059116cf733a37e1d6d2f2ae20358a8816",
+    "short/equal-data/original-seed29": "5eec6230ba4690b438b067c312c7905b8f490c9a66a8c67535058c1ad97eb60b",
+    "long/equal-data/original-seed43": "a55a3ce7dcf80c911e56e5ca443fd2db2f3327f3bf4f446b59bd98ce5ee5d70e",
+    "short/equal-data/original-seed43": "dd0ee9945ece01d2c1a3856a87f13a1ba6947812d943707c19ffe2a9adeb9fef",
+    "long/equal-compute/original-seed17": "1f667069b42c50e19ae4f2cb5ddd4ba5c3b36ee444e75b4d139edb6da6d3a257",
+    "short/equal-compute/original-seed17": "925ff0beaf459d1a6e90eb607a3b20b4ef1a7e749f4430a502bb0e573057ee79",
+    "long/equal-compute/original-seed29": "079f2b6722e742e8a9151165d375ef26b391bd659a7b39a98d30db0ef1a5b80f",
+    "short/equal-compute/original-seed29": "50941f3e632a26ee44eb0a5ed5950d57dc31bd402cab1f5352f2d9e83a90523a",
+    "long/equal-compute/original-seed43": "5bdffd2494c25bb68be181f44363dff0affde58b8682151d957ac0a634ccf875",
+    "short/equal-compute/original-seed43": "b82901d031c7ae654fe732dc9acd36908b4507f703113cae47ba169f31c5d7fc"
+  },
+  "long_original_confirmed": false,
+  "limits": [
+    "longer exposure, English retention and hard negatives change together; this is not an isolated ablation",
+    "paired crossed resampling of three training seeds and six domain blocks; excludes annotation uncertainty",
+    "source-backed agent-authored benchmark; no human review or natural-traffic claim",
+    "test results cannot select a different seed, budget or model"
+  ]
+}

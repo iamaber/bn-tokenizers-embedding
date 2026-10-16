@@ -112,3 +112,5 @@ Reproduction paths differ from the saved report's paths; compare coverage and la
 ## Label audit and fresh source-backed follow-up
 
 The [blinded label audit](../../reports/LABEL_AUDIT.md) checks all 395 added positive pairs and 120 sampled negatives, records disagreements without replacing labels, and prepares a blank human review packet. The [fresh source-backed benchmark](../../reports/SOURCE_BENCHMARK.md) has 90 intents with complete same-split candidate judgments, source-disjoint development/test material and audited lexical training exclusion. Its report includes the original-only longer-training and frozen-selection reproduction commands; execution status is tracked in the [second-experiment ledger](../../reports/ROUND2_PLAN.md).
+
+The [completed longer-original comparison](../../reports/ROUND2_ORIGINAL_COMPARISON.md) evaluates all 13 original-tokenizer encoders on both fresh splits. Longer adaptation improves over the earlier short controls but fails the gain-over-unchanged and English-retention gates; the frozen choice remains unchanged E5.

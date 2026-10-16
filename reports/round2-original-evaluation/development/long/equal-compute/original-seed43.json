@@ -1,0 +1,951 @@
+{
+  "model": "models/encoders-round2/equal-compute/original-seed43",
+  "model_files": {
+    "config.json": "d3e1cf0a6fef0ae92f8bc55ec4ce6d01baa2525df33712f2d5937bd2162d2006",
+    "encoder.json": "ca72038a164060441c6922c48985e9b467a1d283b7c44a0b22a94025e7e9186d",
+    "model.safetensors": "ae17d4bac09e5d98494020658f434458909c7258560088c5b30e67a45ffbb018",
+    "tokenizer.json": "5b58593a7e63f3c8b69801a92415fc0813dd287a3ba2f767cdf33106806fca11",
+    "tokenizer_config.json": "073baeda1d4206d2884440810a167a690bfbf44c2ddc38185418fb7bb0e2dc79",
+    "training-report.json": "0ddbc59dc7a7a1967cd8a39c493812a5217308b13fa87b6f6bf169177431ad0b"
+  },
+  "custom_tokenizer": false,
+  "maximum_tokens": 512,
+  "batch_size": 16,
+  "cpu_threads": 4,
+  "load_seconds": 1.166032749984879,
+  "document_encoding": {
+    "untruncated_tokens": 8422,
+    "emitted_tokens": 8422,
+    "padded_token_positions": 12156,
+    "truncated_texts": 0,
+    "seconds": 0.9167149580316618
+  },
+  "query_encoding": {
+    "untruncated_tokens": 5104,
+    "emitted_tokens": 5104,
+    "padded_token_positions": 6720,
+    "truncated_texts": 0,
+    "seconds": 0.3650628750328906
+  },
+  "runtime": {
+    "repeat_seconds": [
+      0.359004333964549,
+      0.40024308301508427,
+      0.4726035000057891,
+      0.7531586249824613,
+      1.5884509169845842
+    ],
+    "median_seconds": 0.4726035000057891,
+    "median_seconds_per_query": 0.001969181250024121,
+    "queries_per_pass": 240,
+    "cached_documents": 180,
+    "scope": "warm batch throughput: tokenize + encode + exact cached-document search; excludes loading/indexing",
+    "single_query": {
+      "repeat_seconds": [
+        0.011022957973182201,
+        0.009806749993003905,
+        0.009721375012304634,
+        0.009538416983559728,
+        0.00941904098726809,
+        0.00909183401381597,
+        0.00958191603422165,
+        0.00963870796840638,
+        0.00979212496895343,
+        0.008285458956379443,
+        0.00794145802501589,
+        0.007926165999379009,
+        0.00791229197056964,
+        0.008407958957832307,
+        0.008377332997042686,
+        0.008261916984338313,
+        0.008204625046346337,
+        0.00790541700553149,
+        0.008135667012538761,
+        0.00818016700213775,
+        0.008317500003613532,
+        0.008121332968585193,
+        0.00793683301890269,
+        0.007880833989474922,
+        0.007882875041104853,
+        0.008444083970971406,
+        0.008174915972631425,
+        0.0074175840127281845,
+        0.007352457963861525,
+        0.007248084002640098,
+        0.007365582976490259,
+        0.007442292000632733,
+        0.007954416971188039,
+        0.007358749979175627,
+        0.007167290954384953,
+        0.007106625009328127,
+        0.0071971669676713645,
+        0.007570457994006574,
+        0.007432540995068848,
+        0.007407166005577892,
+        0.0073445000452920794,
+        0.006668084010016173,
+        0.006836707994807512,
+        0.006820083013735712,
+        0.006927000009454787,
+        0.006763375014998019,
+        0.006571708945557475,
+        0.006530000013299286,
+        0.006479791016317904,
+        0.006923916982486844,
+        0.006798083952162415,
+        0.006801791954785585,
+        0.006768958002794534,
+        0.006530000013299286,
+        0.006758916948456317,
+        0.006782250013202429,
+        0.006847332988400012,
+        0.006739917036611587,
+        0.006556834036018699,
+        0.0065521670039743185
+      ],
+      "median_seconds": 0.007437416497850791,
+      "requests": 60,
+      "unique_queries": 12,
+      "workload_sha256": "f230266835c8fc68c2e6b17dd6b59288799fa423764345d6dd93fa35c2748a28",
+      "scope": "warm batch-1 tokenize + encode + exact cached-document search"
+    },
+    "query_workload_sha256": "c058385fb8ad03e8aa41216416b3ba9407dac02be4b12e55685b5b236bba99a0",
+    "document_workload_sha256": "79dcb141c90c42d26f84553fe90ca4ac5d774b66543afe9ca35ef4dd9e12e36f"
+  },
+  "peak_process_rss_bytes": 965656576,
+  "memory_scope": "fresh-process peak including model load, encoding and ranking; not training memory",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "packages": {
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2"
+  },
+  "implementation_sha256": {
+    "evaluate_encoder.py": "a3e4603efdca9584201e63e9c9b4a408eb2324819e9df7bc820cb3106c5d8f71",
+    "encoder.py": "3d24c23c4e7ae4777dbaa32e4c7950e0fe4a1f3676af0271c2bf84bb02972f46",
+    "compare.py": "c30c8ed5cc1baf1081d0a2a07ff53013717f6f98c69887ab020dda1bcd18eb2c",
+    "metrics.py": "87a72dedb057da3a7a2fbdfcd8bec21893268284ad595a9d5fb272e808be7e3b"
+  },
+  "results": {
+    "bl-bl": {
+      "dataset": "data/processed/source-benchmark-v2/development/bl-bl",
+      "dataset_manifest_sha256": "79e0aa2302ad793eaf3f399047f23282104d14c253dca6427f54f84fc1fb93ea",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 120,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9520833333333333,
+          "ndcg_at_10": 0.7698074729157042,
+          "mrr_at_10": 0.7212301587301587
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 120,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9520833333333333,
+            "ndcg_at_10": 0.7698074729157042,
+            "mrr_at_10": 0.7212301587301587
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7170454712878068,
+            "mrr_at_10": 0.6125
+          }
+        },
+        "business": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.975,
+            "ndcg_at_10": 0.7817888703080021,
+            "mrr_at_10": 0.7150595238095238
+          }
+        },
+        "conversation": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.8336760927285587,
+            "mrr_at_10": 0.8196428571428571
+          }
+        },
+        "qa": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9375,
+            "ndcg_at_10": 0.7862343745903934,
+            "mrr_at_10": 0.7400595238095238
+          }
+        },
+        "science": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.85,
+            "ndcg_at_10": 0.6730672078504294,
+            "mrr_at_10": 0.6658333333333333
+          }
+        },
+        "technology": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8270328207290344,
+            "mrr_at_10": 0.7742857142857142
+          }
+        }
+      },
+      "ranking_sha256": "ca169aca3ec981021f5e2fdc72784209e53d8825a183c8efcafd4e5f0a907831",
+      "scores_sha256": "21c7b1efbe75aaf25389290837dcebc75db7d8df4c85b6d39254e46dd264d6fc"
+    },
+    "bl-bn": {
+      "dataset": "data/processed/source-benchmark-v2/development/bl-bn",
+      "dataset_manifest_sha256": "b452c9c7cfbd73923c5e22466fbb3d910af6dd6da1209025ea8e74ed162f3906",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 120,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.8719444444444444,
+          "ndcg_at_10": 0.619572715420892,
+          "mrr_at_10": 0.55369708994709
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 120,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8719444444444444,
+            "ndcg_at_10": 0.619572715420892,
+            "mrr_at_10": 0.55369708994709
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9166666666666666,
+            "ndcg_at_10": 0.5579950373079605,
+            "mrr_at_10": 0.4888888888888889
+          }
+        },
+        "business": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.6888392700134719,
+            "mrr_at_10": 0.6188095238095238
+          }
+        },
+        "conversation": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.775,
+            "ndcg_at_10": 0.5906945889014679,
+            "mrr_at_10": 0.5463888888888889
+          }
+        },
+        "qa": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.865,
+            "ndcg_at_10": 0.5995953403001569,
+            "mrr_at_10": 0.5296428571428572
+          }
+        },
+        "science": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.875,
+            "ndcg_at_10": 0.5619984251206815,
+            "mrr_at_10": 0.47845238095238096
+          }
+        },
+        "technology": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.7183136308816133,
+            "mrr_at_10": 0.66
+          }
+        }
+      },
+      "ranking_sha256": "22721e1f8e783aa47dd22b11b9bd996c747f2871f2029bd49eebdb3bc00fe911",
+      "scores_sha256": "082da676648584f53da86133f767776d4500eafe4dc7045da94f5594bc395124"
+    },
+    "bl-en": {
+      "dataset": "data/processed/source-benchmark-v2/development/bl-en",
+      "dataset_manifest_sha256": "95986791bb2801a77797e2f79b89909963790fc8362ee730be581f08394ba934",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 120,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9416666666666667,
+          "ndcg_at_10": 0.8158278323099312,
+          "mrr_at_10": 0.7976818783068783
+        }
+      },
+      "buckets": {
+        "banglish": {
+          "queries": 120,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9416666666666667,
+            "ndcg_at_10": 0.8158278323099312,
+            "mrr_at_10": 0.7976818783068783
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8559382561438874,
+            "mrr_at_10": 0.8154761904761905
+          }
+        },
+        "business": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.975,
+            "ndcg_at_10": 0.8723051178633074,
+            "mrr_at_10": 0.8488888888888889
+          }
+        },
+        "conversation": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.8349348167670824,
+            "mrr_at_10": 0.8125
+          }
+        },
+        "qa": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.925,
+            "ndcg_at_10": 0.8724366997217503,
+            "mrr_at_10": 0.88125
+          }
+        },
+        "science": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.6180712932109809,
+            "mrr_at_10": 0.6375
+          }
+        },
+        "technology": {
+          "queries": 20,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8412808101525788,
+            "mrr_at_10": 0.7904761904761904
+          }
+        }
+      },
+      "ranking_sha256": "bf470d1c986cde3728ce75421a77d76966719d902f1c3857233a2e023a5a749c",
+      "scores_sha256": "6add159c36451cce47be4b9ddddc0f0b6133711d63f6f7e8641f095b9e2459d8"
+    },
+    "bn-bl": {
+      "dataset": "data/processed/source-benchmark-v2/development/bn-bl",
+      "dataset_manifest_sha256": "9a923c469a4919277d76f12c737e0ac042cb02372b9f8080667f3626eeb1aefd",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9361111111111111,
+          "ndcg_at_10": 0.6879456771784103,
+          "mrr_at_10": 0.6530687830687831
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9361111111111111,
+            "ndcg_at_10": 0.6879456771784103,
+            "mrr_at_10": 0.6530687830687831
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9666666666666667,
+            "ndcg_at_10": 0.7810827943755793,
+            "mrr_at_10": 0.7083333333333334
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8233199647699356,
+            "mrr_at_10": 0.7658333333333334
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.6773162157723489,
+            "mrr_at_10": 0.7361111111111112
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.6402877528855266,
+            "mrr_at_10": 0.5870634920634921
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.75,
+            "ndcg_at_10": 0.5057204004588912,
+            "mrr_at_10": 0.5092857142857143
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.69994693480818,
+            "mrr_at_10": 0.6117857142857143
+          }
+        }
+      },
+      "ranking_sha256": "a46d4562cf0ecd700dc40f7b6464c308599a3ba4b735efb6475fd4546be9f6ef",
+      "scores_sha256": "783bdab0283d5432ee5c3fe5d80cbf40002374c1044d65f7f065917f6315c2e1"
+    },
+    "bn-bn": {
+      "dataset": "data/processed/source-benchmark-v2/development/bn-bn",
+      "dataset_manifest_sha256": "d14db3e5dbb660d9eaf28c6f07303d33435b13c4d2a028ffe01ba6caa4e5ddfc",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9958333333333333,
+          "ndcg_at_10": 0.9022144323706796,
+          "mrr_at_10": 0.8866666666666667
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9958333333333333,
+            "ndcg_at_10": 0.9022144323706796,
+            "mrr_at_10": 0.8866666666666667
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8963458293499886,
+            "mrr_at_10": 0.8666666666666667
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8689446072440721,
+            "mrr_at_10": 0.825
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9702554030672629,
+            "mrr_at_10": 1.0
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.975,
+            "ndcg_at_10": 0.8930272939155084,
+            "mrr_at_10": 0.9
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9029605241164518,
+            "mrr_at_10": 0.8833333333333333
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8817529365307935,
+            "mrr_at_10": 0.845
+          }
+        }
+      },
+      "ranking_sha256": "652cd19b78e30efd9105cbe0eee7d431fa39d3a56234c00dceecbe00b75aea88",
+      "scores_sha256": "08560533407155d79802d5611923f824643209748cc86641c8ba280e5c9b12b6"
+    },
+    "bn-en": {
+      "dataset": "data/processed/source-benchmark-v2/development/bn-en",
+      "dataset_manifest_sha256": "bd477b74854b970688ec5e83f909f9f9e387e7e65b57dae4e599b1e7accdec79",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9791666666666666,
+          "ndcg_at_10": 0.8077631570590098,
+          "mrr_at_10": 0.7835185185185185
+        }
+      },
+      "buckets": {
+        "bangla": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9791666666666666,
+            "ndcg_at_10": 0.8077631570590098,
+            "mrr_at_10": 0.7835185185185185
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.7420301516859695,
+            "mrr_at_10": 0.7333333333333333
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8845077077799719,
+            "mrr_at_10": 0.8611111111111112
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8399321751259665,
+            "mrr_at_10": 0.85
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.975,
+            "ndcg_at_10": 0.8209286904700307,
+            "mrr_at_10": 0.8366666666666667
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7443089858543742,
+            "mrr_at_10": 0.6666666666666666
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8148712314377456,
+            "mrr_at_10": 0.7533333333333333
+          }
+        }
+      },
+      "ranking_sha256": "5531ae2d68306250e4dae8180ad160e85ab8a74c6cd732c5ef4a5feca378c6b2",
+      "scores_sha256": "1f5330ca4ede7309a0c9d870c173315cc8ed9840cacd18bb432643f056006237"
+    },
+    "en-bl": {
+      "dataset": "data/processed/source-benchmark-v2/development/en-bl",
+      "dataset_manifest_sha256": "82b9dda5ba6f5df3508028fcbba76431bf34e64923ad4b325a8136a5a3b3b119",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9166666666666666,
+          "ndcg_at_10": 0.6943646880220171,
+          "mrr_at_10": 0.6299537037037037
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9166666666666666,
+            "ndcg_at_10": 0.6943646880220171,
+            "mrr_at_10": 0.6299537037037037
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8876007701583121,
+            "mrr_at_10": 0.85
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.8251590945780091,
+            "mrr_at_10": 0.7811111111111111
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.5386687019110472,
+            "mrr_at_10": 0.4469444444444444
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.7503607156185317,
+            "mrr_at_10": 0.7333333333333333
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.85,
+            "ndcg_at_10": 0.5075281564395226,
+            "mrr_at_10": 0.4216666666666667
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.6568706894266801,
+            "mrr_at_10": 0.5466666666666666
+          }
+        }
+      },
+      "ranking_sha256": "7f9743d4658519631635fa95fdc73cec54dcc9d2f4ae0675a2eb55e5f8b30535",
+      "scores_sha256": "dac0a259a5cec52edc31271b54e001e19992f5c3eb18d881cfdc04c1f7581ac7"
+    },
+    "en-bn": {
+      "dataset": "data/processed/source-benchmark-v2/development/en-bn",
+      "dataset_manifest_sha256": "b6d5330f3114f0249da90e79bab2f35c1466af6035ef6b8265593d4528554006",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.95,
+          "ndcg_at_10": 0.7619376279790238,
+          "mrr_at_10": 0.7209920634920635
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.7619376279790238,
+            "mrr_at_10": 0.7209920634920635
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7887192182341848,
+            "mrr_at_10": 0.7833333333333333
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.764562232160187,
+            "mrr_at_10": 0.72
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.8,
+            "ndcg_at_10": 0.6812655499310668,
+            "mrr_at_10": 0.6726190476190477
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7772187501140532,
+            "mrr_at_10": 0.7166666666666667
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8493396539416093,
+            "mrr_at_10": 0.8166666666666667
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.7105203634930417,
+            "mrr_at_10": 0.6166666666666667
+          }
+        }
+      },
+      "ranking_sha256": "1f6b5bb53c11124d888b36cab2ef763e0b4cedccb97b33536c6a2f8641981f40",
+      "scores_sha256": "b7da9d9834cf3c2e4075644c0883cd8d6dc3b4cbc1e23c6f53d2872252ca9fe7"
+    },
+    "en-en": {
+      "dataset": "data/processed/source-benchmark-v2/development/en-en",
+      "dataset_manifest_sha256": "8a95d14863b0d4a91ae72d71729855ce5c97826054464a8645f8e8a608ed86b1",
+      "label_status": "agent-reviewed complete same-split source-intent judgments projected across parallel forms",
+      "all": {
+        "queries": 60,
+        "groups": 6,
+        "weighting": "equal group weight",
+        "metrics": {
+          "recall_at_10": 0.9666666666666667,
+          "ndcg_at_10": 0.9098799116007512,
+          "mrr_at_10": 0.9013888888888889
+        }
+      },
+      "buckets": {
+        "english": {
+          "queries": 60,
+          "groups": 6,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9666666666666667,
+            "ndcg_at_10": 0.9098799116007512,
+            "mrr_at_10": 0.9013888888888889
+          }
+        }
+      },
+      "domains": {
+        "banking": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.9133103752887058,
+            "mrr_at_10": 0.9
+          }
+        },
+        "business": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.9,
+            "ndcg_at_10": 0.807058588611874,
+            "mrr_at_10": 0.775
+          }
+        },
+        "conversation": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.9449176895247626,
+            "mrr_at_10": 0.95
+          }
+        },
+        "qa": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 0.95,
+            "ndcg_at_10": 0.9583198467760626,
+            "mrr_at_10": 1.0
+          }
+        },
+        "science": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.959487018688811,
+            "mrr_at_10": 0.95
+          }
+        },
+        "technology": {
+          "queries": 10,
+          "groups": 1,
+          "weighting": "equal group weight",
+          "metrics": {
+            "recall_at_10": 1.0,
+            "ndcg_at_10": 0.8761859507142915,
+            "mrr_at_10": 0.8333333333333334
+          }
+        }
+      },
+      "ranking_sha256": "be16ba0884206ed370902df0c185acafa95c8bd1302c69d84dec5167f2f188f4",
+      "scores_sha256": "a63b71b6ddf5d135fd4c49a0886c234649da6e6e38d4a6abaf0bfaeb61df94d3"
+    }
+  }
+}

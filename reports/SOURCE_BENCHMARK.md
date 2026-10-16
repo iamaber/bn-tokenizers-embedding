@@ -10,7 +10,7 @@ The [material, source provenance and review](../experiments/retrieval/source_ben
 
 Metrics give equal weight to six domains. Banglish spelling variants remain inside their domain block. Paired uncertainty jointly resamples training seeds and six domain blocks; variants are not treated as independent evidence. Annotation uncertainty is excluded.
 
-Fresh adapted quality evaluation is pending. The [original-tokenizer criteria](../experiments/retrieval/round2_original_criteria.json) are frozen before scoring: gain over short adaptation, a positive paired interval, gain over unchanged E5, English retention, latency and memory gates in both budgets. Development selects the candidate; a durable selection artifact must exist before reserved-test scoring.
+Fresh original-tokenizer quality evaluation is complete; the [comparison report](ROUND2_ORIGINAL_COMPARISON.md) retains unchanged E5. The [original-tokenizer criteria](../experiments/retrieval/round2_original_criteria.json) are frozen before scoring: gain over short adaptation, a positive paired interval, gain over unchanged E5, English retention, latency and memory gates in both budgets. Development selects the candidate; a durable selection artifact must exist before reserved-test scoring.
 
 Reproduce from the repository root, using the pinned local raw snapshots and corpora:
 

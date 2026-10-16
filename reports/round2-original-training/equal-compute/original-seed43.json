@@ -1,0 +1,177 @@
+{
+  "arm": "original",
+  "seed": 43,
+  "budget": "equal-compute",
+  "protocol_sha256": "0e8aa3abfebb25ea4e5d7f7bb04316f926df58a4494bb9eb6b8ccbfa0f104a2c",
+  "stages": {
+    "representation": {
+      "steps": 198,
+      "mean_loss": 0.00832869748425002,
+      "first_loss": 0.008900970220565796,
+      "last_loss": 0.007595133036375046,
+      "query_languages": {
+        "english": 1584,
+        "banglish": 1584
+      },
+      "verified_negative_examples": 0
+    },
+    "contrastive": {
+      "steps": 325,
+      "mean_loss": 0.07638704617722676,
+      "first_loss": 1.1847774982452393,
+      "last_loss": 0.013991332612931728,
+      "query_languages": {
+        "english": 2600,
+        "banglish": 2600
+      },
+      "verified_negative_examples": 1728
+    }
+  },
+  "history": [
+    {
+      "stage": "representation",
+      "steps": 1,
+      "loss": 0.008900970220565796,
+      "charged_seconds": 1.920549292000942
+    },
+    {
+      "stage": "representation",
+      "steps": 33,
+      "loss": 0.008586596697568893,
+      "charged_seconds": 21.360498041962273
+    },
+    {
+      "stage": "representation",
+      "steps": 65,
+      "loss": 0.008746171370148659,
+      "charged_seconds": 40.179158916987944
+    },
+    {
+      "stage": "representation",
+      "steps": 97,
+      "loss": 0.00844324566423893,
+      "charged_seconds": 61.41473279194906
+    },
+    {
+      "stage": "representation",
+      "steps": 129,
+      "loss": 0.007492799311876297,
+      "charged_seconds": 82.47750908398302
+    },
+    {
+      "stage": "representation",
+      "steps": 161,
+      "loss": 0.008213883265852928,
+      "charged_seconds": 103.01386420900235
+    },
+    {
+      "stage": "representation",
+      "steps": 193,
+      "loss": 0.007505213841795921,
+      "charged_seconds": 124.37374841695419
+    },
+    {
+      "stage": "contrastive",
+      "steps": 1,
+      "loss": 1.1847774982452393,
+      "charged_seconds": 128.06712241697824
+    },
+    {
+      "stage": "contrastive",
+      "steps": 33,
+      "loss": 0.1093408465385437,
+      "charged_seconds": 148.87996516696876
+    },
+    {
+      "stage": "contrastive",
+      "steps": 65,
+      "loss": 0.046461544930934906,
+      "charged_seconds": 167.7058351250016
+    },
+    {
+      "stage": "contrastive",
+      "steps": 97,
+      "loss": 0.05401674658060074,
+      "charged_seconds": 187.98817483399762
+    },
+    {
+      "stage": "contrastive",
+      "steps": 129,
+      "loss": 0.016322968527674675,
+      "charged_seconds": 207.89291437499924
+    },
+    {
+      "stage": "contrastive",
+      "steps": 161,
+      "loss": 0.025883052498102188,
+      "charged_seconds": 227.3237850839505
+    },
+    {
+      "stage": "contrastive",
+      "steps": 193,
+      "loss": 0.022962117567658424,
+      "charged_seconds": 248.07571229198948
+    },
+    {
+      "stage": "contrastive",
+      "steps": 225,
+      "loss": 0.013262423686683178,
+      "charged_seconds": 267.26967449998483
+    },
+    {
+      "stage": "contrastive",
+      "steps": 257,
+      "loss": 0.03304191678762436,
+      "charged_seconds": 296.7088593340013
+    },
+    {
+      "stage": "contrastive",
+      "steps": 289,
+      "loss": 0.015772521495819092,
+      "charged_seconds": 322.71709954197286
+    },
+    {
+      "stage": "contrastive",
+      "steps": 321,
+      "loss": 0.010475404560565948,
+      "charged_seconds": 353.9385998339858
+    }
+  ],
+  "charged_training_seconds": 360.05878079199465,
+  "preprocessing_charged_seconds": 0.0,
+  "equal_compute_limit_seconds": 360,
+  "overrun_seconds": 0.05878079199464992,
+  "tokenizer_initialization": {
+    "method": "retain original tokenizer and input embeddings",
+    "seconds": 0.0
+  },
+  "training_sequence_sha256": "09065efbc9edb9b020369d7ef74fd0882e8d99b23b5e1a8b54ca9778886f6a2a",
+  "base_files": {
+    "model.safetensors": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477",
+    "tokenizer_config.json": "a1d6bc8734a6f635dc158508bef000f8e2e5a759c7d92f984b2c86e5ff53425b",
+    "special_tokens_map.json": "d05497f1da52c5e09554c0cd874037a083e1dc1b9cfd48034d1c717f1afc07a7",
+    "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "config.json": "69137736cab8b8903a07fe8afaafdda25aac55415a12a55d1bffa9f581abf959",
+    "tokenizer.json": "0b44a9d7b51c3c62626640cda0e2c2f70fdacdc25bbbd68038369d14ebdf4c39"
+  },
+  "checkpoint_files": {
+    "model.safetensors": "ae17d4bac09e5d98494020658f434458909c7258560088c5b30e67a45ffbb018",
+    "encoder.json": "ca72038a164060441c6922c48985e9b467a1d283b7c44a0b22a94025e7e9186d",
+    "tokenizer_config.json": "073baeda1d4206d2884440810a167a690bfbf44c2ddc38185418fb7bb0e2dc79",
+    "config.json": "d3e1cf0a6fef0ae92f8bc55ec4ce6d01baa2525df33712f2d5937bd2162d2006",
+    "tokenizer.json": "5b58593a7e63f3c8b69801a92415fc0813dd287a3ba2f767cdf33106806fca11"
+  },
+  "implementations": {
+    "train_extended.py": "e5e82ad4842b93df0c36469befcb5b8901d8a4c9769c3d88149200fce7028ac6",
+    "encoder.py": "3d24c23c4e7ae4777dbaa32e4c7950e0fe4a1f3676af0271c2bf84bb02972f46",
+    "context_transfer.py": "80156816e2b1b73db7ae77149a68f7f7ca940f9b9932e7b27d9db959c97e7fbf"
+  },
+  "objective": "cosine teacher adaptation; symmetric in-batch CE plus verified-negative CE and English teacher cosine retention",
+  "english_sampling": "eight English and eight Banglish queries per batch; no reversal",
+  "limitations": [
+    "single-agent negative judgments",
+    "bulk in-batch semantic negatives remain unreviewed",
+    "balanced replay and retention do not guarantee English quality",
+    "cached context artifact build cost conservatively charged in full per run"
+  ]
+}
